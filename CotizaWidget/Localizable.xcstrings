@@ -1,0 +1,96 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Awaiting %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por cobrar %@"
+          }
+        }
+      }
+    },
+    "Awaiting payment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por cobrar"
+          }
+        }
+      }
+    },
+    "Money owed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo que me deben"
+          }
+        }
+      }
+    },
+    "New estimate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva cotización"
+          }
+        }
+      }
+    },
+    "Overdue: %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vencidas: %lld"
+          }
+        }
+      }
+    },
+    "Paid this month": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cobrado del mes"
+          }
+        }
+      }
+    },
+    "Paid this month: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cobrado este mes: %@"
+          }
+        }
+      }
+    },
+    "Start describing a job from the Lock Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe un trabajo desde la pantalla bloqueada."
+          }
+        }
+      }
+    },
+    "What your clients still owe you and what came in this month.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo que tus clientes aún te deben y lo que cobraste este mes."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,2881 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@": {
+      "shouldTranslate": false
+    },
+    "%@ approved %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ aprobó %@"
+          }
+        }
+      }
+    },
+    "%@ has been waiting %lld days for an answer (%@).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ lleva %lld días esperando respuesta (%@)."
+          }
+        }
+      }
+    },
+    "%@ is overdue": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ está vencida"
+          }
+        }
+      }
+    },
+    "%@ is paid: %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ quedó pagada: %@."
+          }
+        }
+      }
+    },
+    "%@ per month": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ al mes"
+          }
+        }
+      }
+    },
+    "%@ per week": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ a la semana"
+          }
+        }
+      }
+    },
+    "%@ per year": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ al año"
+          }
+        }
+      }
+    },
+    "%@ was due %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ venció el %@."
+          }
+        }
+      }
+    },
+    "%@ · %@": {
+      "shouldTranslate": false
+    },
+    "%@ × %@": {
+      "shouldTranslate": false
+    },
+    "%@. Renews automatically. Cancel anytime in the App Store.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. Se renueva automáticamente. Cancela cuando quieras en el App Store."
+          }
+        }
+      }
+    },
+    "%@: a new copy of %@ is ready to send.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: hay una copia nueva de %@ lista para enviar."
+          }
+        }
+      }
+    },
+    "%lld days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld días"
+          }
+        }
+      }
+    },
+    "0": {
+      "shouldTranslate": false
+    },
+    "1": {
+      "shouldTranslate": false
+    },
+    "Active": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa"
+          }
+        }
+      }
+    },
+    "Add %lld items · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agregar %lld conceptos · %@"
+          }
+        }
+      }
+    },
+    "Add client": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agregar cliente"
+          }
+        }
+      }
+    },
+    "Add from my prices": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agregar de mis precios"
+          }
+        }
+      }
+    },
+    "Add item": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agregar concepto"
+          }
+        }
+      }
+    },
+    "Add materials from a receipt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agrega materiales desde un recibo"
+          }
+        }
+      }
+    },
+    "Add price": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poner precio"
+          }
+        }
+      }
+    },
+    "Address": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dirección"
+          }
+        }
+      }
+    },
+    "All": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo"
+          }
+        }
+      }
+    },
+    "Approved": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprobada"
+          }
+        }
+      }
+    },
+    "Approved on the spot, with the signature on the PDF.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprobada ahí mismo, con la firma en el PDF."
+          }
+        }
+      }
+    },
+    "Awaiting payment: %@. Paid this month: %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por cobrar: %@. Cobrado este mes: %@."
+          }
+        }
+      }
+    },
+    "Awaiting reply": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En espera"
+          }
+        }
+      }
+    },
+    "Back": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atrás"
+          }
+        }
+      }
+    },
+    "Business name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre del negocio"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "Cancel the link": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar el enlace"
+          }
+        }
+      }
+    },
+    "Change logo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar logo"
+          }
+        }
+      }
+    },
+    "Check now": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisar ahora"
+          }
+        }
+      }
+    },
+    "Choose a photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir una foto"
+          }
+        }
+      }
+    },
+    "Choose from Contacts": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir de Contactos"
+          }
+        }
+      }
+    },
+    "Choose logo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir logo"
+          }
+        }
+      }
+    },
+    "Cleaning": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limpieza"
+          }
+        }
+      }
+    },
+    "Client": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cliente"
+          }
+        }
+      }
+    },
+    "Client approval": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprobación del cliente"
+          }
+        }
+      }
+    },
+    "Client signature": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Firma del cliente"
+          }
+        }
+      }
+    },
+    "Client signs on your phone": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu cliente firma en tu teléfono"
+          }
+        }
+      }
+    },
+    "Clients": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clientes"
+          }
+        }
+      }
+    },
+    "Clients are saved when you add them to an estimate.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los clientes se guardan cuando los agregas a una cotización."
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar"
+          }
+        }
+      }
+    },
+    "Concrete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concreto"
+          }
+        }
+      }
+    },
+    "Contact support": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contactar a soporte"
+          }
+        }
+      }
+    },
+    "Continue": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        }
+      }
+    },
+    "Convert to invoice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convertir en factura"
+          }
+        }
+      }
+    },
+    "Cost %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Costo %@"
+          }
+        }
+      }
+    },
+    "Cotiza": {
+      "shouldTranslate": false
+    },
+    "Cotiza %@": {
+      "shouldTranslate": false
+    },
+    "Cotiza Pro": {
+      "shouldTranslate": false
+    },
+    "Cotiza reads the items and prices on your phone. You choose which ones to add.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza lee los artículos y precios en tu teléfono. Tú eliges cuáles agregar."
+          }
+        }
+      }
+    },
+    "Cotiza remembers your prices each time you send an estimate.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza recuerda tus precios cada vez que envías una cotización."
+          }
+        }
+      }
+    },
+    "Cotiza reminds you when an estimate has waited %lld days for an answer and when an invoice is past due.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza te avisa cuando una cotización lleva %lld días sin respuesta y cuando una factura está vencida."
+          }
+        }
+      }
+    },
+    "Cotiza uses this to understand the jobs you describe.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza lo usa para entender los trabajos que describes."
+          }
+        }
+      }
+    },
+    "Couldn't create the PDF": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo crear el PDF"
+          }
+        }
+      }
+    },
+    "Create estimate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear cotización"
+          }
+        }
+      }
+    },
+    "Dates and reminders": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fechas y recordatorios"
+          }
+        }
+      }
+    },
+    "Defaults for new estimates": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valores para cotizaciones nuevas"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar"
+          }
+        }
+      }
+    },
+    "Delete item": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar concepto"
+          }
+        }
+      }
+    },
+    "Delete this document?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar este documento?"
+          }
+        }
+      }
+    },
+    "Describe the job and your prices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe el trabajo y tus precios."
+          }
+        }
+      }
+    },
+    "Describe the work in Spanish or English. Cotiza writes a professional estimate your client can approve on the spot.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe el trabajo en español o en inglés. Cotiza escribe una cotización profesional que tu cliente puede aprobar ahí mismo."
+          }
+        }
+      }
+    },
+    "Description": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descripción"
+          }
+        }
+      }
+    },
+    "Didn't catch that. Tap to try again, or type the job.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No te escuché. Toca para intentarlo de nuevo o escribe el trabajo."
+          }
+        }
+      }
+    },
+    "Document": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Documento"
+          }
+        }
+      }
+    },
+    "Document language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma del documento"
+          }
+        }
+      }
+    },
+    "Documents: %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Documentos: %lld"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo"
+          }
+        }
+      }
+    },
+    "Draft": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borrador"
+          }
+        }
+      }
+    },
+    "Drywall": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tablaroca"
+          }
+        }
+      }
+    },
+    "Duplicate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duplicar"
+          }
+        }
+      }
+    },
+    "EN": {
+      "shouldTranslate": false
+    },
+    "ES": {
+      "shouldTranslate": false
+    },
+    "Edit": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar"
+          }
+        }
+      }
+    },
+    "Electrical": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electricidad"
+          }
+        }
+      }
+    },
+    "Email": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correo electrónico"
+          }
+        }
+      }
+    },
+    "Email or other apps": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correo u otras apps"
+          }
+        }
+      }
+    },
+    "English": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inglés"
+          }
+        }
+      }
+    },
+    "Estimate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotización"
+          }
+        }
+      }
+    },
+    "Estimate or invoice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotización o factura"
+          }
+        }
+      }
+    },
+    "Estimates": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotizaciones"
+          }
+        }
+      }
+    },
+    "Estimates valid for": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotizaciones válidas por"
+          }
+        }
+      }
+    },
+    "Every 2 weeks": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada 2 semanas"
+          }
+        }
+      }
+    },
+    "Every month": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada mes"
+          }
+        }
+      }
+    },
+    "Every week": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada semana"
+          }
+        }
+      }
+    },
+    "Example:": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ejemplo:"
+          }
+        }
+      }
+    },
+    "Example: 50% deposit to start, balance on completion.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ejemplo: 50% de anticipo para empezar y el resto al terminar."
+          }
+        }
+      }
+    },
+    "Example: Zelle 555-123-4567, check or cash.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ejemplo: Zelle 555-123-4567, cheque o efectivo."
+          }
+        }
+      }
+    },
+    "Export": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar"
+          }
+        }
+      }
+    },
+    "Fill in from Contacts": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Llenar desde Contactos"
+          }
+        }
+      }
+    },
+    "Flooring": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pisos"
+          }
+        }
+      }
+    },
+    "Follow up on your estimate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dale seguimiento a tu cotización"
+          }
+        }
+      }
+    },
+    "Found on the receipt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encontrado en el recibo"
+          }
+        }
+      }
+    },
+    "Free plan: %lld of %lld estimates left": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan gratis: te quedan %lld de %lld cotizaciones"
+          }
+        }
+      }
+    },
+    "Free trial, then %@. Renews automatically. Cancel anytime in the App Store.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba gratis, después %@. Se renueva automáticamente. Cancela cuando quieras en el App Store."
+          }
+        }
+      }
+    },
+    "Free up some storage and try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Libera espacio en tu teléfono e inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "General contractor": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contratista general"
+          }
+        }
+      }
+    },
+    "Get client signature": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pedir firma del cliente"
+          }
+        }
+      }
+    },
+    "Get started": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar"
+          }
+        }
+      }
+    },
+    "Go Pro": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hazte Pro"
+          }
+        }
+      }
+    },
+    "Hand the phone to your client, or send a link they can sign from anywhere. Signing approves the estimate and the signature is printed on the PDF.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pásale el teléfono a tu cliente o envíale un enlace para firmar desde donde esté. Al firmar, aprueba la cotización y la firma aparece en el PDF."
+          }
+        }
+      }
+    },
+    "Handyman": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantenimiento"
+          }
+        }
+      }
+    },
+    "Heating & air": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aire y calefacción"
+          }
+        }
+      }
+    },
+    "Help and FAQ": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayuda y preguntas frecuentes"
+          }
+        }
+      }
+    },
+    "How clients pay you": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cómo te pagan tus clientes"
+          }
+        }
+      }
+    },
+    "I speak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yo hablo"
+          }
+        }
+      }
+    },
+    "Income is counted on the day a job is marked paid. Materials cost comes from scanned receipts and the cost you enter on each item.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los ingresos cuentan el día en que marcas el trabajo como pagado. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto."
+          }
+        }
+      }
+    },
+    "Income, materials and profit by month, ready for your accountant.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingresos, materiales y ganancia por mes, listos para tu contador."
+          }
+        }
+      }
+    },
+    "Invoice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Factura"
+          }
+        }
+      }
+    },
+    "Invoice ready to send": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Factura lista para enviar"
+          }
+        }
+      }
+    },
+    "Invoices": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facturas"
+          }
+        }
+      }
+    },
+    "Invoices in one tap": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facturas con un toque"
+          }
+        }
+      }
+    },
+    "Item": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concepto"
+          }
+        }
+      }
+    },
+    "Items": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conceptos"
+          }
+        }
+      }
+    },
+    "Items without a price: %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conceptos sin precio: %lld"
+          }
+        }
+      }
+    },
+    "Job address": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dirección del trabajo"
+          }
+        }
+      }
+    },
+    "Job title": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre del trabajo"
+          }
+        }
+      }
+    },
+    "Jobs paid: %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trabajos pagados: %lld"
+          }
+        }
+      }
+    },
+    "Labor": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mano de obra"
+          }
+        }
+      }
+    },
+    "Landscaping": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jardinería"
+          }
+        }
+      }
+    },
+    "License number": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Número de licencia"
+          }
+        }
+      }
+    },
+    "Line total": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total del concepto"
+          }
+        }
+      }
+    },
+    "Link sent %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enlace enviado %@"
+          }
+        }
+      }
+    },
+    "Listening… tap to stop": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuchando… toca para parar"
+          }
+        }
+      }
+    },
+    "Logo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo"
+          }
+        }
+      }
+    },
+    "Look professional. Win more jobs. Get paid faster.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luce profesional. Gana más trabajos. Cobra más rápido."
+          }
+        }
+      }
+    },
+    "Manage subscription": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Administrar suscripción"
+          }
+        }
+      }
+    },
+    "Mark ${document} as paid": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar ${document} como pagada"
+          }
+        }
+      }
+    },
+    "Mark as paid": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como pagada"
+          }
+        }
+      }
+    },
+    "Marks an estimate or invoice as paid.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca una cotización o factura como pagada."
+          }
+        }
+      }
+    },
+    "Markup on materials": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganancia sobre materiales"
+          }
+        }
+      }
+    },
+    "Markup on materials (%)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganancia sobre materiales (%)"
+          }
+        }
+      }
+    },
+    "Materials cost": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Costo de materiales"
+          }
+        }
+      }
+    },
+    "Microphone access is off. You can still type the job.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El micrófono está desactivado. Puedes escribir el trabajo."
+          }
+        }
+      }
+    },
+    "Money owed to me": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo que me deben"
+          }
+        }
+      }
+    },
+    "Month": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mes"
+          }
+        }
+      }
+    },
+    "Monthly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensual"
+          }
+        }
+      }
+    },
+    "More": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más"
+          }
+        }
+      }
+    },
+    "My prices": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mis precios"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre"
+          }
+        }
+      }
+    },
+    "Never": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nunca"
+          }
+        }
+      }
+    },
+    "New client": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cliente nuevo"
+          }
+        }
+      }
+    },
+    "New estimate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva cotización"
+          }
+        }
+      }
+    },
+    "New item": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concepto nuevo"
+          }
+        }
+      }
+    },
+    "Next": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente"
+          }
+        }
+      }
+    },
+    "Next invoice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próxima factura"
+          }
+        }
+      }
+    },
+    "No Cotiza footer on what your client sees.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin la marca de Cotiza en lo que ve tu cliente."
+          }
+        }
+      }
+    },
+    "No account, no ads. Your jobs and prices stay with you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin cuenta ni anuncios. Tus trabajos y precios son solo tuyos."
+          }
+        }
+      }
+    },
+    "No active subscription was found for this Apple Account.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontró una suscripción activa en esta cuenta de Apple."
+          }
+        }
+      }
+    },
+    "No clients yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay clientes"
+          }
+        }
+      }
+    },
+    "No jobs were paid in this period.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay trabajos pagados en este periodo."
+          }
+        }
+      }
+    },
+    "No prices found": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron precios"
+          }
+        }
+      }
+    },
+    "No saved prices": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay precios guardados"
+          }
+        }
+      }
+    },
+    "Not selected": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No seleccionado"
+          }
+        }
+      }
+    },
+    "Notes for the client": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas para el cliente"
+          }
+        }
+      }
+    },
+    "Nothing here yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay nada aquí."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "On that day Cotiza makes a copy of this invoice with a new number and reminds you to send it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese día Cotiza hace una copia de esta factura con un número nuevo y te recuerda enviarla."
+          }
+        }
+      }
+    },
+    "Only %@ per month": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo %@ al mes"
+          }
+        }
+      }
+    },
+    "Open Cotiza ready to describe a job by voice.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre Cotiza listo para describir un trabajo con tu voz."
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ajustes"
+          }
+        }
+      }
+    },
+    "Open document": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir documento"
+          }
+        }
+      }
+    },
+    "Opens an estimate or invoice in Cotiza.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre una cotización o factura en Cotiza."
+          }
+        }
+      }
+    },
+    "Other": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otro"
+          }
+        }
+      }
+    },
+    "Overdue": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vencida"
+          }
+        }
+      }
+    },
+    "PDF summary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumen en PDF"
+          }
+        }
+      }
+    },
+    "Paid": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pagada"
+          }
+        }
+      }
+    },
+    "Paid this month": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cobrado del mes"
+          }
+        }
+      }
+    },
+    "Painting": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pintura"
+          }
+        }
+      }
+    },
+    "Payment due": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fecha de pago"
+          }
+        }
+      }
+    },
+    "Payment due after": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plazo de pago"
+          }
+        }
+      }
+    },
+    "Period": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Periodo"
+          }
+        }
+      }
+    },
+    "Phone": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teléfono"
+          }
+        }
+      }
+    },
+    "Plans couldn't be loaded. Check your connection and try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron cargar los planes. Revisa tu conexión e inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "Plumbing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plomería"
+          }
+        }
+      }
+    },
+    "Preview and send": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver y enviar"
+          }
+        }
+      }
+    },
+    "Previous": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anterior"
+          }
+        }
+      }
+    },
+    "Price": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precio"
+          }
+        }
+      }
+    },
+    "Price per unit ($)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precio por unidad ($)"
+          }
+        }
+      }
+    },
+    "Prices, quantities and tasks become line items automatically.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los precios, cantidades y trabajos se convierten en conceptos automáticamente."
+          }
+        }
+      }
+    },
+    "Printed at the bottom of every document.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparecen al final de cada documento."
+          }
+        }
+      }
+    },
+    "Printed on invoices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparece en las facturas."
+          }
+        }
+      }
+    },
+    "Printed on the PDF.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparece en el PDF."
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacidad"
+          }
+        }
+      }
+    },
+    "Privacy policy": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidad"
+          }
+        }
+      }
+    },
+    "Private by design": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privado por diseño"
+          }
+        }
+      }
+    },
+    "Profit": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganancia"
+          }
+        }
+      }
+    },
+    "Profit %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganancia %@"
+          }
+        }
+      }
+    },
+    "Profit reports": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportes de ganancias"
+          }
+        }
+      }
+    },
+    "Quantity": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cantidad"
+          }
+        }
+      }
+    },
+    "Quote every job, every day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza todos los trabajos, todos los días."
+          }
+        }
+      }
+    },
+    "Rate Cotiza on the App Store": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Califica Cotiza en el App Store"
+          }
+        }
+      }
+    },
+    "Reading the receipt…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leyendo el recibo…"
+          }
+        }
+      }
+    },
+    "Remembers your prices": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuerda tus precios"
+          }
+        }
+      }
+    },
+    "Reminders": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorios"
+          }
+        }
+      }
+    },
+    "Remove": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar"
+          }
+        }
+      }
+    },
+    "Remove client from this document": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar al cliente de este documento"
+          }
+        }
+      }
+    },
+    "Remove signature": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar firma"
+          }
+        }
+      }
+    },
+    "Repeat": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repetir"
+          }
+        }
+      }
+    },
+    "Reports": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportes"
+          }
+        }
+      }
+    },
+    "Restore purchases": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compras"
+          }
+        }
+      }
+    },
+    "Revenue (before tax)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingresos (sin impuesto)"
+          }
+        }
+      }
+    },
+    "Roofing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Techos"
+          }
+        }
+      }
+    },
+    "Sales tax (%)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impuesto (%)"
+          }
+        }
+      }
+    },
+    "Sales tax collected": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impuesto cobrado"
+          }
+        }
+      }
+    },
+    "Save %lld%%": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahorra %lld%%"
+          }
+        }
+      }
+    },
+    "Say the job. Send the estimate.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di el trabajo. Envía la cotización."
+          }
+        }
+      }
+    },
+    "Says how much your clients still owe you and how much you were paid this month.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Te dice cuánto te deben tus clientes y cuánto cobraste este mes."
+          }
+        }
+      }
+    },
+    "Scan a receipt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanear un recibo"
+          }
+        }
+      }
+    },
+    "Search or type a new name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca o escribe un nombre nuevo"
+          }
+        }
+      }
+    },
+    "Selected": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seleccionado"
+          }
+        }
+      }
+    },
+    "Send a signing link": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar enlace para firmar"
+          }
+        }
+      }
+    },
+    "Send to client": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar al cliente"
+          }
+        }
+      }
+    },
+    "Sent": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviada"
+          }
+        }
+      }
+    },
+    "Set up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configuración"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        }
+      }
+    },
+    "Share the link again": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir el enlace otra vez"
+          }
+        }
+      }
+    },
+    "Show": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        }
+      }
+    },
+    "Sign in to iCloud in the Settings app to back up and sync": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión en iCloud en la app Ajustes para respaldar y sincronizar"
+          }
+        }
+      }
+    },
+    "Signed by %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Firmado por %@"
+          }
+        }
+      }
+    },
+    "Something went wrong": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal"
+          }
+        }
+      }
+    },
+    "Spanish": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Español"
+          }
+        }
+      }
+    },
+    "Speak Spanish, send English": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Habla español, envía en inglés"
+          }
+        }
+      }
+    },
+    "Speak in any language. The estimate is written in the document language.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Habla en cualquier idioma. La cotización se escribe en el idioma del documento."
+          }
+        }
+      }
+    },
+    "Spreadsheet (CSV)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoja de cálculo (CSV)"
+          }
+        }
+      }
+    },
+    "Start recording": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar a grabar"
+          }
+        }
+      }
+    },
+    "Start with a blank estimate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar con una cotización en blanco"
+          }
+        }
+      }
+    },
+    "Status": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estado"
+          }
+        }
+      }
+    },
+    "Stop recording": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parar la grabación"
+          }
+        }
+      }
+    },
+    "Subscribe": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suscribirme"
+          }
+        }
+      }
+    },
+    "Subtotal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtotal"
+          }
+        }
+      }
+    },
+    "Synced with iCloud": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizado con iCloud"
+          }
+        }
+      }
+    },
+    "Take a photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomar una foto"
+          }
+        }
+      }
+    },
+    "Talk, don't type": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Habla, no escribas"
+          }
+        }
+      }
+    },
+    "Tap the button below and describe the job out loud, with your prices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el botón de abajo y describe el trabajo en voz alta, con tus precios."
+          }
+        }
+      }
+    },
+    "Tap to add more": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca para agregar más"
+          }
+        }
+      }
+    },
+    "Tap to speak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca para hablar"
+          }
+        }
+      }
+    },
+    "Tax": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impuesto"
+          }
+        }
+      }
+    },
+    "Tax applies only to items marked taxable.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El impuesto solo se aplica a los conceptos marcados como gravables."
+          }
+        }
+      }
+    },
+    "Taxable": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gravable"
+          }
+        }
+      }
+    },
+    "Terms": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Términos"
+          }
+        }
+      }
+    },
+    "Terms of use": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Términos de uso"
+          }
+        }
+      }
+    },
+    "Text message": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensaje de texto"
+          }
+        }
+      }
+    },
+    "That document is no longer in Cotiza.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese documento ya no está en Cotiza."
+          }
+        }
+      }
+    },
+    "The estimate was signed online. The signature is on the PDF.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La cotización se firmó en línea. La firma ya está en el PDF."
+          }
+        }
+      }
+    },
+    "The signing link couldn't be created. Check your connection and try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo crear el enlace para firmar. Revisa tu conexión e inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "This appears at the top of every estimate. You can change it later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparece arriba en cada cotización. Puedes cambiarlo después."
+          }
+        }
+      }
+    },
+    "This can't be undone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto no se puede deshacer."
+          }
+        }
+      }
+    },
+    "Timeline, deposit, what's included…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fechas, anticipo, qué incluye…"
+          }
+        }
+      }
+    },
+    "Total": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
+        }
+      }
+    },
+    "Totals, tax and payment lines are left out. Check each price before sending.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se omiten totales, impuestos y pagos. Revisa cada precio antes de enviar."
+          }
+        }
+      }
+    },
+    "Trade": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oficio"
+          }
+        }
+      }
+    },
+    "Try %lld days free": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba %lld días gratis"
+          }
+        }
+      }
+    },
+    "Try again": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intentar de nuevo"
+          }
+        }
+      }
+    },
+    "Try again with the whole receipt flat, in good light.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inténtalo otra vez con el recibo completo, plano y con buena luz."
+          }
+        }
+      }
+    },
+    "Turn an approved estimate into an invoice and track who paid.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convierte una cotización aprobada en factura y lleva el control de quién pagó."
+          }
+        }
+      }
+    },
+    "Unit": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unidad"
+          }
+        }
+      }
+    },
+    "Unlimited estimates": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotizaciones ilimitadas"
+          }
+        }
+      }
+    },
+    "Unlimited estimates, invoices and your logo.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotizaciones ilimitadas, facturas y tu logo."
+          }
+        }
+      }
+    },
+    "Unnamed client": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cliente sin nombre"
+          }
+        }
+      }
+    },
+    "Untitled job": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trabajo sin nombre"
+          }
+        }
+      }
+    },
+    "Upgrade to Cotiza Pro": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pásate a Cotiza Pro"
+          }
+        }
+      }
+    },
+    "Valid until": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Válida hasta"
+          }
+        }
+      }
+    },
+    "Voice isn't available right now. Type the job instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La voz no está disponible ahora. Escribe el trabajo."
+          }
+        }
+      }
+    },
+    "Waiting for the client to sign": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperando la firma del cliente"
+          }
+        }
+      }
+    },
+    "Weekly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semanal"
+          }
+        }
+      }
+    },
+    "What do you do? For example: pool cleaning": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿A qué te dedicas? Por ejemplo: limpieza de albercas"
+          }
+        }
+      }
+    },
+    "What is being done or supplied": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qué se va a hacer o entregar"
+          }
+        }
+      }
+    },
+    "What kind of work do you do?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué tipo de trabajo haces?"
+          }
+        }
+      }
+    },
+    "WhatsApp": {
+      "shouldTranslate": false
+    },
+    "When your client signs, the estimate is approved and you get a notification.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando tu cliente firme, la cotización queda aprobada y recibes una notificación."
+          }
+        }
+      }
+    },
+    "Which estimate or invoice?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué cotización o factura?"
+          }
+        }
+      }
+    },
+    "Which one was paid?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cuál te pagaron?"
+          }
+        }
+      }
+    },
+    "Writing your estimate…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribiendo tu cotización…"
+          }
+        }
+      }
+    },
+    "Year": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Año"
+          }
+        }
+      }
+    },
+    "Yearly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anual"
+          }
+        }
+      }
+    },
+    "Your business": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu negocio"
+          }
+        }
+      }
+    },
+    "Your client gets a clean estimate in the language they read.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu cliente recibe una cotización clara en el idioma que lee."
+          }
+        }
+      }
+    },
+    "Your cost is only for your profit report. The client never sees it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu costo es solo para tu reporte de ganancias. El cliente nunca lo ve."
+          }
+        }
+      }
+    },
+    "Your cost is saved for your profit report. The client only sees the price with markup.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu costo se guarda para tu reporte de ganancias. El cliente solo ve el precio con tu ganancia."
+          }
+        }
+      }
+    },
+    "Your cost per unit ($)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu costo por unidad ($)"
+          }
+        }
+      }
+    },
+    "Your first estimate takes one minute": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu primera cotización toma un minuto"
+          }
+        }
+      }
+    },
+    "Your jobs, clients and prices are kept in your private iCloud and appear on every iPhone and iPad signed in to your Apple Account. We can't see them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus trabajos, clientes y precios se guardan en tu iCloud privado y aparecen en cada iPhone y iPad con tu cuenta de Apple. Nosotros no podemos verlos."
+          }
+        }
+      }
+    },
+    "Your logo on estimates and invoices is part of Cotiza Pro.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu logo en cotizaciones y facturas es parte de Cotiza Pro."
+          }
+        }
+      }
+    },
+    "Your logo, your brand": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu logo, tu marca"
+          }
+        }
+      }
+    },
+    "Your name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu nombre"
+          }
+        }
+      }
+    },
+    "Your usual prices fill in by themselves.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus precios de siempre se llenan solos."
+          }
+        }
+      }
+    },
+    "each": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "c/u"
+          }
+        }
+      }
+    },
+    "iCloud": {
+      "shouldTranslate": false
+    },
+    "iCloud sync isn't available right now": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sincronización con iCloud no está disponible ahora"
+          }
+        }
+      }
+    },
+    "·": {
+      "shouldTranslate": false
+    },
+    "“Paint two bedrooms at 350 each, install 3 doors at 120 dollars each and 8 hours of labor at 45 an hour. Client Maria Lopez.”": {
+      "shouldTranslate": false
+    },
+    "“Pintar dos recámaras a 350 cada una, instalar 3 puertas a 120 dólares cada una y 8 horas de mano de obra a 45 la hora. Cliente María López.”": {
+      "shouldTranslate": false
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,935 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		012D84BF587C06890F2F0F38 /* DocumentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AAA00BCBF0103ECA030D /* DocumentFactory.swift */; };
+		02DFEDAE0D3B8AD431E61DB1 /* CotizaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C050AB564FBD0FAF46547C10 /* CotizaApp.swift */; };
+		076F58A444BA63293833B178 /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D9550569D215115B13E6B921 /* AppShortcuts.xcstrings */; };
+		0AA0B9995DB1B46354F58689 /* PDFPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08BBB89BB0618B5DD84A45D /* PDFPreviewView.swift */; };
+		138936032C89FDAE8C474599 /* DocumentEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D58BE7CB46F98F4A41D8862 /* DocumentEditorView.swift */; };
+		145BD083C9E889095001E389 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 97748F449E02E025543C2DBF /* Localizable.xcstrings */; };
+		16F7A91422062E5BB2820CC8 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8989F4A93ABF2D1D3DE7A87 /* ReportView.swift */; };
+		1D69FB4C6B3BB33614D746F8 /* CotizaWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		204242D948781F3610225E4E /* CotizaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0AC3A5B78A9AFBAE7AF08 /* CotizaWidget.swift */; };
+		2601ADBBC2A0021A9D3D69AF /* ContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA54A7F6D7880DC80F05602 /* ContactPicker.swift */; };
+		28884CF4F87AD1960C4B4395 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */; };
+		34F93FA8271BB47951F856C1 /* CotizaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057B79D0DAF08DDAA6D948F /* CotizaUITests.swift */; };
+		358CBC8A3F7636370A5C744D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C7611FF6E48351B7CEAC3 /* HomeView.swift */; };
+		35DA39DEFDBA627AEE9D8C5D /* PDFAndStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */; };
+		3D6E08F2F781124851D6196C /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E2CDA2DDE2E3EBAF7717749F /* Products.storekit */; };
+		3F2ADF41FCF090E17E587B14 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9F458BABA3B80701C0CDCDE5 /* InfoPlist.xcstrings */; };
+		40849B5872063B5F718CBC40 /* EstimateEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BAB05885BBDA5421CFA9FD /* EstimateEngine.swift */; };
+		4B66799A9B2AA0A0DB8A52F4 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1B3BFB3BCCD80C2F11574 /* WidgetSnapshot.swift */; };
+		4BBFF6B11DDAF61E296FEF30 /* RuleBasedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFEC0C1E61460BDAA711AC6 /* RuleBasedParser.swift */; };
+		5532325E272AA740BC627260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A280E84207537F4F5F5BEA1 /* Assets.xcassets */; };
+		5767075FB1D78F1E0E718325 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C89F4C39F24A0ED28BF873B8 /* Localizable.xcstrings */; };
+		58AF17EC0DBAB1E8FDD8C2A3 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1B3BFB3BCCD80C2F11574 /* WidgetSnapshot.swift */; };
+		5A804F7D0280FEAFB5CBBA3E /* ClientViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE96F98D0AA36E586F68D01 /* ClientViews.swift */; };
+		5F9D87D43AFA63848B7379B5 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E09B2631769B6AF736601 /* ActivityView.swift */; };
+		6913EBF497635E66672E31A4 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE33C5EE6B3DF22D2B836799 /* CaptureView.swift */; };
+		69677D8A6B20D036917DDBA7 /* SignLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF6454DDBF15DA51E182A5 /* SignLink.swift */; };
+		720E9B8453DFFFE446D8ABEB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895900AA689A5869DA771403 /* Theme.swift */; };
+		7627BA4FCD83FF0D0ECCC4E0 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */; };
+		7AB465804B012AE6C53AB8F5 /* ProfitReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70318AA0E17D7E28BEE1D552 /* ProfitReport.swift */; };
+		8A7CDF32AA5A890B9DB4031F /* IntentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE1C56EE0FD681589E99B51 /* IntentsTests.swift */; };
+		8E9C2676B6D9E6FEFCA94E23 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A20DA9E55643A74C5CBC7D5 /* OnboardingView.swift */; };
+		8F5961762B3E26C39F3240C4 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9441818E1257B6F619811F2 /* PaywallView.swift */; };
+		90AC14E71312C52BE11723BB /* ClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670718E606D16083B62935EC /* ClientMessage.swift */; };
+		9379BDA2BBD7F6D196437DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32057A3E4F0ECF0C93DE15F3 /* SettingsView.swift */; };
+		940665927B0D81889CC91D20 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338736FD07A26A4FDB4F006 /* ParserTests.swift */; };
+		9D818D390E6A4E0A40926BCD /* ReceiptParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB29EC9464845917996AEB /* ReceiptParser.swift */; };
+		9DCB5A2016D2EBC53631E7AD /* BusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E13CF05F1594C4B0592099 /* BusinessTests.swift */; };
+		A334259C6FACBFB635C2B4BC /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1BFC421CDF4657CEF3C00 /* ReceiptScanView.swift */; };
+		A92676EA46DC264C2BB1F838 /* SignLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50F8E75420374B2351085A /* SignLinkTests.swift */; };
+		AC61B296BE71659B784E716E /* PDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E5E3B71DF9E75A9B5F1FF1 /* PDFRenderer.swift */; };
+		ADE433C52430A1B301DA7351 /* SpeechRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C343C4C63D4E335DB1ACE5 /* SpeechRecorder.swift */; };
+		B3BBDBA325C5C92ED6F3D460 /* AppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E7F88FA2079E765DAAC03 /* AppIntents.swift */; };
+		B673030E41D1EAC9AFD80418 /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A37BFF8D395C7B0DF4D88 /* SubscriptionStore.swift */; };
+		B71B5B624B45C1320B0E6417 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D8361D9FCFE508D12BEC6 /* SignatureView.swift */; };
+		C34550F66ACEB56446347500 /* ScreenshotMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394C1274CEC57617D295548 /* ScreenshotMode.swift */; };
+		CA8566FB67F483695C9F5409 /* WidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0401740DA354A424055B4B6 /* WidgetData.swift */; };
+		CB9E75CB3CD7F6B693ADF045 /* ReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */; };
+		D053519442539D174EB2E80B /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BD4F985B5AABAA38FDBC0 /* AppDatabase.swift */; };
+		D31126AF40A48382F8F08E83 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269863B52E4D1ECF23CD8D5A /* FeatureTests.swift */; };
+		DDDABF2081295FBE39011282 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13562BF4E7FAAB665BDB842 /* Models.swift */; };
+		E1297855DF8DD2E82B370394 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 320B0120E11FC78950A20BB4 /* AppIcon.icon */; };
+		E8F1D9F710A0293881F91984 /* SpotlightIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1D8AD8A7DD48E27FC3CF9 /* SpotlightIndexer.swift */; };
+		E9B17C6665D89EB1AAC0C56F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00C76CED3106337FDAF3073 /* SplashView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		100E5C371CD181F7999B0FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C78C86649111F201211A8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46765DF3AAE1F92D2B34E5E0;
+			remoteInfo = Cotiza;
+		};
+		11E53C31F9A851014457E514 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C78C86649111F201211A8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46765DF3AAE1F92D2B34E5E0;
+			remoteInfo = Cotiza;
+		};
+		E9476DFBE27DE5DEFE06CB1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C78C86649111F201211A8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5D739E46DA0A3773423748;
+			remoteInfo = CotizaWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96C4CF7ABF00A0896CF82BED /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1D69FB4C6B3BB33614D746F8 /* CotizaWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0CFF6454DDBF15DA51E182A5 /* SignLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLink.swift; sourceTree = "<group>"; };
+		1057B79D0DAF08DDAA6D948F /* CotizaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotizaUITests.swift; sourceTree = "<group>"; };
+		13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFAndStoreTests.swift; sourceTree = "<group>"; };
+		1A20DA9E55643A74C5CBC7D5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		1A280E84207537F4F5F5BEA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D58BE7CB46F98F4A41D8862 /* DocumentEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditorView.swift; sourceTree = "<group>"; };
+		1EA54A7F6D7880DC80F05602 /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
+		269863B52E4D1ECF23CD8D5A /* FeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTests.swift; sourceTree = "<group>"; };
+		27C6BAA6496582AEAED02FA4 /* CotizaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CotizaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E563C83DD5E5D268AB2164 /* Cotiza.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cotiza.entitlements; sourceTree = "<group>"; };
+		28BAB05885BBDA5421CFA9FD /* EstimateEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateEngine.swift; sourceTree = "<group>"; };
+		32057A3E4F0ECF0C93DE15F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		320B0120E11FC78950A20BB4 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		3AA1B3BFB3BCCD80C2F11574 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
+		43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScheduler.swift; sourceTree = "<group>"; };
+		48EB29EC9464845917996AEB /* ReceiptParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptParser.swift; sourceTree = "<group>"; };
+		49C343C4C63D4E335DB1ACE5 /* SpeechRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecorder.swift; sourceTree = "<group>"; };
+		4CFEC0C1E61460BDAA711AC6 /* RuleBasedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleBasedParser.swift; sourceTree = "<group>"; };
+		514C7611FF6E48351B7CEAC3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		533A37BFF8D395C7B0DF4D88 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
+		5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cotiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF1BFC421CDF4657CEF3C00 /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
+		62E5E3B71DF9E75A9B5F1FF1 /* PDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRenderer.swift; sourceTree = "<group>"; };
+		670718E606D16083B62935EC /* ClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMessage.swift; sourceTree = "<group>"; };
+		70318AA0E17D7E28BEE1D552 /* ProfitReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitReport.swift; sourceTree = "<group>"; };
+		8394C1274CEC57617D295548 /* ScreenshotMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotMode.swift; sourceTree = "<group>"; };
+		850BD4F985B5AABAA38FDBC0 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		895900AA689A5869DA771403 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9564AAA00BCBF0103ECA030D /* DocumentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentFactory.swift; sourceTree = "<group>"; };
+		97748F449E02E025543C2DBF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9F458BABA3B80701C0CDCDE5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		A0401740DA354A424055B4B6 /* WidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetData.swift; sourceTree = "<group>"; };
+		A7F0AC3A5B78A9AFBAE7AF08 /* CotizaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotizaWidget.swift; sourceTree = "<group>"; };
+		A9441818E1257B6F619811F2 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		ADA09CDB9E573CC5E9DD4CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF5D8361D9FCFE508D12BEC6 /* SignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		B08BBB89BB0618B5DD84A45D /* PDFPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewView.swift; sourceTree = "<group>"; };
+		B19E09B2631769B6AF736601 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		B5B5B3AA53AA32525F9D894E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B8989F4A93ABF2D1D3DE7A87 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		BAE1D8AD8A7DD48E27FC3CF9 /* SpotlightIndexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightIndexer.swift; sourceTree = "<group>"; };
+		BCE1C56EE0FD681589E99B51 /* IntentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentsTests.swift; sourceTree = "<group>"; };
+		C050AB564FBD0FAF46547C10 /* CotizaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotizaApp.swift; sourceTree = "<group>"; };
+		C338736FD07A26A4FDB4F006 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		C89F4C39F24A0ED28BF873B8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		CEB8F0051324136347177462 /* CotizaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CotizaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9550569D215115B13E6B921 /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = AppShortcuts.xcstrings; sourceTree = "<group>"; };
+		DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPrompt.swift; sourceTree = "<group>"; };
+		DE50F8E75420374B2351085A /* SignLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLinkTests.swift; sourceTree = "<group>"; };
+		E00C76CED3106337FDAF3073 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E13562BF4E7FAAB665BDB842 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E2CDA2DDE2E3EBAF7717749F /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		EBE96F98D0AA36E586F68D01 /* ClientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViews.swift; sourceTree = "<group>"; };
+		F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
+		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40E7F88FA2079E765DAAC03 /* AppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntents.swift; sourceTree = "<group>"; };
+		F4E13CF05F1594C4B0592099 /* BusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTests.swift; sourceTree = "<group>"; };
+		FE33C5EE6B3DF22D2B836799 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		01A93A6B9568759493297AE2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				850BD4F985B5AABAA38FDBC0 /* AppDatabase.swift */,
+				F40E7F88FA2079E765DAAC03 /* AppIntents.swift */,
+				C050AB564FBD0FAF46547C10 /* CotizaApp.swift */,
+				43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */,
+				DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */,
+				8394C1274CEC57617D295548 /* ScreenshotMode.swift */,
+				BAE1D8AD8A7DD48E27FC3CF9 /* SpotlightIndexer.swift */,
+				A0401740DA354A424055B4B6 /* WidgetData.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0587D7FD1B7E302ECB9D0D63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B19E09B2631769B6AF736601 /* ActivityView.swift */,
+				FE33C5EE6B3DF22D2B836799 /* CaptureView.swift */,
+				EBE96F98D0AA36E586F68D01 /* ClientViews.swift */,
+				1EA54A7F6D7880DC80F05602 /* ContactPicker.swift */,
+				1D58BE7CB46F98F4A41D8862 /* DocumentEditorView.swift */,
+				514C7611FF6E48351B7CEAC3 /* HomeView.swift */,
+				1A20DA9E55643A74C5CBC7D5 /* OnboardingView.swift */,
+				A9441818E1257B6F619811F2 /* PaywallView.swift */,
+				B08BBB89BB0618B5DD84A45D /* PDFPreviewView.swift */,
+				5DF1BFC421CDF4657CEF3C00 /* ReceiptScanView.swift */,
+				B8989F4A93ABF2D1D3DE7A87 /* ReportView.swift */,
+				32057A3E4F0ECF0C93DE15F3 /* SettingsView.swift */,
+				AF5D8361D9FCFE508D12BEC6 /* SignatureView.swift */,
+				E00C76CED3106337FDAF3073 /* SplashView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		06D57B00FB70A1526CA6995B /* CotizaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4E13CF05F1594C4B0592099 /* BusinessTests.swift */,
+				269863B52E4D1ECF23CD8D5A /* FeatureTests.swift */,
+				BCE1C56EE0FD681589E99B51 /* IntentsTests.swift */,
+				C338736FD07A26A4FDB4F006 /* ParserTests.swift */,
+				13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */,
+				F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */,
+				DE50F8E75420374B2351085A /* SignLinkTests.swift */,
+			);
+			path = CotizaTests;
+			sourceTree = "<group>";
+		};
+		0F1C687420A2912B3C7E801C /* CotizaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1057B79D0DAF08DDAA6D948F /* CotizaUITests.swift */,
+			);
+			path = CotizaUITests;
+			sourceTree = "<group>";
+		};
+		17B435F8EC955B8AA78B85C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9564AAA00BCBF0103ECA030D /* DocumentFactory.swift */,
+				E13562BF4E7FAAB665BDB842 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27B67ED9AB7AD67A85D1DE07 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3AA1B3BFB3BCCD80C2F11574 /* WidgetSnapshot.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		33C729BF6280D3F51830C943 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				670718E606D16083B62935EC /* ClientMessage.swift */,
+				28BAB05885BBDA5421CFA9FD /* EstimateEngine.swift */,
+				62E5E3B71DF9E75A9B5F1FF1 /* PDFRenderer.swift */,
+				70318AA0E17D7E28BEE1D552 /* ProfitReport.swift */,
+				48EB29EC9464845917996AEB /* ReceiptParser.swift */,
+				4CFEC0C1E61460BDAA711AC6 /* RuleBasedParser.swift */,
+				0CFF6454DDBF15DA51E182A5 /* SignLink.swift */,
+				49C343C4C63D4E335DB1ACE5 /* SpeechRecorder.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		4EE43942BA2DFA01445304F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */,
+				27C6BAA6496582AEAED02FA4 /* CotizaTests.xctest */,
+				CEB8F0051324136347177462 /* CotizaUITests.xctest */,
+				F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6552ACCA246CB0C0113F302E = {
+			isa = PBXGroup;
+			children = (
+				B314ECD1A9D1D07DC7854E53 /* Cotiza */,
+				06D57B00FB70A1526CA6995B /* CotizaTests */,
+				0F1C687420A2912B3C7E801C /* CotizaUITests */,
+				CDFEBA6B55CE16ACE3C92D28 /* CotizaWidget */,
+				4EE43942BA2DFA01445304F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77078A1399A9807944EAC095 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				895900AA689A5869DA771403 /* Theme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		B314ECD1A9D1D07DC7854E53 /* Cotiza */ = {
+			isa = PBXGroup;
+			children = (
+				01A93A6B9568759493297AE2 /* App */,
+				77078A1399A9807944EAC095 /* Design */,
+				33C729BF6280D3F51830C943 /* Engine */,
+				17B435F8EC955B8AA78B85C5 /* Models */,
+				D9559D2E8812A0038ED70855 /* Resources */,
+				27B67ED9AB7AD67A85D1DE07 /* Shared */,
+				C6D54B0CE6FF4BCBCFD4638B /* Store */,
+				0587D7FD1B7E302ECB9D0D63 /* Views */,
+			);
+			path = Cotiza;
+			sourceTree = "<group>";
+		};
+		C6D54B0CE6FF4BCBCFD4638B /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				533A37BFF8D395C7B0DF4D88 /* SubscriptionStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		CDFEBA6B55CE16ACE3C92D28 /* CotizaWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A7F0AC3A5B78A9AFBAE7AF08 /* CotizaWidget.swift */,
+				ADA09CDB9E573CC5E9DD4CEC /* Info.plist */,
+				97748F449E02E025543C2DBF /* Localizable.xcstrings */,
+			);
+			path = CotizaWidget;
+			sourceTree = "<group>";
+		};
+		D9559D2E8812A0038ED70855 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				320B0120E11FC78950A20BB4 /* AppIcon.icon */,
+				D9550569D215115B13E6B921 /* AppShortcuts.xcstrings */,
+				1A280E84207537F4F5F5BEA1 /* Assets.xcassets */,
+				27E563C83DD5E5D268AB2164 /* Cotiza.entitlements */,
+				B5B5B3AA53AA32525F9D894E /* Info.plist */,
+				9F458BABA3B80701C0CDCDE5 /* InfoPlist.xcstrings */,
+				C89F4C39F24A0ED28BF873B8 /* Localizable.xcstrings */,
+				E2CDA2DDE2E3EBAF7717749F /* Products.storekit */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14A344F80D6290D028286C9A /* CotizaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80BACAFEFFE755C8BFEA288B /* Build configuration list for PBXNativeTarget "CotizaUITests" */;
+			buildPhases = (
+				CBF468BD6222BF777B7A92EB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				791FD15128BA3EEDC9B6163B /* PBXTargetDependency */,
+			);
+			name = CotizaUITests;
+			packageProductDependencies = (
+			);
+			productName = CotizaUITests;
+			productReference = CEB8F0051324136347177462 /* CotizaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2A5D739E46DA0A3773423748 /* CotizaWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792F7D245AC6CDF0372CEA82 /* Build configuration list for PBXNativeTarget "CotizaWidget" */;
+			buildPhases = (
+				9758E739E6ADDFE5CFEB851D /* Sources */,
+				E6062A6CC13EEEC9AA41AC34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CotizaWidget;
+			packageProductDependencies = (
+			);
+			productName = CotizaWidget;
+			productReference = F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		46765DF3AAE1F92D2B34E5E0 /* Cotiza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ECE4AB5D6E5C301D5AE8F02 /* Build configuration list for PBXNativeTarget "Cotiza" */;
+			buildPhases = (
+				CBD79674B56C77688F9708D0 /* Sources */,
+				E03BDE2B8CABCF34E79CE47A /* Resources */,
+				96C4CF7ABF00A0896CF82BED /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56A9811A7042E51794F059BD /* PBXTargetDependency */,
+			);
+			name = Cotiza;
+			packageProductDependencies = (
+			);
+			productName = Cotiza;
+			productReference = 5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6BC1C63A0C591CC1AFCA4B91 /* CotizaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47B91CAD033F221867BCC7B3 /* Build configuration list for PBXNativeTarget "CotizaTests" */;
+			buildPhases = (
+				2D968C62C053ABFF5223E803 /* Sources */,
+				C881249E1E4E33D3929F8A02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC550D32EB512D3514F322A8 /* PBXTargetDependency */,
+			);
+			name = CotizaTests;
+			packageProductDependencies = (
+			);
+			productName = CotizaTests;
+			productReference = 27C6BAA6496582AEAED02FA4 /* CotizaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C78C86649111F201211A8D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					14A344F80D6290D028286C9A = {
+						TestTargetID = 46765DF3AAE1F92D2B34E5E0;
+					};
+				};
+			};
+			buildConfigurationList = 17F329A58E19CC641D5B38A4 /* Build configuration list for PBXProject "Cotiza" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				es,
+			);
+			mainGroup = 6552ACCA246CB0C0113F302E;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46765DF3AAE1F92D2B34E5E0 /* Cotiza */,
+				6BC1C63A0C591CC1AFCA4B91 /* CotizaTests */,
+				14A344F80D6290D028286C9A /* CotizaUITests */,
+				2A5D739E46DA0A3773423748 /* CotizaWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C881249E1E4E33D3929F8A02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6E08F2F781124851D6196C /* Products.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03BDE2B8CABCF34E79CE47A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1297855DF8DD2E82B370394 /* AppIcon.icon in Resources */,
+				076F58A444BA63293833B178 /* AppShortcuts.xcstrings in Resources */,
+				5532325E272AA740BC627260 /* Assets.xcassets in Resources */,
+				3F2ADF41FCF090E17E587B14 /* InfoPlist.xcstrings in Resources */,
+				5767075FB1D78F1E0E718325 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6062A6CC13EEEC9AA41AC34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				145BD083C9E889095001E389 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D968C62C053ABFF5223E803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DCB5A2016D2EBC53631E7AD /* BusinessTests.swift in Sources */,
+				D31126AF40A48382F8F08E83 /* FeatureTests.swift in Sources */,
+				8A7CDF32AA5A890B9DB4031F /* IntentsTests.swift in Sources */,
+				35DA39DEFDBA627AEE9D8C5D /* PDFAndStoreTests.swift in Sources */,
+				940665927B0D81889CC91D20 /* ParserTests.swift in Sources */,
+				28884CF4F87AD1960C4B4395 /* ReviewPromptTests.swift in Sources */,
+				A92676EA46DC264C2BB1F838 /* SignLinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9758E739E6ADDFE5CFEB851D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				204242D948781F3610225E4E /* CotizaWidget.swift in Sources */,
+				4B66799A9B2AA0A0DB8A52F4 /* WidgetSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD79674B56C77688F9708D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9D87D43AFA63848B7379B5 /* ActivityView.swift in Sources */,
+				D053519442539D174EB2E80B /* AppDatabase.swift in Sources */,
+				B3BBDBA325C5C92ED6F3D460 /* AppIntents.swift in Sources */,
+				6913EBF497635E66672E31A4 /* CaptureView.swift in Sources */,
+				90AC14E71312C52BE11723BB /* ClientMessage.swift in Sources */,
+				5A804F7D0280FEAFB5CBBA3E /* ClientViews.swift in Sources */,
+				2601ADBBC2A0021A9D3D69AF /* ContactPicker.swift in Sources */,
+				02DFEDAE0D3B8AD431E61DB1 /* CotizaApp.swift in Sources */,
+				138936032C89FDAE8C474599 /* DocumentEditorView.swift in Sources */,
+				012D84BF587C06890F2F0F38 /* DocumentFactory.swift in Sources */,
+				40849B5872063B5F718CBC40 /* EstimateEngine.swift in Sources */,
+				358CBC8A3F7636370A5C744D /* HomeView.swift in Sources */,
+				DDDABF2081295FBE39011282 /* Models.swift in Sources */,
+				8E9C2676B6D9E6FEFCA94E23 /* OnboardingView.swift in Sources */,
+				0AA0B9995DB1B46354F58689 /* PDFPreviewView.swift in Sources */,
+				AC61B296BE71659B784E716E /* PDFRenderer.swift in Sources */,
+				8F5961762B3E26C39F3240C4 /* PaywallView.swift in Sources */,
+				7AB465804B012AE6C53AB8F5 /* ProfitReport.swift in Sources */,
+				9D818D390E6A4E0A40926BCD /* ReceiptParser.swift in Sources */,
+				A334259C6FACBFB635C2B4BC /* ReceiptScanView.swift in Sources */,
+				CB9E75CB3CD7F6B693ADF045 /* ReminderScheduler.swift in Sources */,
+				16F7A91422062E5BB2820CC8 /* ReportView.swift in Sources */,
+				7627BA4FCD83FF0D0ECCC4E0 /* ReviewPrompt.swift in Sources */,
+				4BBFF6B11DDAF61E296FEF30 /* RuleBasedParser.swift in Sources */,
+				C34550F66ACEB56446347500 /* ScreenshotMode.swift in Sources */,
+				9379BDA2BBD7F6D196437DF9 /* SettingsView.swift in Sources */,
+				69677D8A6B20D036917DDBA7 /* SignLink.swift in Sources */,
+				B71B5B624B45C1320B0E6417 /* SignatureView.swift in Sources */,
+				ADE433C52430A1B301DA7351 /* SpeechRecorder.swift in Sources */,
+				E9B17C6665D89EB1AAC0C56F /* SplashView.swift in Sources */,
+				E8F1D9F710A0293881F91984 /* SpotlightIndexer.swift in Sources */,
+				B673030E41D1EAC9AFD80418 /* SubscriptionStore.swift in Sources */,
+				720E9B8453DFFFE446D8ABEB /* Theme.swift in Sources */,
+				CA8566FB67F483695C9F5409 /* WidgetData.swift in Sources */,
+				58AF17EC0DBAB1E8FDD8C2A3 /* WidgetSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF468BD6222BF777B7A92EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34F93FA8271BB47951F856C1 /* CotizaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56A9811A7042E51794F059BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5D739E46DA0A3773423748 /* CotizaWidget */;
+			targetProxy = E9476DFBE27DE5DEFE06CB1C /* PBXContainerItemProxy */;
+		};
+		791FD15128BA3EEDC9B6163B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46765DF3AAE1F92D2B34E5E0 /* Cotiza */;
+			targetProxy = 11E53C31F9A851014457E514 /* PBXContainerItemProxy */;
+		};
+		CC550D32EB512D3514F322A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46765DF3AAE1F92D2B34E5E0 /* Cotiza */;
+			targetProxy = 100E5C371CD181F7999B0FE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04FFC96A2F494996F7D42A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CotizaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20CFEE6820846BE73E473A7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		268E21A6A29630788AD3F7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cotiza/Resources/Cotiza.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Cotiza uses the camera to scan material receipts into your invoices.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Cotiza lets you pick a logo for your estimates and invoices.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		82238D6EAA761115731A0478 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CotizaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A2F410CE5F38388FB015B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cotiza.app/Cotiza";
+			};
+			name = Release;
+		};
+		8BEAEE48FF9E55BB669B9E13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		9E7A5C8966038BC7C3C93C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cotiza.app/Cotiza";
+			};
+			name = Debug;
+		};
+		A3FE0CF51C41480274DADFBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cotiza/Resources/Cotiza.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Cotiza uses the camera to scan material receipts into your invoices.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Cotiza lets you pick a logo for your estimates and invoices.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC3E33D4BB18C2E2B0A30120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app.uitests;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cotiza;
+			};
+			name = Release;
+		};
+		F81BBB0128531A57B325099A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GHV7BT96W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cotiza.app.uitests;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cotiza;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ECE4AB5D6E5C301D5AE8F02 /* Build configuration list for PBXNativeTarget "Cotiza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				268E21A6A29630788AD3F7E8 /* Debug */,
+				A3FE0CF51C41480274DADFBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		17F329A58E19CC641D5B38A4 /* Build configuration list for PBXProject "Cotiza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BEAEE48FF9E55BB669B9E13 /* Debug */,
+				20CFEE6820846BE73E473A7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		47B91CAD033F221867BCC7B3 /* Build configuration list for PBXNativeTarget "CotizaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E7A5C8966038BC7C3C93C17 /* Debug */,
+				8A2F410CE5F38388FB015B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		792F7D245AC6CDF0372CEA82 /* Build configuration list for PBXNativeTarget "CotizaWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82238D6EAA761115731A0478 /* Debug */,
+				04FFC96A2F494996F7D42A61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		80BACAFEFFE755C8BFEA288B /* Build configuration list for PBXNativeTarget "CotizaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F81BBB0128531A57B325099A /* Debug */,
+				AC3E33D4BB18C2E2B0A30120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C78C86649111F201211A8D4 /* Project object */;
+}

@@ -1,0 +1,152 @@
+name: Cotiza
+options:
+  bundleIdPrefix: com.cotiza
+  deploymentTarget:
+    iOS: "26.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  # Icon Composer documents are folders that Xcode treats as one resource.
+  fileTypes:
+    icon:
+      file: true
+      buildPhase: resources
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+    SWIFT_APPROACHABLE_CONCURRENCY: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+targets:
+  Cotiza:
+    type: application
+    platform: iOS
+    info:
+      # Merged with the generated Info.plist. The launch screen matches the first frame of SplashView.
+      path: Cotiza/Resources/Info.plist
+      properties:
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+          UIImageName: LaunchMark
+          UIImageRespectsSafeAreaInsets: false
+        # cotiza://new-estimate, opened by the widget.
+        CFBundleURLTypes:
+          - CFBundleURLName: com.cotiza.app
+            CFBundleURLSchemes: [cotiza]
+        # Lets the send screen check whether WhatsApp is installed.
+        LSApplicationQueriesSchemes: [whatsapp]
+        # iCloud (CloudKit) pushes changes from the user's other devices.
+        UIBackgroundModes: [remote-notification, fetch]
+        # Background check for signatures on signing links.
+        BGTaskSchedulerPermittedIdentifiers: [com.cotiza.app.signcheck]
+    entitlements:
+      path: Cotiza/Resources/Cotiza.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.cotiza.app]
+        com.apple.developer.icloud-container-identifiers: [iCloud.com.cotiza.app]
+        com.apple.developer.icloud-services: [CloudKit]
+        aps-environment: development
+    dependencies:
+      - target: CotizaWidget
+    sources:
+      - path: Cotiza
+        excludes:
+          - "Resources/Products.storekit"
+      - path: Cotiza/Resources/Products.storekit
+        buildPhase: none
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cotiza.app
+        # iPhone and iPad. iPad gets every orientation, as iPad multitasking requires.
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Cotiza
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.business
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate."
+        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible."
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Cotiza lets you pick a logo for your estimates and invoices."
+        INFOPLIST_KEY_NSCameraUsageDescription: "Cotiza uses the camera to scan material receipts into your invoices."
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        ENABLE_PREVIEWS: YES
+  CotizaWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: CotizaWidget
+        excludes:
+          - "*.entitlements"
+      - path: Cotiza/Shared
+    info:
+      path: CotizaWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Cotiza
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: CotizaWidget/CotizaWidget.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.cotiza.app]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cotiza.app.widget
+        # Shown in Xcode's General tab; the widget gallery shows the app's name and each widget's own name.
+        INFOPLIST_KEY_CFBundleDisplayName: Cotiza
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
+  CotizaTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CotizaTests
+      - path: Cotiza/Resources/Products.storekit
+        buildPhase: resources
+    dependencies:
+      - target: Cotiza
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cotiza.app.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Cotiza.app/Cotiza"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+  CotizaUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: CotizaUITests
+    dependencies:
+      - target: Cotiza
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cotiza.app.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        TEST_TARGET_NAME: Cotiza
+schemes:
+  Cotiza:
+    build:
+      targets:
+        Cotiza: all
+        CotizaTests: [test]
+        CotizaUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Cotiza/Resources/Products.storekit
+    test:
+      config: Debug
+      targets:
+        - CotizaTests
+        - CotizaUITests
+    archive:
+      config: Release

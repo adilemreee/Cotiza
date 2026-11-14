@@ -1,0 +1,8 @@
+{
+  "name": "cotiza-sign",
+  "private": true,
+  "type": "module",
+  "description": "Signing links for Cotiza estimates. No dependencies.",
+  "scripts": { "start": "node server.js", "test": "node --test" },
+  "engines": { "node": ">=22.13" }
+}

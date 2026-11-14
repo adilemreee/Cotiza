@@ -1,0 +1,121 @@
+{
+  "identifier": "C0712A01",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21700001",
+      "localizations": [
+        {
+          "description": "Unlimited estimates, invoices and your logo.",
+          "displayName": "Cotiza Pro",
+          "locale": "en_US"
+        },
+        {
+          "description": "Presupuestos ilimitados, facturas y tu logo.",
+          "displayName": "Cotiza Pro",
+          "locale": "es_MX"
+        }
+      ],
+      "name": "Cotiza Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "99.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6700000001",
+          "introductoryOffer": {
+            "internalID": "C0712A02",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P3D"
+          },
+          "localizations": [
+            {
+              "description": "Unlimited estimates, invoices and your logo.",
+              "displayName": "Cotiza Pro Yearly",
+              "locale": "en_US"
+            },
+            {
+              "description": "Presupuestos ilimitados, facturas y tu logo.",
+              "displayName": "Cotiza Pro Anual",
+              "locale": "es_MX"
+            }
+          ],
+          "productID": "com.cotiza.app.pro.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Pro Yearly",
+          "subscriptionGroupID": "21700001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "14.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6700000002",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Unlimited estimates, invoices and your logo.",
+              "displayName": "Cotiza Pro Monthly",
+              "locale": "en_US"
+            },
+            {
+              "description": "Presupuestos ilimitados, facturas y tu logo.",
+              "displayName": "Cotiza Pro Mensual",
+              "locale": "es_MX"
+            }
+          ],
+          "productID": "com.cotiza.app.pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Pro Monthly",
+          "subscriptionGroupID": "21700001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "4.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6700000003",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Unlimited estimates, invoices and your logo.",
+              "displayName": "Cotiza Pro Weekly",
+              "locale": "en_US"
+            },
+            {
+              "description": "Presupuestos ilimitados, facturas y tu logo.",
+              "displayName": "Cotiza Pro Semanal",
+              "locale": "es_MX"
+            }
+          ],
+          "productID": "com.cotiza.app.pro.weekly",
+          "recurringSubscriptionPeriod": "P1W",
+          "referenceName": "Pro Weekly",
+          "subscriptionGroupID": "21700001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 4,
+    "minor": 0
+  }
+}

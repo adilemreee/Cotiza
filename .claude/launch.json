@@ -1,0 +1,30 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8765",
+        "--directory",
+        "AppStore/site"
+      ],
+      "port": 8765
+    },
+    {
+      "name": "sign",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "Server/sign/server.js"
+      ],
+      "port": 4131,
+      "env": {
+        "PORT": "4131",
+        "DATA_DIR": "/private/tmp/claude-501/-Users-adilemre--claude-spares-spare-7oNwKR/45de6afb-a536-4362-940e-e30252bf071e/scratchpad/sign-data",
+        "PUBLIC_URL": "http://localhost:4131"
+      }
+    }
+  ]
+}
