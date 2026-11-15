@@ -32,7 +32,7 @@ nonisolated struct EstimateDraft: Equatable, Sendable {
 
 // MARK: - Rule-based parser
 
-/// Deterministic Spanish/English job-description parser.
+/// Deterministic Spanish/English/Turkish job-description parser.
 ///
 /// Used on devices without Apple Intelligence, and as the safety net whenever the
 /// on-device model refuses or fails. It never invents numbers: every quantity and
@@ -43,8 +43,9 @@ nonisolated enum RuleBasedParser {
         var text = transcript
             .replacingOccurrences(of: "\n", with: ". ")
             .replacingOccurrences(of: "\u{00A0}", with: " ")
+        let language = detectLanguage(of: transcript)
 
-        let clientName = extractClient(from: &text)
+        let clientName = language == .turkish ? turkishClient(from: &text) : extractClient(from: &text)
         text = replaceNumberWords(in: text)
 
         var items: [DraftItem] = []
@@ -52,7 +53,7 @@ nonisolated enum RuleBasedParser {
         // The last line was work with no price or quantity yet ("Pintar la sala").
         var lastIsOpenJob = false
         for segment in segments(of: text) {
-            switch parseSegment(segment) {
+            switch parseSegment(segment, language: language) {
             case .item(var item, let placeholder):
                 if let placeholder, lastIsOpenJob, let job = items.popLast() {
                     // "Pintar la sala, 400 pies a 2 el pie": the measurement prices the job just named.
@@ -69,7 +70,6 @@ nonisolated enum RuleBasedParser {
             }
         }
 
-        let language = detectLanguage(of: transcript)
         let title = items.first.map { String($0.text.prefix(48)) } ?? ""
         let noteText = notes.isEmpty ? "" : notes.joined(separator: ". ") + "."
         return EstimateDraft(title: title, clientName: clientName, items: items, notes: noteText, source: .basic, textLanguage: language)
@@ -77,8 +77,14 @@ nonisolated enum RuleBasedParser {
 
     static func detectLanguage(of text: String) -> DocumentLanguage {
         let recognizer = NLLanguageRecognizer()
-        recognizer.languageConstraints = [.spanish, .english]
+        recognizer.languageConstraints = [.spanish, .english, .turkish]
         recognizer.processString(text)
+        // Letters only Turkish uses settle it; otherwise Turkish needs a confident guess, so a short
+        // English or Spanish phrase is never read with Turkish rules.
+        // (Not ü: Spanish has it too, as in "desagüe".)
+        let hasTurkishLetters = text.contains(where: { "çğışöÇĞİŞÖ".contains($0) })
+        let turkishConfidence = recognizer.languageHypotheses(withMaximum: 3)[.turkish] ?? 0
+        if hasTurkishLetters || turkishConfidence >= 0.9 { return .turkish }
         return recognizer.dominantLanguage == .spanish ? .spanish : .english
     }
 
@@ -151,6 +157,23 @@ nonisolated enum RuleBasedParser {
         return ranges
     }
 
+    /// "Müşteri Ayşe Yılmaz", "Ayşe Yılmaz için", "Ayşe Hanım". The name is taken out of the job text.
+    private static func turkishClient(from text: inout String) -> String? {
+        let name = #"(\p{Lu}[\p{L}\-]+(?:\s+\p{Lu}[\p{L}\-]+){0,2})"#
+        let patterns = [
+            #"(?i:\b(?:müşteri(?:nin adı)?|musteri(?:nin adi)?|müşterimiz)(?:\s+(?:de|da))?)[:\s]+"# + name + #"(?:['’]\p{L}+)?[.,;]?"#,
+            name + #"\s+(?i:hanım|hanim|bey)(?:['’]?\p{L}*)?\b"#,
+            #"(\p{Lu}[\p{L}\-]+(?:\s+\p{Lu}[\p{L}\-]+){1,2})(?:['’]\p{L}+)?\s+(?i:için|icin)\b"#,
+        ]
+        for pattern in patterns {
+            guard let match = text.firstMatch(of: rx(pattern)), let found = match.output[1].substring else { continue }
+            let result = String(found)
+            text.replaceSubrange(match.range, with: ". ")
+            return result
+        }
+        return nil
+    }
+
     // MARK: Number words
 
     private static let numberWords: [(String, String)] = [
@@ -164,7 +187,17 @@ nonisolated enum RuleBasedParser {
         ("twenty", "20"), ("thirty", "30"), ("forty", "40"), ("fifty", "50"),
     ]
 
+    private static let turkishOnes: [(String, Int)] = [
+        ("iki", 2), ("üç", 3), ("uc", 3), ("dört", 4), ("dort", 4), ("beş", 5), ("bes", 5), ("altı", 6),
+        ("yedi", 7), ("sekiz", 8), ("dokuz", 9),
+    ]
+    private static let turkishTens: [(String, Int)] = [
+        ("on", 10), ("yirmi", 20), ("otuz", 30), ("kırk", 40), ("kirk", 40), ("elli", 50), ("altmış", 60),
+        ("yetmiş", 70), ("seksen", 80), ("doksan", 90),
+    ]
+
     static func replaceNumberWords(in text: String) -> String {
+        if detectLanguage(of: text) == .turkish { return turkishNumbers(in: text) }
         var result = text
         for (word, digits) in numberWords {
             result = result.replacing(rx("(?i)\\b\(word)\\b"), with: digits)
@@ -172,14 +205,56 @@ nonisolated enum RuleBasedParser {
         return result
     }
 
+    /// Turkish digits and number words: "1.200" is 1200, "120'den" is 120, "350'şer" is 350 each,
+    /// "yirmi beş" is 25, "iki yüz" is 200, "iki buçuk" is 2.5. "Bir" is left alone: it is also "a".
+    private static func turkishNumbers(in text: String) -> String {
+        var s = text
+        // Thousands dots: "1.200", "12.500.000". A dot before exactly three digits.
+        while let match = s.firstMatch(of: rx(#"(\d)\.(\d{3})(?!\d)"#)) {
+            s.replaceSubrange(match.range, with: "\(match.output[1].substring!)\(match.output[2].substring!)")
+        }
+        // "350'şer", "120'şer": so much each.
+        s = s.replacing(rx(#"(\d[\d,]*(?:\.\d+)?)['’](?:şer|şar|ser|sar|er|ar)(?!\p{L})"#)) { "tanesi \($0.output[1].substring!)" }
+        // Case endings: "120'den", "45'ten", "600'e".
+        s = s.replacing(rx(#"(\d)['’]\p{L}+"#)) { "\($0.output[1].substring!)" }
+        // "Bir de": "also".
+        s = s.replacing(rx(#"(?i)\bbir de\b"#), with: ",")
+        let ones = turkishOnes.map(\.0).joined(separator: "|")
+        let tens = turkishTens.map(\.0).joined(separator: "|")
+        func value(_ word: Substring?, _ table: [(String, Int)]) -> Int {
+            guard let word else { return 0 }
+            return table.first { $0.0 == word.lowercased() }?.1 ?? 0
+        }
+        // "iki yüz", "yüz elli": hundreds.
+        s = s.replacing(rx("(?i)\\b(?:(\(ones))\\s+)?yüz(?:\\s+(\(tens)))?(?:\\s+(\(ones)))?\\b")) { m in
+            let hundreds = max(value(m.output[1].substring, turkishOnes), 1) * 100
+            return String(hundreds + value(m.output[2].substring, turkishTens) + value(m.output[3].substring, turkishOnes))
+        }
+        // "yirmi beş": tens and ones.
+        s = s.replacing(rx("(?i)\\b(\(tens))\\s+(\(ones))\\b")) { m in
+            String(value(m.output[1].substring, turkishTens) + value(m.output[2].substring, turkishOnes))
+        }
+        for (word, number) in turkishTens {
+            s = s.replacing(rx("(?i)\\b\(word)\\b"), with: String(number))
+        }
+        for (word, number) in turkishOnes where word != "altı" {
+            s = s.replacing(rx("(?i)\\b\(word)\\b"), with: String(number))
+        }
+        // "altı" is six, but also "under" ("lavabo altı"): only when it opens a phrase.
+        s = s.replacing(rx(#"(?i)(^|[,.;]\s*|\bve\s+)altı\b"#)) { "\($0.output[1].substring ?? "")6" }
+        // "2 buçuk saat": and a half.
+        s = s.replacing(rx(#"(?i)(\d+)\s+buçuk\b"#)) { "\($0.output[1].substring!).5" }
+        return s
+    }
+
     // MARK: Segmentation
 
     private static func segments(of text: String) -> [String] {
-        let primary = text.split(separator: rx(#"(?i)[.;]\s+|[.;]\s*$|,\s+|\s+(?:también|tambien|además|ademas|luego|después|despues|plus|also|then)\s+"#))
+        let primary = text.split(separator: rx(#"(?i)[.;]\s+|[.;]\s*$|,\s+|\s+(?:también|tambien|además|ademas|luego|después|despues|plus|also|then|ayrıca|ayrica|sonra|artı)\s+"#))
         var result: [String] = []
         for piece in primary {
             let segment = String(piece)
-            let parts = segment.split(separator: rx(#"(?i)\s+(?:y|and|más|mas)\s+"#)).map(String.init)
+            let parts = segment.split(separator: rx(#"(?i)\s+(?:y|and|más|mas|ve|artı)\s+"#)).map(String.init)
             // Only split on "y"/"and" when each side carries its own price —
             // otherwise "sink and mirror" would be torn apart.
             if parts.count > 1, parts.allSatisfy({ findPrice(in: $0) != nil }) {
@@ -197,22 +272,27 @@ nonisolated enum RuleBasedParser {
         var value: Double
         var range: Range<String.Index>
         var isTotalPrefix: Bool
+        /// Turkish puts "each" before the price ("tanesi 120"), inside the matched range.
+        var isEach = false
     }
 
     private static let unitTable: [(pattern: String, unit: String)] = [
+        (#"metrekare|m2|m²"#, "m²"),
         (#"pies cuadrados|pie cuadrado|square feet|square foot|sq\.? ?ft\.?|sqft"#, "sq ft"),
         (#"pies lineales|pie lineal|linear feet|linear foot|lin\.? ?ft\.?"#, "lin ft"),
         (#"metros cuadrados|metro cuadrado|square meters|square meter"#, "m²"),
         (#"yardas cuadradas|yarda cuadrada|square yards|square yard"#, "sq yd"),
         (#"yardas|yarda|yards|yard|yd"#, "yd"),
         (#"pies|pie|feet|foot|ft"#, "ft"),
-        (#"horas|hora|hours|hour|hrs|hr"#, "hr"),
-        (#"días|dias|día|dia|days|day"#, "day"),
+        (#"horas|hora|hours|hour|hrs|hr|saat"#, "hr"),
+        (#"días|dias|día|dia|days|day|gün|gun"#, "day"),
         (#"galones|galón|galon|gallons|gallon|gal"#, "gal"),
-        (#"cajas|caja|boxes|box"#, "box"),
-        (#"bolsas|bolsa|bags|bag"#, "bag"),
-        (#"metros|metro|meters|meter"#, "m"),
+        (#"cajas|caja|boxes|box|kutu"#, "box"),
+        (#"bolsas|bolsa|bags|bag|torba|çuval|cuval"#, "bag"),
+        (#"metros|metro|meters|meter|metre"#, "m"),
         (#"libras|libra|pounds|pound|lbs|lb"#, "lb"),
+        (#"kilo|kg"#, "kg"),
+        (#"adet|tane"#, ""),
     ]
 
     private static var unitAlternation: String {
@@ -228,21 +308,25 @@ nonisolated enum RuleBasedParser {
     }
 
     private static func findPrice(in s: String) -> PriceMatch? {
-        let totalPrefixes: Set<String> = ["por", "for", "en", "de", "son"]
-        let prefix = #"(\b(?:a|at|por|for|en|de|cuestan|cuesta|cobro|son|valen|vale)\s+)?"#
+        let totalPrefixes: Set<String> = ["por", "for", "en", "de", "son", "toplam", "toplamda", "hepsi"]
+        let eachPrefixes: Set<String> = ["tanesi", "adedi", "saati", "saatliği", "saatligi", "metrekaresi", "metresi",
+                                         "günlüğü", "gunlugu", "günü", "galonu", "başına", "basina", "her biri"]
+        let turkishPrefixes = "tanesi|adedi|saati|saatliği|saatligi|metrekaresi|metresi|günlüğü|gunlugu|günü|galonu|başına|basina|her biri|fiyatı|fiyati|ücreti|ucreti|tutarı|tutari|toplam|toplamda|hepsi"
+        let prefix = "(\\b(?:a|at|por|for|en|de|cuestan|cuesta|cobro|son|valen|vale|\(turkishPrefixes))\\s+)?"
         let amount = #"(\d[\d,]*(?:\.\d+)?)"#
-        let notAUnit = "(?!\\s*(?:\(unitAlternation)|manos|capas|coats|%|por ciento|percent)\\b)"
+        let notAUnit = "(?!\\s*(?:\(unitAlternation)|manos|capas|coats|kat|%|por ciento|percent)\\b)"
         let patterns = [
             "(?i)\(prefix)\\$\\s?\(amount)",
-            "(?i)\(prefix)\(amount)\\s*(?:dólares|dolares|dollars|dollar|bucks|usd|pesos)\\b",
-            "(?i)(\\b(?:a|at|por|for|cuestan|cuesta|cobro|son)\\s+)\(amount)(?![\\d.,]*\\d)\(notAUnit)",
+            "(?i)\(prefix)\(amount)\\s*(?:dólares|dolares|dollars|dollar|bucks|usd|pesos|dolar|dolardan|dolara|lira|liradan|tl)\\b",
+            "(?i)(\\b(?:a|at|por|for|cuestan|cuesta|cobro|son|\(turkishPrefixes))\\s+)\(amount)(?![\\d.,]*\\d)\(notAUnit)",
         ]
         for pattern in patterns {
             guard let match = s.matches(of: rx(pattern)).last,
                   let digits = match.output[2].substring,
                   let value = number(String(digits)) else { continue }
             let prefixWord = match.output[1].substring.map { $0.trimmingCharacters(in: .whitespaces).lowercased() } ?? ""
-            return PriceMatch(value: value, range: match.range, isTotalPrefix: totalPrefixes.contains(prefixWord))
+            return PriceMatch(value: value, range: match.range, isTotalPrefix: totalPrefixes.contains(prefixWord),
+                              isEach: eachPrefixes.contains(prefixWord))
         }
         // "New vanity 600": a bare number that ends the phrase is the price for the whole line.
         // (Swift Regex has no lookbehind, so the preceding letter is matched and then excluded from the range.)
@@ -265,7 +349,10 @@ nonisolated enum RuleBasedParser {
     /// as a line to price; anything else unpriced is treated as a note for the client.
     private static let workVerbs = #"pintar|instalar|cambiar|reparar|quitar|poner|cortar|limpiar|colocar|remover|reemplazar|arreglar|podar|lavar|sellar|construir|demoler|resanar|lijar|barnizar|destapar|soldar|nivelar|emparejar|texturizar|impermeabilizar|montar|desmontar|retirar|tirar|paint|install|replace|repair|remove|fix|cut|clean|demo|demolish|build|patch|sand|seal|trim|mow|haul|lay|hang|pressure wash|power wash|stain|caulk|prime|frame|pour|grout|tile|rewire|unclog|mount|tear out|dispose"#
 
-    private static func parseSegment(_ segment: String) -> Parsed? {
+    /// Turkish verbs come last ("kapı takılacak", "duvarı boyamak"), so a stem anywhere marks real work.
+    private static let turkishWork = #"\b(?:boya|tak|montaj|monte|tamir|onar|değiş|degis|sök|sok|temizle|kes|döşe|dose|sıva|siva|zımpara|zimpara|kur|yık|yik|cila|vernik|izolasyon|yalıtım|yalitim|fayans|seramik|parke|alçı|alci|tadilat|tesisat|kablo|boru|çatı|cati|bahçe|bahce|budama|biç|bic)\p{L}*"#
+
+    private static func parseSegment(_ segment: String, language: DocumentLanguage = .english) -> Parsed? {
         var s = segment
 
         // 1. Price
@@ -273,14 +360,14 @@ nonisolated enum RuleBasedParser {
         if let price { s.replaceSubrange(price.range, with: " ") }
 
         // 2. "each" / "total" markers
-        let eachPattern = #"(?i)\b(?:c/u|cada(?:\s+un[oa]?)?|each|apiece|por\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:la|el)\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:an?|per)\s+(?:hour|foot|square foot|sq ft|piece|unit|gallon|yard|day))(?![\p{L}])"#
-        var isEach = false
-        if price != nil, let match = s.firstMatch(of: rx(eachPattern)) {
+        let eachPattern = #"(?i)\b(?:c/u|cada(?:\s+un[oa]?)?|each|apiece|tanesi|adedi|her biri|her birine|birim fiyatı|saati|saatliği|saatlik|metrekaresi|metresi|günlüğü|günü|galonu|başına|basina|por\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:la|el)\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:an?|per)\s+(?:hour|foot|square foot|sq ft|piece|unit|gallon|yard|day))(?![\p{L}])"#
+        var isEach = price?.isEach ?? false
+        if price != nil, !isEach, let match = s.firstMatch(of: rx(eachPattern)) {
             isEach = true
             s.replaceSubrange(match.range, with: " ")
         }
         var saysTotal = false
-        if let match = s.firstMatch(of: rx(#"(?i)\b(?:en total|in total|total)\b"#)) {
+        if let match = s.firstMatch(of: rx(#"(?i)\b(?:en total|in total|total|toplamda|toplam|hepsi)\b"#)) {
             saysTotal = true
             s.replaceSubrange(match.range, with: " ")
         }
@@ -299,9 +386,9 @@ nonisolated enum RuleBasedParser {
         }
 
         // 4. Description
-        var description = clean(s)
+        var description = clean(s, language: language)
         var placeholder: String?
-        let laborWords = rx(#"(?i)\b(?:mano de obra|labor|labour)\b"#)
+        let laborWords = rx(#"(?i)\b(?:mano de obra|labor|labour|işçilik|iscilik|işçi|isci|usta|emek)\b"#)
         let isLabor = unit == "hr" || unit == "day" || description.firstMatch(of: laborWords) != nil
         let letterCount = description.count(where: \.isLetter)
 
@@ -309,12 +396,14 @@ nonisolated enum RuleBasedParser {
             // Without a price, only keep segments that look like real work, not filler.
             let wordCount = description.split(separator: " ").count
             guard letterCount >= 4, wordCount >= 2 || quantityMatches.count > 0 else { return nil }
-            let startsWithWork = description.firstMatch(of: rx("(?i)^(?:\(workVerbs))\\b")) != nil
+            let startsWithWork = language == .turkish
+                ? description.firstMatch(of: rx("(?i)\(turkishWork)")) != nil
+                : description.firstMatch(of: rx("(?i)^(?:\(workVerbs))\\b")) != nil
             if !startsWithWork, chosen == nil {
-                return .note(clean(segment))
+                return .note(clean(segment, language: language))
             }
         } else if letterCount < 3 {
-            description = isLabor ? "Labor" : "Item"
+            description = isLabor ? language.text("Labor", "Labor", "İşçilik") : language.text("Item", "Item", "Kalem")
             placeholder = description
         }
 
@@ -326,21 +415,30 @@ nonisolated enum RuleBasedParser {
                 unitPrice = Money.round(each)
             } else {
                 // The total doesn't divide evenly: keep it as one lump-sum line.
-                let label = unit.isEmpty ? "" : " \(unit)"
+                let label = unit.isEmpty ? "" : " \(written(unit, in: language))"
                 description = "\(description) (\(Money.quantity(quantity, locale: Locale(identifier: "en_US")))\(label))"
                 quantity = 1
                 unit = ""
             }
         }
 
-        return .item(DraftItem(text: description, quantity: quantity, unit: unit, unitPrice: unitPrice, isLabor: isLabor),
+        return .item(DraftItem(text: description, quantity: quantity, unit: written(unit, in: language),
+                                unitPrice: unitPrice, isLabor: isLabor),
                      placeholder: placeholder)
     }
 
-    private static func clean(_ raw: String) -> String {
+    /// Units are matched in one short form ("hr"); a Turkish document prints them in Turkish.
+    private static func written(_ unit: String, in language: DocumentLanguage) -> String {
+        guard language == .turkish else { return unit }
+        let turkish = ["hr": "saat", "day": "gün", "box": "kutu", "bag": "torba", "gal": "galon",
+                       "sq ft": "ft²", "lin ft": "ft", "sq yd": "yd²"]
+        return turkish[unit] ?? unit
+    }
+
+    private static func clean(_ raw: String, language: DocumentLanguage = .english) -> String {
         var s = raw.replacing(rx(#"\s+"#), with: " ").trimmingCharacters(in: .whitespacesAndNewlines)
-        let leading = rx(#"(?i)^(?:y|and|de|del|of|con|with|también|tambien|luego|más|mas|plus|x|necesito|necesita|hay que|vamos a|voy a|i need to|we need to|need to)\s+"#)
-        let trailing = rx(#"(?i)\s+(?:a|at|por|for|de|of|en|y|and|con|with|son)$"#)
+        let leading = rx(#"(?i)^(?:y|and|de|del|of|con|with|también|tambien|luego|más|mas|plus|x|necesito|necesita|hay que|vamos a|voy a|i need to|we need to|need to|ve|ayrıca|ayrica|sonra|artı)\s+"#)
+        let trailing = rx(#"(?i)\s+(?:a|at|por|for|de|of|en|y|and|con|with|son|ve|ile|lazım|gerek)$"#)
         var changed = true
         while changed {
             changed = false
@@ -350,7 +448,8 @@ nonisolated enum RuleBasedParser {
             if let match = s.firstMatch(of: trailing) { s.removeSubrange(match.range); changed = true }
         }
         guard let first = s.first else { return "" }
-        return first.uppercased() + s.dropFirst()
+        // Turkish "işçilik" capitalizes to "İşçilik", not "Işçilik".
+        return String(first).uppercased(with: language.locale) + s.dropFirst()
     }
 
     // MARK: Helpers

@@ -52,6 +52,7 @@ struct CotizaApp: App {
             profile.defaultTaxRate = 8.25
             profile.terms = "50% deposit to start, balance on completion."
             profile.paymentInstructions = "Zelle (713) 555-0142, check or cash."
+            profile.documentLanguage = .device
             context.insert(profile)
             try? context.save()
         }

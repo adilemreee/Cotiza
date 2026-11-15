@@ -1,6 +1,6 @@
-"""Draws the link-preview card WhatsApp and iMessage show for a signing link (1200x630, EN and ES).
+"""Draws the link-preview card WhatsApp and iMessage show for a signing link (1200x630, EN, ES and TR).
 
-    python3 Tools/make_link_card.py   ->  Server/sign/card-en.png, Server/sign/card-es.png
+    python3 Tools/make_link_card.py   ->  Server/sign/card-en.png, card-es.png, card-tr.png
 """
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -11,6 +11,7 @@ W, H = 1200, 630
 TEXT = {
     "en": ("Your estimate is ready", "Review it and approve it with your signature, right from your phone."),
     "es": ("Su cotización está lista", "Revísela y apruébela con su firma, desde su teléfono."),
+    "tr": ("Teklifiniz hazır", "Telefonunuzdan inceleyip imzanızla onaylayın."),
 }
 
 

@@ -49,7 +49,7 @@ nonisolated struct SignLinkDocument: Codable, Equatable, Sendable {
         }
         totals = s.totals.tax > 0
             ? [Total(label: strings.subtotal, value: Money.string(s.totals.subtotal, locale: locale)),
-               Total(label: "\(strings.tax) (\(Money.quantity(s.taxRate, locale: locale))%)", value: Money.string(s.totals.tax, locale: locale))]
+               Total(label: strings.tax(rate: Money.quantity(s.taxRate, locale: locale)), value: Money.string(s.totals.tax, locale: locale))]
             : []
         total = Money.string(s.totals.total, locale: locale)
         notes = s.notes

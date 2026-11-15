@@ -5,18 +5,19 @@ import UIKit
 /// because the client, not the contractor, is holding the phone.
 nonisolated struct SignatureStrings: Sendable {
     let language: DocumentLanguage
-    private var es: Bool { language == .spanish }
+    private func t(_ en: String, _ es: String, _ tr: String) -> String { language.text(en, es, tr) }
 
-    func title(_ number: String) -> String { es ? "Aprobar cotización \(number)" : "Approve estimate \(number)" }
+    func title(_ number: String) -> String { t("Approve estimate \(number)", "Aprobar cotización \(number)", "\(number) teklifini onayla") }
     var consent: String {
-        es ? "Al firmar, apruebo este trabajo, el precio y los términos de la cotización."
-           : "By signing, I approve this work, the price and the terms of the estimate."
+        t("By signing, I approve this work, the price and the terms of the estimate.",
+          "Al firmar, apruebo este trabajo, el precio y los términos de la cotización.",
+          "İmzalayarak bu işi, fiyatı ve teklifin koşullarını onaylıyorum.")
     }
-    var name: String { es ? "Su nombre" : "Your name" }
-    var signHere: String { es ? "Firme aquí con el dedo" : "Sign here with your finger" }
-    var clear: String { es ? "Borrar" : "Clear" }
-    var approve: String { es ? "Aprobar y firmar" : "Approve and sign" }
-    var total: String { "Total" }
+    var name: String { t("Your name", "Su nombre", "Adınız") }
+    var signHere: String { t("Sign here with your finger", "Firme aquí con el dedo", "Parmağınızla buraya imzalayın") }
+    var clear: String { t("Clear", "Borrar", "Temizle") }
+    var approve: String { t("Approve and sign", "Aprobar y firmar", "Onayla ve imzala") }
+    var total: String { t("Total", "Total", "Toplam") }
 }
 
 /// Full-screen sheet the contractor hands to the client.

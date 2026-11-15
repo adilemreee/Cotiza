@@ -65,10 +65,10 @@ nonisolated struct EstimateEngine: Sendable {
     }
 
     private func generate(transcript: String, trade: String, language: DocumentLanguage, priceBook: [PriceHint]) async throws -> GeneratedEstimate {
-        let outputLanguage = language == .english ? "English" : "Spanish"
+        let outputLanguage = language.text("English", "Spanish", "Turkish")
         var instructions = """
         You turn a contractor's spoken job description into the line items of a written estimate. \
-        The contractor works in \(trade) in the United States and may speak Spanish, English, or a mix of both.
+        The contractor works in \(trade) and may speak Spanish, English, Turkish, or a mix.
 
         Rules:
         - Write the title, every description and the notes in \(outputLanguage), using the professional wording a client expects.

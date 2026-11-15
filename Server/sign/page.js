@@ -62,13 +62,45 @@ const STRINGS = {
     footer: "Enviada con Cotiza",
     preview: (total) => `Total ${total} · Revísela y fírmela en línea`,
   },
+  tr: {
+    lang: "tr",
+    title: (n) => `Teklif ${n}`,
+    preparedFor: "Hazırlanan",
+    from: "Gönderen",
+    validUntil: "Geçerlilik",
+    item: "Kalem",
+    amount: "Tutar",
+    total: "Toplam",
+    notes: "Notlar",
+    terms: "Koşullar",
+    viewPdf: "PDF'in tamamını görüntüle",
+    signHeading: "Bu teklifi onaylayın",
+    name: "Adınız soyadınız",
+    signHere: "Parmağınızla ya da fareyle buraya imzalayın",
+    clear: "Temizle",
+    agree: "Bu işi, fiyatı ve teklifin koşullarını onaylıyorum.",
+    approve: "Onayla ve imzala",
+    sending: "Gönderiliyor…",
+    signedHeading: "Onaylandı. Teşekkürler!",
+    signedBody: (name, date) => `${name} tarafından ${date} tarihinde imzalandı. Bu sayfayı kapatabilirsiniz.`,
+    expired: "Bu bağlantının süresi doldu. Ustanızdan yenisini isteyin.",
+    missing: "Bu bağlantı artık geçerli değil. Ustanızdan yenisini isteyin.",
+    needName: "Lütfen adınızı yazın.",
+    needSignature: "Lütfen kutuya imzalayın.",
+    needAgree: "Onaylamak için lütfen kutuyu işaretleyin.",
+    failed: "Gönderilemedi. Bağlantınızı kontrol edip tekrar deneyin.",
+    footer: "Cotiza ile gönderildi",
+    preview: (total) => `Toplam ${total} · İnceleyin ve çevrimiçi imzalayın`,
+  },
 };
+
+const LOCALES = { en: "en-US", es: "es-US", tr: "tr-TR" };
 
 const esc = (value) =>
   String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 function formatDate(ms, language) {
-  return new Date(ms).toLocaleDateString(language === "es" ? "es-US" : "en-US", { year: "numeric", month: "long", day: "numeric" });
+  return new Date(ms).toLocaleDateString(LOCALES[language] ?? "en-US", { year: "numeric", month: "long", day: "numeric" });
 }
 
 const CSS = `

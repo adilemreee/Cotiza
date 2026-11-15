@@ -1,98 +1,122 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "CFBundleDisplayName" : {
-      "comment" : "Bundle display name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Cotiza"
+  "sourceLanguage": "en",
+  "strings": {
+    "CFBundleDisplayName": {
+      "comment": "Bundle display name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Cotiza"
           }
         }
       }
     },
-    "CFBundleName" : {
-      "comment" : "Bundle name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Cotiza"
+    "CFBundleName": {
+      "comment": "Bundle name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Cotiza"
           }
         }
       }
     },
-    "NSCameraUsageDescription" : {
-      "comment" : "Privacy - Camera Usage Description",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza uses the camera to scan material receipts into your invoices."
+    "NSCameraUsageDescription": {
+      "comment": "Privacy - Camera Usage Description",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza uses the camera to scan material receipts into your invoices."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza usa la cámara para escanear recibos de materiales y agregarlos a tus facturas."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza usa la cámara para escanear recibos de materiales y agregarlos a tus facturas."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza, malzeme fişlerini tarayıp faturalarına eklemek için kamerayı kullanır."
           }
         }
       }
     },
-    "NSMicrophoneUsageDescription" : {
-      "comment" : "Privacy - Microphone Usage Description",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate."
+    "NSMicrophoneUsageDescription": {
+      "comment": "Privacy - Microphone Usage Description",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza usa el micrófono para que describas un trabajo en voz alta y lo convierta en cotización."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza usa el micrófono para que describas un trabajo en voz alta y lo convierta en cotización."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza, bir işi sesli anlatıp teklife dönüştürebilmen için mikrofonu kullanır."
           }
         }
       }
     },
-    "NSPhotoLibraryUsageDescription" : {
-      "comment" : "Privacy - Photo Library Usage Description",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza lets you pick a logo for your estimates and invoices."
+    "NSPhotoLibraryUsageDescription": {
+      "comment": "Privacy - Photo Library Usage Description",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza lets you pick a logo for your estimates and invoices."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza te deja elegir un logo para tus cotizaciones y facturas."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza te deja elegir un logo para tus cotizaciones y facturas."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza, teklif ve faturaların için bir logo seçmene izin verir."
           }
         }
       }
     },
-    "NSSpeechRecognitionUsageDescription" : {
-      "comment" : "Privacy - Speech Recognition Usage Description",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible."
+    "NSSpeechRecognitionUsageDescription": {
+      "comment": "Privacy - Speech Recognition Usage Description",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotiza transcribe lo que dices para armar tu cotización. La transcripción se hace en tu teléfono cuando es posible."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza transcribe lo que dices para armar tu cotización. La transcripción se hace en tu teléfono cuando es posible."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza, teklifini hazırlamak için söylediklerini yazıya döker. Mümkün olduğunda bu işlem telefonunda yapılır."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

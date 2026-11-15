@@ -11,6 +11,12 @@
             "state": "translated",
             "value": "%@ aprobó %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, %2$@ teklifini onayladı"
+          }
         }
       }
     },
@@ -20,6 +26,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ lleva %lld días esperando respuesta (%@)."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$lld gündür yanıt bekliyor (%3$@)."
           }
         }
       }
@@ -31,6 +43,12 @@
             "state": "translated",
             "value": "%@ está vencida"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ gecikti"
+          }
         }
       }
     },
@@ -40,6 +58,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ quedó pagada: %@."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ödendi: %2$@."
           }
         }
       }
@@ -51,6 +75,12 @@
             "state": "translated",
             "value": "%@ al mes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aylık %@"
+          }
         }
       }
     },
@@ -60,6 +90,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ a la semana"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haftalık %@"
           }
         }
       }
@@ -71,6 +107,12 @@
             "state": "translated",
             "value": "%@ al año"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yıllık %@"
+          }
         }
       }
     },
@@ -80,6 +122,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ venció el %@."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ son ödeme tarihi %2$@ idi."
           }
         }
       }
@@ -97,6 +145,12 @@
             "state": "translated",
             "value": "%@. Se renueva automáticamente. Cancela cuando quieras en el App Store."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. Otomatik yenilenir. İstediğin zaman App Store'dan iptal edebilirsin."
+          }
         }
       }
     },
@@ -107,6 +161,12 @@
             "state": "translated",
             "value": "%@: hay una copia nueva de %@ lista para enviar."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@: %2$@ faturasının yeni kopyası göndermeye hazır."
+          }
         }
       }
     },
@@ -116,6 +176,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld días"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld gün"
           }
         }
       }
@@ -133,6 +199,12 @@
             "state": "translated",
             "value": "Activa"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etkin"
+          }
         }
       }
     },
@@ -142,6 +214,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agregar %lld conceptos · %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld kalem ekle · %@"
           }
         }
       }
@@ -153,6 +231,12 @@
             "state": "translated",
             "value": "Agregar cliente"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteri ekle"
+          }
         }
       }
     },
@@ -162,6 +246,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agregar de mis precios"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyatlarımdan ekle"
           }
         }
       }
@@ -173,6 +263,12 @@
             "state": "translated",
             "value": "Agregar concepto"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalem ekle"
+          }
         }
       }
     },
@@ -182,6 +278,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agrega materiales desde un recibo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fişten malzeme ekle"
           }
         }
       }
@@ -193,6 +295,12 @@
             "state": "translated",
             "value": "Poner precio"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyat ekle"
+          }
         }
       }
     },
@@ -202,6 +310,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dirección"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adres"
           }
         }
       }
@@ -213,6 +327,12 @@
             "state": "translated",
             "value": "Todo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümü"
+          }
         }
       }
     },
@@ -222,6 +342,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Monto ($)"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutar ($)"
           }
         }
       }
@@ -233,6 +359,12 @@
             "state": "translated",
             "value": "Aprobada"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onaylandı"
+          }
         }
       }
     },
@@ -242,6 +374,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aprobada ahí mismo, con la firma en el PDF."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anında onay, imza PDF'te."
           }
         }
       }
@@ -253,6 +391,12 @@
             "state": "translated",
             "value": "Pide un anticipo, registra cada pago y sabe siempre cuánto te deben."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapora iste, her ödemeyi kaydet, kalan borcu her zaman bil."
+          }
         }
       }
     },
@@ -262,6 +406,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Por cobrar: %@. Cobrado este mes: %@."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekleyen ödeme: %1$@. Bu ay ödenen: %2$@."
           }
         }
       }
@@ -273,6 +423,12 @@
             "state": "translated",
             "value": "En espera"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yanıt bekleniyor"
+          }
         }
       }
     },
@@ -282,6 +438,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Atrás"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri"
           }
         }
       }
@@ -293,6 +455,12 @@
             "state": "translated",
             "value": "Saldo antes de este pago: %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu ödemeden önceki bakiye: %@"
+          }
         }
       }
     },
@@ -302,6 +470,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Saldo pendiente"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalan tutar"
           }
         }
       }
@@ -313,6 +487,12 @@
             "state": "translated",
             "value": "Nombre del negocio"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşletme adı"
+          }
         }
       }
     },
@@ -322,6 +502,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cancelar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vazgeç"
           }
         }
       }
@@ -333,6 +519,12 @@
             "state": "translated",
             "value": "Cancelar el enlace"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantıyı iptal et"
+          }
         }
       }
     },
@@ -343,6 +535,12 @@
             "state": "translated",
             "value": "Tarjeta"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kart"
+          }
         }
       }
     },
@@ -352,6 +550,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Efectivo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nakit"
           }
         }
       }
@@ -366,6 +570,12 @@
             "state": "translated",
             "value": "Cambiar logo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logoyu değiştir"
+          }
         }
       }
     },
@@ -375,6 +585,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cheque"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çek"
           }
         }
       }
@@ -386,6 +602,12 @@
             "state": "translated",
             "value": "Revisar ahora"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi kontrol et"
+          }
         }
       }
     },
@@ -395,6 +617,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elegir una foto"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğraf seç"
           }
         }
       }
@@ -406,6 +634,12 @@
             "state": "translated",
             "value": "Elegir de Contactos"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kişiler'den seç"
+          }
         }
       }
     },
@@ -415,6 +649,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elegir logo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo seç"
           }
         }
       }
@@ -426,6 +666,12 @@
             "state": "translated",
             "value": "Limpieza"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temizlik"
+          }
         }
       }
     },
@@ -435,6 +681,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cliente"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteri"
           }
         }
       }
@@ -446,6 +698,12 @@
             "state": "translated",
             "value": "Aprobación del cliente"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteri onayı"
+          }
         }
       }
     },
@@ -455,6 +713,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Firma del cliente"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteri imzası"
           }
         }
       }
@@ -466,6 +730,12 @@
             "state": "translated",
             "value": "Tu cliente firma en tu teléfono"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteri telefonunda imzalar"
+          }
         }
       }
     },
@@ -475,6 +745,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Clientes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteriler"
           }
         }
       }
@@ -486,6 +762,12 @@
             "state": "translated",
             "value": "Los clientes se guardan cuando los agregas a una cotización."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteriler bir teklife eklediğinde kaydedilir."
+          }
         }
       }
     },
@@ -495,6 +777,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cerrar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapat"
           }
         }
       }
@@ -506,6 +794,12 @@
             "state": "translated",
             "value": "Concreto"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beton"
+          }
         }
       }
     },
@@ -515,6 +809,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Contactar a soporte"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekle iletişime geç"
           }
         }
       }
@@ -526,6 +826,12 @@
             "state": "translated",
             "value": "Continuar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devam"
+          }
         }
       }
     },
@@ -536,6 +842,12 @@
             "state": "translated",
             "value": "Convertir en factura"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faturaya çevir"
+          }
         }
       }
     },
@@ -545,6 +857,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Costo %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maliyet %@"
           }
         }
       }
@@ -565,6 +883,12 @@
             "state": "translated",
             "value": "Cotiza lee los artículos y precios en tu teléfono. Tú eliges cuáles agregar."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza kalemleri ve fiyatları telefonunda okur. Hangilerini ekleyeceğini sen seçersin."
+          }
         }
       }
     },
@@ -574,6 +898,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cotiza recuerda tus precios cada vez que envías una cotización."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza her teklif gönderdiğinde fiyatlarını hatırlar."
           }
         }
       }
@@ -585,6 +915,12 @@
             "state": "translated",
             "value": "Cotiza te avisa cuando una cotización lleva %lld días sin respuesta y cuando una factura está vencida."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza, bir teklif %lld gündür yanıt beklediğinde ve bir faturanın vadesi geçtiğinde sana hatırlatır."
+          }
         }
       }
     },
@@ -594,6 +930,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cotiza lo usa para entender los trabajos que describes."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza bunu anlattığın işleri anlamak için kullanır."
           }
         }
       }
@@ -605,6 +947,12 @@
             "state": "translated",
             "value": "No se pudo crear el PDF"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF oluşturulamadı"
+          }
         }
       }
     },
@@ -614,6 +962,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crear cotización"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif oluştur"
           }
         }
       }
@@ -625,6 +979,12 @@
             "state": "translated",
             "value": "Fecha"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tarih"
+          }
         }
       }
     },
@@ -634,6 +994,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fechas y recordatorios"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tarihler ve hatırlatmalar"
           }
         }
       }
@@ -645,6 +1011,12 @@
             "state": "translated",
             "value": "Valores para cotizaciones nuevas"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni teklifler için varsayılanlar"
+          }
         }
       }
     },
@@ -654,6 +1026,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eliminar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sil"
           }
         }
       }
@@ -665,6 +1043,12 @@
             "state": "translated",
             "value": "Eliminar concepto"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalemi sil"
+          }
         }
       }
     },
@@ -674,6 +1058,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eliminar este documento?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu belge silinsin mi?"
           }
         }
       }
@@ -685,6 +1075,12 @@
             "state": "translated",
             "value": "Anticipo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapora"
+          }
         }
       }
     },
@@ -694,6 +1090,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anticipo para empezar (%)"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlangıç kaporası (%)"
           }
         }
       }
@@ -705,6 +1107,12 @@
             "state": "translated",
             "value": "Anticipo: %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapora: %@"
+          }
         }
       }
     },
@@ -714,6 +1122,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anticipos y pagos parciales"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapora ve kısmi ödemeler"
           }
         }
       }
@@ -725,6 +1139,12 @@
             "state": "translated",
             "value": "Describe el trabajo y tus precios."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşi ve fiyatlarını anlat."
+          }
         }
       }
     },
@@ -734,6 +1154,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Describe el trabajo en español o en inglés. Cotiza escribe una cotización profesional que tu cliente puede aprobar ahí mismo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşi Türkçe, İngilizce ya da İspanyolca anlat. Cotiza, müşterinin hemen onaylayabileceği profesyonel bir teklif yazar."
           }
         }
       }
@@ -745,6 +1171,12 @@
             "state": "translated",
             "value": "Descripción"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açıklama"
+          }
         }
       }
     },
@@ -754,6 +1186,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No te escuché. Toca para intentarlo de nuevo o escribe el trabajo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anlaşılmadı. Tekrar denemek için dokun ya da işi yaz."
           }
         }
       }
@@ -765,6 +1203,12 @@
             "state": "translated",
             "value": "Documento"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belge"
+          }
         }
       }
     },
@@ -774,6 +1218,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Idioma del documento"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belge dili"
           }
         }
       }
@@ -785,6 +1235,12 @@
             "state": "translated",
             "value": "Documentos: %lld"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belgeler: %lld"
+          }
         }
       }
     },
@@ -794,6 +1250,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Listo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitti"
           }
         }
       }
@@ -805,6 +1267,12 @@
             "state": "translated",
             "value": "Borrador"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taslak"
+          }
         }
       }
     },
@@ -814,6 +1282,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tablaroca"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alçıpan"
           }
         }
       }
@@ -825,6 +1299,12 @@
             "state": "translated",
             "value": "Vence %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son ödeme %@"
+          }
         }
       }
     },
@@ -834,6 +1314,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Duplicar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopyala"
           }
         }
       }
@@ -851,6 +1337,12 @@
             "state": "translated",
             "value": "Editar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Düzenle"
+          }
         }
       }
     },
@@ -860,6 +1352,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Electricidad"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elektrik"
           }
         }
       }
@@ -871,6 +1369,12 @@
             "state": "translated",
             "value": "Correo electrónico"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-posta"
+          }
         }
       }
     },
@@ -880,6 +1384,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Correo u otras apps"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-posta ya da diğer uygulamalar"
           }
         }
       }
@@ -891,6 +1401,12 @@
             "state": "translated",
             "value": "Inglés"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İngilizce"
+          }
         }
       }
     },
@@ -900,6 +1416,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cotización"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif"
           }
         }
       }
@@ -911,6 +1433,12 @@
             "state": "translated",
             "value": "Cotización o factura"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif ya da fatura"
+          }
         }
       }
     },
@@ -920,6 +1448,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cotizaciones"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklifler"
           }
         }
       }
@@ -931,6 +1465,12 @@
             "state": "translated",
             "value": "Cotizaciones válidas por"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekliflerin geçerliliği"
+          }
         }
       }
     },
@@ -940,6 +1480,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada 2 semanas"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 haftada bir"
           }
         }
       }
@@ -951,6 +1497,12 @@
             "state": "translated",
             "value": "Cada mes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her ay"
+          }
         }
       }
     },
@@ -960,6 +1512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada semana"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her hafta"
           }
         }
       }
@@ -971,6 +1529,12 @@
             "state": "translated",
             "value": "Todo: %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamamı: %@"
+          }
         }
       }
     },
@@ -980,6 +1544,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ejemplo:"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Örnek:"
           }
         }
       }
@@ -991,6 +1561,12 @@
             "state": "translated",
             "value": "Ejemplo: 50% de anticipo para empezar y el resto al terminar."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Örnek: Başlangıçta %50 kapora, kalanı iş bitince."
+          }
         }
       }
     },
@@ -1000,6 +1576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ejemplo: Zelle 555-123-4567, cheque o efectivo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Örnek: IBAN TR00 0000 0000, nakit ya da kart."
           }
         }
       }
@@ -1011,6 +1593,12 @@
             "state": "translated",
             "value": "Exportar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dışa aktar"
+          }
         }
       }
     },
@@ -1020,6 +1608,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Llenar desde Contactos"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kişiler'den doldur"
           }
         }
       }
@@ -1031,6 +1625,12 @@
             "state": "translated",
             "value": "Pisos"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zemin kaplama"
+          }
         }
       }
     },
@@ -1040,6 +1640,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dale seguimiento a tu cotización"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklifini takip et"
           }
         }
       }
@@ -1051,6 +1657,12 @@
             "state": "translated",
             "value": "Encontrado en el recibo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fişte bulunanlar"
+          }
         }
       }
     },
@@ -1060,6 +1672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plan gratis: te quedan %lld de %lld cotizaciones"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ücretsiz plan: %lld / %lld teklif kaldı"
           }
         }
       }
@@ -1071,6 +1689,12 @@
             "state": "translated",
             "value": "Prueba gratis, después %@. Se renueva automáticamente. Cancela cuando quieras en el App Store."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ücretsiz deneme, sonra %@. Otomatik yenilenir. İstediğin zaman App Store'dan iptal edebilirsin."
+          }
         }
       }
     },
@@ -1080,6 +1704,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Libera espacio en tu teléfono e inténtalo de nuevo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biraz yer aç ve tekrar dene."
           }
         }
       }
@@ -1091,6 +1721,12 @@
             "state": "translated",
             "value": "Contratista general"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genel müteahhit"
+          }
         }
       }
     },
@@ -1100,6 +1736,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pedir firma del cliente"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteri imzası al"
           }
         }
       }
@@ -1111,6 +1753,12 @@
             "state": "translated",
             "value": "Empezar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başla"
+          }
         }
       }
     },
@@ -1120,6 +1768,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hazte Pro"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro'ya geç"
           }
         }
       }
@@ -1131,6 +1785,12 @@
             "state": "translated",
             "value": "Pásale el teléfono a tu cliente o envíale un enlace para firmar desde donde esté. Al firmar, aprueba la cotización y la firma aparece en el PDF."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telefonu müşterine ver ya da her yerden imzalayabileceği bir bağlantı gönder. İmza teklifi onaylar ve PDF'e basılır."
+          }
         }
       }
     },
@@ -1140,6 +1800,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mantenimiento"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamirci"
           }
         }
       }
@@ -1151,6 +1817,12 @@
             "state": "translated",
             "value": "Aire y calefacción"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isıtma ve klima"
+          }
         }
       }
     },
@@ -1160,6 +1832,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ayuda y preguntas frecuentes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yardım ve SSS"
           }
         }
       }
@@ -1171,6 +1849,12 @@
             "state": "translated",
             "value": "Cómo te pagan tus clientes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteriler sana nasıl öder"
+          }
         }
       }
     },
@@ -1180,6 +1864,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yo hablo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konuştuğum dil"
           }
         }
       }
@@ -1191,6 +1881,12 @@
             "state": "translated",
             "value": "Los ingresos cuentan el día en que marcas el trabajo como pagado. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelir, iş ödendi olarak işaretlendiği gün sayılır. Malzeme maliyeti taranan fişlerden ve her kaleme girdiğin maliyetten gelir."
+          }
         }
       }
     },
@@ -1200,6 +1896,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los ingresos cuentan el día en que te pagan, incluidos anticipos y pagos parciales. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelir, kapora ve kısmi ödemeler dahil, ödemeyi aldığın gün sayılır. Malzeme maliyeti taranan fişlerden ve her kaleme girdiğin maliyetten gelir."
           }
         }
       }
@@ -1211,6 +1913,12 @@
             "state": "translated",
             "value": "Ingresos, materiales y ganancia por mes, listos para tu contador."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aylık gelir, malzeme ve kâr; muhasebecin için hazır."
+          }
         }
       }
     },
@@ -1220,6 +1928,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Factura"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fatura"
           }
         }
       }
@@ -1231,6 +1945,12 @@
             "state": "translated",
             "value": "Factura lista para enviar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fatura göndermeye hazır"
+          }
         }
       }
     },
@@ -1240,6 +1960,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Facturas"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faturalar"
           }
         }
       }
@@ -1251,6 +1977,12 @@
             "state": "translated",
             "value": "Facturas con un toque"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tek dokunuşla fatura"
+          }
         }
       }
     },
@@ -1260,6 +1992,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Concepto"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalem"
           }
         }
       }
@@ -1271,6 +2009,12 @@
             "state": "translated",
             "value": "Conceptos"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalemler"
+          }
         }
       }
     },
@@ -1280,6 +2024,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conceptos sin precio: %lld"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyatı olmayan kalemler: %lld"
           }
         }
       }
@@ -1291,6 +2041,12 @@
             "state": "translated",
             "value": "Dirección del trabajo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İş adresi"
+          }
         }
       }
     },
@@ -1300,6 +2056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nombre del trabajo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İş başlığı"
           }
         }
       }
@@ -1311,6 +2073,12 @@
             "state": "translated",
             "value": "Trabajos pagados: %lld"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödenen işler: %lld"
+          }
         }
       }
     },
@@ -1320,6 +2088,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mano de obra"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşçilik"
           }
         }
       }
@@ -1331,6 +2105,12 @@
             "state": "translated",
             "value": "Jardinería"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahçe düzenleme"
+          }
         }
       }
     },
@@ -1340,6 +2120,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Número de licencia"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ruhsat numarası"
           }
         }
       }
@@ -1351,6 +2137,12 @@
             "state": "translated",
             "value": "Total del concepto"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satır toplamı"
+          }
         }
       }
     },
@@ -1360,6 +2152,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enlace enviado %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantı gönderildi %@"
           }
         }
       }
@@ -1371,12 +2169,24 @@
             "state": "translated",
             "value": "Escuchando… toca para parar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dinliyorum… durdurmak için dokun"
+          }
         }
       }
     },
     "Logo": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo"
+          }
+        },
+        "tr": {
           "stringUnit": {
             "state": "translated",
             "value": "Logo"
@@ -1391,6 +2201,12 @@
             "state": "translated",
             "value": "Luce profesional. Gana más trabajos. Cobra más rápido."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profesyonel görün. Daha çok iş al. Daha hızlı tahsil et."
+          }
         }
       }
     },
@@ -1400,6 +2216,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Administrar suscripción"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aboneliği yönet"
           }
         }
       }
@@ -1411,6 +2233,12 @@
             "state": "translated",
             "value": "Marcar ${document} como pagada"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${document} ödendi olarak işaretle"
+          }
         }
       }
     },
@@ -1420,6 +2248,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marcar como pagada"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödendi olarak işaretle"
           }
         }
       }
@@ -1431,6 +2265,12 @@
             "state": "translated",
             "value": "Marca una cotización o factura como pagada."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir teklifi ya da faturayı ödendi olarak işaretler."
+          }
         }
       }
     },
@@ -1440,6 +2280,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ganancia sobre materiales"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malzemeye kâr payı"
           }
         }
       }
@@ -1451,6 +2297,12 @@
             "state": "translated",
             "value": "Ganancia sobre materiales (%)"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malzemeye kâr payı (%)"
+          }
         }
       }
     },
@@ -1460,6 +2312,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Costo de materiales"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malzeme maliyeti"
           }
         }
       }
@@ -1471,6 +2329,12 @@
             "state": "translated",
             "value": "El micrófono está desactivado. Puedes escribir el trabajo."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mikrofon erişimi kapalı. İşi yine de yazabilirsin."
+          }
         }
       }
     },
@@ -1480,6 +2344,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lo que me deben"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alacaklarım"
           }
         }
       }
@@ -1491,6 +2361,12 @@
             "state": "translated",
             "value": "Mes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ay"
+          }
         }
       }
     },
@@ -1500,6 +2376,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mensual"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aylık"
           }
         }
       }
@@ -1511,6 +2393,12 @@
             "state": "translated",
             "value": "Más"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer"
+          }
         }
       }
     },
@@ -1520,6 +2408,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más opciones"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer ayarlar"
           }
         }
       }
@@ -1531,6 +2425,12 @@
             "state": "translated",
             "value": "Mis precios"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyatlarım"
+          }
         }
       }
     },
@@ -1540,6 +2440,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nombre"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ad"
           }
         }
       }
@@ -1551,6 +2457,12 @@
             "state": "translated",
             "value": "Nunca"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiçbir zaman"
+          }
         }
       }
     },
@@ -1560,6 +2472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cliente nuevo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni müşteri"
           }
         }
       }
@@ -1571,6 +2489,12 @@
             "state": "translated",
             "value": "Nueva cotización"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni teklif"
+          }
         }
       }
     },
@@ -1580,6 +2504,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Concepto nuevo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni kalem"
           }
         }
       }
@@ -1591,6 +2521,12 @@
             "state": "translated",
             "value": "Siguiente"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonraki"
+          }
         }
       }
     },
@@ -1600,6 +2536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Próxima factura"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonraki fatura"
           }
         }
       }
@@ -1611,6 +2553,12 @@
             "state": "translated",
             "value": "Sin la marca de Cotiza en lo que ve tu cliente."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşterinin gördüğü belgelerde Cotiza yazısı olmaz."
+          }
         }
       }
     },
@@ -1620,6 +2568,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sin cuenta ni anuncios. Tus trabajos y precios son solo tuyos."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hesap yok, reklam yok. İşlerin ve fiyatların sende kalır."
           }
         }
       }
@@ -1631,6 +2585,12 @@
             "state": "translated",
             "value": "No se encontró una suscripción activa en esta cuenta de Apple."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Apple Hesabı için etkin bir abonelik bulunamadı."
+          }
         }
       }
     },
@@ -1640,6 +2600,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay clientes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz müşteri yok"
           }
         }
       }
@@ -1651,6 +2617,12 @@
             "state": "translated",
             "value": "No hay trabajos pagados en este periodo."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu dönemde ödenen iş yok."
+          }
         }
       }
     },
@@ -1660,6 +2632,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se encontraron precios"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyat bulunamadı"
           }
         }
       }
@@ -1671,6 +2649,12 @@
             "state": "translated",
             "value": "Aún no hay precios guardados"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kayıtlı fiyat yok"
+          }
         }
       }
     },
@@ -1680,6 +2664,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No seleccionado"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seçili değil"
           }
         }
       }
@@ -1691,6 +2681,12 @@
             "state": "translated",
             "value": "Notas para el cliente"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteriye notlar"
+          }
         }
       }
     },
@@ -1700,6 +2696,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay nada aquí."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Burada henüz bir şey yok."
           }
         }
       }
@@ -1711,6 +2713,12 @@
             "state": "translated",
             "value": "OK"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamam"
+          }
         }
       }
     },
@@ -1720,6 +2728,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ese día Cotiza hace una copia de esta factura con un número nuevo y te recuerda enviarla."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O gün Cotiza bu faturanın yeni numaralı bir kopyasını oluşturur ve göndermeni hatırlatır."
           }
         }
       }
@@ -1731,6 +2745,12 @@
             "state": "translated",
             "value": "Solo %@ al mes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayda yalnızca %@"
+          }
         }
       }
     },
@@ -1740,6 +2760,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abre Cotiza listo para describir un trabajo con tu voz."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza'yı bir işi sesle anlatmaya hazır aç."
           }
         }
       }
@@ -1751,6 +2777,12 @@
             "state": "translated",
             "value": "Abrir Ajustes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar'ı aç"
+          }
         }
       }
     },
@@ -1760,6 +2792,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir documento"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belgeyi aç"
           }
         }
       }
@@ -1771,6 +2809,12 @@
             "state": "translated",
             "value": "Abre una cotización o factura en Cotiza."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza'da bir teklif ya da fatura açar."
+          }
         }
       }
     },
@@ -1780,6 +2824,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Otro"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer"
           }
         }
       }
@@ -1791,6 +2841,12 @@
             "state": "translated",
             "value": "Vencida"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gecikti"
+          }
         }
       }
     },
@@ -1800,6 +2856,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Debe %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borç %@"
           }
         }
       }
@@ -1811,6 +2873,12 @@
             "state": "translated",
             "value": "Resumen en PDF"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF özeti"
+          }
         }
       }
     },
@@ -1820,6 +2888,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pagada"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödendi"
           }
         }
       }
@@ -1831,6 +2905,12 @@
             "state": "translated",
             "value": "Cobrado del mes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu ay ödenen"
+          }
         }
       }
     },
@@ -1840,6 +2920,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pagado con"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödeme şekli"
           }
         }
       }
@@ -1851,6 +2937,12 @@
             "state": "translated",
             "value": "Pintura"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boya badana"
+          }
         }
       }
     },
@@ -1860,6 +2952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fecha de pago"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son ödeme tarihi"
           }
         }
       }
@@ -1871,6 +2969,12 @@
             "state": "translated",
             "value": "Plazo de pago"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödeme vadesi"
+          }
         }
       }
     },
@@ -1880,6 +2984,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pagos"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödemeler"
           }
         }
       }
@@ -1891,6 +3001,12 @@
             "state": "translated",
             "value": "Periodo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dönem"
+          }
         }
       }
     },
@@ -1900,6 +3016,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Teléfono"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telefon"
           }
         }
       }
@@ -1911,6 +3033,12 @@
             "state": "translated",
             "value": "No se pudieron cargar los planes. Revisa tu conexión e inténtalo de nuevo."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planlar yüklenemedi. Bağlantını kontrol edip tekrar dene."
+          }
         }
       }
     },
@@ -1920,6 +3048,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plomería"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıhhi tesisat"
           }
         }
       }
@@ -1931,6 +3065,12 @@
             "state": "translated",
             "value": "Ver y enviar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önizle ve gönder"
+          }
         }
       }
     },
@@ -1940,6 +3080,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anterior"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önceki"
           }
         }
       }
@@ -1951,6 +3097,12 @@
             "state": "translated",
             "value": "Precio"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyat"
+          }
         }
       }
     },
@@ -1960,6 +3112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Precio por unidad ($)"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birim fiyat ($)"
           }
         }
       }
@@ -1971,6 +3129,12 @@
             "state": "translated",
             "value": "Los precios, cantidades y trabajos se convierten en conceptos automáticamente."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyatlar, miktarlar ve işler kendiliğinden kalemlere dönüşür."
+          }
         }
       }
     },
@@ -1980,6 +3144,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aparecen al final de cada documento."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her belgenin altına basılır."
           }
         }
       }
@@ -1991,6 +3161,12 @@
             "state": "translated",
             "value": "Aparece en las facturas y en las cotizaciones que piden anticipo. Las cotizaciones nuevas piden este anticipo; 0 es sin anticipo."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faturalara ve kapora isteyen tekliflere basılır. Yeni teklifler bu kaporayı ister; 0 kapora yok demektir."
+          }
         }
       }
     },
@@ -2000,6 +3176,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aparece en las facturas."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faturalara basılır."
           }
         }
       }
@@ -2011,6 +3193,12 @@
             "state": "translated",
             "value": "Aparece en el PDF."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF'e basılır."
+          }
         }
       }
     },
@@ -2020,6 +3208,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Privacidad"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik"
           }
         }
       }
@@ -2031,6 +3225,12 @@
             "state": "translated",
             "value": "Política de privacidad"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik politikası"
+          }
         }
       }
     },
@@ -2040,6 +3240,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Privado por diseño"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baştan gizlilik odaklı"
           }
         }
       }
@@ -2051,6 +3257,12 @@
             "state": "translated",
             "value": "Ganancia"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kâr"
+          }
         }
       }
     },
@@ -2060,6 +3272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ganancia %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kâr %@"
           }
         }
       }
@@ -2071,6 +3289,12 @@
             "state": "translated",
             "value": "Reportes de ganancias"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kâr raporları"
+          }
         }
       }
     },
@@ -2080,6 +3304,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cantidad"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miktar"
           }
         }
       }
@@ -2091,6 +3321,12 @@
             "state": "translated",
             "value": "Cotiza todos los trabajos, todos los días."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her işe, her gün teklif ver."
+          }
         }
       }
     },
@@ -2100,6 +3336,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Califica Cotiza en el App Store"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza'yı App Store'da puanla"
           }
         }
       }
@@ -2111,6 +3353,12 @@
             "state": "translated",
             "value": "Leyendo el recibo…"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiş okunuyor…"
+          }
         }
       }
     },
@@ -2120,6 +3368,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Registrar un pago"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödeme kaydet"
           }
         }
       }
@@ -2131,6 +3385,12 @@
             "state": "translated",
             "value": "Recuerda tus precios"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiyatlarını hatırlar"
+          }
         }
       }
     },
@@ -2140,6 +3400,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recordatorios"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlatmalar"
           }
         }
       }
@@ -2151,6 +3417,12 @@
             "state": "translated",
             "value": "Quitar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaldır"
+          }
         }
       }
     },
@@ -2160,6 +3432,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quitar al cliente de este documento"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteriyi bu belgeden kaldır"
           }
         }
       }
@@ -2171,6 +3449,12 @@
             "state": "translated",
             "value": "Quitar firma"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İmzayı kaldır"
+          }
         }
       }
     },
@@ -2180,6 +3464,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Repetir"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekrarla"
           }
         }
       }
@@ -2191,6 +3481,12 @@
             "state": "translated",
             "value": "Reportes"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Raporlar"
+          }
         }
       }
     },
@@ -2200,6 +3496,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Restaurar compras"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alımları geri yükle"
           }
         }
       }
@@ -2211,6 +3513,12 @@
             "state": "translated",
             "value": "Ingresos (sin impuesto)"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelir (vergi hariç)"
+          }
         }
       }
     },
@@ -2220,6 +3528,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Techos"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çatı"
           }
         }
       }
@@ -2231,6 +3545,12 @@
             "state": "translated",
             "value": "Impuesto (%)"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vergi (%)"
+          }
         }
       }
     },
@@ -2240,6 +3560,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impuesto cobrado"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tahsil edilen vergi"
           }
         }
       }
@@ -2251,6 +3577,12 @@
             "state": "translated",
             "value": "Guardar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydet"
+          }
         }
       }
     },
@@ -2260,6 +3592,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ahorra %lld%%"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%%%lld tasarruf"
           }
         }
       }
@@ -2271,6 +3609,12 @@
             "state": "translated",
             "value": "Di el trabajo. Envía la cotización."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşi söyle. Teklifi gönder."
+          }
         }
       }
     },
@@ -2280,6 +3624,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Te dice cuánto te deben tus clientes y cuánto cobraste este mes."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşterilerinin sana hâlâ ne kadar borçlu olduğunu ve bu ay ne kadar ödeme aldığını söyler."
           }
         }
       }
@@ -2291,6 +3641,12 @@
             "state": "translated",
             "value": "Escanear un recibo"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiş tara"
+          }
         }
       }
     },
@@ -2300,6 +3656,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Busca o escribe un nombre nuevo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ara ya da yeni bir ad yaz"
           }
         }
       }
@@ -2311,6 +3673,12 @@
             "state": "translated",
             "value": "Seleccionado"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seçili"
+          }
         }
       }
     },
@@ -2320,6 +3688,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enviar enlace para firmar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İmza bağlantısı gönder"
           }
         }
       }
@@ -2331,6 +3705,12 @@
             "state": "translated",
             "value": "Enviar al cliente"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşteriye gönder"
+          }
         }
       }
     },
@@ -2340,6 +3720,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enviada"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönderildi"
           }
         }
       }
@@ -2351,6 +3737,12 @@
             "state": "translated",
             "value": "Configuración"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kur"
+          }
         }
       }
     },
@@ -2360,6 +3752,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar"
           }
         }
       }
@@ -2371,6 +3769,12 @@
             "state": "translated",
             "value": "Compartir el enlace otra vez"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantıyı tekrar paylaş"
+          }
         }
       }
     },
@@ -2380,6 +3784,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostrar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göster"
           }
         }
       }
@@ -2391,6 +3801,12 @@
             "state": "translated",
             "value": "Inicia sesión en iCloud en la app Ajustes para respaldar y sincronizar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yedeklemek ve eşitlemek için Ayarlar uygulamasından iCloud'a giriş yap"
+          }
         }
       }
     },
@@ -2400,6 +3816,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Firmado por %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İmzalayan: %@"
           }
         }
       }
@@ -2411,6 +3833,12 @@
             "state": "translated",
             "value": "Algo salió mal"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir şeyler ters gitti"
+          }
         }
       }
     },
@@ -2420,6 +3848,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Español"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İspanyolca"
           }
         }
       }
@@ -2431,6 +3865,12 @@
             "state": "translated",
             "value": "Habla español, envía en inglés"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendi dilinde konuş, müşterinin dilinde gönder"
+          }
         }
       }
     },
@@ -2440,6 +3880,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Habla en cualquier idioma. La cotización se escribe en el idioma del documento."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İstediğin dilde konuş. Teklif belge dilinde yazılır."
           }
         }
       }
@@ -2451,6 +3897,12 @@
             "state": "translated",
             "value": "Hoja de cálculo (CSV)"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tablo (CSV)"
+          }
         }
       }
     },
@@ -2460,6 +3912,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Empezar a grabar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydı başlat"
           }
         }
       }
@@ -2471,6 +3929,12 @@
             "state": "translated",
             "value": "Empezar con una cotización en blanco"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boş bir teklifle başla"
+          }
         }
       }
     },
@@ -2480,6 +3944,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estado"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durum"
           }
         }
       }
@@ -2491,6 +3961,12 @@
             "state": "translated",
             "value": "Parar la grabación"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydı durdur"
+          }
         }
       }
     },
@@ -2500,6 +3976,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suscribirme"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abone ol"
           }
         }
       }
@@ -2511,6 +3993,12 @@
             "state": "translated",
             "value": "Subtotal"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ara toplam"
+          }
         }
       }
     },
@@ -2520,6 +4008,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sincronizado con iCloud"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud ile eşitlendi"
           }
         }
       }
@@ -2531,6 +4025,12 @@
             "state": "translated",
             "value": "Tomar una foto"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğraf çek"
+          }
         }
       }
     },
@@ -2540,6 +4040,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Habla, no escribas"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yazma, konuş"
           }
         }
       }
@@ -2551,6 +4057,12 @@
             "state": "translated",
             "value": "Toca el botón de abajo y describe el trabajo en voz alta, con tus precios."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aşağıdaki düğmeye dokun ve işi fiyatlarıyla birlikte sesli anlat."
+          }
         }
       }
     },
@@ -2560,6 +4072,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca para agregar más"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha fazla eklemek için dokun"
           }
         }
       }
@@ -2571,6 +4089,12 @@
             "state": "translated",
             "value": "Toca para hablar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konuşmak için dokun"
+          }
         }
       }
     },
@@ -2580,6 +4104,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impuesto"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vergi"
           }
         }
       }
@@ -2591,6 +4121,12 @@
             "state": "translated",
             "value": "El impuesto solo se aplica a los conceptos marcados como gravables."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vergi yalnızca vergili işaretli kalemlere uygulanır."
+          }
         }
       }
     },
@@ -2600,6 +4136,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gravable"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vergili"
           }
         }
       }
@@ -2611,6 +4153,12 @@
             "state": "translated",
             "value": "Términos"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koşullar"
+          }
         }
       }
     },
@@ -2620,6 +4168,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Términos de uso"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kullanım koşulları"
           }
         }
       }
@@ -2631,6 +4185,12 @@
             "state": "translated",
             "value": "Mensaje"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SMS"
+          }
         }
       }
     },
@@ -2640,6 +4200,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ese documento ya no está en Cotiza."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu belge artık Cotiza'da yok."
           }
         }
       }
@@ -2651,6 +4217,12 @@
             "state": "translated",
             "value": "La cotización se firmó en línea. La firma ya está en el PDF."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif çevrimiçi imzalandı. İmza PDF'te."
+          }
         }
       }
     },
@@ -2660,6 +4232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se pudo crear el enlace para firmar. Revisa tu conexión e inténtalo de nuevo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İmza bağlantısı oluşturulamadı. Bağlantını kontrol edip tekrar dene."
           }
         }
       }
@@ -2671,6 +4249,12 @@
             "state": "translated",
             "value": "Aparece arriba en cada cotización. Puedes cambiarlo después."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu, her teklifin en üstünde görünür. Sonra değiştirebilirsin."
+          }
         }
       }
     },
@@ -2680,6 +4264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esto no se puede deshacer."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu geri alınamaz."
           }
         }
       }
@@ -2691,6 +4281,12 @@
             "state": "translated",
             "value": "Fechas, anticipo, qué incluye…"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süre, kapora, neler dahil…"
+          }
         }
       }
     },
@@ -2700,6 +4296,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Total"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toplam"
           }
         }
       }
@@ -2711,6 +4313,12 @@
             "state": "translated",
             "value": "Se omiten totales, impuestos y pagos. Revisa cada precio antes de enviar."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toplam, vergi ve ödeme satırları alınmaz. Göndermeden önce her fiyatı kontrol et."
+          }
         }
       }
     },
@@ -2720,6 +4328,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oficio"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meslek"
           }
         }
       }
@@ -2731,6 +4345,12 @@
             "state": "translated",
             "value": "Prueba %lld días gratis"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld gün ücretsiz dene"
+          }
         }
       }
     },
@@ -2740,6 +4360,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Intentar de nuevo"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekrar dene"
           }
         }
       }
@@ -2751,6 +4377,28 @@
             "state": "translated",
             "value": "Inténtalo otra vez con el recibo completo, plano y con buena luz."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fişin tamamı düz ve iyi ışıkta olacak şekilde tekrar dene."
+          }
+        }
+      }
+    },
+    "Turkish": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turco"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Türkçe"
+          }
         }
       }
     },
@@ -2760,6 +4408,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Convierte una cotización aprobada en factura y lleva el control de quién pagó."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onaylanan teklifi faturaya çevir, kimin ödediğini takip et."
           }
         }
       }
@@ -2771,6 +4425,12 @@
             "state": "translated",
             "value": "Unidad"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birim"
+          }
         }
       }
     },
@@ -2780,6 +4440,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cotizaciones ilimitadas"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sınırsız teklif"
           }
         }
       }
@@ -2791,6 +4457,12 @@
             "state": "translated",
             "value": "Cotizaciones ilimitadas, facturas y tu logo."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sınırsız teklif, fatura ve kendi logon."
+          }
         }
       }
     },
@@ -2800,6 +4472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cliente sin nombre"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adsız müşteri"
           }
         }
       }
@@ -2811,6 +4489,12 @@
             "state": "translated",
             "value": "Trabajo sin nombre"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlıksız iş"
+          }
         }
       }
     },
@@ -2820,6 +4504,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pásate a Cotiza Pro"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotiza Pro'ya geç"
           }
         }
       }
@@ -2831,6 +4521,12 @@
             "state": "translated",
             "value": "Válida hasta"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geçerlilik tarihi"
+          }
         }
       }
     },
@@ -2840,6 +4536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Válida hasta %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ tarihine kadar geçerli"
           }
         }
       }
@@ -2854,6 +4556,12 @@
             "state": "translated",
             "value": "La voz no está disponible ahora. Escribe el trabajo."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses şu an kullanılamıyor. İşi yazabilirsin."
+          }
         }
       }
     },
@@ -2863,6 +4571,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esperando la firma del cliente"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşterinin imzası bekleniyor"
           }
         }
       }
@@ -2874,6 +4588,12 @@
             "state": "translated",
             "value": "Semanal"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haftalık"
+          }
         }
       }
     },
@@ -2883,6 +4603,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿A qué te dedicas? Por ejemplo: limpieza de albercas"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ne iş yapıyorsun? Örneğin: havuz temizliği"
           }
         }
       }
@@ -2894,6 +4620,12 @@
             "state": "translated",
             "value": "Qué se va a hacer o entregar"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yapılan iş ya da verilen malzeme"
+          }
         }
       }
     },
@@ -2903,6 +4635,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué tipo de trabajo haces?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ne tür işler yapıyorsun?"
           }
         }
       }
@@ -2917,6 +4655,12 @@
             "state": "translated",
             "value": "Cuando tu cliente firme, la cotización queda aprobada y recibes una notificación."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşterin imzaladığında teklif onaylanır ve sana bildirim gelir."
+          }
         }
       }
     },
@@ -2926,6 +4670,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué cotización o factura?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hangi teklif ya da fatura?"
           }
         }
       }
@@ -2937,6 +4687,12 @@
             "state": "translated",
             "value": "¿Cuál te pagaron?"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hangisi ödendi?"
+          }
         }
       }
     },
@@ -2946,6 +4702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escribiendo tu cotización…"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklifin yazılıyor…"
           }
         }
       }
@@ -2957,6 +4719,12 @@
             "state": "translated",
             "value": "Año"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yıl"
+          }
         }
       }
     },
@@ -2966,6 +4734,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anual"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yıllık"
           }
         }
       }
@@ -2977,6 +4751,12 @@
             "state": "translated",
             "value": "Tu negocio"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşletmen"
+          }
         }
       }
     },
@@ -2986,6 +4766,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu cliente recibe una cotización clara en el idioma que lee."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşterin, okuduğu dilde düzgün bir teklif alır."
           }
         }
       }
@@ -2997,6 +4783,12 @@
             "state": "translated",
             "value": "Tu costo es solo para tu reporte de ganancias. El cliente nunca lo ve."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maliyetin sadece kâr raporun içindir. Müşteri asla görmez."
+          }
         }
       }
     },
@@ -3006,6 +4798,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu costo se guarda para tu reporte de ganancias. El cliente solo ve el precio con tu ganancia."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maliyetin kâr raporun için saklanır. Müşteri yalnızca kâr payı eklenmiş fiyatı görür."
           }
         }
       }
@@ -3017,6 +4815,12 @@
             "state": "translated",
             "value": "Tu costo por unidad ($)"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birim maliyetin ($)"
+          }
         }
       }
     },
@@ -3026,6 +4830,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu primera cotización toma un minuto"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk teklifin bir dakika sürer"
           }
         }
       }
@@ -3037,6 +4847,12 @@
             "state": "translated",
             "value": "Tus trabajos, clientes y precios se guardan en tu iCloud privado y aparecen en cada iPhone y iPad con tu cuenta de Apple. Nosotros no podemos verlos."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşlerin, müşterilerin ve fiyatların özel iCloud'unda saklanır ve Apple Hesabınla giriş yaptığın her iPhone ve iPad'de görünür. Biz göremeyiz."
+          }
         }
       }
     },
@@ -3046,6 +4862,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu logo en cotizaciones y facturas es parte de Cotiza Pro."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif ve faturalarda kendi logon Cotiza Pro'ya dahildir."
           }
         }
       }
@@ -3057,6 +4879,12 @@
             "state": "translated",
             "value": "Tu logo, tu marca"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senin logon, senin markan"
+          }
         }
       }
     },
@@ -3067,6 +4895,12 @@
             "state": "translated",
             "value": "Tu nombre"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adın"
+          }
         }
       }
     },
@@ -3076,6 +4910,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus precios de siempre se llenan solos."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her zamanki fiyatların kendiliğinden dolar."
           }
         }
       }
@@ -3090,6 +4930,12 @@
             "state": "translated",
             "value": "c/u"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "adet"
+          }
         }
       }
     },
@@ -3102,6 +4948,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "La sincronización con iCloud no está disponible ahora"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud eşitleme şu an kullanılamıyor"
           }
         }
       }

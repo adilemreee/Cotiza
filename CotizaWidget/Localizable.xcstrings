@@ -8,6 +8,12 @@
             "state": "translated",
             "value": "Por cobrar %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekleyen %@"
+          }
         }
       }
     },
@@ -17,6 +23,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Por cobrar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödeme bekleniyor"
           }
         }
       }
@@ -28,6 +40,12 @@
             "state": "translated",
             "value": "Lo que me deben"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alacaklar"
+          }
         }
       }
     },
@@ -37,6 +55,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nueva cotización"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni teklif"
           }
         }
       }
@@ -48,6 +72,12 @@
             "state": "translated",
             "value": "Vencidas: %lld"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geciken: %lld"
+          }
         }
       }
     },
@@ -57,6 +87,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cobrado del mes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu ay ödenen"
           }
         }
       }
@@ -68,6 +104,12 @@
             "state": "translated",
             "value": "Cobrado este mes: %@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu ay ödenen: %@"
+          }
         }
       }
     },
@@ -78,6 +120,12 @@
             "state": "translated",
             "value": "Describe un trabajo desde la pantalla bloqueada."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit ekranından bir işi anlatmaya başla."
+          }
         }
       }
     },
@@ -87,6 +135,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lo que tus clientes aún te deben y lo que cobraste este mes."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müşterilerinin hâlâ borçlu olduğu tutar ve bu ay gelen para."
           }
         }
       }

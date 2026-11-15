@@ -1,142 +1,196 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "Check my payments in ${applicationName}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revisa mis pagos en ${applicationName}"
+  "sourceLanguage": "en",
+  "strings": {
+    "Check my payments in ${applicationName}": {
+      "extractionState": "stale",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa mis pagos en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} ile ödemelerimi kontrol et"
           }
         }
       }
     },
-    "Find a job in ${applicationName}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Busca un trabajo en ${applicationName}"
+    "Find a job in ${applicationName}": {
+      "extractionState": "stale",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca un trabajo en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} içinde bir iş bul"
           }
         }
       }
     },
-    "How much am I owed in ${applicationName}" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringSet" : {
-            "state" : "new",
-            "values" : [
+    "How much am I owed in ${applicationName}": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "new",
+            "values": [
               "How much am I owed in ${applicationName}",
               "What do my clients owe me in ${applicationName}",
               "Check my payments in ${applicationName}"
             ]
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Cuánto me deben en ${applicationName}"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuánto me deben en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} içinde ne kadar alacağım var"
           }
         }
       }
     },
-    "Mark ${document} as paid in ${applicationName}" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringSet" : {
-            "state" : "new",
-            "values" : [
+    "Mark ${document} as paid in ${applicationName}": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "new",
+            "values": [
               "Mark ${document} as paid in ${applicationName}",
               "Mark a job as paid in ${applicationName}"
             ]
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Marca ${document} como pagada en ${applicationName}"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca ${document} como pagada en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} ile ${document} ödendi olarak işaretle"
           }
         }
       }
     },
-    "Mark a job as paid in ${applicationName}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Marca un trabajo como pagado en ${applicationName}"
+    "Mark a job as paid in ${applicationName}": {
+      "extractionState": "stale",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca un trabajo como pagado en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} ile bir işi ödendi olarak işaretle"
           }
         }
       }
     },
-    "New estimate in ${applicationName}" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringSet" : {
-            "state" : "new",
-            "values" : [
+    "New estimate in ${applicationName}": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "new",
+            "values": [
               "New estimate in ${applicationName}",
               "Start an estimate with ${applicationName}"
             ]
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Nueva cotización en ${applicationName}"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva cotización en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} ile yeni teklif"
           }
         }
       }
     },
-    "Open ${target} in ${applicationName}" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringSet" : {
-            "state" : "new",
-            "values" : [
+    "Open ${target} in ${applicationName}": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringSet": {
+            "state": "new",
+            "values": [
               "Open ${target} in ${applicationName}",
               "Find a job in ${applicationName}"
             ]
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Abre ${target} en ${applicationName}"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre ${target} en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} ile ${target} aç"
           }
         }
       }
     },
-    "Start an estimate with ${applicationName}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empieza una cotización con ${applicationName}"
+    "Start an estimate with ${applicationName}": {
+      "extractionState": "stale",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza una cotización con ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} ile teklif başlat"
           }
         }
       }
     },
-    "What do my clients owe me in ${applicationName}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Qué me deben mis clientes en ${applicationName}"
+    "What do my clients owe me in ${applicationName}": {
+      "extractionState": "stale",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qué me deben mis clientes en ${applicationName}"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "${applicationName} içinde müşterilerim bana ne kadar borçlu"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

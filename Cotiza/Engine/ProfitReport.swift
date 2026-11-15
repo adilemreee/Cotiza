@@ -128,25 +128,27 @@ extension ProfitReport.Row {
 /// Words in the exported report, in the business's document language.
 nonisolated struct ReportStrings: Sendable {
     let language: DocumentLanguage
-    private var es: Bool { language == .spanish }
+    private func t(_ en: String, _ es: String, _ tr: String) -> String { language.text(en, es, tr) }
+    func upper(_ text: String) -> String { text.uppercased(with: language.locale) }
 
-    var fileName: String { es ? "Reporte Cotiza" : "Cotiza report" }
-    var heading: String { es ? "Reporte de ingresos y gastos" : "Income and expense report" }
-    var datePaid: String { es ? "Fecha de pago" : "Date paid" }
-    var number: String { es ? "Número" : "Number" }
-    var client: String { es ? "Cliente" : "Client" }
-    var job: String { es ? "Trabajo" : "Job" }
-    var revenue: String { es ? "Ingresos (sin impuesto)" : "Revenue (before tax)" }
-    var tax: String { es ? "Impuesto cobrado" : "Sales tax collected" }
-    var total: String { es ? "Total cobrado" : "Total collected" }
-    var materials: String { es ? "Costo de materiales" : "Materials cost" }
-    var profit: String { es ? "Ganancia" : "Profit" }
-    var totals: String { es ? "Totales" : "Totals" }
-    var jobsPaid: String { es ? "Trabajos pagados" : "Jobs paid" }
-    var noJobs: String { es ? "No hay trabajos pagados en este periodo." : "No jobs were paid in this period." }
+    var fileName: String { t("Cotiza report", "Reporte Cotiza", "Cotiza raporu") }
+    var heading: String { t("Income and expense report", "Reporte de ingresos y gastos", "Gelir ve gider raporu") }
+    var datePaid: String { t("Date paid", "Fecha de pago", "Ödeme tarihi") }
+    var number: String { t("Number", "Número", "Numara") }
+    var client: String { t("Client", "Cliente", "Müşteri") }
+    var job: String { t("Job", "Trabajo", "İş") }
+    var revenue: String { t("Revenue (before tax)", "Ingresos (sin impuesto)", "Gelir (vergi hariç)") }
+    var tax: String { t("Sales tax collected", "Impuesto cobrado", "Tahsil edilen vergi") }
+    var total: String { t("Total collected", "Total cobrado", "Toplam tahsilat") }
+    var materials: String { t("Materials cost", "Costo de materiales", "Malzeme maliyeti") }
+    var profit: String { t("Profit", "Ganancia", "Kâr") }
+    var totals: String { t("Totals", "Totales", "Toplamlar") }
+    var jobsPaid: String { t("Jobs paid", "Trabajos pagados", "Ödenen işler") }
+    var noJobs: String { t("No jobs were paid in this period.", "No hay trabajos pagados en este periodo.", "Bu dönemde ödenen iş yok.") }
     var note: String {
-        es ? "Ingresos contados en la fecha de pago, incluidos anticipos y pagos parciales. El costo de materiales incluye solo los conceptos con costo registrado (de recibos escaneados o escrito a mano). No es asesoría fiscal; revísalo con tu contador."
-           : "Income is counted on the date it was paid, including deposits and partial payments. Materials cost includes only items with a recorded cost (from scanned receipts or typed in). Not tax advice; review it with your accountant."
+        t("Income is counted on the date it was paid, including deposits and partial payments. Materials cost includes only items with a recorded cost (from scanned receipts or typed in). Not tax advice; review it with your accountant.",
+          "Ingresos contados en la fecha de pago, incluidos anticipos y pagos parciales. El costo de materiales incluye solo los conceptos con costo registrado (de recibos escaneados o escrito a mano). No es asesoría fiscal; revísalo con tu contador.",
+          "Gelir, kapora ve kısmi ödemeler dahil, ödemenin alındığı tarihte sayılır. Malzeme maliyeti yalnızca maliyeti girilmiş kalemleri (taranan fişlerden ya da elle yazılan) içerir. Vergi tavsiyesi değildir; muhasebecinizle kontrol edin.")
     }
 }
 
@@ -193,7 +195,7 @@ private struct ReportPDF {
             @MainActor func header() {
                 var x = margin
                 for (label, width, align) in columns {
-                    draw(label.uppercased(), PDFFont.make(7.5, .semibold), secondary, x: x, y: y, width: width - 4, align: align)
+                    draw(strings.upper(label), PDFFont.make(7.5, .semibold), secondary, x: x, y: y, width: width - 4, align: align)
                     x += width
                 }
                 y += 22

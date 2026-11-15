@@ -112,52 +112,60 @@ extension DocumentSnapshot {
 /// The words printed on the PDF. They follow the document's language, not the phone's.
 nonisolated struct PDFStrings: Sendable {
     let language: DocumentLanguage
-    private var es: Bool { language == .spanish }
+    private func t(_ en: String, _ es: String, _ tr: String) -> String { language.text(en, es, tr) }
+    /// Capitals in the document's language: Turkish "Teklif" is "TEKLİF", not "TEKLIF".
+    func upper(_ text: String) -> String { text.uppercased(with: language.locale) }
 
     func documentWord(_ kind: DocumentKind) -> String {
         switch kind {
-        case .estimate: es ? "Cotización" : "Estimate"
-        case .invoice: es ? "Factura" : "Invoice"
+        case .estimate: t("Estimate", "Cotización", "Teklif")
+        case .invoice: t("Invoice", "Factura", "Fatura")
         }
     }
-    var date: String { es ? "Fecha" : "Date" }
-    var preparedFor: String { es ? "Preparado para" : "Prepared for" }
-    var billTo: String { es ? "Facturar a" : "Bill to" }
-    var project: String { es ? "Trabajo" : "Project" }
-    var description: String { es ? "Descripción" : "Description" }
-    var quantity: String { es ? "Cant." : "Qty" }
-    var unitPrice: String { es ? "Precio" : "Rate" }
-    var amount: String { es ? "Importe" : "Amount" }
-    var subtotal: String { "Subtotal" }
-    var tax: String { es ? "Impuesto" : "Tax" }
-    var total: String { "Total" }
-    var amountDue: String { es ? "Total a pagar" : "Amount due" }
-    var paid: String { es ? "PAGADO" : "PAID" }
-    var notes: String { es ? "Notas" : "Notes" }
-    var terms: String { es ? "Términos" : "Terms" }
-    var payment: String { es ? "Formas de pago" : "Payment" }
-    var license: String { es ? "Licencia" : "License" }
-    var validity: String { es ? "Esta cotización es válida por 30 días." : "This estimate is valid for 30 days." }
-    func validity(until date: String) -> String { es ? "Esta cotización es válida hasta el \(date)." : "This estimate is valid until \(date)." }
-    var validUntil: String { es ? "Válida hasta" : "Valid until" }
-    var due: String { es ? "Vence" : "Due" }
-    var signedOn: String { es ? "Firmada el" : "Signed on" }
-    var clientSignature: String { es ? "Firma del cliente" : "Client signature" }
-    var thanks: String { es ? "Gracias por su preferencia." : "Thank you for your business." }
-    var branding: String { es ? "Creado con Cotiza" : "Made with Cotiza" }
-    func page(_ number: Int) -> String { es ? "Página \(number)" : "Page \(number)" }
-    var balanceDue: String { es ? "Saldo pendiente" : "Balance due" }
-    func depositToStart(percent: String) -> String { es ? "Anticipo para empezar (\(percent)%)" : "Deposit to start (\(percent)%)" }
-    func paid(on date: String, by method: PaymentMethod) -> String { "\(es ? "Pagado" : "Paid") \(date) · \(self.method(method))" }
+    var date: String { t("Date", "Fecha", "Tarih") }
+    var preparedFor: String { t("Prepared for", "Preparado para", "Hazırlanan") }
+    var billTo: String { t("Bill to", "Facturar a", "Fatura edilen") }
+    var project: String { t("Project", "Trabajo", "İş") }
+    var description: String { t("Description", "Descripción", "Açıklama") }
+    var quantity: String { t("Qty", "Cant.", "Miktar") }
+    var unitPrice: String { t("Rate", "Precio", "Birim fiyat") }
+    var amount: String { t("Amount", "Importe", "Tutar") }
+    var subtotal: String { t("Subtotal", "Subtotal", "Ara toplam") }
+    var tax: String { t("Tax", "Impuesto", "Vergi") }
+    /// "Tax (8.25%)"; Turkish puts the percent sign first: "Vergi (%8,25)".
+    func tax(rate: String) -> String { t("\(tax) (\(rate)%)", "\(tax) (\(rate)%)", "\(tax) (%\(rate))") }
+    var total: String { t("Total", "Total", "Toplam") }
+    var amountDue: String { t("Amount due", "Total a pagar", "Ödenecek tutar") }
+    var paid: String { t("PAID", "PAGADO", "ÖDENDİ") }
+    var notes: String { t("Notes", "Notas", "Notlar") }
+    var terms: String { t("Terms", "Términos", "Koşullar") }
+    var payment: String { t("Payment", "Formas de pago", "Ödeme bilgileri") }
+    var license: String { t("License", "Licencia", "Ruhsat") }
+    var validity: String { t("This estimate is valid for 30 days.", "Esta cotización es válida por 30 días.", "Bu teklif 30 gün geçerlidir.") }
+    func validity(until date: String) -> String {
+        t("This estimate is valid until \(date).", "Esta cotización es válida hasta el \(date).", "Bu teklif \(date) tarihine kadar geçerlidir.")
+    }
+    var validUntil: String { t("Valid until", "Válida hasta", "Geçerlilik") }
+    var due: String { t("Due", "Vence", "Son ödeme") }
+    var signedOn: String { t("Signed on", "Firmada el", "İmza tarihi") }
+    var clientSignature: String { t("Client signature", "Firma del cliente", "Müşteri imzası") }
+    var thanks: String { t("Thank you for your business.", "Gracias por su preferencia.", "Bizi tercih ettiğiniz için teşekkür ederiz.") }
+    var branding: String { t("Made with Cotiza", "Creado con Cotiza", "Cotiza ile hazırlandı") }
+    func page(_ number: Int) -> String { t("Page \(number)", "Página \(number)", "Sayfa \(number)") }
+    var balanceDue: String { t("Balance due", "Saldo pendiente", "Kalan tutar") }
+    func depositToStart(percent: String) -> String {
+        t("Deposit to start (\(percent)%)", "Anticipo para empezar (\(percent)%)", "Başlangıç kaporası (%\(percent))")
+    }
+    func paid(on date: String, by method: PaymentMethod) -> String { "\(t("Paid", "Pagado", "Ödendi")) \(date) · \(self.method(method))" }
     func method(_ method: PaymentMethod) -> String {
         switch method {
-        case .cash: es ? "Efectivo" : "Cash"
-        case .check: es ? "Cheque" : "Check"
+        case .cash: t("Cash", "Efectivo", "Nakit")
+        case .check: t("Check", "Cheque", "Çek")
         case .zelle: "Zelle"
         case .cashApp: "Cash App"
         case .venmo: "Venmo"
-        case .card: es ? "Tarjeta" : "Card"
-        case .other: es ? "Otro" : "Other"
+        case .card: t("Card", "Tarjeta", "Kart")
+        case .other: t("Other", "Otro", "Diğer")
         }
     }
 }
@@ -283,7 +291,7 @@ struct PDFRenderer {
 
         let rightX = layout.right - rightColumn
         var rightY = top
-        rightY += draw(strings.documentWord(s.kind).uppercased(), font: PDFFont.make(24, .heavy), color: accent,
+        rightY += draw(strings.upper(strings.documentWord(s.kind)), font: PDFFont.make(24, .heavy), color: accent,
                        in: CGRect(x: rightX, y: rightY, width: rightColumn, height: 40), alignment: .right, kern: 1.2) + 6
         rightY += draw(s.displayNumber, font: PDFFont.make(11, .semibold), color: ink,
                        in: CGRect(x: rightX, y: rightY, width: rightColumn, height: 16), alignment: .right) + 3
@@ -326,7 +334,7 @@ struct PDFRenderer {
         let hasClient = !s.clientName.isEmpty
         if hasClient {
             let label = s.kind == .invoice ? strings.billTo : strings.preparedFor
-            leftY += draw(label.uppercased(), font: labelFont, color: secondary,
+            leftY += draw(strings.upper(label), font: labelFont, color: secondary,
                           in: CGRect(x: layout.left, y: leftY, width: columnWidth, height: 12), kern: 0.8) + 5
             leftY += draw(s.clientName, font: PDFFont.make(12, .semibold), color: ink,
                           in: CGRect(x: layout.left, y: leftY, width: columnWidth, height: 40)) + 3
@@ -339,7 +347,7 @@ struct PDFRenderer {
         if !s.title.isEmpty {
             let x = hasClient ? layout.left + columnWidth + 24 : layout.left
             let width = hasClient ? columnWidth : layout.width
-            rightY += draw(strings.project.uppercased(), font: labelFont, color: secondary,
+            rightY += draw(strings.upper(strings.project), font: labelFont, color: secondary,
                            in: CGRect(x: x, y: rightY, width: width, height: 12), kern: 0.8) + 5
             rightY += draw(s.title, font: PDFFont.make(12, .semibold), color: ink,
                            in: CGRect(x: x, y: rightY, width: width, height: 60))
@@ -373,10 +381,10 @@ struct PDFRenderer {
         UIBezierPath(roundedRect: CGRect(x: layout.left, y: layout.y, width: layout.width, height: height), cornerRadius: 4).fill()
         let font = PDFFont.make(8, .semibold)
         let textY = layout.y + 8
-        draw(strings.description.uppercased(), font: font, color: secondary, in: columns.description.at(y: textY, height: 12), kern: 0.8)
-        draw(strings.quantity.uppercased(), font: font, color: secondary, in: columns.quantity.at(y: textY, height: 12), alignment: .right, kern: 0.8)
-        draw(strings.unitPrice.uppercased(), font: font, color: secondary, in: columns.rate.at(y: textY, height: 12), alignment: .right, kern: 0.8)
-        draw(strings.amount.uppercased(), font: font, color: secondary, in: columns.amount.at(y: textY, height: 12), alignment: .right, kern: 0.8)
+        draw(strings.upper(strings.description), font: font, color: secondary, in: columns.description.at(y: textY, height: 12), kern: 0.8)
+        draw(strings.upper(strings.quantity), font: font, color: secondary, in: columns.quantity.at(y: textY, height: 12), alignment: .right, kern: 0.8)
+        draw(strings.upper(strings.unitPrice), font: font, color: secondary, in: columns.rate.at(y: textY, height: 12), alignment: .right, kern: 0.8)
+        draw(strings.upper(strings.amount), font: font, color: secondary, in: columns.amount.at(y: textY, height: 12), alignment: .right, kern: 0.8)
         layout.y += height + 4
     }
 
@@ -437,7 +445,7 @@ struct PDFRenderer {
         if showsTax {
             row(strings.subtotal, money(s.totals.subtotal))
             let rate = Money.quantity(s.taxRate, locale: locale)
-            row("\(strings.tax) (\(rate)%)", money(s.totals.tax))
+            row(strings.tax(rate: rate), money(s.totals.tax))
         }
         if hasPayments {
             row(strings.total, money(s.totals.total))
@@ -454,7 +462,7 @@ struct PDFRenderer {
         let (totalLabel, totalValue) = hasPayments
             ? (strings.balanceDue, s.balanceDue)
             : (s.kind == .invoice && !s.isPaid ? strings.amountDue : strings.total, s.totals.total)
-        draw(totalLabel.uppercased(), font: PDFFont.make(9.5, .bold), color: .white,
+        draw(strings.upper(totalLabel), font: PDFFont.make(9.5, .bold), color: .white,
              in: CGRect(x: x + 12, y: layout.y + 12, width: boxWidth - 112, height: 14), kern: 0.8)
         draw(money(totalValue), font: PDFFont.make(15, .bold), color: .white,
              in: CGRect(x: x + 100, y: layout.y + 9, width: boxWidth - 112, height: 20), alignment: .right)
@@ -476,7 +484,7 @@ struct PDFRenderer {
             guard !body.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
             let height = measure(body, font: bodyFont, width: layout.width, lineSpacing: 2.5)
             layout.ensure(min(height, 200) + 30)
-            layout.y += draw(label.uppercased(), font: labelFont, color: secondary,
+            layout.y += draw(strings.upper(label), font: labelFont, color: secondary,
                              in: CGRect(x: layout.left, y: layout.y, width: layout.width, height: 12), kern: 0.8) + 5
             layout.y += draw(body, font: bodyFont, color: ink,
                              in: CGRect(x: layout.left, y: layout.y, width: layout.width, height: max(layout.bottom - layout.y, 20)), lineSpacing: 2.5) + 16

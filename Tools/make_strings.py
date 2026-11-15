@@ -1,15 +1,19 @@
-"""Builds the String Catalogs (English source, Spanish translation).
+"""Builds the String Catalogs (English source; Spanish and Turkish translations).
 
 Run after a build:  python3 Tools/make_strings.py
-It reads the keys the compiler extracted and fails if any is missing a Spanish translation.
+It reads the keys the compiler extracted and fails if any is missing a Spanish or Turkish translation.
+Turkish lives in Tools/strings_tr.py.
 """
 import glob
 import json
 import sys
 
+from strings_tr import INFO_PLIST_TR, SHORTCUTS_TR, TR
+
 NO_TRANSLATE = {"%@", "%@ · %@", "iCloud", "%@ × %@", "WhatsApp", "0", "1", "·", "EN", "ES", "Cotiza", "Cotiza %@", "Cotiza Pro", "Zelle", "Cash App", "Venmo"}
 
 ES = {
+    "Turkish": "Turco",
     "Due %@": "Vence %@",
     "More options": "Más opciones",
     "Valid until %@": "Válida hasta %@",
@@ -383,11 +387,27 @@ def catalog(keys):
     for key in sorted(keys):
         if key in NO_TRANSLATE or key.startswith(PASSTHROUGH_PREFIXES):
             strings[key] = {"shouldTranslate": False}
-        elif key in ES:
-            strings[key] = {"localizations": {"es": unit(ES[key])}}
+        elif key in ES and key in TR:
+            strings[key] = {"localizations": {"es": unit(ES[key]), "tr": unit(TR[key])}}
         else:
-            missing.append(key)
+            missing.append(key + ("" if key in ES else "  [es]") + ("" if key in TR else "  [tr]"))
     return strings, missing
+
+
+def merge(path, translations):
+    """Adds translations to a catalog Xcode also writes to, keeping the entries and fields Xcode added."""
+    try:
+        catalog = json.load(open(path))
+    except FileNotFoundError:
+        catalog = {"sourceLanguage": "en", "strings": {}, "version": "1.0"}
+    for key, languages in translations.items():
+        entry = catalog["strings"].setdefault(key, {})
+        localizations = entry.setdefault("localizations", {})
+        for language, value in languages.items():
+            localizations[language] = unit(value)
+    with open(path, "w") as handle:
+        json.dump(catalog, handle, ensure_ascii=False, indent=2, sort_keys=True)
+        handle.write("\n")
 
 
 def main():
@@ -397,9 +417,9 @@ def main():
     strings, missing = catalog(localizable)
     widget_strings, widget_missing = catalog(widget_keys)
     missing = sorted(set(missing) | set(widget_missing))
-    unused = sorted(set(ES) - localizable - widget_keys)
+    unused = sorted((set(ES) | set(TR)) - localizable - widget_keys)
     if missing:
-        print("MISSING Spanish for:", *missing, sep="\n  ")
+        print("MISSING translations for:", *missing, sep="\n  ")
         sys.exit(1)
     if unused:
         print("Unused translations (safe to delete):", *unused, sep="\n  ")
@@ -413,10 +433,10 @@ def main():
     write("Cotiza/Resources/Localizable.xcstrings", strings)
     if widget_strings:
         write("CotizaWidget/Localizable.xcstrings", widget_strings)
-    write("Cotiza/Resources/AppShortcuts.xcstrings",
-          {key: {"localizations": {"es": unit(value)}} for key, value in SHORTCUTS_ES.items()})
-    write("Cotiza/Resources/InfoPlist.xcstrings",
-          {key: {"localizations": {"en": unit(en), "es": unit(es)}} for key, (en, es) in INFO_PLIST_ES.items()})
+    merge("Cotiza/Resources/AppShortcuts.xcstrings",
+          {key: {"es": value, "tr": SHORTCUTS_TR[key]} for key, value in SHORTCUTS_ES.items()})
+    merge("Cotiza/Resources/InfoPlist.xcstrings",
+          {key: {"en": en, "es": es, "tr": INFO_PLIST_TR[key]} for key, (en, es) in INFO_PLIST_ES.items()})
     print(f"Wrote {len(strings)} strings, all translated.")
 
 

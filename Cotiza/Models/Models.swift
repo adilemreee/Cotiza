@@ -7,10 +7,38 @@ import SwiftData
 nonisolated enum DocumentLanguage: String, CaseIterable, Identifiable, Sendable, Codable {
     case english = "en"
     case spanish = "es"
+    case turkish = "tr"
 
     var id: String { rawValue }
-    var locale: Locale { Locale(identifier: self == .english ? "en_US" : "es_US") }
+    var locale: Locale {
+        switch self {
+        case .english: Locale(identifier: "en_US")
+        case .spanish: Locale(identifier: "es_US")
+        case .turkish: Locale(identifier: "tr_TR")
+        }
+    }
     var language: Locale.Language { Locale.Language(identifier: rawValue) }
+
+    /// The words for this language. Every client-facing text (PDF, messages, reports, signing) goes through it.
+    func text(_ english: String, _ spanish: String, _ turkish: String) -> String {
+        switch self {
+        case .english: english
+        case .spanish: spanish
+        case .turkish: turkish
+        }
+    }
+
+    /// The language the phone is set to, when Cotiza speaks it; otherwise English.
+    static var device: DocumentLanguage {
+        switch Locale.current.language.languageCode {
+        case .spanish: .spanish
+        case .turkish: .turkish
+        default: .english
+        }
+    }
+
+    /// Short code shown on the language button: EN, ES, TR.
+    var code: String { rawValue.uppercased() }
 }
 
 nonisolated enum DocumentKind: String, CaseIterable, Identifiable, Sendable, Codable {

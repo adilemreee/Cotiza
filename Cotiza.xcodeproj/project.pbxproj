@@ -34,6 +34,7 @@
 		5F9D87D43AFA63848B7379B5 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E09B2631769B6AF736601 /* ActivityView.swift */; };
 		6913EBF497635E66672E31A4 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE33C5EE6B3DF22D2B836799 /* CaptureView.swift */; };
 		69677D8A6B20D036917DDBA7 /* SignLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF6454DDBF15DA51E182A5 /* SignLink.swift */; };
+		6E2B022672E64630649BD23B /* TurkishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6FE32F6423C7C90ED6771 /* TurkishTests.swift */; };
 		720E9B8453DFFFE446D8ABEB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895900AA689A5869DA771403 /* Theme.swift */; };
 		7627BA4FCD83FF0D0ECCC4E0 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */; };
 		7AB465804B012AE6C53AB8F5 /* ProfitReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70318AA0E17D7E28BEE1D552 /* ProfitReport.swift */; };
@@ -162,6 +163,7 @@
 		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40E7F88FA2079E765DAAC03 /* AppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntents.swift; sourceTree = "<group>"; };
 		F4E13CF05F1594C4B0592099 /* BusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTests.swift; sourceTree = "<group>"; };
+		F5B6FE32F6423C7C90ED6771 /* TurkishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkishTests.swift; sourceTree = "<group>"; };
 		FE33C5EE6B3DF22D2B836799 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 				13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */,
 				F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */,
 				DE50F8E75420374B2351085A /* SignLinkTests.swift */,
+				F5B6FE32F6423C7C90ED6771 /* TurkishTests.swift */,
 			);
 			path = CotizaTests;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				Base,
 				en,
 				es,
+				tr,
 			);
 			mainGroup = 6552ACCA246CB0C0113F302E;
 			minimizedProjectReferenceProxies = 1;
@@ -505,6 +509,7 @@
 				3C22B136A38DE9D4A0A50C68 /* PaymentTests.swift in Sources */,
 				28884CF4F87AD1960C4B4395 /* ReviewPromptTests.swift in Sources */,
 				A92676EA46DC264C2BB1F838 /* SignLinkTests.swift in Sources */,
+				6E2B022672E64630649BD23B /* TurkishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

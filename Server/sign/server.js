@@ -145,7 +145,8 @@ function readBody(req) {
   });
 }
 
-const CARDS = Object.fromEntries(["en", "es"].map((l) => [l, readFileSync(new URL(`./card-${l}.png`, import.meta.url))]));
+const LANGUAGES = ["en", "es", "tr"];
+const CARDS = Object.fromEntries(LANGUAGES.map((l) => [l, readFileSync(new URL(`./card-${l}.png`, import.meta.url))]));
 
 const PNG = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 const PDF = Buffer.from("%PDF-");
@@ -168,7 +169,7 @@ async function handle(req, res) {
     if (typeof secret !== "string" || secret.length < 32 || secret.length > 128) return send(res, 400, { error: "secret" });
     const pdf = Buffer.from(String(body.pdf ?? ""), "base64");
     if (pdf.length === 0 || pdf.length > MAX_PDF || !pdf.subarray(0, 5).equals(PDF)) return send(res, 400, { error: "pdf" });
-    const language = body.language === "es" ? "es" : "en";
+    const language = LANGUAGES.includes(body.language) ? body.language : "en";
     const document = cleanDocument(body.document);
     if (!document.number || !document.total) return send(res, 400, { error: "document" });
     const id = newID();
@@ -197,7 +198,7 @@ async function handle(req, res) {
   }
 
   // The link-preview card (Tools/make_link_card.py).
-  const card = path.match(/^\/s\/card-(en|es)\.png$/);
+  const card = path.match(/^\/s\/card-(en|es|tr)\.png$/);
   if (card && req.method === "GET") {
     return send(res, 200, CARDS[card[1]], { "Content-Type": "image/png", "Cache-Control": "public, max-age=604800" });
   }
@@ -233,7 +234,8 @@ async function handle(req, res) {
     }
     if (!page[2] && req.method === "GET") {
       const nonce = randomBytes(12).toString("base64");
-      const language = row?.language ?? (String(req.headers["accept-language"] ?? "").startsWith("es") ? "es" : "en");
+      const wanted = String(req.headers["accept-language"] ?? "").slice(0, 2);
+      const language = row?.language ?? (LANGUAGES.includes(wanted) ? wanted : "en");
       const state = !row ? "missing" : !live ? "expired" : row.status;
       const html = renderPage({
         language, state, nonce, id: row?.id, publicURL: PUBLIC_URL,

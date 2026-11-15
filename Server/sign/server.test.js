@@ -58,6 +58,21 @@ test("the app creates a link and the client sees the estimate, escaped", async (
   assert.equal(file.headers.get("content-type"), "application/pdf");
 });
 
+test("a Turkish estimate gets the Turkish page and card", async () => {
+  const res = await create({ language: "tr", document, pdf });
+  assert.equal(res.status, 201);
+  const { id } = await res.json();
+  const html = await (await fetch(`${base}/s/${id}`)).text();
+  assert.match(html, /<html lang="tr">/);
+  assert.match(html, /Bu teklifi onaylayın/);
+  assert.match(html, /og:image" content="https:\/\/example\.test\/s\/card-tr\.png"/);
+  const card = await fetch(`${base}/s/card-tr.png`);
+  assert.equal(card.headers.get("content-type"), "image/png");
+  // An unknown language falls back to English.
+  const other = await (await create({ language: "xx", document, pdf })).json();
+  assert.match(await (await fetch(`${base}/s/${other.id}`)).text(), /Approve this estimate/);
+});
+
 test("bad uploads are refused", async () => {
   assert.equal((await create({ document, pdf }, {})).status, 400);
   assert.equal((await create({ document, pdf: Buffer.from("not a pdf").toString("base64") })).status, 400);

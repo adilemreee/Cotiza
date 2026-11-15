@@ -21,9 +21,7 @@ struct CaptureView: View {
     @AppStorage("speechLanguage") private var speechLanguageRaw = CaptureView.defaultSpeechLanguage.rawValue
     @FocusState private var editing: Bool
 
-    private static var defaultSpeechLanguage: DocumentLanguage {
-        Locale.current.language.languageCode == .spanish ? .spanish : .english
-    }
+    private static var defaultSpeechLanguage: DocumentLanguage { .device }
 
     private var speechLanguage: DocumentLanguage {
         DocumentLanguage(rawValue: speechLanguageRaw) ?? .spanish
@@ -56,7 +54,7 @@ struct CaptureView: View {
                             }
                         }
                     } label: {
-                        Label(speechLanguage == .spanish ? "ES" : "EN", systemImage: "globe")
+                        Label(speechLanguage.code, systemImage: "globe")
                             .labelStyle(.titleAndIcon)
                     }
                     .disabled(recorder.isRecording)
@@ -108,9 +106,10 @@ struct CaptureView: View {
                     Text("Example:")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.secondary)
-                    Text(speechLanguage == .spanish
-                         ? "“Pintar dos recámaras a 350 cada una, instalar 3 puertas a 120 dólares cada una y 8 horas de mano de obra a 45 la hora. Cliente María López.”"
-                         : "“Paint two bedrooms at 350 each, install 3 doors at 120 dollars each and 8 hours of labor at 45 an hour. Client Maria Lopez.”")
+                    Text(speechLanguage.text(
+                        "“Paint two bedrooms at 350 each, install 3 doors at 120 dollars each and 8 hours of labor at 45 an hour. Client Maria Lopez.”",
+                        "“Pintar dos recámaras a 350 cada una, instalar 3 puertas a 120 dólares cada una y 8 horas de mano de obra a 45 la hora. Cliente María López.”",
+                        "“2 yatak odası boyama tanesi 350, 3 kapı takma tanesi 120 dolar ve 8 saat işçilik saati 45. Müşteri Ayşe Yılmaz.”"))
                         .font(.body)
                         .foregroundStyle(Color.secondary)
                 }

@@ -53,7 +53,8 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | İmza linki: müşteri teklifi tarayıcıda imzalar (Pro) | `Cotiza/Engine/SignLink.swift`, sunucu: `Server/sign` |
 | Uygulama simgesi (Icon Composer belgesi: zemin + kâğıt, ses dalgası, satırlar katmanları; koyu modda dalga beyaz) | `Cotiza/Resources/AppIcon.icon`, 1024 px dışa aktarım: `AppStore/icon/AppIcon-1024.png` |
 | Açılış ekranı + animasyonlu splash | `Cotiza/Views/SplashView.swift`, `LaunchBackground` / `LaunchMark` (görsel: `Tools/make_launch_mark.py`) |
-| Çeviriler (EN kaynak, ES çeviri) | `Tools/make_strings.py` → `Cotiza/Resources/*.xcstrings` |
+| Çeviriler (EN kaynak; ES ve TR çeviri) | `Tools/make_strings.py` (TR: `Tools/strings_tr.py`) → `Cotiza/Resources/*.xcstrings`, `CotizaWidget/Localizable.xcstrings` |
+| Türkçe: arayüz, belge dili (PDF, mesaj, rapor, imza), Türkçe iş tarifi ayrıştırma ("tanesi 120", "120'den", "toplam 600", "yirmi beş", "iki buçuk saat") | `DocumentLanguage.turkish`, `RuleBasedParser.turkishNumbers`, `CotizaTests/TurkishTests.swift` |
 | App Store Connect metinleri (EN + ES) | `AppStore/AppStoreConnect.md` (`python3 AppStore/check_lengths.py` sınırları kontrol eder) |
 | Web sitesi (https://cotiza.adilemree.xyz, EN + ES) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
 | UI testleri (tüm ekranları gezer) | `CotizaUITests/CotizaUITests.swift` |
@@ -63,7 +64,7 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 Gelir nakit esasına göre sayılır: her ödeme kendi tarihinde, "ödendi" diye işaretlenen belgede kalan kısım o gün.
 Kısmi ödenen bir işin gelir, vergi ve malzeme payı raporda ödeme oranına göre bölünür.
 
-Yeni bir arayüz metni eklediğinde önce betiğin okuduğu klasöre derle, sonra betiği çalıştır. İspanyolcası eksik
+Yeni bir arayüz metni eklediğinde önce betiğin okuduğu klasöre derle, sonra betiği çalıştır. İspanyolcası ya da Türkçesi eksik
 anahtar varsa betik hata verir.
 
 ```bash
@@ -134,6 +135,10 @@ Bağımlılığı olmayan küçük bir Node servisi (Node'un kendi `http` ve `sq
 ```bash
 cd Server/sign && node --test
 ```
+
+İmza sayfası İngilizce, İspanyolca ve Türkçe (`page.js`, bağlantı önizleme kartları `Tools/make_link_card.py`).
+Türkçe sayfa ve `card-tr.png` depoda; sunucuya `Tools/deploy_sign.sh` ile yüklenene kadar Türkçe belgelerin
+imza sayfası İngilizce görünür.
 
 ```bash
 Tools/deploy_sign.sh

@@ -161,6 +161,8 @@ struct OnboardingView: View {
     private func finish() {
         let profile = profiles.first ?? {
             let created = BusinessProfile()
+            // Documents start in the phone's language; Settings changes it.
+            created.documentLanguage = .device
             context.insert(created)
             return created
         }()

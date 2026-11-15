@@ -70,6 +70,7 @@ extension DocumentLanguage {
         switch self {
         case .english: "English"
         case .spanish: "Spanish"
+        case .turkish: "Turkish"
         }
     }
 }

@@ -26,6 +26,9 @@ nonisolated enum ReceiptParser {
         "débito", "credit", "credito", "crédito", "tarjeta", "card", "tender", "payment", "pago", "paid", "pagado", "savings",
         "you saved", "ahorro", "discount", "descuento", "coupon", "cupon", "cupón", "rewards", "points", "puntos", "auth",
         "approval", "ref #", "account", "acct", "items sold", "tip", "propina", "amount due", "importe", "rounding",
+        // Turkish receipts
+        "toplam", "ara toplam", "topkdv", "kdv", "nakit", "kredi karti", "kredi kartı", "banka karti", "banka kartı",
+        "para ustu", "para üstü", "indirim", "iskonto", "odenen", "ödenen", "bakiye", "fis no", "fiş no", "z no",
     ]
 
     private static let price = #"(-)?\$?\s?(\d{1,3}(?:[,\s]\d{3})*[.,]\d{2}|\d{1,6}[.,]\d{2})(?:\s*-)?(?:\s+[A-Z]{1,2})?\s*$"#
@@ -64,7 +67,8 @@ nonisolated enum ReceiptParser {
     }
 
     private static func isSummary(_ name: String) -> Bool {
-        let lowered = " " + name.lowercased() + " "
+        // "İNDİRİM" lowercases to "i̇ndi̇ri̇m" (i plus a combining dot); dropping the dot lets it match.
+        let lowered = " " + name.lowercased().replacingOccurrences(of: "\u{0307}", with: "") + " "
         return skipWords.contains { word in
             lowered.firstMatch(of: rx("[^\\p{L}]" + NSRegularExpression.escapedPattern(for: word) + "[^\\p{L}]")) != nil
         }
@@ -107,7 +111,8 @@ nonisolated enum ReceiptReader {
     static func lines(in image: CGImage, orientation: CGImagePropertyOrientation = .up) async throws -> [String] {
         var request = RecognizeTextRequest()
         request.recognitionLevel = .accurate
-        request.recognitionLanguages = [Locale.Language(identifier: "en-US"), Locale.Language(identifier: "es-US")]
+        request.recognitionLanguages = [Locale.Language(identifier: "en-US"), Locale.Language(identifier: "es-US"),
+                                        Locale.Language(identifier: "tr-TR")]
         // Correction "fixes" SKUs and prices into words.
         request.usesLanguageCorrection = false
         let observations = try await request.perform(on: image, orientation: orientation)
