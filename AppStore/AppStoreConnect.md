@@ -90,7 +90,8 @@ LOOK PROFESSIONAL
 
 GET PAID FASTER
 • Send by text message or WhatsApp, with a ready-made note in your client's language
-• Turn an approved estimate into an invoice in one tap
+• Ask for a deposit, record each payment and see the balance due
+• Turn an approved estimate into an invoice in one tap; the deposit carries over
 • Reminders when an estimate has no answer after 3 days or an invoice is past due
 • Recurring invoices for weekly or monthly clients, ready on the day with a reminder
 • See what's waiting for an answer and what you've been paid this month
@@ -117,7 +118,7 @@ No account, no sign-up. Your jobs, clients and prices are stored on your phone a
 Made for painters, landscapers, cleaners, handymen, roofers, flooring, drywall, concrete, plumbing, electrical and HVAC pros, and general contractors.
 
 COTIZA PRO
-Try Cotiza free with 3 estimates. Cotiza Pro gives you unlimited estimates, invoices, recurring invoices, client signatures, profit reports, your logo on every document and no Cotiza branding. Choose weekly, monthly or yearly; the yearly plan starts with a 3-day free trial for new subscribers.
+Try Cotiza free with 3 estimates. Cotiza Pro gives you unlimited estimates, invoices, recurring invoices, deposits and partial payments, client signatures, profit reports, your logo on every document and no Cotiza branding. Choose weekly, monthly or yearly; the yearly plan starts with a 3-day free trial for new subscribers.
 
 Payment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless it is canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the end of the current period. Manage or cancel anytime in your App Store account settings. Any unused portion of a free trial is forfeited when you purchase a subscription.
 
@@ -126,7 +127,19 @@ Subscription terms: https://cotiza.adilemree.xyz/terms
 Privacy Policy: https://cotiza.adilemree.xyz/privacy
 ```
 
-**What's New** — ilk sürümde istenmez.
+**What's New** (4000) — 1.1.0
+```
+Deposits and partial payments
+
+• Ask for a deposit on your estimates. Set your usual percentage once in Settings. The deposit is printed on the PDF, on the signing page and in the message to your client.
+• Record each payment: the amount, the date and how your client paid (cash, check, Zelle, Cash App, Venmo or card).
+• Invoices list what was paid and show the balance due. A deposit paid on the estimate carries over to the invoice.
+• When everything is paid, the job is marked paid by itself.
+• The home screen shows what each client still owes, and overdue reminders mention the balance, not the full total.
+• Reports count every payment on the day you got it, deposits included.
+
+Recording payments is part of Cotiza Pro.
+```
 
 ---
 
@@ -171,19 +184,19 @@ Tu cliente firma con el dedo en tu teléfono o desde un enlace que le mandas por
 LUCE PROFESIONAL
 • Cotizaciones y facturas en PDF con los datos de tu negocio, número de licencia, términos y fecha de vigencia o de pago
 • Impuesto de venta que solo se aplica a los conceptos que marques
-• Notas para el cliente: fechas, anticipo, qué incluye
 
 COBRA MÁS RÁPIDO
 • Envía por mensaje de texto o WhatsApp, con una nota lista en el idioma de tu cliente
-• Convierte una cotización aprobada en factura con un toque
-• Recordatorios cuando una cotización lleva 3 días sin respuesta o una factura está vencida
-• Facturas que se repiten para clientes semanales o mensuales, listas el día que toca y con recordatorio
-• Ve qué está esperando respuesta y cuánto cobraste este mes
+• Pide un anticipo, registra cada pago y ve el saldo pendiente
+• Convierte una cotización aprobada en factura con un toque; el anticipo pasa a la factura
+• Recordatorios si una cotización lleva 3 días sin respuesta o una factura se vence
+• Facturas que se repiten para clientes semanales o mensuales, con recordatorio
+• Ve cuánto te deben y cuánto cobraste este mes
 
 SABE CUÁNTO GANASTE
 • Los recibos escaneados guardan tu costo; Cotiza le suma tu ganancia (15% de inicio) a lo que paga el cliente
 • Reportes por mes y por año: ingresos, impuesto cobrado, costo de materiales y ganancia por trabajo
-• Exporta una hoja de cálculo (CSV) o un PDF para tu contador en temporada de impuestos
+• Exporta un CSV o un PDF para tu contador en temporada de impuestos
 
 ESCRIBE MENOS
 • Escanea el recibo de la tienda y agrega los materiales a la factura
@@ -202,13 +215,27 @@ Sin cuenta ni registro. Tus trabajos, clientes y precios se guardan en tu teléf
 Para pintores, jardineros, limpieza, mantenimiento, techos, pisos, tablaroca, concreto, plomería, electricidad, aire acondicionado y contratistas.
 
 COTIZA PRO
-Prueba Cotiza gratis con 3 cotizaciones. Cotiza Pro te da cotizaciones ilimitadas, facturas, facturas que se repiten, firma del cliente, reportes de ganancias, tu logo en cada documento y sin la marca de Cotiza. Elige plan semanal, mensual o anual; el plan anual empieza con una prueba gratis de 3 días para nuevos suscriptores.
+Prueba Cotiza gratis con 3 cotizaciones. Cotiza Pro te da cotizaciones ilimitadas, facturas, facturas que se repiten, anticipos y pagos parciales, firma del cliente, reportes de ganancias, tu logo en cada documento y sin la marca de Cotiza. Elige plan semanal, mensual o anual; el plan anual empieza con una prueba gratis de 3 días para nuevos suscriptores.
 
 El pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente a menos que se cancele al menos 24 horas antes de que termine el periodo actual. La renovación se cobra dentro de las 24 horas previas al final del periodo. Puedes administrarla o cancelarla cuando quieras en la configuración de tu cuenta del App Store. La parte no usada de una prueba gratis se pierde al comprar una suscripción.
 
 Términos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Términos de suscripción: https://cotiza.adilemree.xyz/es/terms
 Política de privacidad: https://cotiza.adilemree.xyz/es/privacy
+```
+
+**What's New** (4000) — 1.1.0
+```
+Anticipos y pagos parciales
+
+• Pide un anticipo en tus cotizaciones. Pon tu porcentaje de siempre una vez en Configuración. El anticipo sale en el PDF, en la página para firmar y en el mensaje a tu cliente.
+• Registra cada pago: el monto, la fecha y cómo te pagó tu cliente (efectivo, cheque, Zelle, Cash App, Venmo o tarjeta).
+• Las facturas muestran lo que ya te pagaron y el saldo pendiente. Un anticipo pagado en la cotización pasa a la factura.
+• Cuando te pagan todo, el trabajo queda como pagado solo.
+• La pantalla de inicio muestra cuánto te debe cada cliente, y los recordatorios de pago vencido dicen el saldo, no el total.
+• Los reportes cuentan cada pago el día en que lo recibiste, anticipos incluidos.
+
+Registrar pagos es parte de Cotiza Pro.
 ```
 
 ---
@@ -257,7 +284,7 @@ HOW TO TEST
 4. Tap "Create estimate". Line items, quantities and prices are filled in. Tap "Preview and send" to see the PDF.
 
 SUBSCRIPTION
-The free plan allows 3 estimates. Creating a 4th, converting an estimate to an invoice, getting a client signature ("Get client signature" at the bottom of an estimate), opening Reports (chart button on the home screen) or adding a logo opens the Cotiza Pro screen, where the yearly (with a 3-day free trial), monthly and weekly plans can be bought with a sandbox account. "Restore purchases" is on the same screen.
+The free plan allows 3 estimates. Creating a 4th, converting an estimate to an invoice, getting a client signature ("Get client signature" at the bottom of an estimate), recording a payment ("Record a payment" under Payments in an estimate or invoice), opening Reports (chart button on the home screen) or adding a logo opens the Cotiza Pro screen, where the yearly (with a 3-day free trial), monthly and weekly plans can be bought with a sandbox account. "Restore purchases" is on the same screen.
 
 AI AND PRIVACY
 On devices with Apple Intelligence, the estimate is generated with Apple's on-device Foundation Models framework. On other devices the app uses a built-in parser, so the full flow works on any supported iPhone. No data is sent to our servers; the app has no server and no analytics. Data syncs between the user's own devices through their private iCloud database (CloudKit), which we cannot access.

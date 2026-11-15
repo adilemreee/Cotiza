@@ -1,7 +1,7 @@
 """Checks every App Store Connect field in AppStoreConnect.md against Apple's limits."""
 import re, sys
 
-LIMITS = {"Name": 30, "Subtitle": 30, "Promotional text": 170, "Keywords": 100, "Description": 4000}
+LIMITS = {"Name": 30, "Subtitle": 30, "Promotional text": 170, "Keywords": 100, "Description": 4000, "What's New": 4000}
 text = open("AppStore/AppStoreConnect.md").read()
 ok = True
 for section in re.split(r"\n## ", text):
