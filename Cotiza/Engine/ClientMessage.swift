@@ -28,14 +28,36 @@ nonisolated enum ClientMessage {
         let business = s.businessName.isEmpty ? s.ownerName : s.businessName
         let from = business.isEmpty ? "" : (es ? " de \(business)" : " from \(business)")
         let number = s.displayNumber
-
+        let locale = s.language.locale
+        let deposit = Money.string(s.depositAmount, locale: locale)
+        let percent = Money.quantity(s.depositPercent, locale: locale)
+        let paidSoFar = Money.string(s.amountPaid, locale: locale)
+        let balance = Money.string(s.balanceDue, locale: locale)
+        let payment = s.paymentInstructions.trimmingCharacters(in: .whitespacesAndNewlines)
         var lines: [String] = []
+        func paymentLine() {
+            if !payment.isEmpty { lines.append(es ? "Formas de pago: \(payment)" : "Payment: \(payment)") }
+        }
         switch s.kind {
         case .estimate:
-            if s.signature != nil {
+            if s.amountPaid > 0 {
+                // A receipt for the deposit.
+                lines.append(es
+                    ? "\(greeting) le envío la cotización \(number)\(from) por \(total). Recibí su pago de \(paidSoFar)."
+                    : "\(greeting) here is estimate \(number)\(from) for \(total). I received your payment of \(paidSoFar).")
+                if s.balanceDue > 0 {
+                    lines.append(es ? "Saldo pendiente: \(balance). ¡Gracias!" : "Balance due: \(balance). Thank you!")
+                } else {
+                    lines.append(es ? "Queda pagada por completo. ¡Gracias!" : "It's paid in full. Thank you!")
+                }
+            } else if s.signature != nil {
                 lines.append(es
                     ? "\(greeting) le envío la copia firmada de la cotización \(number)\(from) por \(total). ¡Gracias por su confianza!"
                     : "\(greeting) here is the signed copy of estimate \(number)\(from) for \(total). Thank you for your trust!")
+                if s.depositIsDue {
+                    lines.append(es ? "Para empezar, el anticipo es de \(deposit)." : "To get started, the deposit is \(deposit).")
+                    paymentLine()
+                }
             } else {
                 var first = es
                     ? "\(greeting) le envío la cotización \(number)\(from) por \(total)."
@@ -44,6 +66,11 @@ nonisolated enum ClientMessage {
                     first += es ? " Es válida hasta el \(s.formatted(date))." : " It's valid until \(s.formatted(date))."
                 }
                 lines.append(first)
+                if s.depositIsDue {
+                    lines.append(es
+                        ? "Para empezar se pide un anticipo de \(deposit) (\(percent)%)."
+                        : "A deposit of \(deposit) (\(percent)%) is due to start.")
+                }
                 lines.append(es ? "Si tiene alguna pregunta, con gusto le ayudo." : "Let me know if you have any questions.")
             }
         case .invoice:
@@ -52,19 +79,20 @@ nonisolated enum ClientMessage {
                     ? "\(greeting) le envío la factura \(number)\(from) por \(total), ya pagada. ¡Gracias!"
                     : "\(greeting) here is invoice \(number)\(from) for \(total), paid in full. Thank you!")
             } else {
-                var first = es
-                    ? "\(greeting) le envío la factura \(number)\(from) por \(total)"
-                    : "\(greeting) here is invoice \(number)\(from) for \(total)"
+                var first = s.amountPaid > 0
+                    ? (es
+                        ? "\(greeting) le envío la factura \(number)\(from) por \(total). Ya recibí \(paidSoFar); el saldo pendiente es de \(balance)"
+                        : "\(greeting) here is invoice \(number)\(from) for \(total). I've received \(paidSoFar); the balance due is \(balance)")
+                    : (es
+                        ? "\(greeting) le envío la factura \(number)\(from) por \(total)"
+                        : "\(greeting) here is invoice \(number)\(from) for \(total)")
                 if let date = s.dueDate {
                     first += es ? ", con vencimiento el \(s.formatted(date))." : ", due \(s.formatted(date))."
                 } else {
                     first += "."
                 }
                 lines.append(first)
-                let payment = s.paymentInstructions.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !payment.isEmpty {
-                    lines.append(es ? "Formas de pago: \(payment)" : "Payment: \(payment)")
-                }
+                paymentLine()
                 lines.append(es ? "Gracias." : "Thank you.")
             }
         }

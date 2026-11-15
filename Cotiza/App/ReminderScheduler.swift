@@ -64,7 +64,9 @@ enum ReminderScheduler {
             case .invoice:
                 guard document.status != .paid, document.status != .draft, let due = document.dueDate,
                       let fire = morning(days: 1, after: due, calendar: calendar), fire > now else { return nil }
-                let who = client.isEmpty ? total : "\(client) · \(total)"
+                // After a partial payment, the reminder is about what is still owed.
+                let owed = Money.string(document.balanceDue, locale: .current)
+                let who = client.isEmpty ? owed : "\(client) · \(owed)"
                 return Reminder(
                     kind: .overdue, documentID: document.uuid, fireDate: fire,
                     title: String(localized: "\(document.displayNumber) is overdue"),

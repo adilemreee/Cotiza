@@ -118,7 +118,7 @@ struct DocumentLifecycleTests {
 
     private func makeContext() throws -> ModelContext {
         let container = try ModelContainer(
-            for: BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self,
+            for: BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self, Payment.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none)
         )
         return ModelContext(container)

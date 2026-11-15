@@ -51,6 +51,20 @@ extension RepeatInterval {
     }
 }
 
+extension PaymentMethod {
+    var label: LocalizedStringResource {
+        switch self {
+        case .cash: "Cash"
+        case .check: "Check"
+        case .zelle: "Zelle"
+        case .cashApp: "Cash App"
+        case .venmo: "Venmo"
+        case .card: "Card"
+        case .other: "Other"
+        }
+    }
+}
+
 extension DocumentLanguage {
     var label: LocalizedStringResource {
         switch self {
@@ -145,6 +159,19 @@ struct MoneyField: View {
 
     var body: some View {
         TextField(title, value: $value, format: .number.precision(.fractionLength(0...2)))
+            .keyboardType(.decimalPad)
+            .multilineTextAlignment(.trailing)
+            .monospacedDigit()
+    }
+}
+
+/// Text field for a share from 0 to 100, such as a deposit.
+struct PercentField: View {
+    @Binding var value: Double
+
+    var body: some View {
+        TextField("0", value: Binding(get: { value }, set: { value = min(max($0, 0), 100) }),
+                  format: .number.precision(.fractionLength(0...1)))
             .keyboardType(.decimalPad)
             .multilineTextAlignment(.trailing)
             .monospacedDigit()

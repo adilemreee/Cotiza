@@ -103,10 +103,13 @@ struct SettingsView: View {
                 Section {
                     TextField("Example: Zelle 555-123-4567, check or cash.", text: $profile.paymentInstructions, axis: .vertical)
                         .lineLimit(2...6)
+                    LabeledContent("Deposit to start (%)") {
+                        PercentField(value: $profile.defaultDepositPercent)
+                    }
                 } header: {
                     Text("How clients pay you")
                 } footer: {
-                    Text("Printed on invoices.")
+                    Text("Printed on invoices, and on estimates that ask for a deposit. New estimates ask for this deposit; 0 means none.")
                 }
 
                 iCloudSection

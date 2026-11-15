@@ -312,6 +312,14 @@ private struct DocumentRow: View {
                         .padding(.vertical, 3)
                         .foregroundStyle(.red)
                         .background(Color.red.opacity(0.14), in: Capsule())
+                } else if document.isPartlyPaid {
+                    Text("Owes \(Money.string(document.balanceDue, locale: .current))")
+                        .font(.caption.weight(.semibold))
+                        .monospacedDigit()
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .foregroundStyle(.orange)
+                        .background(Color.orange.opacity(0.14), in: Capsule())
                 } else {
                     StatusBadge(status: document.status)
                 }

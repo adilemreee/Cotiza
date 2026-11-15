@@ -47,6 +47,7 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | Ana ekran / kilit ekranı widget'ı (App Group üzerinden özet) | `CotizaWidget/`, `Cotiza/Shared/WidgetSnapshot.swift`, `Cotiza/App/WidgetData.swift` |
 | Malzemeye kâr payı (fişten gelen maliyet saklanır, müşteriye kârlı fiyat gider) | `Money.withMarkup`, `LineItem.unitCost`, `Cotiza/Views/ReceiptScanView.swift` |
 | Tekrarlayan faturalar (haftalık / 2 haftalık / aylık) + hatırlatma | `DocumentFactory.makeDueRepeats`, `RecurringInvoices`, `ReminderScheduler` |
+| Kapora ve kısmi ödemeler (Pro): teklifte kapora yüzdesi, ödeme kaydı, PDF'te ödenenler + kalan bakiye, faturaya çevirince kapora faturaya taşınır, tamamı ödenince "ödendi" | `Payment` modeli, `DocumentFactory.record(payment:)`, `PaymentSheet` (`DocumentEditorView.swift`) |
 | Kazanç / gider raporu, CSV + PDF dışa aktarma (Pro) | `Cotiza/Engine/ProfitReport.swift`, `Cotiza/Views/ReportView.swift` |
 | iCloud senkronu (CloudKit özel veritabanı, olmazsa yerel) | `Cotiza/App/AppDatabase.swift` |
 | İmza linki: müşteri teklifi tarayıcıda imzalar (Pro) | `Cotiza/Engine/SignLink.swift`, sunucu: `Server/sign` |
@@ -57,7 +58,10 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | Web sitesi (https://cotiza.adilemree.xyz, EN + ES) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
 | UI testleri (tüm ekranları gezer) | `CotizaUITests/CotizaUITests.swift` |
 
-Ücretsiz plan: 3 teklif, PDF altında "Made with Cotiza". Pro: sınırsız teklif, faturaya çevirme, logo, markasız PDF.
+Ücretsiz plan: 3 teklif, PDF altında "Made with Cotiza". Pro: sınırsız teklif, faturaya çevirme, ödeme kaydı, logo, markasız PDF.
+
+Gelir nakit esasına göre sayılır: her ödeme kendi tarihinde, "ödendi" diye işaretlenen belgede kalan kısım o gün.
+Kısmi ödenen bir işin gelir, vergi ve malzeme payı raporda ödeme oranına göre bölünür.
 
 Yeni bir arayüz metni eklediğinde önce betiğin okuduğu klasöre derle, sonra betiği çalıştır. İspanyolcası eksik
 anahtar varsa betik hata verir.
@@ -86,9 +90,9 @@ python3 Tools/make_strings.py
 
 Doğrulandı (iPhone Duo simülatörü, iOS 27.2):
 
-- 64 birim testi: ayrıştırıcı, AI çıktısı doğrulaması, vergi/toplam, PDF (tek ve çok sayfa, İspanyolca etiketler),
+- 77 birim testi: ayrıştırıcı, AI çıktısı doğrulaması, vergi/toplam, PDF (tek ve çok sayfa, İspanyolca etiketler),
   ücretsiz limit, `Products.storekit` üzerinden gerçek satın alma akışı, Siri özet hesabı, belge kimliği onarımı, fiş ayrıştırma (Vision ile gerçek görüntü dahil), müşteri mesajı,
-  hatırlatma planı, imza, tarihler, widget özeti, Kişiler alanları, imzalı PDF
+  hatırlatma planı, imza, tarihler, widget özeti, Kişiler alanları, imzalı PDF, kapora ve kısmi ödemeler (bakiye, faturaya taşınma, rapor bölüşümü, PDF, müşteri mesajı)
 - Uçtan uca akış elle: profil → iş tarifi → kalemler → müşteri → PDF önizleme; İngilizce ve İspanyolca arayüz
 
 Doğrulanmadı — gerçek cihazda denenmeli:

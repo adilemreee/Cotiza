@@ -3,7 +3,8 @@ import UIKit
 
 /// Money in and materials out for a month or a year, for the contractor and their accountant.
 ///
-/// Income is counted when a document is marked paid (cash basis, as most sole proprietors file).
+/// Income is counted on the day it comes in (cash basis, as most sole proprietors file): each deposit or
+/// partial payment on its own date, and the rest when the document is marked paid.
 /// Materials cost comes from the cost recorded on each line: receipts fill it in, and it can be typed.
 nonisolated struct ProfitReport: Equatable, Sendable {
     enum Period: String, CaseIterable, Identifiable, Sendable {
@@ -34,6 +35,8 @@ nonisolated struct ProfitReport: Equatable, Sendable {
     var total: Double { Money.round(rows.reduce(0) { $0 + $1.total }) }
     var materialsCost: Double { Money.round(rows.reduce(0) { $0 + $1.materialsCost }) }
     var profit: Double { Money.round(revenue - materialsCost) }
+    /// Jobs with money in this period; a job paid in parts is one job.
+    var jobCount: Int { Set(rows.map(\.number)).count }
 
     init(rows all: [Row], period: Period, containing date: Date, calendar: Calendar = .current) {
         let component: Calendar.Component = period == .month ? .month : .year
@@ -92,22 +95,33 @@ nonisolated struct ProfitReport: Equatable, Sendable {
 }
 
 extension ProfitReport.Row {
-    /// Paid documents only; nil for anything not paid.
+    /// One row for each time money came in on a document: each deposit or partial payment, and what was
+    /// left when it was marked paid. Revenue, tax and materials are split in proportion to each amount,
+    /// so a job paid in two halves adds up to the same totals as one paid at once.
     @MainActor
-    init?(_ document: JobDocument) {
-        guard document.status == .paid, let paidAt = document.paidAt else { return nil }
+    static func rows(for document: JobDocument) -> [Self] {
         let totals = document.totals
+        guard totals.total > 0 else { return [] }
         let costed = document.allItems.filter { $0.unitCost > 0 }
-        self.init(
-            id: document.uuid,
-            paidAt: paidAt,
-            number: document.displayNumber,
-            client: document.client?.name ?? "",
-            job: document.title,
-            revenue: totals.subtotal,
-            tax: totals.tax,
-            materialsCost: Money.round(costed.reduce(0) { $0 + $1.cost })
-        )
+        let materials = Money.round(costed.reduce(0) { $0 + $1.cost })
+        // Each row is the difference between running shares, so the cents always add up to the whole.
+        var paidSoFar = 0.0
+        return document.income.map { event in
+            let before = min(paidSoFar / totals.total, 1)
+            paidSoFar += event.amount
+            let after = min(paidSoFar / totals.total, 1)
+            func part(_ whole: Double) -> Double { Money.round(Money.round(whole * after) - Money.round(whole * before)) }
+            return Self(
+                id: event.id,
+                paidAt: event.date,
+                number: document.displayNumber,
+                client: document.client?.name ?? "",
+                job: document.title,
+                revenue: part(totals.subtotal),
+                tax: part(totals.tax),
+                materialsCost: part(materials)
+            )
+        }
     }
 }
 
@@ -131,8 +145,8 @@ nonisolated struct ReportStrings: Sendable {
     var jobsPaid: String { es ? "Trabajos pagados" : "Jobs paid" }
     var noJobs: String { es ? "No hay trabajos pagados en este periodo." : "No jobs were paid in this period." }
     var note: String {
-        es ? "Ingresos contados en la fecha de pago. El costo de materiales incluye solo los conceptos con costo registrado (de recibos escaneados o escrito a mano). No es asesoría fiscal; revísalo con tu contador."
-           : "Income is counted on the date it was paid. Materials cost includes only items with a recorded cost (from scanned receipts or typed in). Not tax advice; review it with your accountant."
+        es ? "Ingresos contados en la fecha de pago, incluidos anticipos y pagos parciales. El costo de materiales incluye solo los conceptos con costo registrado (de recibos escaneados o escrito a mano). No es asesoría fiscal; revísalo con tu contador."
+           : "Income is counted on the date it was paid, including deposits and partial payments. Materials cost includes only items with a recorded cost (from scanned receipts or typed in). Not tax advice; review it with your accountant."
     }
 }
 
@@ -169,7 +183,7 @@ private struct ReportPDF {
                 draw(money(value), PDFFont.make(11, bold ? .bold : .regular), bold ? accent : ink, x: margin + 300, y: y, width: 216, align: .right)
                 y += 20
             }
-            y += draw("\(strings.jobsPaid): \(report.rows.count)", PDFFont.make(10), secondary, x: margin, y: y, width: 516) + 18
+            y += draw("\(strings.jobsPaid): \(report.jobCount)", PDFFont.make(10), secondary, x: margin, y: y, width: 516) + 18
 
             // Table
             let columns: [(String, CGFloat, NSTextAlignment)] = [

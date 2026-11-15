@@ -18,6 +18,7 @@ struct DocumentFactory {
         document.validUntil = Self.date(days: profile.estimateValidDays, after: document.createdAt)
         document.transcript = transcript
         document.notes = draft.notes
+        document.depositPercent = max(profile.defaultDepositPercent, 0)
         context.insert(document)
 
         for (index, item) in draft.items.enumerated() {
@@ -59,11 +60,55 @@ struct DocumentFactory {
         invoice.dueDate = Self.date(days: profile.paymentDueDays, after: invoice.createdAt)
         invoice.notes = estimate.notes
         invoice.transcript = estimate.transcript
+        invoice.depositPercent = estimate.depositPercent
         context.insert(invoice)
         invoice.client = estimate.client
         copyItems(from: estimate, to: invoice)
+        // The deposit taken on the estimate now counts toward the invoice, and only there.
+        let moved = estimate.sortedPayments
+        for payment in moved { payment.document = invoice }
+        if !moved.isEmpty {
+            // Otherwise the estimate's PDF would ask again for a deposit that was already paid.
+            estimate.depositPercent = 0
+            if estimate.status == .paid { estimate.apply(status: .approved) }
+        }
         if estimate.status != .paid { estimate.status = .approved }
+        settleIfPaidInFull(invoice)
         return invoice
+    }
+
+    // MARK: Payments
+
+    /// Records money received. A payment on an estimate means the client said yes; once everything is
+    /// paid the document is marked paid on the day of the last payment.
+    @discardableResult
+    func record(payment amount: Double, on date: Date = .now, method: PaymentMethod, to document: JobDocument) -> Payment? {
+        guard Money.round(amount) > 0 else { return nil }
+        let payment = Payment(amount: amount, date: date, method: method)
+        context.insert(payment)
+        payment.document = document
+        if document.kind == .estimate, document.status == .draft || document.status == .sent {
+            document.apply(status: .approved)
+        }
+        settleIfPaidInFull(document)
+        return payment
+    }
+
+    /// Removes a payment recorded by mistake. A document that was paid only through its payments
+    /// goes back to waiting for the rest.
+    func remove(_ payment: Payment, from document: JobDocument) {
+        document.payments?.removeAll { $0.persistentModelID == payment.persistentModelID }
+        context.delete(payment)
+        if document.status == .paid, document.amountPaid < document.totals.total {
+            document.apply(status: document.kind == .invoice ? .sent : .approved)
+        }
+    }
+
+    private func settleIfPaidInFull(_ document: JobDocument) {
+        guard document.status != .paid, document.amountPaid > 0, document.amountPaid >= document.totals.total,
+              let last = document.sortedPayments.last else { return }
+        document.apply(status: .paid)
+        document.paidAt = last.date
     }
 
     @discardableResult
@@ -73,6 +118,7 @@ struct DocumentFactory {
         let copy = JobDocument(kind: source.kind, number: number, title: source.title, language: source.language, taxRate: source.taxRate)
         copy.notes = source.notes
         copy.transcript = source.transcript
+        copy.depositPercent = source.depositPercent
         switch source.kind {
         case .estimate: copy.validUntil = Self.date(days: profile.estimateValidDays, after: copy.createdAt)
         case .invoice: copy.dueDate = Self.date(days: profile.paymentDueDays, after: copy.createdAt)
@@ -141,6 +187,7 @@ struct DocumentFactory {
         invoice.createdAt = date
         invoice.dueDate = Self.date(days: profile.paymentDueDays, after: date)
         invoice.notes = template.notes
+        invoice.depositPercent = template.depositPercent
         invoice.repeatSourceID = template.uuid
         context.insert(invoice)
         invoice.client = template.client

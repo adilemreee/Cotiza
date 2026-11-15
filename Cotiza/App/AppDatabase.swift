@@ -7,7 +7,7 @@ import SwiftData
 enum AppDatabase {
     static let iCloudContainer = "iCloud.com.cotiza.app"
     private static let logger = Logger(subsystem: "com.cotiza.app", category: "database")
-    private static let schema = Schema([BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self])
+    private static let schema = Schema([BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self, Payment.self])
 
     private static let setup: (container: ModelContainer, syncsWithICloud: Bool) = {
         var inMemory = false

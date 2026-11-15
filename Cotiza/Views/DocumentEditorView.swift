@@ -18,6 +18,7 @@ struct DocumentEditorView: View {
     @State private var showsPaywall = false
     @State private var showsSignature = false
     @State private var showsReceiptScan = false
+    @State private var showsPaymentSheet = false
     @State private var signLinkShare: [Any]?
     @State private var isCreatingSignLink = false
     @State private var signLinkError: String?
@@ -102,6 +103,8 @@ struct DocumentEditorView: View {
             } footer: {
                 Text("Tax applies only to items marked taxable.")
             }
+
+            paymentsSection
 
             Section("Notes for the client") {
                 TextField("Timeline, deposit, what's included…", text: $document.notes, axis: .vertical)
@@ -236,6 +239,13 @@ struct DocumentEditorView: View {
                 try? context.save()
             }
         }
+        .sheet(isPresented: $showsPaymentSheet) {
+            PaymentSheet(document: document) { amount, date, method in
+                DocumentFactory(context: context).record(payment: amount, on: date, method: method, to: document)
+                if document.status == .paid { ReviewPrompt.goodMoment() }
+                try? context.save()
+            }
+        }
         .sheet(isPresented: $showsReceiptScan) {
             ReceiptScanView(markup: profile.materialMarkupPercent) { lines, markup in
                 profile.materialMarkupPercent = markup
@@ -358,6 +368,64 @@ struct DocumentEditorView: View {
                 Text("Hand the phone to your client, or send a link they can sign from anywhere. Signing approves the estimate and the signature is printed on the PDF.")
             }
         }
+    }
+
+    // MARK: Payments
+
+    private var paymentsSection: some View {
+        Section {
+            if document.kind == .estimate {
+                LabeledContent("Deposit to start (%)") {
+                    PercentField(value: $document.depositPercent)
+                }
+                if document.depositAmount > 0 {
+                    LabeledContent("Deposit") {
+                        Text(Money.string(document.depositAmount, locale: .current)).monospacedDigit()
+                    }
+                }
+            }
+            ForEach(document.sortedPayments) { payment in
+                LabeledContent {
+                    Text(Money.string(payment.amount, locale: .current)).monospacedDigit()
+                } label: {
+                    Text(payment.method.label)
+                    Text(payment.date, format: .dateTime.day().month().year())
+                }
+            }
+            .onDelete(perform: deletePayments)
+            if document.amountPaid > 0 {
+                LabeledContent {
+                    Text(Money.string(document.balanceDue, locale: .current))
+                        .font(.headline)
+                        .monospacedDigit()
+                        .foregroundStyle(document.balanceDue > 0 ? Color.orange : Color.green)
+                        .contentTransition(.numericText())
+                } label: {
+                    Text("Balance due").font(.headline)
+                }
+            }
+            if document.status != .paid {
+                Button("Record a payment", systemImage: "banknote") {
+                    if store.isPro { showsPaymentSheet = true } else { showsPaywall = true }
+                }
+                .disabled(document.totals.total <= 0)
+            }
+        } header: {
+            Text("Payments")
+        } footer: {
+            if document.kind == .estimate, document.amountPaid == 0 {
+                Text("The deposit is printed on the estimate. Record it when the client pays; it moves to the invoice.")
+            } else {
+                Text("Each payment counts in your report on the day you got it. Paid in full, the document is marked paid.")
+            }
+        }
+    }
+
+    private func deletePayments(at offsets: IndexSet) {
+        let sorted = document.sortedPayments
+        let factory = DocumentFactory(context: context)
+        for index in offsets { factory.remove(sorted[index], from: document) }
+        try? context.save()
     }
 
     // MARK: Signing link
@@ -692,5 +760,74 @@ struct PriceBookPicker: View {
                 }
             }
         }
+    }
+}
+
+// MARK: - Payment sheet
+
+/// Records money the client paid: the deposit, part of the balance or all of it.
+struct PaymentSheet: View {
+    let document: JobDocument
+    var onSave: (_ amount: Double, _ date: Date, _ method: PaymentMethod) -> Void
+
+    @Environment(\.dismiss) private var dismiss
+    @State private var amount: Double = 0
+    @State private var date = Date.now
+    @State private var method = PaymentMethod.cash
+    @FocusState private var amountFocused: Bool
+
+    /// What the client most likely paid: the deposit on an estimate that asks for one, otherwise the rest.
+    private var suggested: Double {
+        if document.kind == .estimate, document.depositAmount > document.amountPaid {
+            return Money.round(document.depositAmount - document.amountPaid)
+        }
+        return document.balanceDue
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    LabeledContent("Amount ($)") {
+                        MoneyField(title: "0", value: $amount)
+                            .focused($amountFocused)
+                    }
+                    DatePicker("Date", selection: $date, in: ...Date.now, displayedComponents: .date)
+                    Picker("Paid with", selection: $method) {
+                        ForEach(PaymentMethod.allCases) { method in
+                            Text(method.label).tag(method)
+                        }
+                    }
+                } footer: {
+                    Text("Balance before this payment: \(Money.string(document.balanceDue, locale: .current))")
+                        .monospacedDigit()
+                }
+                if suggested > 0, suggested != document.balanceDue {
+                    Section {
+                        Button("Deposit: \(Money.string(suggested, locale: .current))") { amount = suggested }
+                        Button("Everything: \(Money.string(document.balanceDue, locale: .current))") { amount = document.balanceDue }
+                    }
+                }
+            }
+            .navigationTitle("Record a payment")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        onSave(amount, date, method)
+                        dismiss()
+                    }
+                    .disabled(Money.round(amount) <= 0)
+                }
+            }
+            .onAppear {
+                amount = suggested
+                amountFocused = true
+            }
+        }
+        .presentationDetents([.medium, .large])
     }
 }

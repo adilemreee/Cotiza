@@ -168,6 +168,7 @@ struct PaywallView: View {
             feature("infinity", "Unlimited estimates", "Quote every job, every day.")
             feature("doc.text.fill", "Invoices in one tap", "Turn an approved estimate into an invoice and track who paid.")
             feature("signature", "Client signs on your phone", "Approved on the spot, with the signature on the PDF.")
+            feature("banknote.fill", "Deposits and partial payments", "Ask for a deposit, record each payment and always know what's still owed.")
             feature("chart.bar.xaxis", "Profit reports", "Income, materials and profit by month, ready for your accountant.")
             feature("photo.badge.checkmark.fill", "Your logo, your brand", "No Cotiza footer on what your client sees.")
             feature("book.closed.fill", "Remembers your prices", "Your usual prices fill in by themselves.")

@@ -7,9 +7,31 @@ import glob
 import json
 import sys
 
-NO_TRANSLATE = {"%@", "%@ · %@", "iCloud", "%@ × %@", "WhatsApp", "0", "1", "·", "EN", "ES", "Cotiza", "Cotiza %@", "Cotiza Pro"}
+NO_TRANSLATE = {"%@", "%@ · %@", "iCloud", "%@ × %@", "WhatsApp", "0", "1", "·", "EN", "ES", "Cotiza", "Cotiza %@", "Cotiza Pro", "Zelle", "Cash App", "Venmo"}
 
 ES = {
+    "Amount ($)": "Monto ($)",
+    "Ask for a deposit, record each payment and always know what's still owed.": "Pide un anticipo, registra cada pago y sabe siempre cuánto te deben.",
+    "Balance before this payment: %@": "Saldo antes de este pago: %@",
+    "Balance due": "Saldo pendiente",
+    "Card": "Tarjeta",
+    "Cash": "Efectivo",
+    "Check": "Cheque",
+    "Date": "Fecha",
+    "Deposit": "Anticipo",
+    "Deposit to start (%)": "Anticipo para empezar (%)",
+    "Deposit: %@": "Anticipo: %@",
+    "Deposits and partial payments": "Anticipos y pagos parciales",
+    "Each payment counts in your report on the day you got it. Paid in full, the document is marked paid.": "Cada pago cuenta en tu reporte el día en que lo recibiste. Al pagarse completo, el documento queda como pagado.",
+    "Everything: %@": "Todo: %@",
+    "Income is counted on the day you get paid, deposits and partial payments included. Materials cost comes from scanned receipts and the cost you enter on each item.": "Los ingresos cuentan el día en que te pagan, incluidos anticipos y pagos parciales. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto.",
+    "Owes %@": "Debe %@",
+    "Paid with": "Pagado con",
+    "Payments": "Pagos",
+    "Printed on invoices, and on estimates that ask for a deposit. New estimates ask for this deposit; 0 means none.": "Aparece en las facturas y en las cotizaciones que piden anticipo. Las cotizaciones nuevas piden este anticipo; 0 es sin anticipo.",
+    "Record a payment": "Registrar un pago",
+    "Save": "Guardar",
+    "The deposit is printed on the estimate. Record it when the client pays; it moves to the invoice.": "El anticipo aparece en la cotización. Regístralo cuando el cliente pague; pasa a la factura.",
     "Cotiza uses this to understand the jobs you describe.": "Cotiza lo usa para entender los trabajos que describes.",
     "Other": "Otro",
     "What do you do? For example: pool cleaning": "¿A qué te dedicas? Por ejemplo: limpieza de albercas",

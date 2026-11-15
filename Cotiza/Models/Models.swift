@@ -43,6 +43,12 @@ nonisolated enum RepeatInterval: String, CaseIterable, Identifiable, Sendable, C
     }
 }
 
+/// How the client paid. Printed on the PDF in the document's language.
+nonisolated enum PaymentMethod: String, CaseIterable, Identifiable, Sendable, Codable {
+    case cash, check, zelle, cashApp, venmo, card, other
+    var id: String { rawValue }
+}
+
 nonisolated enum Trade: String, CaseIterable, Identifiable, Sendable, Codable {
     case general, painting, landscaping, cleaning, flooring, roofing, plumbing, electrical, drywall, concrete, hvac, handyman
     /// Anything not listed; the contractor types what they do (BusinessProfile.customTrade).
@@ -115,6 +121,8 @@ final class BusinessProfile {
     var remindersEnabled: Bool = true
     /// Added on top of what the contractor paid for materials from a scanned receipt.
     var materialMarkupPercent: Double = 15
+    /// Asked for on new estimates, as a share of the total. 0 means no deposit.
+    var defaultDepositPercent: Double = 0
     var createdAt: Date = Date.now
 
     init() {}
@@ -190,9 +198,13 @@ final class JobDocument {
     var nextRepeatDate: Date?
     /// On an invoice made by a repeat: the `uuid` of the invoice it was copied from.
     var repeatSourceID: UUID?
+    /// The share of the total asked for before work starts. 0 means no deposit.
+    var depositPercent: Double = 0
     var client: Client?
     // Optional because iCloud (CloudKit) sync requires every relationship to be. Read through `allItems`.
     @Relationship(deleteRule: .cascade, inverse: \LineItem.document) var items: [LineItem]? = []
+    /// Money received so far: a deposit, partial payments. Read through `sortedPayments`.
+    @Relationship(deleteRule: .cascade, inverse: \Payment.document) var payments: [Payment]? = []
 
     init(kind: DocumentKind, number: Int, title: String, language: DocumentLanguage, taxRate: Double) {
         self.kindRaw = kind.rawValue
@@ -236,12 +248,46 @@ final class JobDocument {
         (kind == .estimate ? "E-" : "INV-") + String(number)
     }
 
+    var sortedPayments: [Payment] {
+        (payments ?? []).sorted { $0.date < $1.date }
+    }
+
+    /// Everything recorded as received, whatever the status says.
+    var amountPaid: Double {
+        Money.round((payments ?? []).reduce(0) { $0 + $1.amount })
+    }
+
+    /// The deposit asked for to start; 0 when there is none.
+    var depositAmount: Double {
+        depositPercent > 0 ? Money.round(totals.total * min(depositPercent, 100) / 100) : 0
+    }
+
+    /// What the client still owes. Nothing once the document is marked paid.
+    var balanceDue: Double {
+        status == .paid ? 0 : max(Money.round(totals.total - amountPaid), 0)
+    }
+
+    var isPartlyPaid: Bool { status != .paid && amountPaid > 0 }
+
+    /// Money in, on the day it came in: every recorded payment, plus whatever was left when the
+    /// document was marked paid (all of it for documents with no payments).
+    var income: [(id: UUID, date: Date, amount: Double)] {
+        var events = sortedPayments.filter { $0.amount > 0 }.map { (id: $0.uuid, date: $0.date, amount: $0.amount) }
+        if status == .paid {
+            let rest = Money.round(totals.total - amountPaid)
+            if rest > 0 { events.append((id: uuid, date: paidAt ?? createdAt, amount: rest)) }
+        }
+        return events
+    }
+
     /// Changes the status and keeps the sent/paid dates in step.
     func apply(status newStatus: DocumentStatus) {
         status = newStatus
         switch newStatus {
         case .paid: paidAt = paidAt ?? .now
-        case .sent: sentAt = sentAt ?? .now
+        case .sent:
+            sentAt = sentAt ?? .now
+            paidAt = nil
         case .draft, .approved: paidAt = nil
         }
     }
@@ -303,13 +349,11 @@ struct DocumentSummary: Equatable {
     let paidThisMonth: Double
 
     init(documents: [JobDocument], now: Date = .now, calendar: Calendar = .current) {
-        pending = Money.round(documents.filter(\.isAwaitingPayment).reduce(0) { $0 + $1.totals.total })
+        pending = Money.round(documents.filter(\.isAwaitingPayment).reduce(0) { $0 + $1.balanceDue })
         paidThisMonth = Money.round(documents
-            .filter { document in
-                guard document.status == .paid, let paidAt = document.paidAt else { return false }
-                return calendar.isDate(paidAt, equalTo: now, toGranularity: .month)
-            }
-            .reduce(0) { $0 + $1.totals.total })
+            .flatMap(\.income)
+            .filter { calendar.isDate($0.date, equalTo: now, toGranularity: .month) }
+            .reduce(0) { $0 + $1.amount })
     }
 }
 
@@ -338,6 +382,27 @@ final class LineItem {
 
     var amount: Double { Money.round(quantity * unitPrice) }
     var cost: Double { Money.round(quantity * unitCost) }
+}
+
+@Model
+final class Payment {
+    /// Stable ID for report rows.
+    var uuid: UUID = UUID()
+    var amount: Double = 0
+    var date: Date = Date.now
+    var methodRaw: String = PaymentMethod.cash.rawValue
+    var document: JobDocument?
+
+    init(amount: Double, date: Date = .now, method: PaymentMethod = .cash) {
+        self.amount = Money.round(amount)
+        self.date = date
+        self.methodRaw = method.rawValue
+    }
+
+    var method: PaymentMethod {
+        get { PaymentMethod(rawValue: methodRaw) ?? .other }
+        set { methodRaw = newValue.rawValue }
+    }
 }
 
 @Model

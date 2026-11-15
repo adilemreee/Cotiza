@@ -10,7 +10,7 @@ struct BusinessTests {
 
     private func makeContext() throws -> ModelContext {
         let container = try ModelContainer(
-            for: BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self,
+            for: BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self, Payment.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none)
         )
         return ModelContext(container)
@@ -168,9 +168,11 @@ struct BusinessTests {
             context.insert(line)
             line.document = invoice
         }
-        #expect(ProfitReport.Row(invoice) == nil)
+        #expect(ProfitReport.Row.rows(for: invoice).isEmpty)
         invoice.apply(status: .paid)
-        let row = try #require(ProfitReport.Row(invoice))
+        let rows = ProfitReport.Row.rows(for: invoice)
+        try #require(rows.count == 1)
+        let row = rows[0]
         #expect(row.revenue == 480)
         #expect(row.tax == 8)
         #expect(row.materialsCost == 60)

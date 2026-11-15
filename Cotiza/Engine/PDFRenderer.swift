@@ -10,6 +10,12 @@ nonisolated struct DocumentSnapshot: Sendable, Equatable {
         var amount: Double
     }
 
+    struct Payment: Sendable, Equatable {
+        var date: Date
+        var amount: Double
+        var method: PaymentMethod
+    }
+
     var kind: DocumentKind
     var language: DocumentLanguage
     var displayNumber: String
@@ -42,6 +48,14 @@ nonisolated struct DocumentSnapshot: Sendable, Equatable {
     var signature: Data? = nil
     var signerName: String = ""
     var signedAt: Date? = nil
+    var depositPercent: Double = 0
+    var depositAmount: Double = 0
+    var payments: [Payment] = []
+
+    var amountPaid: Double { Money.round(payments.reduce(0) { $0 + $1.amount }) }
+    var balanceDue: Double { isPaid ? 0 : max(Money.round(totals.total - amountPaid), 0) }
+    /// An estimate asks for a deposit that hasn't come in yet. Invoices show the balance instead.
+    var depositIsDue: Bool { kind == .estimate && !isPaid && depositAmount > 0 && amountPaid < depositAmount }
 
     var fileName: String {
         let safeNumber = displayNumber.replacingOccurrences(of: "/", with: "-")
@@ -87,7 +101,10 @@ extension DocumentSnapshot {
             dueDate: document.dueDate,
             signature: document.signatureData,
             signerName: document.signerName,
-            signedAt: document.signedAt
+            signedAt: document.signedAt,
+            depositPercent: document.depositPercent,
+            depositAmount: document.depositAmount,
+            payments: document.sortedPayments.map { Payment(date: $0.date, amount: $0.amount, method: $0.method) }
         )
     }
 }
@@ -129,6 +146,20 @@ nonisolated struct PDFStrings: Sendable {
     var thanks: String { es ? "Gracias por su preferencia." : "Thank you for your business." }
     var branding: String { es ? "Creado con Cotiza" : "Made with Cotiza" }
     func page(_ number: Int) -> String { es ? "Página \(number)" : "Page \(number)" }
+    var balanceDue: String { es ? "Saldo pendiente" : "Balance due" }
+    func depositToStart(percent: String) -> String { es ? "Anticipo para empezar (\(percent)%)" : "Deposit to start (\(percent)%)" }
+    func paid(on date: String, by method: PaymentMethod) -> String { "\(es ? "Pagado" : "Paid") \(date) · \(self.method(method))" }
+    func method(_ method: PaymentMethod) -> String {
+        switch method {
+        case .cash: es ? "Efectivo" : "Cash"
+        case .check: es ? "Cheque" : "Check"
+        case .zelle: "Zelle"
+        case .cashApp: "Cash App"
+        case .venmo: "Venmo"
+        case .card: es ? "Tarjeta" : "Card"
+        case .other: es ? "Otro" : "Other"
+        }
+    }
 }
 
 /// Helvetica Neue embeds cleanly in PDFs, so client-side search and copy work, and its digits are tabular.
@@ -380,36 +411,61 @@ struct PDFRenderer {
     }
 
     private func drawTotals(_ s: DocumentSnapshot, strings: PDFStrings, layout: inout Layout) {
-        let boxWidth: CGFloat = 230
+        let hasPayments = !s.payments.isEmpty
+        let boxWidth: CGFloat = hasPayments ? 260 : 230
         let x = layout.right - boxWidth
         let locale = s.language.locale
         let showsTax = s.totals.tax > 0
-        layout.ensure(showsTax ? 96 : 60)
+        let rowCount = (showsTax ? 2 : 0) + (hasPayments ? 1 + s.payments.count : 0) + (s.depositIsDue ? 1 : 0)
+        layout.ensure(CGFloat(rowCount) * 20 + 66)
 
         let labelFont = PDFFont.make(10.5)
         let numberFont = PDFFont.make(10.5, .regular)
-        func row(_ label: String, _ value: String) {
-            draw(label, font: labelFont, color: secondary, in: CGRect(x: x + 10, y: layout.y, width: 110, height: 14))
-            draw(value, font: numberFont, color: ink, in: CGRect(x: x + 110, y: layout.y, width: boxWidth - 120, height: 14), alignment: .right)
+        func row(_ label: String, _ value: String, color: UIColor? = nil, bold: Bool = false) {
+            let font = bold ? PDFFont.make(10.5, .bold) : labelFont
+            let valueFont = bold ? font : numberFont
+            // The label takes whatever the amount leaves, so long Spanish labels aren't cut short.
+            let valueWidth = min(ceil((value as NSString).size(withAttributes: [.font: valueFont]).width) + 2, 110)
+            draw(label, font: font, color: color ?? secondary,
+                 in: CGRect(x: x + 10, y: layout.y, width: boxWidth - 28 - valueWidth, height: 14))
+            draw(value, font: valueFont, color: color ?? ink,
+                 in: CGRect(x: x + boxWidth - 10 - valueWidth, y: layout.y, width: valueWidth, height: 14), alignment: .right)
             layout.y += 20
         }
+        func money(_ value: Double) -> String { Money.string(value, locale: locale) }
 
         if showsTax {
-            row(strings.subtotal, Money.string(s.totals.subtotal, locale: locale))
+            row(strings.subtotal, money(s.totals.subtotal))
             let rate = Money.quantity(s.taxRate, locale: locale)
-            row("\(strings.tax) (\(rate)%)", Money.string(s.totals.tax, locale: locale))
-            layout.y += 2
+            row("\(strings.tax) (\(rate)%)", money(s.totals.tax))
         }
+        if hasPayments {
+            row(strings.total, money(s.totals.total))
+            for payment in s.payments {
+                let date = payment.date.formatted(.dateTime.month(.abbreviated).day().locale(locale))
+                row(strings.paid(on: date, by: payment.method), "−" + money(payment.amount))
+            }
+        }
+        if showsTax || hasPayments { layout.y += 2 }
 
         let totalRect = CGRect(x: x, y: layout.y, width: boxWidth, height: 36)
         accent.setFill()
         UIBezierPath(roundedRect: totalRect, cornerRadius: 6).fill()
-        let totalLabel = s.kind == .invoice && !s.isPaid ? strings.amountDue : strings.total
+        let (totalLabel, totalValue) = hasPayments
+            ? (strings.balanceDue, s.balanceDue)
+            : (s.kind == .invoice && !s.isPaid ? strings.amountDue : strings.total, s.totals.total)
         draw(totalLabel.uppercased(), font: PDFFont.make(9.5, .bold), color: .white,
-             in: CGRect(x: x + 12, y: layout.y + 12, width: 110, height: 14), kern: 0.8)
-        draw(Money.string(s.totals.total, locale: locale), font: PDFFont.make(15, .bold), color: .white,
+             in: CGRect(x: x + 12, y: layout.y + 12, width: boxWidth - 112, height: 14), kern: 0.8)
+        draw(money(totalValue), font: PDFFont.make(15, .bold), color: .white,
              in: CGRect(x: x + 100, y: layout.y + 9, width: boxWidth - 112, height: 20), alignment: .right)
-        layout.y += 36 + 26
+        layout.y += 36
+
+        if s.depositIsDue {
+            layout.y += 10
+            row(strings.depositToStart(percent: Money.quantity(s.depositPercent, locale: locale)), money(s.depositAmount),
+                color: accent, bold: true)
+        }
+        layout.y += s.depositIsDue ? 16 : 26
     }
 
     private func drawClosing(_ s: DocumentSnapshot, strings: PDFStrings, layout: inout Layout) {
@@ -427,7 +483,8 @@ struct PDFRenderer {
         }
 
         block(strings.notes, s.notes)
-        if s.kind == .invoice { block(strings.payment, s.paymentInstructions) }
+        // Estimates that ask for a deposit say how to pay it.
+        if s.kind == .invoice || s.depositIsDue { block(strings.payment, s.paymentInstructions) }
         let validity = s.validUntil.map { strings.validity(until: s.formatted($0)) } ?? strings.validity
         let terms = s.kind == .estimate
             ? [s.terms, validity].filter { !$0.isEmpty }.joined(separator: "\n")

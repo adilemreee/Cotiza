@@ -216,6 +216,16 @@
         }
       }
     },
+    "Amount ($)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monto ($)"
+          }
+        }
+      }
+    },
     "Approved": {
       "localizations": {
         "es": {
@@ -232,6 +242,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aprobada ahí mismo, con la firma en el PDF."
+          }
+        }
+      }
+    },
+    "Ask for a deposit, record each payment and always know what's still owed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pide un anticipo, registra cada pago y sabe siempre cuánto te deben."
           }
         }
       }
@@ -266,6 +286,26 @@
         }
       }
     },
+    "Balance before this payment: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldo antes de este pago: %@"
+          }
+        }
+      }
+    },
+    "Balance due": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldo pendiente"
+          }
+        }
+      }
+    },
     "Business name": {
       "localizations": {
         "es": {
@@ -296,12 +336,45 @@
         }
       }
     },
+    "Card": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tarjeta"
+          }
+        }
+      }
+    },
+    "Cash": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Efectivo"
+          }
+        }
+      }
+    },
+    "Cash App": {
+      "shouldTranslate": false
+    },
     "Change logo": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Cambiar logo"
+          }
+        }
+      }
+    },
+    "Check": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cheque"
           }
         }
       }
@@ -545,6 +618,16 @@
         }
       }
     },
+    "Date": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fecha"
+          }
+        }
+      }
+    },
     "Dates and reminders": {
       "localizations": {
         "es": {
@@ -591,6 +674,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eliminar este documento?"
+          }
+        }
+      }
+    },
+    "Deposit": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anticipo"
+          }
+        }
+      }
+    },
+    "Deposit to start (%)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anticipo para empezar (%)"
+          }
+        }
+      }
+    },
+    "Deposit: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anticipo: %@"
+          }
+        }
+      }
+    },
+    "Deposits and partial payments": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anticipos y pagos parciales"
           }
         }
       }
@@ -711,6 +834,16 @@
     "ES": {
       "shouldTranslate": false
     },
+    "Each payment counts in your report on the day you got it. Paid in full, the document is marked paid.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada pago cuenta en tu reporte el día en que lo recibiste. Al pagarse completo, el documento queda como pagado."
+          }
+        }
+      }
+    },
     "Edit": {
       "localizations": {
         "es": {
@@ -827,6 +960,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada semana"
+          }
+        }
+      }
+    },
+    "Everything: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo: %@"
           }
         }
       }
@@ -1047,6 +1190,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los ingresos cuentan el día en que marcas el trabajo como pagado. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto."
+          }
+        }
+      }
+    },
+    "Income is counted on the day you get paid, deposits and partial payments included. Materials cost comes from scanned receipts and the cost you enter on each item.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los ingresos cuentan el día en que te pagan, incluidos anticipos y pagos parciales. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto."
           }
         }
       }
@@ -1631,6 +1784,16 @@
         }
       }
     },
+    "Owes %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Debe %@"
+          }
+        }
+      }
+    },
     "PDF summary": {
       "localizations": {
         "es": {
@@ -1661,6 +1824,16 @@
         }
       }
     },
+    "Paid with": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pagado con"
+          }
+        }
+      }
+    },
     "Painting": {
       "localizations": {
         "es": {
@@ -1687,6 +1860,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plazo de pago"
+          }
+        }
+      }
+    },
+    "Payments": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pagos"
           }
         }
       }
@@ -1787,6 +1970,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aparecen al final de cada documento."
+          }
+        }
+      }
+    },
+    "Printed on invoices, and on estimates that ask for a deposit. New estimates ask for this deposit; 0 means none.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparece en las facturas y en las cotizaciones que piden anticipo. Las cotizaciones nuevas piden este anticipo; 0 es sin anticipo."
           }
         }
       }
@@ -1911,6 +2104,16 @@
         }
       }
     },
+    "Record a payment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrar un pago"
+          }
+        }
+      }
+    },
     "Remembers your prices": {
       "localizations": {
         "es": {
@@ -2027,6 +2230,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impuesto cobrado"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
           }
         }
       }
@@ -2421,6 +2634,16 @@
         }
       }
     },
+    "The deposit is printed on the estimate. Record it when the client pays; it moves to the invoice.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El anticipo aparece en la cotización. Regístralo cuando el cliente pague; pasa a la factura."
+          }
+        }
+      }
+    },
     "The estimate was signed online. The signature is on the PDF.": {
       "localizations": {
         "es": {
@@ -2610,6 +2833,9 @@
           }
         }
       }
+    },
+    "Venmo": {
+      "shouldTranslate": false
     },
     "Voice isn't available right now. Type the job instead.": {
       "localizations": {
@@ -2843,6 +3069,9 @@
           }
         }
       }
+    },
+    "Zelle": {
+      "shouldTranslate": false
     },
     "each": {
       "localizations": {

@@ -14,7 +14,7 @@ struct ReportView: View {
     private var calendar: Calendar { .current }
 
     private var report: ProfitReport {
-        ProfitReport(rows: documents.compactMap(ProfitReport.Row.init), period: period, containing: anchor)
+        ProfitReport(rows: documents.flatMap(ProfitReport.Row.rows), period: period, containing: anchor)
     }
 
     private var canGoForward: Bool { report.interval.end <= .now }
@@ -58,7 +58,7 @@ struct ReportView: View {
                         Text("Profit").font(.headline)
                     }
                 } footer: {
-                    Text("Income is counted on the day a job is marked paid. Materials cost comes from scanned receipts and the cost you enter on each item.")
+                    Text("Income is counted on the day you get paid, deposits and partial payments included. Materials cost comes from scanned receipts and the cost you enter on each item.")
                 }
                 Section {
                     if report.rows.isEmpty {
@@ -88,7 +88,7 @@ struct ReportView: View {
                         }
                     }
                 } header: {
-                    Text("Jobs paid: \(report.rows.count)")
+                    Text("Jobs paid: \(report.jobCount)")
                 }
             }
             .readableListWidth()

@@ -81,6 +81,15 @@ struct CotizaApp: App {
             invoice.paidAt = date
             invoice.setRepeat(interval)
         }
+        // A job with half paid up front: the deposit moves to the invoice, which still owes the rest.
+        let draft = EstimateDraft(title: "Pintar exterior", clientName: "Luis Ramos", items: [
+            DraftItem(text: "Pintar exterior de la casa", quantity: 1, unitPrice: 1800),
+        ])
+        let estimate = factory.makeEstimate(from: draft, transcript: "", profile: profile)
+        estimate.depositPercent = 50
+        factory.record(payment: estimate.depositAmount, on: .now.addingTimeInterval(-86_400 * 2), method: .zelle, to: estimate)
+        let invoice = factory.makeInvoice(from: estimate, profile: profile)
+        invoice.apply(status: .sent)
         try? context.save()
     }
     #endif

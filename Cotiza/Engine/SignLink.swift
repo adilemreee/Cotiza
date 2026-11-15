@@ -54,7 +54,11 @@ nonisolated struct SignLinkDocument: Codable, Equatable, Sendable {
         total = Money.string(s.totals.total, locale: locale)
         notes = s.notes
         let validity = s.validUntil.map { strings.validity(until: s.formatted($0)) } ?? ""
-        terms = [s.terms, validity].filter { !$0.isEmpty }.joined(separator: "\n")
+        // The page shows totals before the grand total, so the deposit goes with the terms instead.
+        let deposit = s.depositIsDue
+            ? "\(strings.depositToStart(percent: Money.quantity(s.depositPercent, locale: locale))): \(Money.string(s.depositAmount, locale: locale))"
+            : ""
+        terms = [deposit, s.terms, validity].filter { !$0.isEmpty }.joined(separator: "\n")
     }
 }
 

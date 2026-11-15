@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		34F93FA8271BB47951F856C1 /* CotizaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057B79D0DAF08DDAA6D948F /* CotizaUITests.swift */; };
 		358CBC8A3F7636370A5C744D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C7611FF6E48351B7CEAC3 /* HomeView.swift */; };
 		35DA39DEFDBA627AEE9D8C5D /* PDFAndStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */; };
+		3C22B136A38DE9D4A0A50C68 /* PaymentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6361FA3A67CD01665F6D9 /* PaymentTests.swift */; };
 		3D6E08F2F781124851D6196C /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E2CDA2DDE2E3EBAF7717749F /* Products.storekit */; };
 		3F2ADF41FCF090E17E587B14 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9F458BABA3B80701C0CDCDE5 /* InfoPlist.xcstrings */; };
 		40849B5872063B5F718CBC40 /* EstimateEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BAB05885BBDA5421CFA9FD /* EstimateEngine.swift */; };
@@ -109,11 +110,11 @@
 		1D58BE7CB46F98F4A41D8862 /* DocumentEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditorView.swift; sourceTree = "<group>"; };
 		1EA54A7F6D7880DC80F05602 /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
 		269863B52E4D1ECF23CD8D5A /* FeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTests.swift; sourceTree = "<group>"; };
-		27C6BAA6496582AEAED02FA4 /* CotizaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CotizaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27C6BAA6496582AEAED02FA4 /* CotizaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CotizaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E563C83DD5E5D268AB2164 /* Cotiza.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cotiza.entitlements; sourceTree = "<group>"; };
 		28BAB05885BBDA5421CFA9FD /* EstimateEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateEngine.swift; sourceTree = "<group>"; };
 		32057A3E4F0ECF0C93DE15F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		320B0120E11FC78950A20BB4 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		320B0120E11FC78950A20BB4 /* AppIcon.icon */ = {isa = PBXFileReference; path = AppIcon.icon; sourceTree = "<group>"; };
 		3AA1B3BFB3BCCD80C2F11574 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
 		43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScheduler.swift; sourceTree = "<group>"; };
 		48EB29EC9464845917996AEB /* ReceiptParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptParser.swift; sourceTree = "<group>"; };
@@ -121,13 +122,14 @@
 		4CFEC0C1E61460BDAA711AC6 /* RuleBasedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleBasedParser.swift; sourceTree = "<group>"; };
 		514C7611FF6E48351B7CEAC3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		533A37BFF8D395C7B0DF4D88 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
-		5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cotiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Cotiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF1BFC421CDF4657CEF3C00 /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
 		62E5E3B71DF9E75A9B5F1FF1 /* PDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRenderer.swift; sourceTree = "<group>"; };
 		670718E606D16083B62935EC /* ClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMessage.swift; sourceTree = "<group>"; };
 		70318AA0E17D7E28BEE1D552 /* ProfitReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitReport.swift; sourceTree = "<group>"; };
 		8394C1274CEC57617D295548 /* ScreenshotMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotMode.swift; sourceTree = "<group>"; };
 		850BD4F985B5AABAA38FDBC0 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		88D6361FA3A67CD01665F6D9 /* PaymentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTests.swift; sourceTree = "<group>"; };
 		895900AA689A5869DA771403 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		9564AAA00BCBF0103ECA030D /* DocumentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentFactory.swift; sourceTree = "<group>"; };
 		97748F449E02E025543C2DBF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -146,16 +148,16 @@
 		C050AB564FBD0FAF46547C10 /* CotizaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotizaApp.swift; sourceTree = "<group>"; };
 		C338736FD07A26A4FDB4F006 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		C89F4C39F24A0ED28BF873B8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		CEB8F0051324136347177462 /* CotizaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CotizaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB8F0051324136347177462 /* CotizaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CotizaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9550569D215115B13E6B921 /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = AppShortcuts.xcstrings; sourceTree = "<group>"; };
 		DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPrompt.swift; sourceTree = "<group>"; };
 		DE50F8E75420374B2351085A /* SignLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLinkTests.swift; sourceTree = "<group>"; };
 		E00C76CED3106337FDAF3073 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E13562BF4E7FAAB665BDB842 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		E2CDA2DDE2E3EBAF7717749F /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		E2CDA2DDE2E3EBAF7717749F /* Products.storekit */ = {isa = PBXFileReference; path = Products.storekit; sourceTree = "<group>"; };
 		EBE96F98D0AA36E586F68D01 /* ClientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViews.swift; sourceTree = "<group>"; };
 		F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
-		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40E7F88FA2079E765DAAC03 /* AppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntents.swift; sourceTree = "<group>"; };
 		F4E13CF05F1594C4B0592099 /* BusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTests.swift; sourceTree = "<group>"; };
 		FE33C5EE6B3DF22D2B836799 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				269863B52E4D1ECF23CD8D5A /* FeatureTests.swift */,
 				BCE1C56EE0FD681589E99B51 /* IntentsTests.swift */,
 				C338736FD07A26A4FDB4F006 /* ParserTests.swift */,
+				88D6361FA3A67CD01665F6D9 /* PaymentTests.swift */,
 				13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */,
 				F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */,
 				DE50F8E75420374B2351085A /* SignLinkTests.swift */,
@@ -418,7 +421,17 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					14A344F80D6290D028286C9A = {
+						DevelopmentTeam = "";
 						TestTargetID = 46765DF3AAE1F92D2B34E5E0;
+					};
+					2A5D739E46DA0A3773423748 = {
+						DevelopmentTeam = "";
+					};
+					46765DF3AAE1F92D2B34E5E0 = {
+						DevelopmentTeam = "";
+					};
+					6BC1C63A0C591CC1AFCA4B91 = {
+						DevelopmentTeam = "";
 					};
 				};
 			};
@@ -433,6 +446,7 @@
 			);
 			mainGroup = 6552ACCA246CB0C0113F302E;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -485,6 +499,7 @@
 				8A7CDF32AA5A890B9DB4031F /* IntentsTests.swift in Sources */,
 				35DA39DEFDBA627AEE9D8C5D /* PDFAndStoreTests.swift in Sources */,
 				940665927B0D81889CC91D20 /* ParserTests.swift in Sources */,
+				3C22B136A38DE9D4A0A50C68 /* PaymentTests.swift in Sources */,
 				28884CF4F87AD1960C4B4395 /* ReviewPromptTests.swift in Sources */,
 				A92676EA46DC264C2BB1F838 /* SignLinkTests.swift in Sources */,
 			);
@@ -574,8 +589,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CotizaWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
@@ -625,7 +638,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -640,7 +653,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -661,8 +674,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cotiza/Resources/Cotiza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
@@ -689,8 +700,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CotizaWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
@@ -710,7 +719,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -758,7 +766,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -779,7 +787,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -798,7 +806,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -819,8 +826,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cotiza/Resources/Cotiza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
@@ -847,7 +852,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -866,7 +870,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GHV7BT96W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
