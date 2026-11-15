@@ -19,7 +19,7 @@ settings:
     LOCALIZATION_PREFERS_STRING_CATALOGS: YES
     MARKETING_VERSION: "1.1.0"
     CURRENT_PROJECT_VERSION: "1"
-    DEVELOPMENT_TEAM: ""
+    DEVELOPMENT_TEAM: GHV7BT96W7
 targets:
   Cotiza:
     type: application
@@ -143,6 +143,10 @@ schemes:
     run:
       config: Debug
       storeKitConfiguration: Cotiza/Resources/Products.storekit
+      # Off by default. Tick it in Edit Scheme → Run → Arguments, run once on an iPhone signed in to
+      # iCloud, then deploy the schema to Production in CloudKit Console (see README).
+      commandLineArguments:
+        "-CotizaInitCloudKitSchema YES": false
     test:
       config: Debug
       targets:

@@ -1,3 +1,6 @@
+#if DEBUG
+import CoreData
+#endif
 import Foundation
 import os
 import SwiftData
@@ -7,11 +10,15 @@ import SwiftData
 enum AppDatabase {
     static let iCloudContainer = "iCloud.com.cotiza.app"
     private static let logger = Logger(subsystem: "com.cotiza.app", category: "database")
-    private static let schema = Schema([BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self, Payment.self])
+    private static let models: [any PersistentModel.Type] = [
+        BusinessProfile.self, Client.self, JobDocument.self, LineItem.self, PriceBookItem.self, Payment.self,
+    ]
+    private static let schema = Schema(models)
 
     private static let setup: (container: ModelContainer, syncsWithICloud: Bool) = {
         var inMemory = false
         #if DEBUG
+        if UserDefaults.standard.bool(forKey: "CotizaInitCloudKitSchema") { initializeCloudKitSchema() }
         // `-CotizaResetState YES` (UI tests) starts like a fresh install, with nothing saved to disk.
         inMemory = UserDefaults.standard.bool(forKey: "CotizaResetState")
         #endif
@@ -35,6 +42,40 @@ enum AppDatabase {
             fatalError("Could not open the database: \(error)")
         }
     }()
+
+    #if DEBUG
+    /// `-CotizaInitCloudKitSchema YES`, on an iPhone signed in to iCloud: writes every record type and
+    /// every field to the CloudKit Development environment in one go. Using the app only creates the
+    /// fields that happened to have a value, and anything missing in Production breaks sync later.
+    /// Uses a throwaway store, so the user's data isn't touched.
+    private static func initializeCloudKitSchema() {
+        guard let model = NSManagedObjectModel.makeManagedObjectModel(for: models) else {
+            logger.error("CloudKit schema: could not build the Core Data model")
+            return
+        }
+        let url = URL.temporaryDirectory.appending(path: "CloudKitSchema-\(UUID().uuidString).store")
+        let description = NSPersistentStoreDescription(url: url)
+        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: iCloudContainer)
+        description.shouldAddStoreAsynchronously = false
+        let container = NSPersistentCloudKitContainer(name: "CotizaSchema", managedObjectModel: model)
+        container.persistentStoreDescriptions = [description]
+        var loadError: Error?
+        container.loadPersistentStores { _, error in loadError = error }
+        do {
+            if let loadError { throw loadError }
+            try container.initializeCloudKitSchema()
+            logger.notice("CloudKit schema: created in Development. Now deploy it to Production in CloudKit Console.")
+            print("✅ CloudKit schema created in Development. Deploy it to Production in CloudKit Console.")
+        } catch {
+            logger.error("CloudKit schema failed: \(error.localizedDescription, privacy: .public)")
+            print("❌ CloudKit schema failed: \(error)")
+        }
+        for store in container.persistentStoreCoordinator.persistentStores {
+            try? container.persistentStoreCoordinator.remove(store)
+        }
+        try? FileManager.default.removeItem(at: url)
+    }
+    #endif
 
     static var container: ModelContainer { setup.container }
     /// False when the store couldn't be opened with iCloud and the app fell back to this device only.

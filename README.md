@@ -140,9 +140,12 @@ Tools/deploy_sign.sh
    `com.cotiza.app.widget` kimliklerine ekle (widget özeti için). Veritabanı App Group'ta değil, uygulamanın kendi
    klasöründe kalır.
 3. iCloud: Apple Developer hesabında `iCloud.com.cotiza.app` CloudKit container'ını oluştur ve uygulama
-   kimliğine iCloud (CloudKit) + Push Notifications yetkilerini ekle. Gerçek cihazda bir kez çalıştırınca
-   CloudKit şeması geliştirme ortamında oluşur; **yayından önce CloudKit Console'da şemayı Production'a
-   "Deploy" et**, yoksa App Store sürümünde senkron çalışmaz. Modele alan eklerken yalnızca yeni alan ekle
+   kimliğine iCloud (CloudKit) + Push Notifications yetkilerini ekle. Şemayı oluşturmak için Xcode'da
+   Product → Scheme → Edit Scheme → Run → Arguments'ta `-CotizaInitCloudKitSchema YES` kutusunu işaretle,
+   iCloud'a girişli bir iPhone'da bir kez çalıştır (konsolda "✅ CloudKit schema created" yazar), kutuyu
+   kaldır. Bu, tüm kayıt türlerini ve alanları Development ortamına yazar; uygulamayı kullanarak oluşan şemada
+   hiç doldurulmamış alanlar eksik kalır. **Yayından önce CloudKit Console'da şemayı Production'a "Deploy"
+   et**, yoksa App Store ve TestFlight sürümlerinde senkron çalışmaz. Modele alan eklerken yalnızca yeni alan ekle
    (silme / yeniden adlandırma CloudKit'te yapılamaz).
 4. App Store Connect'te bir abonelik grubu ve iki ürün; kimlikleri koddakiyle aynı olmalı:
    `com.cotiza.app.pro.yearly` (3 gün ücretsiz deneme), `com.cotiza.app.pro.monthly` ve `com.cotiza.app.pro.weekly`.
