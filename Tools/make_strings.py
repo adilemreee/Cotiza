@@ -130,7 +130,7 @@ ES = {
     "Signed by %@": "Firmado por %@",
     "Start describing a job from the Lock Screen.": "Describe un trabajo desde la pantalla bloqueada.",
     "Take a photo": "Tomar una foto",
-    "Text message": "Mensaje de texto",
+    "Text message": "Mensaje",
     "Totals, tax and payment lines are left out. Check each price before sending.": "Se omiten totales, impuestos y pagos. Revisa cada precio antes de enviar.",
     "Try again with the whole receipt flat, in good light.": "Inténtalo otra vez con el recibo completo, plano y con buena luz.",
     "Valid until": "Válida hasta",

@@ -16,9 +16,18 @@ struct PDFPreviewView: View {
     @State private var showsMessageComposer = false
     @State private var showsWhatsAppShare = false
 
-    private var canText: Bool { MFMessageComposeViewController.canSendText() }
+    private var canText: Bool { MFMessageComposeViewController.canSendText() || Self.showsAllSendButtons }
     private var canWhatsApp: Bool {
-        URL(string: "whatsapp://").map { UIApplication.shared.canOpenURL($0) } ?? false
+        (URL(string: "whatsapp://").map { UIApplication.shared.canOpenURL($0) } ?? false) || Self.showsAllSendButtons
+    }
+
+    /// `-CotizaShowSendButtons YES` (DEBUG): shows WhatsApp and Text message in the simulator, which has neither.
+    private static var showsAllSendButtons: Bool {
+        #if DEBUG
+        UserDefaults.standard.bool(forKey: "CotizaShowSendButtons")
+        #else
+        false
+        #endif
     }
 
     var body: some View {
@@ -78,6 +87,7 @@ struct PDFPreviewView: View {
                             showsWhatsAppShare = true
                         } label: {
                             Label("WhatsApp", systemImage: "phone.bubble.fill")
+                                .sideBySideLabel()
                         }
                         .buttonStyle(.primary)
                     }
@@ -86,6 +96,7 @@ struct PDFPreviewView: View {
                             showsMessageComposer = true
                         } label: {
                             Label("Text message", systemImage: "message.fill")
+                                .sideBySideLabel()
                         }
                         .buttonStyle(.primary)
                     }
@@ -182,5 +193,12 @@ private struct MessageComposer: UIViewControllerRepresentable {
             onFinish(result == .sent)
             controller.dismiss(animated: true)
         }
+    }
+}
+
+private extension View {
+    /// Two buttons share the row, so a long label ("Mensaje de texto") shrinks a little instead of wrapping.
+    func sideBySideLabel() -> some View {
+        lineLimit(1).minimumScaleFactor(0.7)
     }
 }
