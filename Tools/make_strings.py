@@ -10,6 +10,9 @@ import sys
 NO_TRANSLATE = {"%@", "%@ · %@", "iCloud", "%@ × %@", "WhatsApp", "0", "1", "·", "EN", "ES", "Cotiza", "Cotiza %@", "Cotiza Pro", "Zelle", "Cash App", "Venmo"}
 
 ES = {
+    "Due %@": "Vence %@",
+    "More options": "Más opciones",
+    "Valid until %@": "Válida hasta %@",
     "Amount ($)": "Monto ($)",
     "Ask for a deposit, record each payment and always know what's still owed.": "Pide un anticipo, registra cada pago y sabe siempre cuánto te deben.",
     "Balance before this payment: %@": "Saldo antes de este pago: %@",

@@ -818,6 +818,16 @@
         }
       }
     },
+    "Due %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vence %@"
+          }
+        }
+      }
+    },
     "Duplicate": {
       "localizations": {
         "es": {
@@ -833,16 +843,6 @@
     },
     "ES": {
       "shouldTranslate": false
-    },
-    "Each payment counts in your report on the day you got it. Paid in full, the document is marked paid.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cada pago cuenta en tu reporte el día en que lo recibiste. Al pagarse completo, el documento queda como pagado."
-          }
-        }
-      }
     },
     "Edit": {
       "localizations": {
@@ -1510,6 +1510,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más"
+          }
+        }
+      }
+    },
+    "More options": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más opciones"
           }
         }
       }
@@ -2634,16 +2644,6 @@
         }
       }
     },
-    "The deposit is printed on the estimate. Record it when the client pays; it moves to the invoice.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El anticipo aparece en la cotización. Regístralo cuando el cliente pague; pasa a la factura."
-          }
-        }
-      }
-    },
     "The estimate was signed online. The signature is on the PDF.": {
       "localizations": {
         "es": {
@@ -2830,6 +2830,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Válida hasta"
+          }
+        }
+      }
+    },
+    "Valid until %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Válida hasta %@"
           }
         }
       }

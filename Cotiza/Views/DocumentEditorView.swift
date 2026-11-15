@@ -19,6 +19,7 @@ struct DocumentEditorView: View {
     @State private var showsSignature = false
     @State private var showsReceiptScan = false
     @State private var showsPaymentSheet = false
+    @State private var showsMoreOptions = false
     @State private var signLinkShare: [Any]?
     @State private var isCreatingSignLink = false
     @State private var signLinkError: String?
@@ -57,7 +58,13 @@ struct DocumentEditorView: View {
                     Text(document.kind.label)
                     Text(document.displayNumber).monospacedDigit()
                     Spacer()
-                    StatusBadge(status: document.status)
+                    if document.isOverdue() {
+                        Label("Overdue", systemImage: "exclamationmark.circle.fill")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.red)
+                    } else {
+                        StatusBadge(status: document.status)
+                    }
                 }
             }
 
@@ -104,57 +111,18 @@ struct DocumentEditorView: View {
                 Text("Tax applies only to items marked taxable.")
             }
 
-            paymentsSection
+            if showsPayments { paymentsSection }
+
+            if document.kind == .estimate || document.signatureData != nil {
+                approvalSection
+            }
 
             Section("Notes for the client") {
                 TextField("Timeline, deposit, what's included…", text: $document.notes, axis: .vertical)
                     .lineLimit(3...8)
             }
 
-            Section {
-                switch document.kind {
-                case .estimate:
-                    DatePicker("Valid until", selection: deadlineBinding, displayedComponents: .date)
-                case .invoice:
-                    DatePicker("Payment due", selection: deadlineBinding, displayedComponents: .date)
-                    if document.isOverdue() {
-                        Label("Overdue", systemImage: "exclamationmark.circle.fill")
-                            .foregroundStyle(.red)
-                    }
-                    Picker("Repeat", selection: Binding(get: { document.repeatInterval }, set: { document.setRepeat($0) })) {
-                        ForEach(RepeatInterval.allCases) { interval in
-                            Text(interval.label).tag(interval)
-                        }
-                    }
-                    if document.repeatInterval != .never {
-                        DatePicker("Next invoice", selection: nextRepeatBinding, in: Calendar.current.startOfDay(for: .now)...,
-                                   displayedComponents: .date)
-                    }
-                }
-            } footer: {
-                if document.kind == .invoice, document.repeatInterval != .never {
-                    Text("On that day Cotiza makes a copy of this invoice with a new number and reminds you to send it.")
-                } else {
-                    Text("Printed on the PDF.")
-                }
-            }
-
-            if document.kind == .estimate || document.signatureData != nil {
-                approvalSection
-            }
-
-            Section {
-                Picker("Document language", selection: $document.languageRaw) {
-                    ForEach(DocumentLanguage.allCases) { language in
-                        Text(language.label).tag(language.rawValue)
-                    }
-                }
-                Picker("Status", selection: statusBinding) {
-                    ForEach(DocumentStatus.allCases) { status in
-                        Text(status.label).tag(status)
-                    }
-                }
-            }
+            moreOptionsSection
         }
         .scrollDismissesKeyboard(.interactively)
         .readableListWidth()
@@ -372,16 +340,18 @@ struct DocumentEditorView: View {
 
     // MARK: Payments
 
+    /// A paid document with nothing recorded has nothing to show here.
+    private var showsPayments: Bool {
+        document.status != .paid || !document.sortedPayments.isEmpty
+    }
+
     private var paymentsSection: some View {
-        Section {
-            if document.kind == .estimate {
-                LabeledContent("Deposit to start (%)") {
-                    PercentField(value: $document.depositPercent)
-                }
-                if document.depositAmount > 0 {
-                    LabeledContent("Deposit") {
-                        Text(Money.string(document.depositAmount, locale: .current)).monospacedDigit()
-                    }
+        Section("Payments") {
+            if document.kind == .estimate, document.depositAmount > 0, document.amountPaid == 0 {
+                LabeledContent("Deposit") {
+                    Text(Money.string(document.depositAmount, locale: .current)
+                         + " · " + Money.quantity(document.depositPercent) + "%")
+                        .monospacedDigit()
                 }
             }
             ForEach(document.sortedPayments) { payment in
@@ -410,15 +380,67 @@ struct DocumentEditorView: View {
                 }
                 .disabled(document.totals.total <= 0)
             }
-        } header: {
-            Text("Payments")
+        }
+    }
+
+    // MARK: More options
+
+    /// Settings most jobs never change, folded away with a one-line summary.
+    private var moreOptionsSection: some View {
+        Section {
+            DisclosureGroup(isExpanded: $showsMoreOptions) {
+                switch document.kind {
+                case .estimate:
+                    DatePicker("Valid until", selection: deadlineBinding, displayedComponents: .date)
+                    LabeledContent("Deposit to start (%)") {
+                        PercentField(value: $document.depositPercent)
+                    }
+                case .invoice:
+                    DatePicker("Payment due", selection: deadlineBinding, displayedComponents: .date)
+                    Picker("Repeat", selection: Binding(get: { document.repeatInterval }, set: { document.setRepeat($0) })) {
+                        ForEach(RepeatInterval.allCases) { interval in
+                            Text(interval.label).tag(interval)
+                        }
+                    }
+                    if document.repeatInterval != .never {
+                        DatePicker("Next invoice", selection: nextRepeatBinding, in: Calendar.current.startOfDay(for: .now)...,
+                                   displayedComponents: .date)
+                    }
+                }
+                Picker("Document language", selection: $document.languageRaw) {
+                    ForEach(DocumentLanguage.allCases) { language in
+                        Text(language.label).tag(language.rawValue)
+                    }
+                }
+                Picker("Status", selection: statusBinding) {
+                    ForEach(DocumentStatus.allCases) { status in
+                        Text(status.label).tag(status)
+                    }
+                }
+            } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("More options")
+                    Text(moreOptionsSummary)
+                        .font(.subheadline)
+                        .foregroundStyle(Color.secondary)
+                }
+            }
         } footer: {
-            if document.kind == .estimate, document.amountPaid == 0 {
-                Text("The deposit is printed on the estimate. Record it when the client pays; it moves to the invoice.")
-            } else {
-                Text("Each payment counts in your report on the day you got it. Paid in full, the document is marked paid.")
+            if showsMoreOptions, document.kind == .invoice, document.repeatInterval != .never {
+                Text("On that day Cotiza makes a copy of this invoice with a new number and reminds you to send it.")
             }
         }
+    }
+
+    /// "Due Nov 29 · Every month · Spanish"
+    private var moreOptionsSummary: String {
+        let date = deadlineBinding.wrappedValue.formatted(.dateTime.month(.abbreviated).day())
+        var parts = [document.kind == .estimate ? String(localized: "Valid until \(date)") : String(localized: "Due \(date)")]
+        if document.kind == .invoice, document.repeatInterval != .never {
+            parts.append(String(localized: document.repeatInterval.label))
+        }
+        parts.append(String(localized: document.language.label))
+        return parts.joined(separator: " · ")
     }
 
     private func deletePayments(at offsets: IndexSet) {

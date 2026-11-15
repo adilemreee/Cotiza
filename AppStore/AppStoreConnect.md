@@ -127,7 +127,7 @@ Subscription terms: https://cotiza.adilemree.xyz/terms
 Privacy Policy: https://cotiza.adilemree.xyz/privacy
 ```
 
-**What's New** (4000) — 1.1.0
+**What's New** (4000) — 1.1.1 (1.1.0 ayrıca yayınlanmadığı için onun notlarını da içerir)
 ```
 Deposits and partial payments
 
@@ -137,6 +137,7 @@ Deposits and partial payments
 • When everything is paid, the job is marked paid by itself.
 • The home screen shows what each client still owes, and overdue reminders mention the balance, not the full total.
 • Reports count every payment on the day you got it, deposits included.
+• A cleaner estimate and invoice screen: dates, repeat, deposit percentage, language and status are now tucked under More options.
 
 Recording payments is part of Cotiza Pro.
 ```
@@ -224,7 +225,7 @@ Términos de suscripción: https://cotiza.adilemree.xyz/es/terms
 Política de privacidad: https://cotiza.adilemree.xyz/es/privacy
 ```
 
-**What's New** (4000) — 1.1.0
+**What's New** (4000) — 1.1.1
 ```
 Anticipos y pagos parciales
 
@@ -234,6 +235,7 @@ Anticipos y pagos parciales
 • Cuando te pagan todo, el trabajo queda como pagado solo.
 • La pantalla de inicio muestra cuánto te debe cada cliente, y los recordatorios de pago vencido dicen el saldo, no el total.
 • Los reportes cuentan cada pago el día en que lo recibiste, anticipos incluidos.
+• Pantalla de cotización y factura más limpia: fechas, repetición, porcentaje de anticipo, idioma y estado ahora están en Más opciones.
 
 Registrar pagos es parte de Cotiza Pro.
 ```
