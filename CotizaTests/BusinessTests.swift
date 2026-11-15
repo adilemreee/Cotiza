@@ -199,6 +199,7 @@ struct BusinessTests {
         newPhone.phone = "(713) 555-0142"
         newPhone.nextEstimateNumber = 1001
         newPhone.nextInvoiceNumber = 1005
+        newPhone.defaultDepositPercent = 50
         context.insert(original)
         context.insert(newPhone)
         try context.save()
@@ -210,6 +211,7 @@ struct BusinessTests {
         #expect(profiles[0].phone == "(713) 555-0142")
         #expect(profiles[0].nextEstimateNumber == 1020)
         #expect(profiles[0].nextInvoiceNumber == 1005)
+        #expect(profiles[0].defaultDepositPercent == 50)
     }
 }
 

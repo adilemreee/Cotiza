@@ -79,6 +79,7 @@ enum AppDatabase {
             if keep.logoData == nil { keep.logoData = extra.logoData }
             if keep.terms.isEmpty { keep.terms = extra.terms }
             if keep.paymentInstructions.isEmpty { keep.paymentInstructions = extra.paymentInstructions }
+            if keep.defaultDepositPercent == 0 { keep.defaultDepositPercent = extra.defaultDepositPercent }
             context.delete(extra)
         }
         try? context.save()

@@ -175,6 +175,8 @@ struct PercentField: View {
             .keyboardType(.decimalPad)
             .multilineTextAlignment(.trailing)
             .monospacedDigit()
+            // A few digits at most; the rest of the row goes to the label ("Anticipo para empezar (%)").
+            .frame(maxWidth: 72)
     }
 }
 
