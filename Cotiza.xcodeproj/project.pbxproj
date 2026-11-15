@@ -57,6 +57,7 @@
 		CB9E75CB3CD7F6B693ADF045 /* ReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */; };
 		D053519442539D174EB2E80B /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BD4F985B5AABAA38FDBC0 /* AppDatabase.swift */; };
 		D31126AF40A48382F8F08E83 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269863B52E4D1ECF23CD8D5A /* FeatureTests.swift */; };
+		D7C2FED0AB8B67D263655A58 /* CloudKitReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78786E136A8B8E180028AA0 /* CloudKitReport.swift */; };
 		DDDABF2081295FBE39011282 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13562BF4E7FAAB665BDB842 /* Models.swift */; };
 		E1297855DF8DD2E82B370394 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 320B0120E11FC78950A20BB4 /* AppIcon.icon */; };
 		E8F1D9F710A0293881F91984 /* SpotlightIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1D8AD8A7DD48E27FC3CF9 /* SpotlightIndexer.swift */; };
@@ -155,6 +156,7 @@
 		E00C76CED3106337FDAF3073 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E13562BF4E7FAAB665BDB842 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		E2CDA2DDE2E3EBAF7717749F /* Products.storekit */ = {isa = PBXFileReference; path = Products.storekit; sourceTree = "<group>"; };
+		E78786E136A8B8E180028AA0 /* CloudKitReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitReport.swift; sourceTree = "<group>"; };
 		EBE96F98D0AA36E586F68D01 /* ClientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViews.swift; sourceTree = "<group>"; };
 		F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
 		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			children = (
 				850BD4F985B5AABAA38FDBC0 /* AppDatabase.swift */,
 				F40E7F88FA2079E765DAAC03 /* AppIntents.swift */,
+				E78786E136A8B8E180028AA0 /* CloudKitReport.swift */,
 				C050AB564FBD0FAF46547C10 /* CotizaApp.swift */,
 				43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */,
 				DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */,
@@ -524,6 +527,7 @@
 				6913EBF497635E66672E31A4 /* CaptureView.swift in Sources */,
 				90AC14E71312C52BE11723BB /* ClientMessage.swift in Sources */,
 				5A804F7D0280FEAFB5CBBA3E /* ClientViews.swift in Sources */,
+				D7C2FED0AB8B67D263655A58 /* CloudKitReport.swift in Sources */,
 				2601ADBBC2A0021A9D3D69AF /* ContactPicker.swift in Sources */,
 				02DFEDAE0D3B8AD431E61DB1 /* CotizaApp.swift in Sources */,
 				138936032C89FDAE8C474599 /* DocumentEditorView.swift in Sources */,

@@ -47,7 +47,7 @@ enum AppDatabase {
     /// `-CotizaInitCloudKitSchema YES`, on an iPhone signed in to iCloud: writes every record type and
     /// every field to the CloudKit Development environment in one go. Using the app only creates the
     /// fields that happened to have a value, and anything missing in Production breaks sync later.
-    /// Uses a throwaway store, so the user's data isn't touched.
+    /// Uses a throwaway store, so the user's data isn't touched, and quits when done.
     private static func initializeCloudKitSchema() {
         guard let model = NSManagedObjectModel.makeManagedObjectModel(for: models) else {
             logger.error("CloudKit schema: could not build the Core Data model")
@@ -74,6 +74,10 @@ enum AppDatabase {
             try? container.persistentStoreCoordinator.remove(store)
         }
         try? FileManager.default.removeItem(at: url)
+        // Stops here. Opening the real store in the same run puts two sync engines on the same iCloud zone;
+        // that once left a device thinking its changes were uploaded when they weren't.
+        print("Untick -CotizaInitCloudKitSchema in the scheme and run again to use the app.")
+        exit(0)
     }
     #endif
 

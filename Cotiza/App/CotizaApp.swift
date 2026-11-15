@@ -10,6 +10,13 @@ struct CotizaApp: App {
 
     init() {
         #if DEBUG
+        // `CotizaCloudKitDebug=1` in the environment: Core Data's iCloud sync log on stderr, before the
+        // database opens. Registered, not saved, so it is gone on the next launch.
+        if ProcessInfo.processInfo.environment["CotizaCloudKitDebug"] != nil {
+            UserDefaults.standard.register(defaults: ["com.apple.CoreData.CloudKitDebug": 3,
+                                                      "com.apple.CoreData.Logging.stderr": 1])
+        }
+        CloudKitReport.watchIfRequested()
         // `-CotizaResetState YES` (UI tests) starts like a fresh install: no settings, nothing saved to disk.
         if UserDefaults.standard.bool(forKey: "CotizaResetState") {
             if let id = Bundle.main.bundleIdentifier { UserDefaults.standard.removePersistentDomain(forName: id) }
@@ -20,6 +27,7 @@ struct CotizaApp: App {
         container = AppDatabase.container
         #if DEBUG
         Self.seedDemoDataIfRequested(in: container)
+        CloudKitReport.runIfRequested()
         // Screenshots show the screen itself, not the launch animation.
         if ScreenshotScene.current != nil { _showsSplash = State(initialValue: false) }
         #endif

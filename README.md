@@ -83,6 +83,12 @@ python3 Tools/make_strings.py
 - `-CotizaResetState YES` — temiz kurulum gibi başlatır (UI testleri kullanır)
 - `-CotizaScreen <capture|editor|pdf|signature|home|report|paywall>` — App Store ekran görüntüleri için o ekranı
   örnek veriyle doğrudan açar (`Tools/screenshots.sh` kullanır)
+- `-CotizaInitCloudKitSchema YES` — tüm iCloud şemasını Development'a yazar ve uygulamayı kapatır (bkz. "App Store'a
+  göndermeden önce" 3. madde)
+- Ortam değişkeni `CotizaCloudKitReport=1` — iCloud'da bu kullanıcı için ne kayıtlı olduğunu türlere göre sayar,
+  `Documents/cloudkit-report.txt`'e ve konsola yazar; `CotizaCloudKitLookup=<kayıt adı>,…` ile tek tek kayıt sorar.
+  `CotizaCloudKitDebug=1` her senkron adımını hatasıyla birlikte konsola yazar. Telefonda:
+  `xcrun devicectl device process launch --device <UDID> --console --environment-variables '{"CotizaCloudKitReport":"1"}' com.cotiza.app`
 - `-CotizaDemoPaid YES` — (`-CotizaDemoData` ile) bu ay ödenmiş 3 iş, fiş maliyetleri ve aylık tekrar; rapor ve
   tekrarlayan faturaları denemek için
 
@@ -142,8 +148,8 @@ Tools/deploy_sign.sh
 3. iCloud: Apple Developer hesabında `iCloud.com.cotiza.app` CloudKit container'ını oluştur ve uygulama
    kimliğine iCloud (CloudKit) + Push Notifications yetkilerini ekle. Şemayı oluşturmak için Xcode'da
    Product → Scheme → Edit Scheme → Run → Arguments'ta `-CotizaInitCloudKitSchema YES` kutusunu işaretle,
-   iCloud'a girişli bir iPhone'da bir kez çalıştır (konsolda "✅ CloudKit schema created" yazar), kutuyu
-   kaldır. Bu, tüm kayıt türlerini ve alanları Development ortamına yazar; uygulamayı kullanarak oluşan şemada
+   iCloud'a girişli bir iPhone'da bir kez çalıştır (konsolda "✅ CloudKit schema created" yazar, uygulama
+   kendini kapatır), kutuyu kaldır. Bu, tüm kayıt türlerini ve alanları Development ortamına yazar; uygulamayı kullanarak oluşan şemada
    hiç doldurulmamış alanlar eksik kalır. **Yayından önce CloudKit Console'da şemayı Production'a "Deploy"
    et**, yoksa App Store ve TestFlight sürümlerinde senkron çalışmaz. Modele alan eklerken yalnızca yeni alan ekle
    (silme / yeniden adlandırma CloudKit'te yapılamaz).
