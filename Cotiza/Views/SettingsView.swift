@@ -88,7 +88,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Dates and reminders")
                 } footer: {
-                    Text("Cotiza reminds you when an estimate has waited \(ReminderScheduler.followUpDays) days for an answer and when an invoice is past due.")
+                    Text("Precia reminds you when an estimate has waited \(ReminderScheduler.followUpDays) days for an answer and when an invoice is past due.")
                 }
 
                 Section {
@@ -133,7 +133,7 @@ struct SettingsView: View {
                     }
                     if let review = AppLinks.writeReview {
                         Link(destination: review) {
-                            Label("Rate Cotiza on the App Store", systemImage: "star.fill")
+                            Label("Rate Precia on the App Store", systemImage: "star.fill")
                         }
                     }
                     Link(destination: AppLinks.support) {
@@ -146,7 +146,7 @@ struct SettingsView: View {
                         Label("Terms of use", systemImage: "doc.plaintext.fill")
                     }
                 } footer: {
-                    Text("Cotiza \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")")
+                    Text("Precia \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")")
                         .frame(maxWidth: .infinity)
                         .padding(.top, 8)
                 }
@@ -205,7 +205,7 @@ struct SettingsView: View {
                 LabeledContent {
                     Text("Active").foregroundStyle(.green)
                 } label: {
-                    Label("Cotiza Pro", systemImage: "crown.fill")
+                    Label("Precia Pro", systemImage: "crown.fill")
                 }
                 Button("Manage subscription") { showsManage = true }
             } else {
@@ -219,7 +219,7 @@ struct SettingsView: View {
                             .frame(width: 40, height: 40)
                             .background(Color.accentColor.gradient, in: RoundedRectangle(cornerRadius: 11, style: .continuous))
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Upgrade to Cotiza Pro")
+                            Text("Upgrade to Precia Pro")
                                 .font(.headline)
                                 .foregroundStyle(Color.primary)
                             Text("Unlimited estimates, invoices and your logo.")
@@ -266,7 +266,7 @@ struct SettingsView: View {
             Text("Logo")
         } footer: {
             if !store.isPro {
-                Text("Your logo on estimates and invoices is part of Cotiza Pro.")
+                Text("Your logo on estimates and invoices is part of Precia Pro.")
             }
         }
     }

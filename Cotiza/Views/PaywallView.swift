@@ -22,7 +22,7 @@ enum AppLinks {
     static var support: URL { URL(string: "mailto:\(supportEmail)") ?? supportPage }
 
     /// The numeric Apple ID from App Store Connect (App Information). Until it's set, the
-    /// "Rate Cotiza" row stays hidden; the in-app rating prompt works without it.
+    /// "Rate Precia" row stays hidden; the in-app rating prompt works without it.
     static let appStoreID: String? = nil
     static var writeReview: URL? {
         appStoreID.flatMap { URL(string: "https://apps.apple.com/app/id\($0)?action=write-review") }
@@ -157,7 +157,7 @@ struct PaywallView: View {
                 .foregroundStyle(.white)
                 .frame(width: 72, height: 72)
                 .background(Color.accentColor.gradient, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            Text("Cotiza Pro")
+            Text("Precia Pro")
                 .font(.largeTitle.bold())
             Text("Look professional. Win more jobs. Get paid faster.")
                 .font(.body)
@@ -174,7 +174,7 @@ struct PaywallView: View {
             feature("signature", "Client signs on your phone", "Approved on the spot, with the signature on the PDF.")
             feature("banknote.fill", "Deposits and partial payments", "Ask for a deposit, record each payment and always know what's still owed.")
             feature("chart.bar.xaxis", "Profit reports", "Income, materials and profit by month, ready for your accountant.")
-            feature("photo.badge.checkmark.fill", "Your logo, your brand", "No Cotiza footer on what your client sees.")
+            feature("photo.badge.checkmark.fill", "Your logo, your brand", "No Precia footer on what your client sees.")
             feature("book.closed.fill", "Remembers your prices", "Your usual prices fill in by themselves.")
         }
         .frame(maxWidth: .infinity, alignment: .leading)

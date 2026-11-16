@@ -82,7 +82,7 @@ struct SignLinkLiveTests {
         let items = [DocumentSnapshot.Item(text: "Live test — paint", quantity: 1, unit: "", unitPrice: 100, amount: 100)]
         let snapshot = DocumentSnapshot(
             kind: .estimate, language: .spanish, displayNumber: "E-TEST", title: "Prueba automática", date: date, isPaid: false,
-            businessName: "Cotiza Test", ownerName: "", businessPhone: "", businessEmail: "", businessAddress: "",
+            businessName: "Precia Test", ownerName: "", businessPhone: "", businessEmail: "", businessAddress: "",
             licenseNumber: "", logo: nil, clientName: "Test Client", clientPhone: "", clientEmail: "", clientAddress: "",
             items: items, totals: Totals(lines: [.init(amount: 100, isTaxable: false)], taxRate: 0), taxRate: 0,
             notes: "", terms: "", paymentInstructions: "", showsBranding: false

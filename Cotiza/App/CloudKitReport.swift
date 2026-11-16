@@ -35,7 +35,7 @@ enum CloudKitReport {
     }
 
     static func run() async {
-        var lines = ["Cotiza CloudKit report \(Date.now.formatted(.iso8601))"]
+        var lines = ["Precia CloudKit report \(Date.now.formatted(.iso8601))"]
         let container = CKContainer(identifier: AppDatabase.iCloudContainer)
         do {
             let status = try await container.accountStatus()

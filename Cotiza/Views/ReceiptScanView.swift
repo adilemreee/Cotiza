@@ -86,7 +86,7 @@ struct ReceiptScanView: View {
                 .padding(.bottom, 6)
             Text("Add materials from a receipt")
                 .font(.title3.bold())
-            Text("Cotiza reads the items and prices on your phone. You choose which ones to add.")
+            Text("Precia reads the items and prices on your phone. You choose which ones to add.")
                 .font(.subheadline)
                 .foregroundStyle(Color.secondary)
                 .multilineTextAlignment(.center)

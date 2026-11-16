@@ -29,7 +29,7 @@ const STRINGS = {
     needSignature: "Please sign in the box.",
     needAgree: "Please check the box to approve.",
     failed: "That didn't go through. Check your connection and try again.",
-    footer: "Sent with Cotiza",
+    footer: "Sent with Precia",
     preview: (total) => `Total ${total} · Review and sign online`,
   },
   es: {
@@ -59,7 +59,7 @@ const STRINGS = {
     needSignature: "Firme en el recuadro, por favor.",
     needAgree: "Marque la casilla para aprobar, por favor.",
     failed: "No se pudo enviar. Revise su conexión e inténtelo de nuevo.",
-    footer: "Enviada con Cotiza",
+    footer: "Enviada con Precia",
     preview: (total) => `Total ${total} · Revísela y fírmela en línea`,
   },
   tr: {
@@ -89,7 +89,7 @@ const STRINGS = {
     needSignature: "Lütfen kutuya imzalayın.",
     needAgree: "Onaylamak için lütfen kutuyu işaretleyin.",
     failed: "Gönderilemedi. Bağlantınızı kontrol edip tekrar deneyin.",
-    footer: "Cotiza ile gönderildi",
+    footer: "Precia ile gönderildi",
     preview: (total) => `Toplam ${total} · İnceleyin ve çevrimiçi imzalayın`,
   },
 };
@@ -217,10 +217,10 @@ const SCRIPT = (s, id) => `
 export function renderPage({ language, state, nonce, id, document: d, signerName, signedAt, publicURL = "" }) {
   const s = STRINGS[language] ?? STRINGS.en;
   // The card WhatsApp, iMessage and others show for the link: "Cotización E-1003 · López Painting LLC".
-  const title = d ? [d.kindLabel && d.number ? `${d.kindLabel} ${d.number}` : s.title(d.number), d.businessName].filter(Boolean).join(" · ") : "Cotiza";
+  const title = d ? [d.kindLabel && d.number ? `${d.kindLabel} ${d.number}` : s.title(d.number), d.businessName].filter(Boolean).join(" · ") : "Precia";
   const description = d ? [d.title, s.preview(d.total)].filter(Boolean).join(" — ") : "";
   const card = `${publicURL}/s/card-${s.lang}.png`;
-  const preview = `<meta property="og:type" content="website"><meta property="og:site_name" content="Cotiza">
+  const preview = `<meta property="og:type" content="website"><meta property="og:site_name" content="Precia">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}">
 <meta property="og:image" content="${esc(card)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${esc(title)}"><meta property="og:url" content="${esc(`${publicURL}/s/${id ?? ""}`)}">
@@ -231,7 +231,7 @@ export function renderPage({ language, state, nonce, id, document: d, signerName
 <title>${esc(title)}</title>${d ? preview : ""}<style>${CSS}</style></head><body>`;
 
   if (!d || state === "missing" || state === "expired") {
-    return `${head}<div class="top"><div class="wrap"><div class="kind">Cotiza</div></div></div>
+    return `${head}<div class="top"><div class="wrap"><div class="kind">Precia</div></div></div>
 <main><div class="card done"><p>${esc(state === "expired" ? s.expired : s.missing)}</p></div></main></body></html>`;
   }
 

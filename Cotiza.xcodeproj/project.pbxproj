@@ -600,7 +600,7 @@
 				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CotizaWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				INFOPLIST_KEY_CFBundleDisplayName = Precia;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,13 +686,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				INFOPLIST_KEY_CFBundleDisplayName = Precia;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Cotiza uses the camera to scan material receipts into your invoices.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Cotiza lets you pick a logo for your estimates and invoices.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Precia uses the camera to scan material receipts into your invoices.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precia uses the microphone so you can describe a job out loud and turn it into an estimate.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Precia lets you pick a logo for your estimates and invoices.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Precia transcribes what you say to build your estimate. Transcription happens on your device when possible.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -711,7 +711,7 @@
 				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CotizaWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				INFOPLIST_KEY_CFBundleDisplayName = Precia;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -838,13 +838,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Cotiza;
+				INFOPLIST_KEY_CFBundleDisplayName = Precia;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Cotiza uses the camera to scan material receipts into your invoices.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Cotiza lets you pick a logo for your estimates and invoices.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Precia uses the camera to scan material receipts into your invoices.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precia uses the microphone so you can describe a job out loud and turn it into an estimate.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Precia lets you pick a logo for your estimates and invoices.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Precia transcribes what you say to build your estimate. Transcription happens on your device when possible.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

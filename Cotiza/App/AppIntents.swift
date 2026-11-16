@@ -99,7 +99,7 @@ enum CotizaIntentError: Error, CustomLocalizedStringResourceConvertible {
 
     var localizedStringResource: LocalizedStringResource {
         switch self {
-        case .documentNotFound: "That document is no longer in Cotiza."
+        case .documentNotFound: "That document is no longer in Precia."
         }
     }
 }
@@ -108,7 +108,7 @@ enum CotizaIntentError: Error, CustomLocalizedStringResourceConvertible {
 
 struct StartEstimateIntent: AppIntent {
     static let title: LocalizedStringResource = "New estimate"
-    static let description = IntentDescription("Open Cotiza ready to describe a job by voice.")
+    static let description = IntentDescription("Open Precia ready to describe a job by voice.")
     static let supportedModes: IntentModes = .foreground
 
     @MainActor
@@ -121,7 +121,7 @@ struct StartEstimateIntent: AppIntent {
 /// Also what runs when someone taps a Cotiza document in Spotlight.
 struct OpenDocumentIntent: OpenIntent {
     static let title: LocalizedStringResource = "Open document"
-    static let description = IntentDescription("Opens an estimate or invoice in Cotiza.")
+    static let description = IntentDescription("Opens an estimate or invoice in Precia.")
     static let supportedModes: IntentModes = .foreground
 
     @Parameter(title: "Document", requestValueDialog: "Which estimate or invoice?")

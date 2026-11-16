@@ -85,7 +85,7 @@ final class CotizaUITests: XCTestCase {
         app.buttons["onboarding.continue"].tap()
 
         // The trial is offered once, right after setup.
-        waitFor(app.staticTexts["Cotiza Pro"])
+        waitFor(app.staticTexts["Precia Pro"])
         closeSheet(app)
 
         // First estimate from the job description
@@ -121,7 +121,7 @@ final class CotizaUITests: XCTestCase {
 
         // Invoices are a Pro feature
         tapMenuItem(app, "Convert to invoice")
-        waitFor(app.staticTexts["Cotiza Pro"])
+        waitFor(app.staticTexts["Precia Pro"])
         closeSheet(app)
 
         // Duplicate, then delete the copy
@@ -149,7 +149,7 @@ final class CotizaUITests: XCTestCase {
         // Limit reached: the paywall instead of the recorder
         waitFor(app.staticTexts["Free plan: 0 of 3 estimates left"])
         app.buttons["New estimate"].tap()
-        waitFor(app.staticTexts["Cotiza Pro"])
+        waitFor(app.staticTexts["Precia Pro"])
         XCTAssertFalse(app.buttons["Create estimate"].exists)
         closeSheet(app)
 
@@ -157,7 +157,7 @@ final class CotizaUITests: XCTestCase {
         app.buttons["Settings"].tap()
         waitFor(app.buttons["Choose logo"])
         app.buttons["Choose logo"].tap()
-        waitFor(app.staticTexts["Cotiza Pro"])
+        waitFor(app.staticTexts["Precia Pro"])
         closeSheet(app)
         let clients = app.buttons["Clients"]
         scrollTo(clients, in: app, topmost: true)

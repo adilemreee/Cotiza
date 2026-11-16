@@ -427,7 +427,7 @@ struct DocumentEditorView: View {
             }
         } footer: {
             if showsMoreOptions, document.kind == .invoice, document.repeatInterval != .never {
-                Text("On that day Cotiza makes a copy of this invoice with a new number and reminds you to send it.")
+                Text("On that day Precia makes a copy of this invoice with a new number and reminds you to send it.")
             }
         }
     }

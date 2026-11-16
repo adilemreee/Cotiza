@@ -867,79 +867,6 @@
         }
       }
     },
-    "Cotiza": {
-      "shouldTranslate": false
-    },
-    "Cotiza %@": {
-      "shouldTranslate": false
-    },
-    "Cotiza Pro": {
-      "shouldTranslate": false
-    },
-    "Cotiza reads the items and prices on your phone. You choose which ones to add.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza lee los artículos y precios en tu teléfono. Tú eliges cuáles agregar."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza kalemleri ve fiyatları telefonunda okur. Hangilerini ekleyeceğini sen seçersin."
-          }
-        }
-      }
-    },
-    "Cotiza remembers your prices each time you send an estimate.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza recuerda tus precios cada vez que envías una cotización."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza her teklif gönderdiğinde fiyatlarını hatırlar."
-          }
-        }
-      }
-    },
-    "Cotiza reminds you when an estimate has waited %lld days for an answer and when an invoice is past due.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza te avisa cuando una cotización lleva %lld días sin respuesta y cuando una factura está vencida."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza, bir teklif %lld gündür yanıt beklediğinde ve bir faturanın vadesi geçtiğinde sana hatırlatır."
-          }
-        }
-      }
-    },
-    "Cotiza uses this to understand the jobs you describe.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza lo usa para entender los trabajos que describes."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cotiza bunu anlattığın işleri anlamak için kullanır."
-          }
-        }
-      }
-    },
     "Couldn't create the PDF": {
       "localizations": {
         "es": {
@@ -1148,18 +1075,18 @@
         }
       }
     },
-    "Describe the work in Spanish or English. Cotiza writes a professional estimate your client can approve on the spot.": {
+    "Describe the work in Spanish or English. Precia writes a professional estimate your client can approve on the spot.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Describe el trabajo en español o en inglés. Cotiza escribe una cotización profesional que tu cliente puede aprobar ahí mismo."
+            "value": "Describe el trabajo en español o en inglés. Precia escribe una cotización profesional que tu cliente puede aprobar ahí mismo."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "İşi Türkçe, İngilizce ya da İspanyolca anlat. Cotiza, müşterinin hemen onaylayabileceği profesyonel bir teklif yazar."
+            "value": "İşi Türkçe, İngilizce ya da İspanyolca anlat. Precia, müşterinin hemen onaylayabileceği profesyonel bir teklif yazar."
           }
         }
       }
@@ -1323,12 +1250,6 @@
           }
         }
       }
-    },
-    "EN": {
-      "shouldTranslate": false
-    },
-    "ES": {
-      "shouldTranslate": false
     },
     "Edit": {
       "localizations": {
@@ -1870,22 +1791,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Konuştuğum dil"
-          }
-        }
-      }
-    },
-    "Income is counted on the day a job is marked paid. Materials cost comes from scanned receipts and the cost you enter on each item.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los ingresos cuentan el día en que marcas el trabajo como pagado. El costo de materiales sale de los recibos escaneados y del costo que escribes en cada concepto."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gelir, iş ödendi olarak işaretlendiği gün sayılır. Malzeme maliyeti taranan fişlerden ve her kaleme girdiğin maliyetten gelir."
           }
         }
       }
@@ -2546,18 +2451,18 @@
         }
       }
     },
-    "No Cotiza footer on what your client sees.": {
+    "No Precia footer on what your client sees.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sin la marca de Cotiza en lo que ve tu cliente."
+            "value": "Sin la marca de Precia en lo que ve tu cliente."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Müşterinin gördüğü belgelerde Cotiza yazısı olmaz."
+            "value": "Müşterinin gördüğü belgelerde Precia yazısı olmaz."
           }
         }
       }
@@ -2722,18 +2627,18 @@
         }
       }
     },
-    "On that day Cotiza makes a copy of this invoice with a new number and reminds you to send it.": {
+    "On that day Precia makes a copy of this invoice with a new number and reminds you to send it.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ese día Cotiza hace una copia de esta factura con un número nuevo y te recuerda enviarla."
+            "value": "Ese día Precia hace una copia de esta factura con un número nuevo y te recuerda enviarla."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "O gün Cotiza bu faturanın yeni numaralı bir kopyasını oluşturur ve göndermeni hatırlatır."
+            "value": "O gün Precia bu faturanın yeni numaralı bir kopyasını oluşturur ve göndermeni hatırlatır."
           }
         }
       }
@@ -2754,18 +2659,18 @@
         }
       }
     },
-    "Open Cotiza ready to describe a job by voice.": {
+    "Open Precia ready to describe a job by voice.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abre Cotiza listo para describir un trabajo con tu voz."
+            "value": "Abre Precia listo para describir un trabajo con tu voz."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cotiza'yı bir işi sesle anlatmaya hazır aç."
+            "value": "Precia'yı bir işi sesle anlatmaya hazır aç."
           }
         }
       }
@@ -2802,18 +2707,18 @@
         }
       }
     },
-    "Opens an estimate or invoice in Cotiza.": {
+    "Opens an estimate or invoice in Precia.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abre una cotización o factura en Cotiza."
+            "value": "Abre una cotización o factura en Precia."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cotiza'da bir teklif ya da fatura açar."
+            "value": "Precia'da bir teklif ya da fatura açar."
           }
         }
       }
@@ -3058,6 +2963,79 @@
         }
       }
     },
+    "Precia": {
+      "shouldTranslate": false
+    },
+    "Precia %@": {
+      "shouldTranslate": false
+    },
+    "Precia Pro": {
+      "shouldTranslate": false
+    },
+    "Precia reads the items and prices on your phone. You choose which ones to add.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia lee los artículos y precios en tu teléfono. Tú eliges cuáles agregar."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia kalemleri ve fiyatları telefonunda okur. Hangilerini ekleyeceğini sen seçersin."
+          }
+        }
+      }
+    },
+    "Precia remembers your prices each time you send an estimate.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia recuerda tus precios cada vez que envías una cotización."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia her teklif gönderdiğinde fiyatlarını hatırlar."
+          }
+        }
+      }
+    },
+    "Precia reminds you when an estimate has waited %lld days for an answer and when an invoice is past due.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia te avisa cuando una cotización lleva %lld días sin respuesta y cuando una factura está vencida."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia, bir teklif %lld gündür yanıt beklediğinde ve bir faturanın vadesi geçtiğinde sana hatırlatır."
+          }
+        }
+      }
+    },
+    "Precia uses this to understand the jobs you describe.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia lo usa para entender los trabajos que describes."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precia bunu anlattığın işleri anlamak için kullanır."
+          }
+        }
+      }
+    },
     "Preview and send": {
       "localizations": {
         "es": {
@@ -3166,38 +3144,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Faturalara ve kapora isteyen tekliflere basılır. Yeni teklifler bu kaporayı ister; 0 kapora yok demektir."
-          }
-        }
-      }
-    },
-    "Printed on invoices.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aparece en las facturas."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Faturalara basılır."
-          }
-        }
-      }
-    },
-    "Printed on the PDF.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aparece en el PDF."
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PDF'e basılır."
           }
         }
       }
@@ -3330,18 +3276,18 @@
         }
       }
     },
-    "Rate Cotiza on the App Store": {
+    "Rate Precia on the App Store": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Califica Cotiza en el App Store"
+            "value": "Califica Precia en el App Store"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cotiza'yı App Store'da puanla"
+            "value": "Precia'yı App Store'da puanla"
           }
         }
       }
@@ -4194,18 +4140,18 @@
         }
       }
     },
-    "That document is no longer in Cotiza.": {
+    "That document is no longer in Precia.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ese documento ya no está en Cotiza."
+            "value": "Ese documento ya no está en Precia."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bu belge artık Cotiza'da yok."
+            "value": "Bu belge artık Precia'da yok."
           }
         }
       }
@@ -4498,18 +4444,18 @@
         }
       }
     },
-    "Upgrade to Cotiza Pro": {
+    "Upgrade to Precia Pro": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pásate a Cotiza Pro"
+            "value": "Pásate a Precia Pro"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cotiza Pro'ya geç"
+            "value": "Precia Pro'ya geç"
           }
         }
       }
@@ -4856,18 +4802,18 @@
         }
       }
     },
-    "Your logo on estimates and invoices is part of Cotiza Pro.": {
+    "Your logo on estimates and invoices is part of Precia Pro.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tu logo en cotizaciones y facturas es parte de Cotiza Pro."
+            "value": "Tu logo en cotizaciones y facturas es parte de Precia Pro."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Teklif ve faturalarda kendi logon Cotiza Pro'ya dahildir."
+            "value": "Teklif ve faturalarda kendi logon Precia Pro'ya dahildir."
           }
         }
       }
@@ -4959,12 +4905,6 @@
       }
     },
     "·": {
-      "shouldTranslate": false
-    },
-    "“Paint two bedrooms at 350 each, install 3 doors at 120 dollars each and 8 hours of labor at 45 an hour. Client Maria Lopez.”": {
-      "shouldTranslate": false
-    },
-    "“Pintar dos recámaras a 350 cada una, instalar 3 puertas a 120 dólares cada una y 8 horas de mano de obra a 45 la hora. Cliente María López.”": {
       "shouldTranslate": false
     }
   },

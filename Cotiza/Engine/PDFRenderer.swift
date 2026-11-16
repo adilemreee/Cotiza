@@ -150,7 +150,7 @@ nonisolated struct PDFStrings: Sendable {
     var signedOn: String { t("Signed on", "Firmada el", "İmza tarihi") }
     var clientSignature: String { t("Client signature", "Firma del cliente", "Müşteri imzası") }
     var thanks: String { t("Thank you for your business.", "Gracias por su preferencia.", "Bizi tercih ettiğiniz için teşekkür ederiz.") }
-    var branding: String { t("Made with Cotiza", "Creado con Cotiza", "Cotiza ile hazırlandı") }
+    var branding: String { t("Made with Precia", "Creado con Precia", "Precia ile hazırlandı") }
     func page(_ number: Int) -> String { t("Page \(number)", "Página \(number)", "Sayfa \(number)") }
     var balanceDue: String { t("Balance due", "Saldo pendiente", "Kalan tutar") }
     func depositToStart(percent: String) -> String {

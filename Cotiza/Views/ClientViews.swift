@@ -228,7 +228,7 @@ struct PriceBookView: View {
         }
         .overlay {
             if entries.isEmpty {
-                ContentUnavailableView("No saved prices", systemImage: "book.closed", description: Text("Cotiza remembers your prices each time you send an estimate."))
+                ContentUnavailableView("No saved prices", systemImage: "book.closed", description: Text("Precia remembers your prices each time you send an estimate."))
             }
         }
         .navigationTitle("My prices")

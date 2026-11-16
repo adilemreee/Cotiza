@@ -1,6 +1,10 @@
-# Cotiza — App Store Connect metinleri
+# Precia — App Store Connect metinleri
 
-Kopyala-yapıştır için hazır. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
+Kopyala-yapıştır için hazır.
+
+**Ad değişikliği (16 Kasım 2026): Cotiza → Precia.** App Store'da aynı işi yapan "Cotizza" ve "Cotiza Pro"
+uygulamaları var. Görünen ad 1.1.1 ile Precia oluyor. Paket kimliği (`com.cotiza.app`), abonelik ürün
+kimlikleri ve iCloud kapsayıcısı aynı kaldı; kullanıcı bunları görmez, veri ve abonelikler etkilenmez. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
 
 Dil sırası: **English (U.S.)** ana dil, **Spanish (Mexico)** ek dil. ABD App Store'u İspanyolca cihaz
 kullanan kişilere Spanish (Mexico) metinlerini gösterir; hedef kitle bu. **Turkish** isteğe bağlı üçüncü dil: Türkiye
@@ -10,7 +14,7 @@ mağazası ve Türkçe cihazlar için (4. bölüm).
 
 - **Ad, en çok aranan iki kelimeyi taşır.** Ustalar uygulamayı ne yaptığıyla arar: "estimate", "invoice",
   "factura", "presupuesto". Apple'ın aramasında en ağır basan alan addır; "by voice" gibi bir özelliği değil,
-  aranan kelimeyi buraya koyuyoruz. Ana ekranda görünen ad yine kısaca "Cotiza".
+  aranan kelimeyi buraya koyuyoruz. Ana ekranda görünen ad yine kısaca "Precia".
 - **Alt başlık, farkı söyler.** Sesle teklif ("voice quotes / cotizaciones por voz") ve kitle ("contractors") ya da
   Pro'nun en güçlü özelliği ("firma"). Bunlar da aramada sayılır.
 - **ABD mağazası iki dili birlikte okur.** English (U.S.) ve Spanish (Mexico) adı, alt başlığı ve anahtar
@@ -52,7 +56,7 @@ Site kaynağı `AppStore/site`, yayınlamak için `Tools/deploy_site.sh`.
 
 **Name** (30)
 ```
-Cotiza: Estimates & Invoices
+Precia: Estimates & Invoices
 ```
 
 **Subtitle** (30)
@@ -62,7 +66,7 @@ Voice quotes for contractors
 
 **Promotional text** (170)
 ```
-Describe the job out loud in Spanish or English. Cotiza turns it into a clean, professional estimate your client can approve on the spot.
+Describe the job out loud in Spanish or English. Precia turns it into a clean, professional estimate your client can approve on the spot.
 ```
 
 **Keywords** (100 byte, virgülden sonra boşluk yok)
@@ -74,11 +78,11 @@ maker,bid,proposal,handyman,painter,landscaping,cleaning,roofing,plumber,receipt
 ```
 Win more jobs by sending a professional estimate before you leave the driveway.
 
-Cotiza is built for contractors and small crews who'd rather talk than type. Describe the job out loud — in Spanish, English, or a mix of both — with your quantities and prices. Cotiza turns it into line items, adds them up and creates a clean PDF estimate with your business name, ready to text or email to your client.
+Precia is built for contractors and small crews who'd rather talk than type. Describe the job out loud — in Spanish, English, or a mix of both — with your quantities and prices. Precia turns it into line items, adds them up and creates a clean PDF estimate with your business name, ready to text or email to your client.
 
 SAY IT, DON'T TYPE IT
 "Paint two bedrooms at 350 each, install 3 doors at 120 each and 8 hours of labor at 45 an hour. Client Maria Lopez."
-Cotiza picks out each task, the quantity, the unit and the price. You review it, fix anything with a tap, and send.
+Precia picks out each task, the quantity, the unit and the price. You review it, fix anything with a tap, and send.
 
 SPEAK SPANISH, SEND ENGLISH
 Talk in the language you think in. Your client receives a clear estimate in the language they read. Every document can be set to English or Spanish.
@@ -100,20 +104,20 @@ GET PAID FASTER
 • See what's waiting for an answer and what you've been paid this month
 
 KNOW WHAT YOU MADE
-• Scanned receipts keep your cost; Cotiza adds your markup (15% by default) to what the client pays
+• Scanned receipts keep your cost; Precia adds your markup (15% by default) to what the client pays
 • Monthly and yearly reports: revenue, sales tax collected, materials cost and profit per job
 • Export a spreadsheet (CSV) or PDF for your accountant at tax time
 
 LESS TYPING
 • Scan a store receipt and add the materials to the invoice
 • Pick a client from your Contacts
-• Home Screen and Lock Screen widgets, and Siri: "How much am I owed in Cotiza?"
+• Home Screen and Lock Screen widgets, and Siri: "How much am I owed in Precia?"
 
 ON ALL YOUR DEVICES
 Your jobs sync through your private iCloud, so they're on your new iPhone and your iPad. We never see them.
 
 GETS FASTER EVERY TIME
-Cotiza remembers the prices you use, so your usual work fills in by itself.
+Precia remembers the prices you use, so your usual work fills in by itself.
 
 PRIVATE BY DESIGN
 No account, no sign-up. Your jobs, clients and prices are stored on your phone and in your private iCloud. On iPhones with Apple Intelligence, the estimate is written by Apple's on-device model; your job description is not sent to us. A signing link you send is deleted from our server once it's signed.
@@ -121,7 +125,7 @@ No account, no sign-up. Your jobs, clients and prices are stored on your phone a
 Made for painters, landscapers, cleaners, handymen, roofers, flooring, drywall, concrete, plumbing, electrical and HVAC pros, and general contractors.
 
 COTIZA PRO
-Try Cotiza free with 3 estimates. Cotiza Pro gives you unlimited estimates, invoices, recurring invoices, deposits and partial payments, client signatures, profit reports, your logo on every document and no Cotiza branding. Choose weekly, monthly or yearly; the yearly plan starts with a 3-day free trial for new subscribers.
+Try Precia free with 3 estimates. Precia Pro gives you unlimited estimates, invoices, recurring invoices, deposits and partial payments, client signatures, profit reports, your logo on every document and no Precia branding. Choose weekly, monthly or yearly; the yearly plan starts with a 3-day free trial for new subscribers.
 
 Payment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless it is canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the end of the current period. Manage or cancel anytime in your App Store account settings. Any unused portion of a free trial is forfeited when you purchase a subscription.
 
@@ -132,6 +136,8 @@ Privacy Policy: https://cotiza.adilemree.xyz/privacy
 
 **What's New** (4000) — 1.1.1 (1.1.0 ayrıca yayınlanmadığı için onun notlarını da içerir)
 ```
+Cotiza is now Precia: same app, new name.
+
 Deposits and partial payments
 
 • Ask for a deposit on your estimates. Set your usual percentage once in Settings. The deposit is printed on the PDF, on the signing page and in the message to your client.
@@ -141,9 +147,9 @@ Deposits and partial payments
 • The home screen shows what each client still owes, and overdue reminders mention the balance, not the full total.
 • Reports count every payment on the day you got it, deposits included.
 • A cleaner estimate and invoice screen: dates, repeat, deposit percentage, language and status are now tucked under More options.
-• Cotiza now speaks Turkish: the app, voice input and documents.
+• Precia now speaks Turkish: the app, voice input and documents.
 
-Recording payments is part of Cotiza Pro.
+Recording payments is part of Precia Pro.
 ```
 
 ---
@@ -152,7 +158,7 @@ Recording payments is part of Cotiza Pro.
 
 **Name** (30)
 ```
-Cotiza: Factura y Presupuesto
+Precia: Factura y Presupuesto
 ```
 
 **Subtitle** (30)
@@ -162,29 +168,29 @@ Cotizaciones por voz y firma
 
 **Promotional text** (170)
 ```
-Describe el trabajo en voz alta, en español o en inglés. Cotiza lo convierte en una cotización profesional que tu cliente puede aprobar ahí mismo.
+Describe el trabajo en voz alta, en español o en inglés. Precia lo convierte en una cotización profesional que tu cliente puede aprobar ahí mismo.
 ```
 
 **Keywords** (100 byte)
 ```
-contratista,pintor,jardineria,limpieza,techos,plomero,remodelacion,recibo,cobrar,ganancias,estimado
+contratista,pintor,jardineria,limpieza,techos,plomero,remodelacion,recibo,cobrar,ganancias,cotizar
 ```
 
 **Description** (4000)
 ```
 Gana más trabajos enviando una cotización profesional antes de irte de la casa del cliente.
 
-Cotiza está hecho para contratistas y cuadrillas que prefieren hablar en vez de escribir. Describe el trabajo en voz alta —en español, en inglés o mezclando los dos— con tus cantidades y precios. Cotiza lo convierte en conceptos, suma todo y crea una cotización en PDF con el nombre de tu negocio, lista para mandar por mensaje o correo.
+Precia está hecho para contratistas y cuadrillas que prefieren hablar en vez de escribir. Describe el trabajo en voz alta —en español, en inglés o mezclando los dos— con tus cantidades y precios. Precia lo convierte en conceptos, suma todo y crea una cotización en PDF con el nombre de tu negocio, lista para mandar por mensaje o correo.
 
 DILO, NO LO ESCRIBAS
 "Pintar dos recámaras a 350 cada una, instalar 3 puertas a 120 cada una y 8 horas de mano de obra a 45 la hora. Cliente María López."
-Cotiza saca cada trabajo, la cantidad, la unidad y el precio. Lo revisas, corriges lo que quieras con un toque y lo envías.
+Precia saca cada trabajo, la cantidad, la unidad y el precio. Lo revisas, corriges lo que quieras con un toque y lo envías.
 
 HABLA ESPAÑOL, ENVÍA EN INGLÉS
 Habla en el idioma en que piensas. Tu cliente recibe una cotización clara en el idioma que lee. Cada documento puede ir en inglés o en español.
 
 CIERRA EL TRATO, AUNQUE NO ESTÉS
-Tu cliente firma con el dedo en tu teléfono o desde un enlace que le mandas por mensaje o WhatsApp. La cotización queda aprobada, te avisa Cotiza y la firma sale en el PDF con la fecha. Sin papel.
+Tu cliente firma con el dedo en tu teléfono o desde un enlace que le mandas por mensaje o WhatsApp. La cotización queda aprobada, te avisa Precia y la firma sale en el PDF con la fecha. Sin papel.
 
 LUCE PROFESIONAL
 • Cotizaciones y facturas en PDF con los datos de tu negocio, número de licencia, términos y fecha de vigencia o de pago
@@ -199,20 +205,20 @@ COBRA MÁS RÁPIDO
 • Ve cuánto te deben y cuánto cobraste este mes
 
 SABE CUÁNTO GANASTE
-• Los recibos escaneados guardan tu costo; Cotiza le suma tu ganancia (15% de inicio) a lo que paga el cliente
+• Los recibos escaneados guardan tu costo; Precia le suma tu ganancia (15% de inicio) a lo que paga el cliente
 • Reportes por mes y por año: ingresos, impuesto cobrado, costo de materiales y ganancia por trabajo
 • Exporta un CSV o un PDF para tu contador en temporada de impuestos
 
 ESCRIBE MENOS
 • Escanea el recibo de la tienda y agrega los materiales a la factura
 • Elige al cliente de tus Contactos
-• Widgets en la pantalla de inicio y bloqueada, y Siri: "¿Cuánto me deben en Cotiza?"
+• Widgets en la pantalla de inicio y bloqueada, y Siri: "¿Cuánto me deben en Precia?"
 
 EN TODOS TUS DISPOSITIVOS
 Tus trabajos se sincronizan con tu iCloud privado: están en tu iPhone nuevo y en tu iPad. Nosotros nunca los vemos.
 
 CADA VEZ MÁS RÁPIDO
-Cotiza recuerda los precios que usas, así tus trabajos de siempre se llenan solos.
+Precia recuerda los precios que usas, así tus trabajos de siempre se llenan solos.
 
 PRIVADO POR DISEÑO
 Sin cuenta ni registro. Tus trabajos, clientes y precios se guardan en tu teléfono y en tu iCloud privado. Con Apple Intelligence, la cotización la escribe el modelo de Apple dentro del teléfono. Un enlace para firmar se borra del servidor al firmarse.
@@ -220,7 +226,7 @@ Sin cuenta ni registro. Tus trabajos, clientes y precios se guardan en tu teléf
 Para pintores, jardineros, limpieza, mantenimiento, techos, pisos, tablaroca, concreto, plomería, electricidad, aire acondicionado y contratistas.
 
 COTIZA PRO
-Prueba Cotiza gratis con 3 cotizaciones. Cotiza Pro te da cotizaciones ilimitadas, facturas, facturas que se repiten, anticipos y pagos parciales, firma del cliente, reportes de ganancias, tu logo en cada documento y sin la marca de Cotiza. Elige plan semanal, mensual o anual; el plan anual empieza con una prueba gratis de 3 días para nuevos suscriptores.
+Prueba Precia gratis con 3 cotizaciones. Precia Pro te da cotizaciones ilimitadas, facturas, facturas que se repiten, anticipos y pagos parciales, firma del cliente, reportes de ganancias, tu logo en cada documento y sin la marca de Precia. Elige plan semanal, mensual o anual; el plan anual empieza con una prueba gratis de 3 días para nuevos suscriptores.
 
 El pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente a menos que se cancele al menos 24 horas antes de que termine el periodo actual. La renovación se cobra dentro de las 24 horas previas al final del periodo. Puedes administrarla o cancelarla cuando quieras en la configuración de tu cuenta del App Store. La parte no usada de una prueba gratis se pierde al comprar una suscripción.
 
@@ -231,6 +237,8 @@ Política de privacidad: https://cotiza.adilemree.xyz/es/privacy
 
 **What's New** (4000) — 1.1.1
 ```
+Cotiza ahora se llama Precia: la misma app, con nombre nuevo.
+
 Anticipos y pagos parciales
 
 • Pide un anticipo en tus cotizaciones. Pon tu porcentaje de siempre una vez en Configuración. El anticipo sale en el PDF, en la página para firmar y en el mensaje a tu cliente.
@@ -240,9 +248,9 @@ Anticipos y pagos parciales
 • La pantalla de inicio muestra cuánto te debe cada cliente, y los recordatorios de pago vencido dicen el saldo, no el total.
 • Los reportes cuentan cada pago el día en que lo recibiste, anticipos incluidos.
 • Pantalla de cotización y factura más limpia: fechas, repetición, porcentaje de anticipo, idioma y estado ahora están en Más opciones.
-• Cotiza ahora también está en turco: la app, la voz y los documentos.
+• Precia ahora también está en turco: la app, la voz y los documentos.
 
-Registrar pagos es parte de Cotiza Pro.
+Registrar pagos es parte de Precia Pro.
 ```
 
 ---
@@ -255,7 +263,7 @@ Zelle/Venmo gibi ABD'ye özgü adlar geçmiyor.
 
 **Name** (30)
 ```
-Cotiza: Teklif ve Fatura
+Precia: Teklif ve Fatura
 ```
 
 **Subtitle** (30)
@@ -265,7 +273,7 @@ Ustalar için sesle teklif
 
 **Promotional text** (170)
 ```
-İşi fiyatlarıyla birlikte sesli anlat. Cotiza onu müşterinin yerinde onaylayabileceği düzgün, profesyonel bir teklife çevirir.
+İşi fiyatlarıyla birlikte sesli anlat. Precia onu müşterinin yerinde onaylayabileceği düzgün, profesyonel bir teklife çevirir.
 ```
 
 **Keywords** (100 byte; Türkçe harfler 2 bayt sayılır)
@@ -277,11 +285,11 @@ fiyat,keşif,boyacı,tadilat,tesisat,elektrikçi,kapora,imza,makbuz,proforma,mü
 ```
 İşi, müşterinin kapısından çıkmadan profesyonel bir teklif göndererek al.
 
-Cotiza, yazmak yerine konuşmayı tercih eden ustalar ve küçük ekipler için yapıldı. İşi miktarları ve fiyatlarıyla birlikte Türkçe sesli anlat. Cotiza onu kalemlere ayırır, toplar ve işletmenin adıyla düzgün bir PDF teklif hazırlar; SMS, WhatsApp ya da e-postayla göndermeye hazır.
+Precia, yazmak yerine konuşmayı tercih eden ustalar ve küçük ekipler için yapıldı. İşi miktarları ve fiyatlarıyla birlikte Türkçe sesli anlat. Precia onu kalemlere ayırır, toplar ve işletmenin adıyla düzgün bir PDF teklif hazırlar; SMS, WhatsApp ya da e-postayla göndermeye hazır.
 
 YAZMA, SÖYLE
 "2 yatak odası boyama tanesi 350, 3 kapı takma tanesi 120 ve 8 saat işçilik saati 45. Müşteri Ayşe Yılmaz."
-Cotiza her işi, miktarı, birimi ve fiyatı ayırır. Sen kontrol edersin, yanlışı tek dokunuşla düzeltir ve gönderirsin. "Tanesi 120", "metrekaresi 25", "toplam 600" ya da "iki buçuk saat" gibi günlük söyleyişleri anlar.
+Precia her işi, miktarı, birimi ve fiyatı ayırır. Sen kontrol edersin, yanlışı tek dokunuşla düzeltir ve gönderirsin. "Tanesi 120", "metrekaresi 25", "toplam 600" ya da "iki buçuk saat" gibi günlük söyleyişleri anlar.
 
 TÜRKÇE KONUŞ, İSTEDİĞİN DİLDE GÖNDER
 Hangi dilde düşünüyorsan o dilde konuş. Her belge Türkçe, İngilizce ya da İspanyolca olabilir; müşterin teklifi okuduğu dilde alır.
@@ -303,20 +311,20 @@ PARANI DAHA ÇABUK AL
 • Neyin yanıt beklediğini ve bu ay ne kadar tahsil ettiğini gör
 
 NE KAZANDIĞINI BİL
-• Taranan fişler maliyetini saklar; Cotiza müşterinin ödediği fiyata kâr payını (varsayılan %15) ekler
+• Taranan fişler maliyetini saklar; Precia müşterinin ödediği fiyata kâr payını (varsayılan %15) ekler
 • Aylık ve yıllık raporlar: gelir, toplanan vergi, malzeme maliyeti ve iş başına kâr
 • Muhasebecin için tablo (CSV) ya da PDF olarak dışa aktar
 
 DAHA AZ YAZ
 • Mağaza fişini tara, malzemeleri faturaya ekle
 • Müşteriyi Kişiler'den seç
-• Ana ekran ve kilit ekranı widget'ları, ve Siri: "Cotiza içinde ne kadar alacağım var"
+• Ana ekran ve kilit ekranı widget'ları, ve Siri: "Precia içinde ne kadar alacağım var"
 
 TÜM CİHAZLARINDA
 İşlerin özel iCloud'un üzerinden senkronlanır; yeni iPhone'unda ve iPad'inde de seninle. Biz hiçbir zaman göremeyiz.
 
 HER SEFERİNDE DAHA HIZLI
-Cotiza kullandığın fiyatları hatırlar; her zamanki işlerin kendiliğinden dolar.
+Precia kullandığın fiyatları hatırlar; her zamanki işlerin kendiliğinden dolar.
 
 GİZLİLİK ESASTIR
 Hesap yok, kayıt yok. İşlerin, müşterilerin ve fiyatların telefonunda ve özel iCloud'unda saklanır. Apple Intelligence olan iPhone'larda teklifi Apple'ın cihaz üzerindeki modeli yazar; iş tarifin bize gönderilmez. Gönderdiğin imza bağlantısı imzalanınca sunucumuzdan silinir.
@@ -324,7 +332,7 @@ Hesap yok, kayıt yok. İşlerin, müşterilerin ve fiyatların telefonunda ve �
 Boyacılar, bahçıvanlar, temizlikçiler, tadilat, çatı, parke, alçıpan, beton, sıhhi tesisat, elektrik ve klima ustaları ve müteahhitler için.
 
 COTIZA PRO
-Cotiza'yı 3 teklifle ücretsiz dene. Cotiza Pro ile sınırsız teklif, faturalar, tekrarlanan faturalar, kapora ve kısmi ödemeler, müşteri imzası, kâr raporları, her belgede kendi logon ve Cotiza markası olmadan belgeler. Haftalık, aylık ya da yıllık seç; yıllık plan yeni aboneler için 3 günlük ücretsiz denemeyle başlar.
+Precia'yı 3 teklifle ücretsiz dene. Precia Pro ile sınırsız teklif, faturalar, tekrarlanan faturalar, kapora ve kısmi ödemeler, müşteri imzası, kâr raporları, her belgede kendi logon ve Precia markası olmadan belgeler. Haftalık, aylık ya da yıllık seç; yıllık plan yeni aboneler için 3 günlük ücretsiz denemeyle başlar.
 
 Ödeme, satın almayı onayladığında Apple Hesabı'ndan alınır. Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir. Yenileme ücreti dönem bitmeden önceki 24 saat içinde alınır. Aboneliğini istediğin zaman App Store hesap ayarlarından yönetebilir ya da iptal edebilirsin. Abonelik satın aldığında ücretsiz denemenin kullanılmayan kısmı geçersiz olur.
 
@@ -335,7 +343,9 @@ Gizlilik Politikası: https://cotiza.adilemree.xyz/tr/privacy
 
 **What's New** (4000) — 1.1.1
 ```
-Cotiza artık Türkçe
+Cotiza'nın yeni adı Precia: aynı uygulama, yeni ad.
+
+Precia artık Türkçe
 
 • Uygulamanın tamamı Türkçe: ekranlar, widget'lar ve Siri.
 • İşi Türkçe sesli anlat: "tanesi 120", "metrekaresi 25", "toplam 600", "iki buçuk saat" gibi söyleyişleri anlar.
@@ -351,7 +361,7 @@ Kapora ve kısmi ödemeler
 • Raporlar, kaporalar dahil her ödemeyi alındığı gün sayar.
 • Daha sade teklif ve fatura ekranı: tarihler, tekrar, kapora yüzdesi, dil ve durum artık Diğer ayarlar altında.
 
-Ödeme kaydetmek Cotiza Pro'ya dahildir.
+Ödeme kaydetmek Precia Pro'ya dahildir.
 ```
 
 ---
@@ -362,7 +372,7 @@ Kapora ve kısmi ödemeler
 
 | | English (U.S.) | Spanish (Mexico) | Turkish |
 | --- | --- | --- | --- |
-| Group display name | Cotiza Pro | Cotiza Pro | Cotiza Pro |
+| Group display name | Precia Pro | Precia Pro | Precia Pro |
 
 | Product ID | Reference name | Süre | Fiyat (öneri) | Intro offer |
 | --- | --- | --- | --- | --- |
@@ -376,17 +386,17 @@ Product ID'ler kodla birebir aynı olmak zorunda.
 
 | Product | Display name (EN, 30) | Description (EN, 45) | Display name (ES, 30) | Description (ES, 45) |
 | --- | --- | --- | --- | --- |
-| Yearly | Cotiza Pro Yearly | Unlimited estimates, invoices and your logo | Cotiza Pro Anual | Cotizaciones ilimitadas, facturas y tu logo |
-| Monthly | Cotiza Pro Monthly | Unlimited estimates, invoices and your logo | Cotiza Pro Mensual | Cotizaciones ilimitadas, facturas y tu logo |
-| Weekly | Cotiza Pro Weekly | Unlimited estimates, invoices and your logo | Cotiza Pro Semanal | Cotizaciones ilimitadas, facturas y tu logo |
+| Yearly | Precia Pro Yearly | Unlimited estimates, invoices and your logo | Precia Pro Anual | Cotizaciones ilimitadas, facturas y tu logo |
+| Monthly | Precia Pro Monthly | Unlimited estimates, invoices and your logo | Precia Pro Mensual | Cotizaciones ilimitadas, facturas y tu logo |
+| Weekly | Precia Pro Weekly | Unlimited estimates, invoices and your logo | Precia Pro Semanal | Cotizaciones ilimitadas, facturas y tu logo |
 
 Turkish:
 
 | Product | Display name (TR, 30) | Description (TR, 45) |
 | --- | --- | --- |
-| Yearly | Cotiza Pro Yıllık | Sınırsız teklif, fatura ve kendi logon |
-| Monthly | Cotiza Pro Aylık | Sınırsız teklif, fatura ve kendi logon |
-| Weekly | Cotiza Pro Haftalık | Sınırsız teklif, fatura ve kendi logon |
+| Yearly | Precia Pro Yıllık | Sınırsız teklif, fatura ve kendi logon |
+| Monthly | Precia Pro Aylık | Sınırsız teklif, fatura ve kendi logon |
+| Weekly | Precia Pro Haftalık | Sınırsız teklif, fatura ve kendi logon |
 
 **Review screenshot** (her ürün için istenir): uygulamadaki Pro ekranının ekran görüntüsü.
 
@@ -402,13 +412,13 @@ No account or sign-in is needed.
 
 HOW TO TEST
 1. Tap "Get started", enter any business name, choose a trade and tap Continue.
-2. The Cotiza Pro offer appears once; close it with the X to stay on the free plan.
+2. The Precia Pro offer appears once; close it with the X to stay on the free plan.
 3. Tap "New estimate". Either tap the microphone and describe a job, or type it, for example:
    "Paint two bedrooms at 350 each, install 3 doors at 120 each and 8 hours of labor at 45 an hour. Client Maria Lopez."
 4. Tap "Create estimate". Line items, quantities and prices are filled in. Tap "Preview and send" to see the PDF.
 
 SUBSCRIPTION
-The free plan allows 3 estimates. Creating a 4th, converting an estimate to an invoice, getting a client signature ("Get client signature" at the bottom of an estimate), recording a payment ("Record a payment" under Payments in an estimate or invoice), opening Reports (chart button on the home screen) or adding a logo opens the Cotiza Pro screen, where the yearly (with a 3-day free trial), monthly and weekly plans can be bought with a sandbox account. "Restore purchases" is on the same screen.
+The free plan allows 3 estimates. Creating a 4th, converting an estimate to an invoice, getting a client signature ("Get client signature" at the bottom of an estimate), recording a payment ("Record a payment" under Payments in an estimate or invoice), opening Reports (chart button on the home screen) or adding a logo opens the Precia Pro screen, where the yearly (with a 3-day free trial), monthly and weekly plans can be bought with a sandbox account. "Restore purchases" is on the same screen.
 
 AI AND PRIVACY
 On devices with Apple Intelligence, the estimate is generated with Apple's on-device Foundation Models framework. On other devices the app uses a built-in parser, so the full flow works on any supported iPhone. No data is sent to our servers; the app has no server and no analytics. Data syncs between the user's own devices through their private iCloud database (CloudKit), which we cannot access.

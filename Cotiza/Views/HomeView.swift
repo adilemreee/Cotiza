@@ -82,7 +82,7 @@ struct HomeView: View {
             }
             .listSectionSpacing(14)
             .readableListWidth()
-            .navigationTitle("Cotiza")
+            .navigationTitle("Precia")
             .navigationDestination(for: JobDocument.self) { document in
                 DocumentEditorView(document: document, profile: profile) { created in
                     path.append(created)

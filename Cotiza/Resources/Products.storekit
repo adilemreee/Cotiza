@@ -14,16 +14,16 @@
       "localizations": [
         {
           "description": "Unlimited estimates, invoices and your logo.",
-          "displayName": "Cotiza Pro",
+          "displayName": "Precia Pro",
           "locale": "en_US"
         },
         {
           "description": "Presupuestos ilimitados, facturas y tu logo.",
-          "displayName": "Cotiza Pro",
+          "displayName": "Precia Pro",
           "locale": "es_MX"
         }
       ],
-      "name": "Cotiza Pro",
+      "name": "Precia Pro",
       "subscriptions": [
         {
           "adHocOffers": [],
@@ -41,12 +41,12 @@
           "localizations": [
             {
               "description": "Unlimited estimates, invoices and your logo.",
-              "displayName": "Cotiza Pro Yearly",
+              "displayName": "Precia Pro Yearly",
               "locale": "en_US"
             },
             {
               "description": "Presupuestos ilimitados, facturas y tu logo.",
-              "displayName": "Cotiza Pro Anual",
+              "displayName": "Precia Pro Anual",
               "locale": "es_MX"
             }
           ],
@@ -68,12 +68,12 @@
           "localizations": [
             {
               "description": "Unlimited estimates, invoices and your logo.",
-              "displayName": "Cotiza Pro Monthly",
+              "displayName": "Precia Pro Monthly",
               "locale": "en_US"
             },
             {
               "description": "Presupuestos ilimitados, facturas y tu logo.",
-              "displayName": "Cotiza Pro Mensual",
+              "displayName": "Precia Pro Mensual",
               "locale": "es_MX"
             }
           ],
@@ -95,12 +95,12 @@
           "localizations": [
             {
               "description": "Unlimited estimates, invoices and your logo.",
-              "displayName": "Cotiza Pro Weekly",
+              "displayName": "Precia Pro Weekly",
               "locale": "en_US"
             },
             {
               "description": "Presupuestos ilimitados, facturas y tu logo.",
-              "displayName": "Cotiza Pro Semanal",
+              "displayName": "Precia Pro Semanal",
               "locale": "es_MX"
             }
           ],

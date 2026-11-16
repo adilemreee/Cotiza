@@ -1,4 +1,7 @@
-# Cotiza
+# Precia
+
+Uygulamanın görünen adı **Precia** (1.1.1'den önce Cotiza). Proje, klasör, hedef ve kimlik adları (`Cotiza.xcodeproj`,
+`com.cotiza.app`, `iCloud.com.cotiza.app`, `-Cotiza…` argümanları) bilerek değişmedi; kullanıcı bunları görmez.
 
 ABD'deki İspanyolca konuşan ustalar ve küçük müteahhitler için sesle teklif/fatura uygulaması (iOS 26+, SwiftUI).
 Usta işi İspanyolca (ya da İngilizce) anlatır; uygulama kalemleri, miktarları ve fiyatları çıkarır, müşteriye
@@ -59,7 +62,7 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | Web sitesi (https://cotiza.adilemree.xyz, EN + ES + TR: `/`, `/es/`, `/tr/`) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
 | UI testleri (tüm ekranları gezer) | `CotizaUITests/CotizaUITests.swift` |
 
-Ücretsiz plan: 3 teklif, PDF altında "Made with Cotiza". Pro: sınırsız teklif, faturaya çevirme, ödeme kaydı, logo, markasız PDF.
+Ücretsiz plan: 3 teklif, PDF altında "Made with Precia". Pro: sınırsız teklif, faturaya çevirme, ödeme kaydı, logo, markasız PDF.
 
 Gelir nakit esasına göre sayılır: her ödeme kendi tarihinde, "ödendi" diye işaretlenen belgede kalan kısım o gün.
 Kısmi ödenen bir işin gelir, vergi ve malzeme payı raporda ödeme oranına göre bölünür.
@@ -123,7 +126,7 @@ Doğrulanmadı — gerçek cihazda denenmeli:
 ## İmza linki servisi (`Server/sign`)
 
 Bağımlılığı olmayan küçük bir Node servisi (Node'un kendi `http` ve `sqlite` modülleri). Sunucuda
-`/opt/cotiza-sign` altında Docker ile çalışır (`127.0.0.1:4130`); Cotiza sitesinin nginx ayarı `/s/` ve
+`/opt/cotiza-sign` altında Docker ile çalışır (`127.0.0.1:4130`); Precia sitesinin nginx ayarı `/s/` ve
 `/api/v1/` yollarını ona yönlendirir, dışarıya mevcut Cloudflare tüneli açar.
 
 - Uygulama teklifi (PDF + sayfada görünecek metin) her link için rastgele bir gizli anahtarla yükler. Anahtar
@@ -164,7 +167,8 @@ Tools/deploy_sign.sh
 5. Gizlilik, destek ve koşullar sayfaları https://cotiza.adilemree.xyz adresinde yayında (sunucuda nginx
    `127.0.0.1:8133` + Cloudflare tüneli; ayar `AppStore/server/nginx-cotiza.conf`). Uygulamadaki bağlantılar
    `AppLinks` içinde.
-6. "Cotiza" adının App Store'da ve marka olarak uygunluğu kontrol edilmedi.
+6. Ad 1.1.1 ile Cotiza'dan Precia'ya değişti (App Store'da aynı işi yapan "Cotizza" ve "Cotiza Pro" var).
+   App Store'da "Precia" adında uygulama görünmüyor; marka tescili kontrol edilmedi.
 7. Fiyatlar ($14.99/ay, $99.99/yıl) `Products.storekit` içinde yalnızca yerel test içindir; gerçek fiyat
    App Store Connect'te belirlenir.
 8. Ekran görüntüleri, açıklama, gizlilik beyanı (uygulama veri toplamıyor; her şey cihazda).

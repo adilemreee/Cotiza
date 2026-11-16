@@ -131,7 +131,7 @@ nonisolated struct ReportStrings: Sendable {
     private func t(_ en: String, _ es: String, _ tr: String) -> String { language.text(en, es, tr) }
     func upper(_ text: String) -> String { text.uppercased(with: language.locale) }
 
-    var fileName: String { t("Cotiza report", "Reporte Cotiza", "Cotiza raporu") }
+    var fileName: String { t("Precia report", "Reporte Precia", "Precia raporu") }
     var heading: String { t("Income and expense report", "Reporte de ingresos y gastos", "Gelir ve gider raporu") }
     var datePaid: String { t("Date paid", "Fecha de pago", "Ödeme tarihi") }
     var number: String { t("Number", "Número", "Numara") }

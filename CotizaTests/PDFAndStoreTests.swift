@@ -30,7 +30,7 @@ struct PDFTests {
         #expect(text.contains("López Painting LLC"))
         #expect(text.contains("Maria Lopez"))
         #expect(text.contains("$779.40"))
-        #expect(text.contains("Made with Cotiza"))
+        #expect(text.contains("Made with Precia"))
     }
 
     @Test func `a long estimate flows onto more pages without losing lines`() throws {

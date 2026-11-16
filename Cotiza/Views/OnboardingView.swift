@@ -39,7 +39,7 @@ struct OnboardingView: View {
                             .padding(.bottom, 4)
                         Text("Say the job. Send the estimate.")
                             .font(.largeTitle.bold())
-                        Text("Describe the work in Spanish or English. Cotiza writes a professional estimate your client can approve on the spot.")
+                        Text("Describe the work in Spanish or English. Precia writes a professional estimate your client can approve on the spot.")
                             .font(.body)
                             .foregroundStyle(Color.secondary)
                     }
@@ -111,7 +111,7 @@ struct OnboardingView: View {
                     Text("What kind of work do you do?")
                 } footer: {
                     if trade == .other {
-                        Text("Cotiza uses this to understand the jobs you describe.")
+                        Text("Precia uses this to understand the jobs you describe.")
                     }
                 }
             }

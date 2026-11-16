@@ -10,7 +10,7 @@ import sys
 
 from strings_tr import INFO_PLIST_TR, SHORTCUTS_TR, TR
 
-NO_TRANSLATE = {"%@", "%@ · %@", "iCloud", "%@ × %@", "WhatsApp", "0", "1", "·", "EN", "ES", "Cotiza", "Cotiza %@", "Cotiza Pro", "Zelle", "Cash App", "Venmo"}
+NO_TRANSLATE = {"%@", "%@ · %@", "iCloud", "%@ × %@", "WhatsApp", "0", "1", "·", "EN", "ES", "Precia", "Precia %@", "Precia Pro", "Zelle", "Cash App", "Venmo"}
 
 ES = {
     "Turkish": "Turco",
@@ -39,10 +39,10 @@ ES = {
     "Record a payment": "Registrar un pago",
     "Save": "Guardar",
     "The deposit is printed on the estimate. Record it when the client pays; it moves to the invoice.": "El anticipo aparece en la cotización. Regístralo cuando el cliente pague; pasa a la factura.",
-    "Cotiza uses this to understand the jobs you describe.": "Cotiza lo usa para entender los trabajos que describes.",
+    "Precia uses this to understand the jobs you describe.": "Precia lo usa para entender los trabajos que describes.",
     "Other": "Otro",
     "What do you do? For example: pool cleaning": "¿A qué te dedicas? Por ejemplo: limpieza de albercas",
-    "Rate Cotiza on the App Store": "Califica Cotiza en el App Store",
+    "Rate Precia on the App Store": "Califica Precia en el App Store",
     "%@ approved %@": "%@ aprobó %@",
     "Cancel the link": "Cancelar el enlace",
     "Check now": "Revisar ahora",
@@ -75,7 +75,7 @@ ES = {
     "Next": "Siguiente",
     "Next invoice": "Próxima factura",
     "No jobs were paid in this period.": "No hay trabajos pagados en este periodo.",
-    "On that day Cotiza makes a copy of this invoice with a new number and reminds you to send it.": "Ese día Cotiza hace una copia de esta factura con un número nuevo y te recuerda enviarla.",
+    "On that day Precia makes a copy of this invoice with a new number and reminds you to send it.": "Ese día Precia hace una copia de esta factura con un número nuevo y te recuerda enviarla.",
     "PDF summary": "Resumen en PDF",
     "Period": "Periodo",
     "Previous": "Anterior",
@@ -108,8 +108,8 @@ ES = {
     "Choose from Contacts": "Elegir de Contactos",
     "Client approval": "Aprobación del cliente",
     "Client signature": "Firma del cliente",
-    "Cotiza reads the items and prices on your phone. You choose which ones to add.": "Cotiza lee los artículos y precios en tu teléfono. Tú eliges cuáles agregar.",
-    "Cotiza reminds you when an estimate has waited %lld days for an answer and when an invoice is past due.": "Cotiza te avisa cuando una cotización lleva %lld días sin respuesta y cuando una factura está vencida.",
+    "Precia reads the items and prices on your phone. You choose which ones to add.": "Precia lee los artículos y precios en tu teléfono. Tú eliges cuáles agregar.",
+    "Precia reminds you when an estimate has waited %lld days for an answer and when an invoice is past due.": "Precia te avisa cuando una cotización lleva %lld días sin respuesta y cuando una factura está vencida.",
     "Dates and reminders": "Fechas y recordatorios",
     "Email or other apps": "Correo u otras apps",
     "Estimates valid for": "Cotizaciones válidas por",
@@ -147,9 +147,9 @@ ES = {
     "Marks an estimate or invoice as paid.": "Marca una cotización o factura como pagada.",
     "Money owed to me": "Lo que me deben",
     "Open document": "Abrir documento",
-    "Opens an estimate or invoice in Cotiza.": "Abre una cotización o factura en Cotiza.",
+    "Opens an estimate or invoice in Precia.": "Abre una cotización o factura en Precia.",
     "Says how much your clients still owe you and how much you were paid this month.": "Te dice cuánto te deben tus clientes y cuánto cobraste este mes.",
-    "That document is no longer in Cotiza.": "Ese documento ya no está en Cotiza.",
+    "That document is no longer in Precia.": "Ese documento ya no está en Precia.",
     "Which estimate or invoice?": "¿Qué cotización o factura?",
     "Which one was paid?": "¿Cuál te pagaron?",
     "%@ per month": "%@ al mes",
@@ -180,7 +180,7 @@ ES = {
     "Contact support": "Contactar a soporte",
     "Continue": "Continuar",
     "Convert to invoice": "Convertir en factura",
-    "Cotiza remembers your prices each time you send an estimate.": "Cotiza recuerda tus precios cada vez que envías una cotización.",
+    "Precia remembers your prices each time you send an estimate.": "Precia recuerda tus precios cada vez que envías una cotización.",
     "Couldn't create the PDF": "No se pudo crear el PDF",
     "Create estimate": "Crear cotización",
     "Defaults for new estimates": "Valores para cotizaciones nuevas",
@@ -188,7 +188,7 @@ ES = {
     "Delete item": "Eliminar concepto",
     "Delete this document?": "¿Eliminar este documento?",
     "Describe the job and your prices.": "Describe el trabajo y tus precios.",
-    "Describe the work in Spanish or English. Cotiza writes a professional estimate your client can approve on the spot.": "Describe el trabajo en español o en inglés. Cotiza escribe una cotización profesional que tu cliente puede aprobar ahí mismo.",
+    "Describe the work in Spanish or English. Precia writes a professional estimate your client can approve on the spot.": "Describe el trabajo en español o en inglés. Precia escribe una cotización profesional que tu cliente puede aprobar ahí mismo.",
     "Description": "Descripción",
     "Document language": "Idioma del documento",
     "Didn't catch that. Tap to try again, or type the job.": "No te escuché. Toca para intentarlo de nuevo o escribe el trabajo.",
@@ -241,7 +241,7 @@ ES = {
     "New client": "Cliente nuevo",
     "New estimate": "Nueva cotización",
     "New item": "Concepto nuevo",
-    "No Cotiza footer on what your client sees.": "Sin la marca de Cotiza en lo que ve tu cliente.",
+    "No Precia footer on what your client sees.": "Sin la marca de Precia en lo que ve tu cliente.",
     "No active subscription was found for this Apple Account.": "No se encontró una suscripción activa en esta cuenta de Apple.",
     "No clients yet": "Aún no hay clientes",
     "No saved prices": "Aún no hay precios guardados",
@@ -249,7 +249,7 @@ ES = {
     "Nothing here yet.": "Aún no hay nada aquí.",
     "OK": "OK",
     "Only %@ per month": "Solo %@ al mes",
-    "Open Cotiza ready to describe a job by voice.": "Abre Cotiza listo para describir un trabajo con tu voz.",
+    "Open Precia ready to describe a job by voice.": "Abre Precia listo para describir un trabajo con tu voz.",
     "Open Settings": "Abrir Ajustes",
     "Paid": "Pagada",
     "Paid this month": "Cobrado del mes",
@@ -314,7 +314,7 @@ ES = {
     "Unlimited estimates, invoices and your logo.": "Cotizaciones ilimitadas, facturas y tu logo.",
     "Unnamed client": "Cliente sin nombre",
     "Untitled job": "Trabajo sin nombre",
-    "Upgrade to Cotiza Pro": "Pásate a Cotiza Pro",
+    "Upgrade to Precia Pro": "Pásate a Precia Pro",
     "Voice isn't available right now. Type the job instead.": "La voz no está disponible ahora. Escribe el trabajo.",
     "What is being done or supplied": "Qué se va a hacer o entregar",
     "What kind of work do you do?": "¿Qué tipo de trabajo haces?",
@@ -324,7 +324,7 @@ ES = {
     "Your client gets a clean estimate in the language they read.": "Tu cliente recibe una cotización clara en el idioma que lee.",
     "Your first estimate takes one minute": "Tu primera cotización toma un minuto",
     "No account, no ads. Your jobs and prices stay with you.": "Sin cuenta ni anuncios. Tus trabajos y precios son solo tuyos.",
-    "Your logo on estimates and invoices is part of Cotiza Pro.": "Tu logo en cotizaciones y facturas es parte de Cotiza Pro.",
+    "Your logo on estimates and invoices is part of Precia Pro.": "Tu logo en cotizaciones y facturas es parte de Precia Pro.",
     "Your logo, your brand": "Tu logo, tu marca",
     "Your name": "Tu nombre",
     "Your usual prices fill in by themselves.": "Tus precios de siempre se llenan solos.",
@@ -348,20 +348,20 @@ SHORTCUTS_ES = {
 
 INFO_PLIST_ES = {
     "NSMicrophoneUsageDescription": (
-        "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate.",
-        "Cotiza usa el micrófono para que describas un trabajo en voz alta y lo convierta en cotización.",
+        "Precia uses the microphone so you can describe a job out loud and turn it into an estimate.",
+        "Precia usa el micrófono para que describas un trabajo en voz alta y lo convierta en cotización.",
     ),
     "NSSpeechRecognitionUsageDescription": (
-        "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible.",
-        "Cotiza transcribe lo que dices para armar tu cotización. La transcripción se hace en tu teléfono cuando es posible.",
+        "Precia transcribes what you say to build your estimate. Transcription happens on your device when possible.",
+        "Precia transcribe lo que dices para armar tu cotización. La transcripción se hace en tu teléfono cuando es posible.",
     ),
     "NSCameraUsageDescription": (
-        "Cotiza uses the camera to scan material receipts into your invoices.",
-        "Cotiza usa la cámara para escanear recibos de materiales y agregarlos a tus facturas.",
+        "Precia uses the camera to scan material receipts into your invoices.",
+        "Precia usa la cámara para escanear recibos de materiales y agregarlos a tus facturas.",
     ),
     "NSPhotoLibraryUsageDescription": (
-        "Cotiza lets you pick a logo for your estimates and invoices.",
-        "Cotiza te deja elegir un logo para tus cotizaciones y facturas.",
+        "Precia lets you pick a logo for your estimates and invoices.",
+        "Precia te deja elegir un logo para tus cotizaciones y facturas.",
     ),
 }
 

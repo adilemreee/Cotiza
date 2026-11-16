@@ -64,7 +64,7 @@ for lang, (title, sub) in TEXT.items():
     for line in subs:
         draw.text((x, y), line, font=sub_font, fill=(255, 240, 228))
         y += 46
-    draw.text((x, H - 80), "Cotiza", font=font(30, "Semibold"), fill=(255, 225, 205))
+    draw.text((x, H - 80), "Precia", font=font(30, "Semibold"), fill=(255, 225, 205))
     out = ROOT / f"Server/sign/card-{lang}.png"
     img.save(out, optimize=True)
     print(out.name, out.stat().st_size // 1024, "KB")

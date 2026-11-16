@@ -68,13 +68,13 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: Cotiza
+        INFOPLIST_KEY_CFBundleDisplayName: Precia
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.business
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
-        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Cotiza uses the microphone so you can describe a job out loud and turn it into an estimate."
-        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "Cotiza transcribes what you say to build your estimate. Transcription happens on your device when possible."
-        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Cotiza lets you pick a logo for your estimates and invoices."
-        INFOPLIST_KEY_NSCameraUsageDescription: "Cotiza uses the camera to scan material receipts into your invoices."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Precia uses the microphone so you can describe a job out loud and turn it into an estimate."
+        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "Precia transcribes what you say to build your estimate. Transcription happens on your device when possible."
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Precia lets you pick a logo for your estimates and invoices."
+        INFOPLIST_KEY_NSCameraUsageDescription: "Precia uses the camera to scan material receipts into your invoices."
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         ENABLE_PREVIEWS: YES
   CotizaWidget:
@@ -88,7 +88,7 @@ targets:
     info:
       path: CotizaWidget/Info.plist
       properties:
-        CFBundleDisplayName: Cotiza
+        CFBundleDisplayName: Precia
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
@@ -101,7 +101,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.cotiza.app.widget
         # Shown in Xcode's General tab; the widget gallery shows the app's name and each widget's own name.
-        INFOPLIST_KEY_CFBundleDisplayName: Cotiza
+        INFOPLIST_KEY_CFBundleDisplayName: Precia
         TARGETED_DEVICE_FAMILY: "1,2"
         GENERATE_INFOPLIST_FILE: YES
         SKIP_INSTALL: YES

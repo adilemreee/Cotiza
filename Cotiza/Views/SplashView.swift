@@ -18,7 +18,7 @@ struct SplashView: View {
             Color("LaunchBackground")
             Mark(step: step)
                 .scaleEffect(leaving && !reduceMotion ? 1.12 : 1)
-            Text(verbatim: "Cotiza")
+            Text(verbatim: "Precia")
                 .font(.system(size: 34, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .opacity(showsName ? 1 : 0)
