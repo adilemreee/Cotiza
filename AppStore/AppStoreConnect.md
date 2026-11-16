@@ -3,7 +3,8 @@
 Kopyala-yapıştır için hazır. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
 
 Dil sırası: **English (U.S.)** ana dil, **Spanish (Mexico)** ek dil. ABD App Store'u İspanyolca cihaz
-kullanan kişilere Spanish (Mexico) metinlerini gösterir; hedef kitle bu.
+kullanan kişilere Spanish (Mexico) metinlerini gösterir; hedef kitle bu. **Turkish** isteğe bağlı üçüncü dil: Türkiye
+mağazası ve Türkçe cihazlar için (4. bölüm).
 
 ### Ad ve anahtar kelime stratejisi
 
@@ -37,10 +38,12 @@ kullanan kişilere Spanish (Mexico) metinlerini gösterir; hedef kitle bu.
 | Privacy Policy URL (Spanish) | `https://cotiza.adilemree.xyz/es/privacy` |
 | Support URL (English) | `https://cotiza.adilemree.xyz/support` |
 | Support URL (Spanish) | `https://cotiza.adilemree.xyz/es/support` |
-| Marketing URL (English / Spanish) | `https://cotiza.adilemree.xyz/` / `https://cotiza.adilemree.xyz/es/` |
+| Privacy Policy URL (Turkish) | `https://cotiza.adilemree.xyz/tr/privacy` |
+| Support URL (Turkish) | `https://cotiza.adilemree.xyz/tr/support` |
+| Marketing URL (English / Spanish / Turkish) | `https://cotiza.adilemree.xyz/` / `https://cotiza.adilemree.xyz/es/` / `https://cotiza.adilemree.xyz/tr/` |
 | Copyright | `2026 Adil Emre Karayürek` |
 
-Gizlilik ve destek adresleri her dil için ayrı girilir; İspanyolca (Mexico) sayfasında `/es/` adreslerini kullan.
+Gizlilik ve destek adresleri her dil için ayrı girilir; İspanyolca (Mexico) sayfasında `/es/`, Türkçede `/tr/` adreslerini kullan.
 Site kaynağı `AppStore/site`, yayınlamak için `Tools/deploy_site.sh`.
 
 ---
@@ -138,6 +141,7 @@ Deposits and partial payments
 • The home screen shows what each client still owes, and overdue reminders mention the balance, not the full total.
 • Reports count every payment on the day you got it, deposits included.
 • A cleaner estimate and invoice screen: dates, repeat, deposit percentage, language and status are now tucked under More options.
+• Cotiza now speaks Turkish: the app, voice input and documents.
 
 Recording payments is part of Cotiza Pro.
 ```
@@ -236,19 +240,129 @@ Anticipos y pagos parciales
 • La pantalla de inicio muestra cuánto te debe cada cliente, y los recordatorios de pago vencido dicen el saldo, no el total.
 • Los reportes cuentan cada pago el día en que lo recibiste, anticipos incluidos.
 • Pantalla de cotización y factura más limpia: fechas, repetición, porcentaje de anticipo, idioma y estado ahora están en Más opciones.
+• Cotiza ahora también está en turco: la app, la voz y los documentos.
 
 Registrar pagos es parte de Cotiza Pro.
 ```
 
 ---
 
-## 4. Abonelikler (Monetization → Subscriptions)
+## 4. Turkish
+
+Türkiye mağazası için (App Store Connect'te dil ekle → **Turkish**). Uygulamada para birimi hâlâ dolar ($) ve
+vergi ABD tarzı tek oran; metinler bu yüzden para birimi, KDV ya da e-fatura vaat etmiyor. Ödeme yöntemlerinde de
+Zelle/Venmo gibi ABD'ye özgü adlar geçmiyor.
+
+**Name** (30)
+```
+Cotiza: Teklif ve Fatura
+```
+
+**Subtitle** (30)
+```
+Ustalar için sesle teklif
+```
+
+**Promotional text** (170)
+```
+İşi fiyatlarıyla birlikte sesli anlat. Cotiza onu müşterinin yerinde onaylayabileceği düzgün, profesyonel bir teklife çevirir.
+```
+
+**Keywords** (100 byte; Türkçe harfler 2 bayt sayılır)
+```
+fiyat,keşif,boyacı,tadilat,tesisat,elektrikçi,kapora,imza,makbuz,proforma,müşteri,kâr
+```
+
+**Description** (4000)
+```
+İşi, müşterinin kapısından çıkmadan profesyonel bir teklif göndererek al.
+
+Cotiza, yazmak yerine konuşmayı tercih eden ustalar ve küçük ekipler için yapıldı. İşi miktarları ve fiyatlarıyla birlikte Türkçe sesli anlat. Cotiza onu kalemlere ayırır, toplar ve işletmenin adıyla düzgün bir PDF teklif hazırlar; SMS, WhatsApp ya da e-postayla göndermeye hazır.
+
+YAZMA, SÖYLE
+"2 yatak odası boyama tanesi 350, 3 kapı takma tanesi 120 ve 8 saat işçilik saati 45. Müşteri Ayşe Yılmaz."
+Cotiza her işi, miktarı, birimi ve fiyatı ayırır. Sen kontrol edersin, yanlışı tek dokunuşla düzeltir ve gönderirsin. "Tanesi 120", "metrekaresi 25", "toplam 600" ya da "iki buçuk saat" gibi günlük söyleyişleri anlar.
+
+TÜRKÇE KONUŞ, İSTEDİĞİN DİLDE GÖNDER
+Hangi dilde düşünüyorsan o dilde konuş. Her belge Türkçe, İngilizce ya da İspanyolca olabilir; müşterin teklifi okuduğu dilde alır.
+
+İŞİ UZAKTAN BİLE BAĞLA
+Müşterin telefonunda parmağıyla ya da SMS veya WhatsApp ile gönderdiğin bir bağlantıdan imzalar. Teklif onaylanır, sana bildirim gelir ve imza tarihle birlikte PDF'e basılır. Yazıcı yok, kâğıt yok.
+
+PROFESYONEL GÖRÜN
+• İşletme bilgilerin, ruhsat numaran, koşulların ve geçerlilik ya da son ödeme tarihiyle düzgün PDF teklif ve faturalar
+• Yalnızca işaretlediğin kalemlere uygulanan vergi
+• Müşteriye notlar: süre, kapora, nelerin dahil olduğu
+
+PARANI DAHA ÇABUK AL
+• Müşterinin dilinde hazır bir notla SMS ya da WhatsApp ile gönder
+• Kapora iste, her ödemeyi kaydet ve kalan tutarı gör
+• Onaylanan teklifi tek dokunuşla faturaya çevir; alınan kapora faturaya geçer
+• Bir teklif 3 gün yanıtsız kalınca ya da faturanın vadesi geçince hatırlatma
+• Haftalık ya da aylık müşteriler için tekrarlanan faturalar, günü gelince hatırlatmayla hazır
+• Neyin yanıt beklediğini ve bu ay ne kadar tahsil ettiğini gör
+
+NE KAZANDIĞINI BİL
+• Taranan fişler maliyetini saklar; Cotiza müşterinin ödediği fiyata kâr payını (varsayılan %15) ekler
+• Aylık ve yıllık raporlar: gelir, toplanan vergi, malzeme maliyeti ve iş başına kâr
+• Muhasebecin için tablo (CSV) ya da PDF olarak dışa aktar
+
+DAHA AZ YAZ
+• Mağaza fişini tara, malzemeleri faturaya ekle
+• Müşteriyi Kişiler'den seç
+• Ana ekran ve kilit ekranı widget'ları, ve Siri: "Cotiza içinde ne kadar alacağım var"
+
+TÜM CİHAZLARINDA
+İşlerin özel iCloud'un üzerinden senkronlanır; yeni iPhone'unda ve iPad'inde de seninle. Biz hiçbir zaman göremeyiz.
+
+HER SEFERİNDE DAHA HIZLI
+Cotiza kullandığın fiyatları hatırlar; her zamanki işlerin kendiliğinden dolar.
+
+GİZLİLİK ESASTIR
+Hesap yok, kayıt yok. İşlerin, müşterilerin ve fiyatların telefonunda ve özel iCloud'unda saklanır. Apple Intelligence olan iPhone'larda teklifi Apple'ın cihaz üzerindeki modeli yazar; iş tarifin bize gönderilmez. Gönderdiğin imza bağlantısı imzalanınca sunucumuzdan silinir.
+
+Boyacılar, bahçıvanlar, temizlikçiler, tadilat, çatı, parke, alçıpan, beton, sıhhi tesisat, elektrik ve klima ustaları ve müteahhitler için.
+
+COTIZA PRO
+Cotiza'yı 3 teklifle ücretsiz dene. Cotiza Pro ile sınırsız teklif, faturalar, tekrarlanan faturalar, kapora ve kısmi ödemeler, müşteri imzası, kâr raporları, her belgede kendi logon ve Cotiza markası olmadan belgeler. Haftalık, aylık ya da yıllık seç; yıllık plan yeni aboneler için 3 günlük ücretsiz denemeyle başlar.
+
+Ödeme, satın almayı onayladığında Apple Hesabı'ndan alınır. Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir. Yenileme ücreti dönem bitmeden önceki 24 saat içinde alınır. Aboneliğini istediğin zaman App Store hesap ayarlarından yönetebilir ya da iptal edebilirsin. Abonelik satın aldığında ücretsiz denemenin kullanılmayan kısmı geçersiz olur.
+
+Kullanım Koşulları (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Abonelik koşulları: https://cotiza.adilemree.xyz/tr/terms
+Gizlilik Politikası: https://cotiza.adilemree.xyz/tr/privacy
+```
+
+**What's New** (4000) — 1.1.1
+```
+Cotiza artık Türkçe
+
+• Uygulamanın tamamı Türkçe: ekranlar, widget'lar ve Siri.
+• İşi Türkçe sesli anlat: "tanesi 120", "metrekaresi 25", "toplam 600", "iki buçuk saat" gibi söyleyişleri anlar.
+• Belge dili olarak Türkçe: PDF, müşteriye giden mesaj, imza sayfası ve kâr raporu.
+
+Kapora ve kısmi ödemeler
+
+• Tekliflerinde kapora iste. Her zamanki yüzdeni bir kez Ayarlar'da gir. Kapora PDF'te, imza sayfasında ve müşteriye giden mesajda görünür.
+• Her ödemeyi kaydet: tutarı, tarihi ve müşterinin nasıl ödediğini (nakit, çek, kart ya da diğer).
+• Faturalar ödenenleri ve kalan tutarı gösterir. Teklifte alınan kapora faturaya geçer.
+• Her şey ödendiğinde iş kendiliğinden ödendi olarak işaretlenir.
+• Ana ekran her müşterinin kalan borcunu gösterir; vadesi geçen hatırlatmaları toplamı değil kalan tutarı söyler.
+• Raporlar, kaporalar dahil her ödemeyi alındığı gün sayar.
+• Daha sade teklif ve fatura ekranı: tarihler, tekrar, kapora yüzdesi, dil ve durum artık Diğer ayarlar altında.
+
+Ödeme kaydetmek Cotiza Pro'ya dahildir.
+```
+
+---
+
+## 5. Abonelikler (Monetization → Subscriptions)
 
 **Subscription group:** reference name `Cotiza Pro`
 
-| | English (U.S.) | Spanish (Mexico) |
-| --- | --- | --- |
-| Group display name | Cotiza Pro | Cotiza Pro |
+| | English (U.S.) | Spanish (Mexico) | Turkish |
+| --- | --- | --- | --- |
+| Group display name | Cotiza Pro | Cotiza Pro | Cotiza Pro |
 
 | Product ID | Reference name | Süre | Fiyat (öneri) | Intro offer |
 | --- | --- | --- | --- | --- |
@@ -266,6 +380,14 @@ Product ID'ler kodla birebir aynı olmak zorunda.
 | Monthly | Cotiza Pro Monthly | Unlimited estimates, invoices and your logo | Cotiza Pro Mensual | Cotizaciones ilimitadas, facturas y tu logo |
 | Weekly | Cotiza Pro Weekly | Unlimited estimates, invoices and your logo | Cotiza Pro Semanal | Cotizaciones ilimitadas, facturas y tu logo |
 
+Turkish:
+
+| Product | Display name (TR, 30) | Description (TR, 45) |
+| --- | --- | --- |
+| Yearly | Cotiza Pro Yıllık | Sınırsız teklif, fatura ve kendi logon |
+| Monthly | Cotiza Pro Aylık | Sınırsız teklif, fatura ve kendi logon |
+| Weekly | Cotiza Pro Haftalık | Sınırsız teklif, fatura ve kendi logon |
+
 **Review screenshot** (her ürün için istenir): uygulamadaki Pro ekranının ekran görüntüsü.
 
 Her iki ürünü sürüm sayfasındaki **In-App Purchases and Subscriptions** bölümünden ilk sürüme ekle;
@@ -273,7 +395,7 @@ eklemezsen inceleme ürünleri göremez ve reddeder.
 
 ---
 
-## 5. App Review Information → Notes
+## 6. App Review Information → Notes
 
 ```
 No account or sign-in is needed.
@@ -304,7 +426,7 @@ adresi: `destek@adilemree.xyz`.
 
 ---
 
-## 6. App Privacy
+## 7. App Privacy
 
 **Data collection:** `Yes, we collect data from this app` — yalnızca imza linki özelliği için.
 
@@ -327,7 +449,7 @@ SDK'sı yok; eklersen bu cevabı güncelle.
 
 ---
 
-## 7. Ekran görüntüleri
+## 8. Ekran görüntüleri
 
 Hazır dosyalar `AppStore/screenshot-kit/out/<dil>/<cihaz>/` içinde, App Store Connect'in kabul ettiği
 boyutlarda. Sıra dosya adındaki numaradır (01–06). `en` → English (U.S.), `es` → Spanish (Mexico).
