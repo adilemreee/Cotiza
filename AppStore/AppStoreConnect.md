@@ -2,9 +2,14 @@
 
 Kopyala-yapıştır için hazır.
 
-**Ad değişikliği (16 Kasım 2026): Cotiza → Precia.** App Store'da aynı işi yapan "Cotizza" ve "Cotiza Pro"
-uygulamaları var. Görünen ad 1.1.1 ile Precia oluyor. Paket kimliği (`com.cotiza.app`), abonelik ürün
-kimlikleri ve iCloud kapsayıcısı aynı kaldı; kullanıcı bunları görmez, veri ve abonelikler etkilenmez. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
+**Ad: Precia (16 Kasım 2026'ya kadar Cotiza).** App Store'da aynı işi yapan "Cotizza" ve "Cotiza Pro"
+uygulamaları var. Cotiza adıyla gönderilen 1.0 incelemeden geri çekildi; uygulama ilk kez Precia adıyla
+yayınlanır. Paket kimliği (`com.cotiza.app`), abonelik ürün kimlikleri ve iCloud kapsayıcısı aynı kaldı;
+kullanıcı bunları görmez. Site ve imza linkleri `precia.adilemree.xyz`; eski `cotiza.adilemree.xyz` adresinde
+imza linkleri ve uygulama API'si çalışmaya devam eder, sayfalar yeni adrese yönlenir.
+
+İlk yayında App Store Connect "What's New" alanını istemez; aşağıdaki What's New metinleri ilk güncellemede
+kullanılır. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
 
 Dil sırası: **English (U.S.)** ana dil, **Spanish (Mexico)** ek dil. ABD App Store'u İspanyolca cihaz
 kullanan kişilere Spanish (Mexico) metinlerini gösterir; hedef kitle bu. **Turkish** isteğe bağlı üçüncü dil: Türkiye
@@ -38,13 +43,13 @@ mağazası ve Türkçe cihazlar için (4. bölüm).
 | Content rights | Does not contain third-party content |
 | Age rating | Tüm sorulara **None / No** → 4+ |
 | Price | Free (abonelik uygulama içinden) |
-| Privacy Policy URL (English) | `https://cotiza.adilemree.xyz/privacy` |
-| Privacy Policy URL (Spanish) | `https://cotiza.adilemree.xyz/es/privacy` |
-| Support URL (English) | `https://cotiza.adilemree.xyz/support` |
-| Support URL (Spanish) | `https://cotiza.adilemree.xyz/es/support` |
-| Privacy Policy URL (Turkish) | `https://cotiza.adilemree.xyz/tr/privacy` |
-| Support URL (Turkish) | `https://cotiza.adilemree.xyz/tr/support` |
-| Marketing URL (English / Spanish / Turkish) | `https://cotiza.adilemree.xyz/` / `https://cotiza.adilemree.xyz/es/` / `https://cotiza.adilemree.xyz/tr/` |
+| Privacy Policy URL (English) | `https://precia.adilemree.xyz/privacy` |
+| Privacy Policy URL (Spanish) | `https://precia.adilemree.xyz/es/privacy` |
+| Support URL (English) | `https://precia.adilemree.xyz/support` |
+| Support URL (Spanish) | `https://precia.adilemree.xyz/es/support` |
+| Privacy Policy URL (Turkish) | `https://precia.adilemree.xyz/tr/privacy` |
+| Support URL (Turkish) | `https://precia.adilemree.xyz/tr/support` |
+| Marketing URL (English / Spanish / Turkish) | `https://precia.adilemree.xyz/` / `https://precia.adilemree.xyz/es/` / `https://precia.adilemree.xyz/tr/` |
 | Copyright | `2026 Adil Emre Karayürek` |
 
 Gizlilik ve destek adresleri her dil için ayrı girilir; İspanyolca (Mexico) sayfasında `/es/`, Türkçede `/tr/` adreslerini kullan.
@@ -130,14 +135,12 @@ Try Precia free with 3 estimates. Precia Pro gives you unlimited estimates, invo
 Payment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless it is canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the end of the current period. Manage or cancel anytime in your App Store account settings. Any unused portion of a free trial is forfeited when you purchase a subscription.
 
 Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-Subscription terms: https://cotiza.adilemree.xyz/terms
-Privacy Policy: https://cotiza.adilemree.xyz/privacy
+Subscription terms: https://precia.adilemree.xyz/terms
+Privacy Policy: https://precia.adilemree.xyz/privacy
 ```
 
 **What's New** (4000) — 1.1.1 (1.1.0 ayrıca yayınlanmadığı için onun notlarını da içerir)
 ```
-Cotiza is now Precia: same app, new name.
-
 Deposits and partial payments
 
 • Ask for a deposit on your estimates. Set your usual percentage once in Settings. The deposit is printed on the PDF, on the signing page and in the message to your client.
@@ -231,14 +234,12 @@ Prueba Precia gratis con 3 cotizaciones. Precia Pro te da cotizaciones ilimitada
 El pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente a menos que se cancele al menos 24 horas antes de que termine el periodo actual. La renovación se cobra dentro de las 24 horas previas al final del periodo. Puedes administrarla o cancelarla cuando quieras en la configuración de tu cuenta del App Store. La parte no usada de una prueba gratis se pierde al comprar una suscripción.
 
 Términos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-Términos de suscripción: https://cotiza.adilemree.xyz/es/terms
-Política de privacidad: https://cotiza.adilemree.xyz/es/privacy
+Términos de suscripción: https://precia.adilemree.xyz/es/terms
+Política de privacidad: https://precia.adilemree.xyz/es/privacy
 ```
 
 **What's New** (4000) — 1.1.1
 ```
-Cotiza ahora se llama Precia: la misma app, con nombre nuevo.
-
 Anticipos y pagos parciales
 
 • Pide un anticipo en tus cotizaciones. Pon tu porcentaje de siempre una vez en Configuración. El anticipo sale en el PDF, en la página para firmar y en el mensaje a tu cliente.
@@ -337,14 +338,12 @@ Precia'yı 3 teklifle ücretsiz dene. Precia Pro ile sınırsız teklif, fatural
 Ödeme, satın almayı onayladığında Apple Hesabı'ndan alınır. Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir. Yenileme ücreti dönem bitmeden önceki 24 saat içinde alınır. Aboneliğini istediğin zaman App Store hesap ayarlarından yönetebilir ya da iptal edebilirsin. Abonelik satın aldığında ücretsiz denemenin kullanılmayan kısmı geçersiz olur.
 
 Kullanım Koşulları (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-Abonelik koşulları: https://cotiza.adilemree.xyz/tr/terms
-Gizlilik Politikası: https://cotiza.adilemree.xyz/tr/privacy
+Abonelik koşulları: https://precia.adilemree.xyz/tr/terms
+Gizlilik Politikası: https://precia.adilemree.xyz/tr/privacy
 ```
 
 **What's New** (4000) — 1.1.1
 ```
-Cotiza'nın yeni adı Precia: aynı uygulama, yeni ad.
-
 Precia artık Türkçe
 
 • Uygulamanın tamamı Türkçe: ekranlar, widget'lar ve Siri.

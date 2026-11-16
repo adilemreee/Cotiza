@@ -5,7 +5,7 @@
 // Nothing here is kept longer than it has to be: a request is deleted when the app collects the
 // signature, and in any case 30 days after it was created or signed.
 //
-//   PORT=4130 DATA_DIR=./data PUBLIC_URL=https://cotiza.adilemree.xyz node server.js
+//   PORT=4130 DATA_DIR=./data PUBLIC_URL=https://precia.adilemree.xyz node server.js
 
 import { createServer } from "node:http";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
@@ -16,7 +16,7 @@ import { renderPage } from "./page.js";
 
 const PORT = Number(process.env.PORT ?? 4130);
 const DATA_DIR = process.env.DATA_DIR ?? "./data";
-const PUBLIC_URL = (process.env.PUBLIC_URL ?? "https://cotiza.adilemree.xyz").replace(/\/$/, "");
+const PUBLIC_URL = (process.env.PUBLIC_URL ?? "https://precia.adilemree.xyz").replace(/\/$/, "");
 const DAY = 24 * 60 * 60 * 1000;
 const LIFETIME = 30 * DAY;
 const MAX_BODY = 6 * 1024 * 1024; // the estimate PDF, base64

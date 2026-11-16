@@ -13,9 +13,9 @@ rsync -az -e "ssh -i $KEY -o BatchMode=yes" --exclude node_modules --exclude dat
 "${SSH[@]}" 'cd /opt/cotiza-sign && docker compose up -d --build && sleep 3 && wget -qO- http://127.0.0.1:4130/api/v1/health'
 echo
 # nginx: keep a dated copy of the live config, install the new one, and only reload if it validates.
-scp -i "$KEY" -o BatchMode=yes AppStore/server/nginx-cotiza.conf "$HOST:/tmp/nginx-cotiza.conf"
+scp -i "$KEY" -o BatchMode=yes AppStore/server/nginx-precia.conf "$HOST:/tmp/nginx-precia.conf"
 "${SSH[@]}" 'set -e; live=$(readlink -f /etc/nginx/sites-enabled/cotiza)
   cp "$live" "$live.bak-$(date +%Y%m%d-%H%M%S)"
-  cp /tmp/nginx-cotiza.conf "$live"
+  cp /tmp/nginx-precia.conf "$live"
   if nginx -t 2>/dev/null; then systemctl reload nginx; echo "nginx reloaded"; else cp "$(ls -t "$live".bak-* | head -1)" "$live"; echo "nginx config invalid, restored"; exit 1; fi'
-echo "Deployed. https://cotiza.adilemree.xyz/api/v1/health"
+echo "Deployed. https://precia.adilemree.xyz/api/v1/health"

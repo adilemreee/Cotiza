@@ -1,5 +1,5 @@
 # Cotiza signing links (server: /opt/cotiza-sign). Reached through nginx on the Cotiza site
-# (cotiza.adilemree.xyz/s/... and /api/v1/...), which the Cloudflare tunnel already serves.
+# (precia.adilemree.xyz/s/... and /api/v1/...), which the Cloudflare tunnel already serves.
 services:
   sign:
     build: .
@@ -8,7 +8,7 @@ services:
     environment:
       PORT: 4130
       DATA_DIR: /data
-      PUBLIC_URL: https://cotiza.adilemree.xyz
+      PUBLIC_URL: https://precia.adilemree.xyz
     volumes:
       # Short-lived on purpose: requests are deleted after 30 days, so this folder is not backed up.
       - ./data:/data

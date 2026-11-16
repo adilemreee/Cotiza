@@ -9,7 +9,7 @@ import hashlib
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent / "AppStore" / "site"
-DOMAIN = "https://cotiza.adilemree.xyz"
+DOMAIN = "https://precia.adilemree.xyz"
 EMAIL = "destek@adilemree.xyz"
 UPDATED = {"en": "November 12, 2026", "es": "12 de noviembre de 2026", "tr": "16 Kasım 2026"}
 EULA = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
@@ -175,7 +175,7 @@ page("en", "/privacy", "Privacy Policy — Precia",
   <p>When you send an estimate or invoice by text message, Precia fills in your client's number, a short note and the PDF, and you review and send it in Messages. For WhatsApp, email or other apps, you choose the app and the recipient in the iOS share sheet. Precia never sends anything by itself; from then on the app you choose handles it.</p>
 
   <h2>8. Signing links</h2>
-  <p>When you tap “Send a signing link”, Precia uploads that one estimate to our server at cotiza.adilemree.xyz so your client can open it in a browser: the estimate's PDF and what the page shows (your business name and contact details, the client's name, the items, prices and terms). When your client signs, the server also stores the name they type, their signature, the time, and their IP address and browser, as a record of the approval.</p>
+  <p>When you tap “Send a signing link”, Precia uploads that one estimate to our server at precia.adilemree.xyz so your client can open it in a browser: the estimate's PDF and what the page shows (your business name and contact details, the client's name, the items, prices and terms). When your client signs, the server also stores the name they type, their signature, the time, and their IP address and browser, as a record of the approval.</p>
   <p>The link is private: it is a long random address, it is not indexed by search engines, and only the device that created it can read the result. As soon as Precia collects the signature, it deletes the request from the server. Anything not collected is deleted automatically 30 days after it was sent or signed. “Cancel the link” deletes it right away. These records are not backed up, sold or shared, and are used only to show the estimate and return the signature to you.</p>
 
   <h2>9. Reminders</h2>
@@ -350,7 +350,7 @@ page("es", "/privacy", "Política de privacidad — Precia",
   <p>Cuando envías una cotización o factura por mensaje de texto, Precia llena el número de tu cliente, una nota corta y el PDF, y tú lo revisas y lo envías en Mensajes. Para WhatsApp, correo u otras apps, eliges la app y el destinatario en el menú de compartir de iOS. Precia nunca envía nada por su cuenta; desde ahí, la app que elijas se encarga.</p>
 
   <h2>8. Enlaces para firmar</h2>
-  <p>Cuando tocas “Enviar enlace para firmar”, Precia sube esa cotización a nuestro servidor en cotiza.adilemree.xyz para que tu cliente la abra en el navegador: el PDF y lo que muestra la página (el nombre y los datos de contacto de tu negocio, el nombre del cliente, los conceptos, los precios y los términos). Cuando tu cliente firma, el servidor también guarda el nombre que escribe, su firma, la hora, y su dirección IP y navegador, como constancia de la aprobación.</p>
+  <p>Cuando tocas “Enviar enlace para firmar”, Precia sube esa cotización a nuestro servidor en precia.adilemree.xyz para que tu cliente la abra en el navegador: el PDF y lo que muestra la página (el nombre y los datos de contacto de tu negocio, el nombre del cliente, los conceptos, los precios y los términos). Cuando tu cliente firma, el servidor también guarda el nombre que escribe, su firma, la hora, y su dirección IP y navegador, como constancia de la aprobación.</p>
   <p>El enlace es privado: es una dirección larga y aleatoria, los buscadores no la indexan y solo el dispositivo que lo creó puede leer el resultado. En cuanto Precia recibe la firma, borra la solicitud del servidor. Lo que no se recibe se borra solo 30 días después de enviarse o firmarse. “Cancelar el enlace” lo borra de inmediato. Estos datos no se respaldan, no se venden ni se comparten, y solo se usan para mostrar la cotización y devolverte la firma.</p>
 
   <h2>9. Recordatorios</h2>
@@ -525,7 +525,7 @@ page("tr", "/privacy", "Gizlilik Politikası — Precia",
   <p>Bir teklifi ya da faturayı SMS ile gönderdiğinde Precia müşterinin numarasını, kısa bir notu ve PDF'i doldurur; sen Mesajlar'da kontrol edip gönderirsin. WhatsApp, e-posta ya da diğer uygulamalar için uygulamayı ve alıcıyı iOS paylaşım ekranında sen seçersin. Precia kendi başına hiçbir şey göndermez; oradan sonrasını seçtiğin uygulama yürütür.</p>
 
   <h2>8. İmza bağlantıları</h2>
-  <p>“İmza bağlantısı gönder”e dokunduğunda Precia, müşterin tarayıcıda açabilsin diye o tek teklifi cotiza.adilemree.xyz adresindeki sunucumuza yükler: teklifin PDF'i ve sayfada görünenler (işletmenin adı ve iletişim bilgileri, müşterinin adı, kalemler, fiyatlar ve koşullar). Müşterin imzaladığında sunucu, onayın kaydı olarak yazdığı adı, imzasını, saati, IP adresini ve tarayıcısını da saklar.</p>
+  <p>“İmza bağlantısı gönder”e dokunduğunda Precia, müşterin tarayıcıda açabilsin diye o tek teklifi precia.adilemree.xyz adresindeki sunucumuza yükler: teklifin PDF'i ve sayfada görünenler (işletmenin adı ve iletişim bilgileri, müşterinin adı, kalemler, fiyatlar ve koşullar). Müşterin imzaladığında sunucu, onayın kaydı olarak yazdığı adı, imzasını, saati, IP adresini ve tarayıcısını da saklar.</p>
   <p>Bağlantı özeldir: uzun ve rastgele bir adrestir, arama motorlarında dizinlenmez ve sonucu yalnızca onu oluşturan cihaz okuyabilir. Precia imzayı alır almaz isteği sunucudan siler. Alınmayan kayıtlar, gönderildikten ya da imzalandıktan 30 gün sonra kendiliğinden silinir. “Bağlantıyı iptal et” kaydı hemen siler. Bu kayıtlar yedeklenmez, satılmaz, paylaşılmaz ve yalnızca teklifi göstermek ve imzayı sana geri getirmek için kullanılır.</p>
 
   <h2>9. Hatırlatıcılar</h2>

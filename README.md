@@ -59,7 +59,7 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | Çeviriler (EN kaynak; ES ve TR çeviri) | `Tools/make_strings.py` (TR: `Tools/strings_tr.py`) → `Cotiza/Resources/*.xcstrings`, `CotizaWidget/Localizable.xcstrings` |
 | Türkçe: arayüz, belge dili (PDF, mesaj, rapor, imza), Türkçe iş tarifi ayrıştırma ("tanesi 120", "120'den", "toplam 600", "yirmi beş", "iki buçuk saat") | `DocumentLanguage.turkish`, `RuleBasedParser.turkishNumbers`, `CotizaTests/TurkishTests.swift` |
 | App Store Connect metinleri (EN + ES) | `AppStore/AppStoreConnect.md` (`python3 AppStore/check_lengths.py` sınırları kontrol eder) |
-| Web sitesi (https://cotiza.adilemree.xyz, EN + ES + TR: `/`, `/es/`, `/tr/`) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
+| Web sitesi (https://precia.adilemree.xyz, EN + ES + TR: `/`, `/es/`, `/tr/`) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
 | UI testleri (tüm ekranları gezer) | `CotizaUITests/CotizaUITests.swift` |
 
 Ücretsiz plan: 3 teklif, PDF altında "Made with Precia". Pro: sınırsız teklif, faturaya çevirme, ödeme kaydı, logo, markasız PDF.
@@ -131,13 +131,16 @@ Bağımlılığı olmayan küçük bir Node servisi (Node'un kendi `http` ve `sq
 
 - Uygulama teklifi (PDF + sayfada görünecek metin) her link için rastgele bir gizli anahtarla yükler. Anahtar
   belgede saklanır ve iCloud ile senkronlanır; imzayı yalnızca o anahtarı bilen cihazlar okuyabilir.
-- Müşteri `cotiza.adilemree.xyz/s/<id>` sayfasında adını yazıp imzalar. Uygulama öne geldiğinde ve arka planda
+- Müşteri `precia.adilemree.xyz/s/<id>` sayfasında adını yazıp imzalar. Uygulama öne geldiğinde ve arka planda
   (`BGAppRefreshTask`, iOS ne zaman isterse) kontrol eder, imzayı belgeye işler, bildirim gösterir ve
   kaydı sunucudan siler. Toplanmayan kayıtlar 30 günde kendiliğinden silinir; veri yedeklenmez.
 
 ```bash
 cd Server/sign && node --test
 ```
+
+Eski adres `cotiza.adilemree.xyz` hâlâ tünelde: imza linkleri (`/s/`) ve API (`/api/v1/`) orada da çalışır, diğer
+sayfalar `precia.adilemree.xyz` adresine yönlenir (`AppStore/server/nginx-precia.conf`).
 
 İmza sayfası İngilizce, İspanyolca ve Türkçe (`page.js`, bağlantı önizleme kartları `Tools/make_link_card.py`).
 Belgenin dili hangisiyse müşteri sayfayı o dilde görür. Sunucuya yükleme (testler geçmezse durur, nginx ayarını
@@ -164,8 +167,8 @@ Tools/deploy_sign.sh
 4. App Store Connect'te bir abonelik grubu ve iki ürün; kimlikleri koddakiyle aynı olmalı:
    `com.cotiza.app.pro.yearly` (3 gün ücretsiz deneme), `com.cotiza.app.pro.monthly` ve `com.cotiza.app.pro.weekly`.
    Paket kimliğini değiştirirsen `SubscriptionStore.swift` ve `Products.storekit` içindekileri de değiştir.
-5. Gizlilik, destek ve koşullar sayfaları https://cotiza.adilemree.xyz adresinde yayında (sunucuda nginx
-   `127.0.0.1:8133` + Cloudflare tüneli; ayar `AppStore/server/nginx-cotiza.conf`). Uygulamadaki bağlantılar
+5. Gizlilik, destek ve koşullar sayfaları https://precia.adilemree.xyz adresinde yayında (sunucuda nginx
+   `127.0.0.1:8133` + Cloudflare tüneli; ayar `AppStore/server/nginx-precia.conf`). Uygulamadaki bağlantılar
    `AppLinks` içinde.
 6. Ad 1.1.1 ile Cotiza'dan Precia'ya değişti (App Store'da aynı işi yapan "Cotizza" ve "Cotiza Pro" var).
    App Store'da "Precia" adında uygulama görünmüyor; marka tescili kontrol edilmedi.

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -116,7 +116,7 @@
 		27E563C83DD5E5D268AB2164 /* Cotiza.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cotiza.entitlements; sourceTree = "<group>"; };
 		28BAB05885BBDA5421CFA9FD /* EstimateEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateEngine.swift; sourceTree = "<group>"; };
 		32057A3E4F0ECF0C93DE15F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		320B0120E11FC78950A20BB4 /* AppIcon.icon */ = {isa = PBXFileReference; path = AppIcon.icon; sourceTree = "<group>"; };
+		320B0120E11FC78950A20BB4 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		3AA1B3BFB3BCCD80C2F11574 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
 		43EE382E9F6308DDA834F325 /* ReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScheduler.swift; sourceTree = "<group>"; };
 		48EB29EC9464845917996AEB /* ReceiptParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptParser.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		4CFEC0C1E61460BDAA711AC6 /* RuleBasedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleBasedParser.swift; sourceTree = "<group>"; };
 		514C7611FF6E48351B7CEAC3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		533A37BFF8D395C7B0DF4D88 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
-		5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Cotiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC0E8EEDAB09FBC66B5E310 /* Cotiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cotiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF1BFC421CDF4657CEF3C00 /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
 		62E5E3B71DF9E75A9B5F1FF1 /* PDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRenderer.swift; sourceTree = "<group>"; };
 		670718E606D16083B62935EC /* ClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMessage.swift; sourceTree = "<group>"; };
@@ -156,11 +156,11 @@
 		DE50F8E75420374B2351085A /* SignLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLinkTests.swift; sourceTree = "<group>"; };
 		E00C76CED3106337FDAF3073 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E13562BF4E7FAAB665BDB842 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		E2CDA2DDE2E3EBAF7717749F /* Products.storekit */ = {isa = PBXFileReference; path = Products.storekit; sourceTree = "<group>"; };
+		E2CDA2DDE2E3EBAF7717749F /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		E78786E136A8B8E180028AA0 /* CloudKitReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitReport.swift; sourceTree = "<group>"; };
 		EBE96F98D0AA36E586F68D01 /* ClientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViews.swift; sourceTree = "<group>"; };
 		F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
-		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25AA11761A0F575223D3EA6 /* CotizaWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CotizaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40E7F88FA2079E765DAAC03 /* AppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntents.swift; sourceTree = "<group>"; };
 		F4E13CF05F1594C4B0592099 /* BusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTests.swift; sourceTree = "<group>"; };
 		F5B6FE32F6423C7C90ED6771 /* TurkishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkishTests.swift; sourceTree = "<group>"; };
@@ -453,7 +453,6 @@
 			);
 			mainGroup = 6552ACCA246CB0C0113F302E;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -598,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CotizaWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Precia;
@@ -683,6 +683,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cotiza/Resources/Cotiza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cotiza/Resources/Info.plist;
@@ -709,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CotizaWidget/CotizaWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CotizaWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Precia;
@@ -835,6 +837,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cotiza/Resources/Cotiza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cotiza/Resources/Info.plist;

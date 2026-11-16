@@ -1,10 +1,10 @@
 import StoreKit
 import SwiftUI
 
-/// Legal and support links, served from https://cotiza.adilemree.xyz (source: AppStore/site).
+/// Legal and support links, served from https://precia.adilemree.xyz (source: AppStore/site).
 /// Spanish- and Turkish-speaking users get the pages in their language.
 enum AppLinks {
-    static let site = "https://cotiza.adilemree.xyz"
+    static let site = "https://precia.adilemree.xyz"
     static let supportEmail = "destek@adilemree.xyz"
 
     private static var languagePrefix: String {

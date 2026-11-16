@@ -65,7 +65,7 @@ nonisolated struct SignLinkDocument: Codable, Equatable, Sendable {
 /// The signing-link service on the Cotiza site (Server/sign). The client signs in the browser; the app
 /// collects the signature and deletes the request from the server.
 nonisolated enum SignLink {
-    static let api = URL(string: "https://cotiza.adilemree.xyz/api/v1/sign-requests")!
+    static let api = URL(string: "https://precia.adilemree.xyz/api/v1/sign-requests")!
 
     enum Failure: LocalizedError {
         case server

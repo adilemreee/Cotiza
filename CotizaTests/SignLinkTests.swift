@@ -64,10 +64,10 @@ struct SignLinkTests {
     }
 
     @Test func `the message to the client includes the link`() throws {
-        let url = try #require(URL(string: "https://cotiza.adilemree.xyz/s/abc"))
+        let url = try #require(URL(string: "https://precia.adilemree.xyz/s/abc"))
         let es = ClientMessage.signLink(for: snapshot(), url: url)
         #expect(es.hasPrefix("Hola Maria, le envío la cotización E-1003 de López Painting LLC por "))
-        #expect(es.contains("\nhttps://cotiza.adilemree.xyz/s/abc\n"))
+        #expect(es.contains("\nhttps://precia.adilemree.xyz/s/abc\n"))
         #expect(ClientMessage.signLink(for: snapshot(language: .english), url: url).contains("approve it with your signature here:"))
     }
 }
@@ -90,7 +90,7 @@ struct SignLinkLiveTests {
         let secret = SignLink.newSecret()
         let created = try await SignLink.create(snapshot: snapshot, secret: secret)
         defer { Task { await SignLink.delete(id: created.id, secret: secret) } }
-        #expect(created.url.absoluteString.hasPrefix("https://cotiza.adilemree.xyz/s/"))
+        #expect(created.url.absoluteString.hasPrefix("https://precia.adilemree.xyz/s/"))
         guard case .pending = try await SignLink.check(id: created.id, secret: secret) else { Issue.record("not pending"); return }
 
         // What the page's script sends.
