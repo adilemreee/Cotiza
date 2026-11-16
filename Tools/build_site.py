@@ -1,4 +1,4 @@
-"""Builds the Cotiza website (English at /, Spanish at /es/) into AppStore/site.
+"""Builds the Cotiza website (English at /, Spanish at /es/, Turkish at /tr/) into AppStore/site.
 
     python3 Tools/build_site.py
 
@@ -11,28 +11,32 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parent.parent / "AppStore" / "site"
 DOMAIN = "https://cotiza.adilemree.xyz"
 EMAIL = "destek@adilemree.xyz"
-UPDATED = {"en": "November 12, 2026", "es": "12 de noviembre de 2026"}
+UPDATED = {"en": "November 12, 2026", "es": "12 de noviembre de 2026", "tr": "16 Kasım 2026"}
 EULA = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
 # Cache-busting: assets are cached for a week, so the stylesheet URL changes with its content.
 CSS = "/assets/style.css?v=" + hashlib.sha256((SITE / "assets" / "style.css").read_bytes()).hexdigest()[:10]
 
+LANGS = ["en", "es", "tr"]
+PREFIX = {"en": "", "es": "/es", "tr": "/tr"}
+NAME = {"en": "English", "es": "Español", "tr": "Türkçe"}
 T = {
-    "en": dict(privacy="Privacy", support="Support", terms="Terms", other="Español", other_href="/es/",
-               home="/", updated="Last updated", footer="Cotiza"),
-    "es": dict(privacy="Privacidad", support="Soporte", terms="Términos", other="English", other_href="/",
-               home="/es/", updated="Última actualización", footer="Cotiza"),
+    "en": dict(privacy="Privacy", support="Support", terms="Terms", updated="Last updated"),
+    "es": dict(privacy="Privacidad", support="Soporte", terms="Términos", updated="Última actualización"),
+    "tr": dict(privacy="Gizlilik", support="Destek", terms="Koşullar", updated="Son güncelleme"),
 }
+
+
+def url(lang: str, path: str) -> str:
+    """/privacy in that language: /privacy, /es/privacy, /tr/privacy; the home page is /, /es/, /tr/."""
+    return (PREFIX[lang] + path) if path != "/" else (PREFIX[lang] + "/")
 
 
 def page(lang: str, path: str, title: str, description: str, body: str, doc: bool = True) -> None:
     t = T[lang]
-    prefix = "" if lang == "en" else "/es"
-    alt_lang = "es" if lang == "en" else "en"
-    # The same page in the other language: /privacy <-> /es/privacy, / <-> /es/
-    if lang == "en":
-        alt_path = "/es/" if path == "/" else "/es" + path
-    else:
-        alt_path = path
+    prefix = PREFIX[lang]
+    others = [l for l in LANGS if l != lang]
+    alternates = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{DOMAIN}{url(l, path)}">' for l in LANGS)
+    switch = "\n      ".join(f'<a class="lang" href="{url(l, path)}" hreflang="{l}" lang="{l}" aria-label="{NAME[l]}"><span class="full">{NAME[l]}</span><span class="short">{l.upper()}</span></a>' for l in others)
     html = f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -45,8 +49,8 @@ def page(lang: str, path: str, title: str, description: str, body: str, doc: boo
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{DOMAIN}{prefix}{path if path != '/' else '/'}">
-<link rel="alternate" hreflang="{alt_lang}" href="{DOMAIN}{alt_path}">
+<meta property="og:url" content="{DOMAIN}{url(lang, path)}">
+{alternates}
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{CSS}">
 </head>
@@ -54,12 +58,12 @@ def page(lang: str, path: str, title: str, description: str, body: str, doc: boo
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="{t['home']}" aria-label="Cotiza"><img src="/assets/icon.svg" alt=""><span>Cotiza</span></a>
+    <a class="brand" href="{url(lang, '/')}" aria-label="Cotiza"><img src="/assets/icon.svg" alt=""><span>Cotiza</span></a>
     <nav class="top">
       <a href="{prefix}/privacy">{t['privacy']}</a>
       <a href="{prefix}/support">{t['support']}</a>
       <a href="{prefix}/terms">{t['terms']}</a>
-      <a class="lang" href="{alt_path}" hreflang="{alt_lang}">{t['other']}</a>
+      {switch}
     </nav>
   </div>
 </header>
@@ -438,6 +442,183 @@ page("es", "/terms", "Términos de uso — Cotiza",
   <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
 """)
 
+# ---------------------------------------------------------------- Turkish
+
+page("tr", "/", "Cotiza — Sesle teklif",
+     "İşi sesli anlat; Cotiza onu müşterinin yerinde onaylayabileceği profesyonel bir teklife çevirsin. Hesap yok, takip yok.",
+     f"""
+  <div class="hero">
+    <img class="icon" src="/assets/icon.svg" alt="Cotiza uygulama simgesi">
+    <h1>İşi anlat.<br>Teklifi gönder.</h1>
+    <p class="lede">Yapılacak işi fiyatlarıyla birlikte Türkçe, İngilizce ya da İspanyolca sesli anlat. Cotiza, müşterinin sen oradan ayrılmadan onaylayabileceği düzgün ve profesyonel bir teklif hazırlar.</p>
+    <a class="cta" href="/tr/support">Destek ve SSS</a>
+    <a class="cta ghost" href="/tr/privacy">Gizlilik</a>
+    <p class="note">iPhone · iOS 26 veya üstü · Ücretsiz dene</p>
+  </div>
+
+  <section>
+    <div class="quote">
+      <div class="who">Sen söylersin</div>
+      “2 yatak odası boyama tanesi 350, 3 kapı takma tanesi 120 ve 8 saat işçilik saati 45. Müşteri Ayşe Yılmaz.”
+    </div>
+    <div class="shot sample"><img src="/assets/sample-estimate.png" alt="Cotiza ile hazırlanmış örnek bir teklif PDF'i" loading="lazy"></div>
+    <p class="note" style="text-align:center">Cotiza teklifi hazırlar</p>
+  </section>
+
+  <section>
+    <h2>Şantiye için yapıldı</h2>
+    <p class="sub">Boyacılar, bahçıvanlar, temizlikçiler, tadilat ve çatı ustaları, kısacası her türlü usta için.</p>
+    <div class="grid">
+      <div class="card"><h3>Yazma, konuş</h3><p>İşler, miktarlar, birimler ve fiyatlar teklif kalemlerine dönüşür. Yanlış olanı tek dokunuşla düzelt.</p></div>
+      <div class="card"><h3>Türkçe konuş, istediğin dilde gönder</h3><p>Hangi dilde düşünüyorsan o dilde konuş. Müşterin teklifi okuduğu dilde alır: Türkçe, İngilizce ya da İspanyolca.</p></div>
+      <div class="card"><h3>Göze hoş görünen bir PDF</h3><p>İşletmenin adı, ruhsat numaran ve koşulların. SMS ya da WhatsApp ile gönder veya müşterinin her yerden imzalayabileceği bir bağlantı yolla.</p></div>
+      <div class="card"><h3>Kapora ve ödemeler</h3><p>Başlangıç kaporasını iste, gelen ödemeleri kaydet. Kalan tutar teklifte ve faturada kendiliğinden görünür.</p></div>
+      <div class="card"><h3>Tekliften faturaya</h3><p>Onaylanan teklifi tek dokunuşla faturaya çevir, sonra ödendi olarak işaretle.</p></div>
+      <div class="card"><h3>Fiyatlarını hatırlar</h3><p>En çok kullandığın fiyatlar bir dahaki sefere kendiliğinden gelir. “Cotiza ile yeni teklif” dediğinde Siri kaydı hemen başlatır.</p></div>
+    </div>
+  </section>
+
+  <section class="banner">
+    <h2>İşlerin sende kalır.</h2>
+    <p>Hesap yok, kayıt yok, reklam yok, takip yok. Müşterilerin, fiyatların ve tekliflerin iPhone'unda ve kendi iCloud'unda saklanır. Sunucumuzdan yalnızca imzaya gönderdiğin bir teklif geçer ve imzalanınca silinir.</p>
+  </section>
+""", doc=False)
+
+page("tr", "/privacy", "Gizlilik Politikası — Cotiza",
+     "Cotiza işlerini, müşterilerini ve fiyatlarını iPhone'unda ve kendi iCloud'unda tutar. Sunucumuzda yalnızca imzaya gönderdiğin bir teklif, o da imzalanana kadar kalır.",
+     f"""
+  <h1>Gizlilik Politikası</h1>
+  <p class="updated">{T['tr']['updated']}: {UPDATED['tr']}</p>
+  <p><strong>Cotiza kişisel verileri satmaz ya da paylaşmaz; reklam, analiz aracı veya kullanıcı hesabı yoktur.</strong> İşlerin, müşterilerin ve fiyatların iPhone'unda ve kendi iCloud'unda kalır. Tek istisna, göndermeyi seçtiğin bir imza bağlantısıdır: o teklif, müşterin imzalayana kadar sunucumuzda tutulur (8. bölüm).</p>
+
+  <h2>1. Biz kimiz</h2>
+  <p>Cotiza, Türkiye'de bağımsız bir geliştirici olan Adil Emre Karayürek tarafından yapılmıştır.<br>
+  İletişim: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+
+  <h2>2. iPhone'unda saklanan veriler</h2>
+  <p>Aşağıdakiler, uygulamanın çalışması için yalnızca cihazındaki uygulama alanında saklanır:</p>
+  <ul>
+    <li>İşletme bilgilerin ve eklersen logon</li>
+    <li>Eklediğin müşteriler: ad, telefon, e-posta ve iş adresi</li>
+    <li>Teklifler, faturalar, kalemler (fişten eklenenler dahil), kaydettiğin ödemeler, notlar, tarihler ve kayıtlı fiyatlar</li>
+    <li>Müşterilerinin telefonunda attığı imzalar, yazdıkları ad ve tarihle birlikte</li>
+    <li>Uygulama ayarları</li>
+  </ul>
+  <p>Bu veriler bize asla ulaşmaz. iCloud'a giriş yaptıysan, aynı Apple Hesabı'yla kullandığın diğer iPhone ve iPad'lerinde de görünmesi için özel iCloud veritabanında da saklanır. Bu veritabanı senin Apple Hesabı'na aittir; biz okuyamayız. Veriler ayrıca kendi ayarlarına göre cihaz yedeklerine de dahil edilir.</p>
+
+  <h2>3. Sesli giriş</h2>
+  <p>Mikrofona dokunduğunda Cotiza, söylediklerini yazıya çevirmek için Apple'ın Konuşma Tanıma özelliğini kullanır. iPhone'un dilin için cihaz üzerinde tanımayı destekliyorsa bu tamamen cihazda olur. Desteklemiyorsa Apple sesi <a href="https://www.apple.com/tr/legal/privacy/">Apple Gizlilik Politikası</a> kapsamında kendi sunucularında işleyebilir. Cotiza sesini kaydetmez, saklamaz ya da göndermez.</p>
+  <p>Mikrofon ve konuşma tanıma izni yalnızca mikrofona ilk dokunduğunda istenir. İşi her zaman yazarak da girebilirsin.</p>
+
+  <h2>4. Teklif nasıl yazılır</h2>
+  <p>Apple Intelligence olan iPhone'larda teklifi Apple'ın cihaz üzerindeki dil modeli yazar. Diğer iPhone'larda Cotiza yerleşik bir ayrıştırıcı kullanır. Her iki durumda da iş tarifin cihazda kalır ve bize gönderilmez.</p>
+
+  <h2>5. Fotoğraflar ve kamera</h2>
+  <p>Bir logo seçersen, yalnızca seçtiğin görsel uygulamaya kopyalanır.</p>
+  <p>Bir mağaza fişini taramak için kamerayla fotoğraf çekersin ya da bir fotoğraf seçersin. Cotiza, ürünleri ve fiyatları bulmak için yazıyı iPhone'unda okur. Fotoğrafın kendisi saklanmaz: yalnızca eklemeyi seçtiğin kalemler tutulur. Kamera izni yalnızca kamerayla ilk taramada istenir. Cotiza fotoğraf arşivini okumaz.</p>
+
+  <h2>6. Kişiler</h2>
+  <p>“Kişiler'den seç”e dokunduğunda iOS kendi kişi seçicisini gösterir. Cotiza yalnızca seçtiğin kişiyi alır ve adını, telefonunu, e-postasını ve adresini o müşteriye kopyalar. Diğer kişilerine erişemez ve Kişiler izni istemez.</p>
+
+  <h2>7. Belge gönderme</h2>
+  <p>Bir teklifi ya da faturayı SMS ile gönderdiğinde Cotiza müşterinin numarasını, kısa bir notu ve PDF'i doldurur; sen Mesajlar'da kontrol edip gönderirsin. WhatsApp, e-posta ya da diğer uygulamalar için uygulamayı ve alıcıyı iOS paylaşım ekranında sen seçersin. Cotiza kendi başına hiçbir şey göndermez; oradan sonrasını seçtiğin uygulama yürütür.</p>
+
+  <h2>8. İmza bağlantıları</h2>
+  <p>“İmza bağlantısı gönder”e dokunduğunda Cotiza, müşterin tarayıcıda açabilsin diye o tek teklifi cotiza.adilemree.xyz adresindeki sunucumuza yükler: teklifin PDF'i ve sayfada görünenler (işletmenin adı ve iletişim bilgileri, müşterinin adı, kalemler, fiyatlar ve koşullar). Müşterin imzaladığında sunucu, onayın kaydı olarak yazdığı adı, imzasını, saati, IP adresini ve tarayıcısını da saklar.</p>
+  <p>Bağlantı özeldir: uzun ve rastgele bir adrestir, arama motorlarında dizinlenmez ve sonucu yalnızca onu oluşturan cihaz okuyabilir. Cotiza imzayı alır almaz isteği sunucudan siler. Alınmayan kayıtlar, gönderildikten ya da imzalandıktan 30 gün sonra kendiliğinden silinir. “Bağlantıyı iptal et” kaydı hemen siler. Bu kayıtlar yedeklenmez, satılmaz, paylaşılmaz ve yalnızca teklifi göstermek ve imzayı sana geri getirmek için kullanılır.</p>
+
+  <h2>9. Hatırlatıcılar</h2>
+  <p>Bildirimlere izin verirsen Cotiza iPhone'unda hatırlatıcılar planlar: bir teklif birkaç gündür yanıtsız kaldığında ve bir faturanın vadesi geçtiğinde. Bunlar cihazda oluşturulur; bildirim sunucusu yoktur. Cotiza Ayarları'ndan ya da iOS Ayarları'ndan kapatabilirsin.</p>
+
+  <h2>10. Widget'lar, Siri ve Spotlight</h2>
+  <p>Cotiza widget'ı, uygulamanın yalnızca kendi widget'ıyla paylaştığı bir alana kaydettiği toplamları gösterir. Teklif ve faturaların, Spotlight'ta bulabilmen ve Siri'ye sorabilmen için iPhone'unun arama dizinine eklenir. Bu dizin cihazında kalır ve iOS tarafından yönetilir.</p>
+
+  <h2>11. Satın alımlar</h2>
+  <p>Cotiza Pro abonelikleri Apple tarafından satılır ve işlenir. Ödeme bilgilerin bize hiçbir zaman ulaşmaz.</p>
+
+  <h2>12. Analiz, reklam ve üçüncü taraflar</h2>
+  <p>Cotiza'da <strong>reklam, analiz, çökme raporlama ya da takip SDK'sı yoktur</strong>. Kullanım verisi toplanmaz; hiçbir şey üçüncü taraflarla paylaşılmaz ya da onlara satılmaz.</p>
+
+  <h2>13. Verilerini silmek</h2>
+  <ul>
+    <li>Herhangi bir teklifi, faturayı, müşteriyi ya da kayıtlı fiyatı uygulamanın içinden silebilirsin. Bir belgeyi silmek ya da “İmzayı kaldır”a dokunmak onun imzasını da siler.</li>
+    <li>Uygulamayı silmek, widget'ın gösterdikleri ve Spotlight'ın buldukları dahil tüm verilerini cihazdan kaldırır. Bir kopyası, iOS Ayarları › adın › iCloud › Saklama Alanını Yönet › Cotiza'dan silene kadar özel iCloud'unda kalır.</li>
+    <li>Bizde hiçbir kopya yoktur, bu yüzden bizden istemen gereken bir şey yok.</li>
+  </ul>
+
+  <h2>14. Çocuklar</h2>
+  <p>Cotiza bir iş aracıdır, çocuklara yönelik değildir ve App Store'da 4+ olarak derecelendirilmiştir.</p>
+
+  <h2>15. Hakların</h2>
+  <p>Türkiye'de 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK), Avrupa'da GDPR veya Kaliforniya'da CCPA gibi yasalar kapsamında kişisel verilerin hakkında bilgi alma, erişme, düzeltme ya da silme hakkın olabilir. Verilerin cihazında ve iCloud'unda olduğu için oradan silmen yeterlidir; imza bağlantısı kayıtları 8. bölümde anlatıldığı gibi kendiliğinden silinir. Yine de <a href="mailto:{EMAIL}">{EMAIL}</a> adresinden bize yazabilirsin; 30 gün içinde yanıt veririz.</p>
+
+  <h2>16. Değişiklikler</h2>
+  <p>Bu politika değişirse yeni sürümü yeni bir tarihle bu sayfada yayımlanır.</p>
+""")
+
+page("tr", "/support", "Destek — Cotiza",
+     "Cotiza ile ilgili yardım: sesli giriş, fiyatlar, abonelikler ve verilerin.",
+     f"""
+  <h1>Destek</h1>
+  <p class="muted">Sık sorulan soruların yanıtları. Hâlâ takıldın mı? Bize yaz.</p>
+
+  <details><summary>Mikrofon çalışmıyor</summary>
+    <p>iPhone'unda Ayarlar uygulamasını aç, Uygulamalar › Cotiza'ya dokun ve Mikrofon ile Konuşma Tanıma'yı aç. İşi yazarak da girebilirsin. Ekrandaki “Konuştuğum dil” seçeneğinin Türkçe olduğundan emin ol.</p></details>
+  <details><summary>Bir fiyat ya da miktar yanlış çıktı</summary>
+    <p>Değiştirmek için teklifteki kaleme dokun; açıklamayı, miktarı, birimi ya da fiyatı düzelt. Cotiza'nın fiyatlandıramadığı kalemlerde “Fiyat ekle” yazar; Cotiza söylemediğin bir fiyatı asla uydurmaz. En iyi sonuç için fiyatı “tanesi 120”, “metrekaresi 25” ya da “toplam 600” gibi söyle.</p></details>
+  <details><summary>Teklifi müşterime nasıl gönderirim?</summary>
+    <p>“Önizle ve gönder”e dokun. “SMS”, Mesajlar'ı müşterinin numarası, onun dilinde kısa bir not ve PDF ile açar. “WhatsApp”, PDF'i ve notu WhatsApp'a aktarır; sohbeti orada seçersin. “E-posta ya da diğer uygulamalar” paylaşım ekranını açar.</p></details>
+  <details><summary>Müşterim teklifi nasıl imzalar?</summary>
+    <p>Teklifi aç (Cotiza Pro). “Müşteri imzası al”: telefonu müşterine ver, parmağıyla imzalasın. “İmza bağlantısı gönder”: SMS ya da WhatsApp ile bir bağlantı gönder; müşterin bağlantıyı açar, teklifi inceler ve tarayıcıda imzalar, sen de bildirim alırsın. İki durumda da teklif onaylandı olarak işaretlenir ve imza tarihle birlikte PDF'e basılır.</p></details>
+  <details><summary>Kapora nasıl istenir, ödeme nasıl kaydedilir?</summary>
+    <p>Teklifte “Diğer ayarlar”ı açıp kapora yüzdesini gir; teklif ve mesaj başlangıç kaporasını gösterir. Para geldiğinde “Ödeme kaydet”e dokun ve tutarı, tarihi ve ödeme yöntemini gir. Kalan tutar her yerde kendiliğinden güncellenir; son ödemeyle belge ödendi olarak işaretlenir.</p></details>
+  <details><summary>Mağaza fişinden nasıl malzeme eklerim?</summary>
+    <p>Bir teklif ya da faturada “Fiş tara”ya dokun, sonra fotoğraf çek ya da bir fotoğraf seç. Cotiza'nın bulduğu ürünleri ve fiyatları kontrol et, istemediklerinin işaretini kaldır ve alttaki “… kalem ekle” düğmesine dokun. Toplam, KDV ve ödeme satırları dışarıda bırakılır.</p></details>
+  <details><summary>Türkçe konuşup teklifi İngilizce gönderebilir miyim?</summary>
+    <p>Evet. Belge dilini Ayarlar'dan ya da her teklifte ayrı ayrı seç. Apple Intelligence olan iPhone'larda kalemler o dilde yazılır; diğerlerinde, dil paketi varsa Cotiza onları cihazda çevirir.</p></details>
+  <details><summary>Cotiza Pro'da neler var?</summary>
+    <p>Sınırsız teklif, faturalar, tekrarlanan faturalar, kapora ve ödeme takibi, müşteri imzası, kâr raporları, her belgede kendi logon ve “Cotiza ile hazırlandı” alt yazısının kalkması. Ücretsiz plan 3 teklif içerir.</p></details>
+  <details><summary>Aboneliğimi nasıl iptal ederim?</summary>
+    <p>iPhone'unda Ayarlar'ı aç, adına › Abonelikler › Cotiza Pro'ya dokun. Ya da Cotiza'da Ayarlar › Aboneliği yönet'i aç. Bir sonraki ücretlendirmeyi önlemek için yenilemeden en az 24 saat önce iptal et.</p></details>
+  <details><summary>Yeni telefon aldım, Pro gitti</summary>
+    <p>Cotiza'da abone olduğun Apple Hesabı'yla giriş yapmışken Pro'ya geç › Satın alımları geri yükle'ye dokun.</p></details>
+  <details><summary>Verilerim nerede? Yeni telefona nasıl taşırım?</summary>
+    <p>iPhone'unda ve iCloud'a giriş yaptıysan özel iCloud'unda. Yeni bir iPhone'a ya da iPad'e aynı Apple Hesabı'yla giriş yap, işlerin orada görünür. <a href="/tr/privacy">Gizlilik politikasına</a> bak.</p></details>
+  <details><summary>Rakamlarımı muhasebecime nasıl veririm?</summary>
+    <p>Ana ekrandaki grafik düğmesine dokun (Cotiza Pro). Bir ay ya da yıl seç ve Dışa aktar'a dokun; gelir, vergi, malzeme maliyeti ve kârı içeren bir tablo (CSV) ya da PDF özeti alırsın.</p></details>
+  <details><summary>Tekrarlanan faturalar nasıl çalışır?</summary>
+    <p>Bir faturayı aç ve Tekrarla'yı her hafta, 2 haftada bir ya da her ay olarak ayarla. O gün Cotiza aynı kalemlerle yeni numaralı bir kopya oluşturur ve göndermeni hatırlatır.</p></details>
+
+  <div class="contact">
+    E-posta: <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+    <span class="muted">Genellikle bir iş günü içinde yanıt veririz. Lütfen iPhone modelini ve iOS sürümünü yaz.</span>
+  </div>
+""")
+
+page("tr", "/terms", "Kullanım Koşulları — Cotiza",
+     "Cotiza kullanım ve abonelik koşulları.",
+     f"""
+  <h1>Kullanım Koşulları</h1>
+  <p class="updated">{T['tr']['updated']}: {UPDATED['tr']}</p>
+  <p>Cotiza sana Apple'ın <a href="{EULA}">Standart Son Kullanıcı Lisans Sözleşmesi</a> kapsamında lisanslanır. Aşağıdaki maddeler bu sözleşmeye eklenir.</p>
+
+  <h2>Abonelikler</h2>
+  <ul>
+    <li>Cotiza Pro, haftalık, aylık ve yıllık seçenekleri olan otomatik yenilenen bir aboneliktir. Fiyatlar satın almadan önce uygulamada gösterilir.</li>
+    <li>Ödeme, satın almayı onayladığında Apple Hesabı'ndan alınır.</li>
+    <li>Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir. Yenileme ücreti dönem bitmeden önceki 24 saat içinde alınır.</li>
+    <li>Aboneliğini istediğin zaman App Store hesap ayarlarından yönetebilir ya da iptal edebilirsin.</li>
+    <li>Abonelik satın aldığında ücretsiz denemenin kullanılmayan kısmı geçersiz olur.</li>
+    <li>İadeler Apple tarafından kendi politikalarına göre yapılır.</li>
+  </ul>
+
+  <h2>Tekliflerin</h2>
+  <p>Cotiza, söylediklerinden ya da yazdıklarından teklif ve fatura hazırlamana yardımcı olur. Bir belgeyi göndermeden önce her açıklamayı, miktarı, fiyatı ve vergiyi kontrol etmek ve müşterilerinle yaptığın anlaşmalar senin sorumluluğundadır. Cotiza hukuki, vergi ya da muhasebe danışmanlığı vermez. Belgeler resmi fatura (e-fatura veya e-arşiv fatura) yerine geçmez.</p>
+
+  <h2>İletişim</h2>
+  <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+""")
+
 (SITE / "404.html").write_text(f"""<!doctype html>
 <html lang="en">
 <head>
@@ -452,7 +633,7 @@ page("es", "/terms", "Términos de uso — Cotiza",
   <div class="hero">
     <img class="icon" src="/assets/icon.svg" alt="">
     <h1>Page not found</h1>
-    <p class="lede">Página no encontrada.</p>
+    <p class="lede">Página no encontrada · Sayfa bulunamadı</p>
     <a class="cta" href="/">Cotiza</a>
   </div>
 </main>

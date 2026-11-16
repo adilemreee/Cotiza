@@ -56,7 +56,7 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | Çeviriler (EN kaynak; ES ve TR çeviri) | `Tools/make_strings.py` (TR: `Tools/strings_tr.py`) → `Cotiza/Resources/*.xcstrings`, `CotizaWidget/Localizable.xcstrings` |
 | Türkçe: arayüz, belge dili (PDF, mesaj, rapor, imza), Türkçe iş tarifi ayrıştırma ("tanesi 120", "120'den", "toplam 600", "yirmi beş", "iki buçuk saat") | `DocumentLanguage.turkish`, `RuleBasedParser.turkishNumbers`, `CotizaTests/TurkishTests.swift` |
 | App Store Connect metinleri (EN + ES) | `AppStore/AppStoreConnect.md` (`python3 AppStore/check_lengths.py` sınırları kontrol eder) |
-| Web sitesi (https://cotiza.adilemree.xyz, EN + ES) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
+| Web sitesi (https://cotiza.adilemree.xyz, EN + ES + TR: `/`, `/es/`, `/tr/`) | `Tools/build_site.py` → `AppStore/site`, yayınlama: `Tools/deploy_site.sh` |
 | UI testleri (tüm ekranları gezer) | `CotizaUITests/CotizaUITests.swift` |
 
 Ücretsiz plan: 3 teklif, PDF altında "Made with Cotiza". Pro: sınırsız teklif, faturaya çevirme, ödeme kaydı, logo, markasız PDF.
@@ -137,8 +137,8 @@ cd Server/sign && node --test
 ```
 
 İmza sayfası İngilizce, İspanyolca ve Türkçe (`page.js`, bağlantı önizleme kartları `Tools/make_link_card.py`).
-Türkçe sayfa ve `card-tr.png` depoda; sunucuya `Tools/deploy_sign.sh` ile yüklenene kadar Türkçe belgelerin
-imza sayfası İngilizce görünür.
+Belgenin dili hangisiyse müşteri sayfayı o dilde görür. Sunucuya yükleme (testler geçmezse durur, nginx ayarını
+yedekleyip yalnızca geçerliyse yeniler):
 
 ```bash
 Tools/deploy_sign.sh
