@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Captures raw App Store screenshots: every scene, in English and Spanish, on each simulator.
+# Captures raw App Store screenshots: every scene, in English, Spanish and Turkish, on each simulator.
+# LANGS="tr" Tools/screenshots.sh … captures only the languages given.
 # Then compose them with AppStoreScreenshotKit: AppStore/screenshot-kit/link_raw.sh, then
 #   python3 ~/Developer/AppStoreScreenshotKit/compose.py AppStore/screenshot-kit/config.py
 #
@@ -18,8 +19,13 @@ OUT=AppStore/screenshots/raw
 xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'generic/platform=iOS Simulator' \
   -derivedDataPath build/DerivedData build -quiet
 
+LANGS=(${LANGS:-en es tr})
+locale_of() { case "$1" in tr) echo tr_TR ;; *) echo "${1}_US" ;; esac; }
+
 transcript() {
-  if [ "$1" = es ]; then
+  if [ "$1" = tr ]; then
+    echo "Üç yatak odası boyama tanesi 450, duvar ve tavan. Alçı ve zımpara 4 saat, saati 45. 6 kutu premium boya tanesi 52,89, bant, naylon ve rulo toplam 38,50. Müşteri Ayşe Demir."
+  elif [ "$1" = es ]; then
     echo "Pintar tres recámaras a 450 cada una, paredes y techo. Resanar y lijar 4 horas a 45 la hora. 6 galones de pintura premium a 52.89 y cinta, plástico y rodillos por 38.50. Cliente María López."
   else
     echo "Paint three bedrooms at 450 each, walls and ceiling. Patch and sand 4 hours at 45 an hour. 6 gallons of premium paint at 52.89 and tape, plastic and rollers for 38.50. Client Maria Lopez."
@@ -81,12 +87,12 @@ for name in "${DEVICES[@]}"; do
       slug="$slug-Folded"
     fi
   fi
-  for lang in en es; do
+  for lang in "${LANGS[@]}"; do
     mkdir -p "$OUT/$slug/$lang"
     if [[ "$name" == *iPad* ]]; then
       # The iPad status bar shows the date in the system language, so switch it to the store language.
       xcrun simctl spawn "$udid" defaults write -g AppleLanguages -array "$lang"
-      xcrun simctl spawn "$udid" defaults write -g AppleLocale "${lang}_US"
+      xcrun simctl spawn "$udid" defaults write -g AppleLocale "$(locale_of "$lang")"
       xcrun simctl reboot "$udid" 2>/dev/null || { xcrun simctl shutdown "$udid"; xcrun simctl boot "$udid"; }
       xcrun simctl bootstatus "$udid" >/dev/null
       xcrun simctl status_bar "$udid" override --time "$(python3 -c 'import datetime as d; print(d.datetime(2026,11,12,9,41).astimezone(d.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"))')" --dataNetwork wifi --wifiMode active \
@@ -94,7 +100,7 @@ for name in "${DEVICES[@]}"; do
     fi
     for i in "${!SCENES[@]}"; do
       scene=${SCENES[$i]}
-      args=(-CotizaResetState YES -CotizaDemoData YES -CotizaScreen "$scene" -AppleLanguages "($lang)" -AppleLocale "${lang}_US")
+      args=(-CotizaResetState YES -CotizaDemoData YES -CotizaScreen "$scene" -AppleLanguages "($lang)" -AppleLocale "$(locale_of "$lang")")
       if [ "$scene" = paywall ]; then args+=(-CotizaMockPlans YES); else args+=(-CotizaForcePro YES); fi
       [ "$scene" = capture ] && args+=(-CotizaDemoTranscript "$(transcript $lang)")
       xcrun simctl terminate "$udid" com.cotiza.app 2>/dev/null || true

@@ -15,7 +15,8 @@ enum ScreenshotScene: String {
     /// The estimate the editor, PDF and signature scenes open.
     static let heroID = UUID(uuidString: "C0717A00-0000-4000-8000-000000000001")!
 
-    private static var spanish: Bool { Locale.current.language.languageCode == .spanish }
+    /// The store language the simulator runs in: English, Spanish or Turkish.
+    private static var language: DocumentLanguage { .device }
 
     // MARK: Sample data
 
@@ -23,10 +24,24 @@ enum ScreenshotScene: String {
     static func seed(in context: ModelContext) {
         guard current != nil, (try? context.fetchCount(FetchDescriptor<JobDocument>())) == 0,
               let profile = try? context.fetch(FetchDescriptor<BusinessProfile>()).first else { return }
-        let es = spanish
-        profile.documentLanguage = es ? .spanish : .english
-        profile.terms = es ? "50% de anticipo para empezar y el resto al terminar." : "50% deposit to start, balance on completion."
-        profile.paymentInstructions = es ? "Zelle (713) 555-0142, cheque o efectivo." : "Zelle (713) 555-0142, check or cash."
+        let language = language
+        func t(_ english: String, _ spanish: String, _ turkish: String) -> String { language.text(english, spanish, turkish) }
+        profile.documentLanguage = language
+        profile.terms = t("50% deposit to start, balance on completion.", "50% de anticipo para empezar y el resto al terminar.",
+                          "İşe başlarken %50 kapora, kalanı iş bitince.")
+        profile.paymentInstructions = t("Zelle (713) 555-0142, check or cash.", "Zelle (713) 555-0142, cheque o efectivo.",
+                                        "IBAN TR12 0006 4000 0011 2345 6789 01, nakit ya da kart.")
+        let turkish = language == .turkish
+        if turkish {
+            // A painter in Istanbul, so the Turkish screens read naturally.
+            profile.businessName = "Yılmaz Boya Dekorasyon"
+            profile.ownerName = "Mehmet Yılmaz"
+            profile.phone = "0532 555 01 42"
+            profile.email = "mehmet@yilmazboya.example"
+            profile.address = "Bağdat Cad. No: 210, Kadıköy, İstanbul"
+            profile.licenseNumber = ""
+            profile.defaultTaxRate = 20
+        }
 
         let calendar = Calendar.current
         func day(_ offset: Int) -> Date { calendar.date(byAdding: .day, value: offset, to: calendar.startOfDay(for: .now))!.addingTimeInterval(10 * 3600) }
@@ -68,43 +83,48 @@ enum ScreenshotScene: String {
         let monthDay = calendar.component(.day, from: .now)
         let early = { (offset: Int) in -min(monthDay - 1, offset) }
 
-        let maria = client("Maria Lopez", "(713) 555-0198", es ? "4512 Calle Rosa, Houston, TX" : "4512 Rose St, Houston, TX")
-        let ana = client("Ana Pérez", "(713) 555-0110", "88 Oak Bend Dr, Houston, TX")
-        let john = client("John Smith", "(832) 555-0175", "1200 Westheimer Rd, Houston, TX")
-        let robert = client("Robert Chen", "(281) 555-0133", "73 Lakeview Ct, Sugar Land, TX")
-        let linda = client("Linda García", "(713) 555-0161", "905 Elm St, Bellaire, TX")
+        let maria = turkish ? client("Ayşe Demir", "0533 555 01 98", "Moda Cad. No: 45, Kadıköy, İstanbul")
+            : client("Maria Lopez", "(713) 555-0198", t("4512 Rose St, Houston, TX", "4512 Calle Rosa, Houston, TX", ""))
+        let ana = turkish ? client("Elif Şahin", "0535 555 01 10", "Fenerbahçe Mah. Dalga Sok. 8, Kadıköy, İstanbul")
+            : client("Ana Pérez", "(713) 555-0110", "88 Oak Bend Dr, Houston, TX")
+        let john = turkish ? client("Ali Çelik", "0532 555 01 75", "Ataşehir Bulvarı 12, Ataşehir, İstanbul")
+            : client("John Smith", "(832) 555-0175", "1200 Westheimer Rd, Houston, TX")
+        let robert = turkish ? client("Can Öztürk", "0542 555 01 33", "Göztepe Mah. Tütüncü Mehmet Efendi Cad. 73, İstanbul")
+            : client("Robert Chen", "(281) 555-0133", "73 Lakeview Ct, Sugar Land, TX")
+        let linda = turkish ? client("Zeynep Kaya", "0536 555 01 61", "Caddebostan Mah. Plaj Yolu 9, İstanbul")
+            : client("Linda García", "(713) 555-0161", "905 Elm St, Bellaire, TX")
 
-        document(.invoice, es ? "Limpieza profunda de casa" : "Deep house cleaning", linda, [
-            (es ? "Limpieza profunda, 3 recámaras" : "Deep cleaning, 3 bedrooms", 1, "", 320, 0, true),
-            (es ? "Productos de limpieza" : "Cleaning supplies", 1, "", 45.98, 39.98, false),
+        document(.invoice, t("Deep house cleaning", "Limpieza profunda de casa", "Detaylı ev temizliği"), linda, [
+            (t("Deep cleaning, 3 bedrooms", "Limpieza profunda, 3 recámaras", "Detaylı temizlik, 3 oda"), 1, "", 320, 0, true),
+            (t("Cleaning supplies", "Productos de limpieza", "Temizlik malzemeleri"), 1, "", 45.98, 39.98, false),
         ], status: .paid, created: early(9), paid: early(8))
-        document(.invoice, es ? "Pintura exterior de la casa" : "Exterior house painting", robert, [
-            (es ? "Pintar exterior de la casa" : "Paint house exterior", 1800, "sq ft", 1.75, 0, true),
-            (es ? "Pintura exterior premium" : "Premium exterior paint", 12, "gal", 57.49, 49.99, false),
-            (es ? "Lijar y resanar" : "Sand and patch", 6, "hr", 45, 0, true),
+        document(.invoice, t("Exterior house painting", "Pintura exterior de la casa", "Dış cephe boyama"), robert, [
+            (t("Paint house exterior", "Pintar exterior de la casa", "Dış cephe boyama"), turkish ? 170 : 1800, turkish ? "m²" : "sq ft", turkish ? 18.5 : 1.75, 0, true),
+            (t("Premium exterior paint", "Pintura exterior premium", "Premium dış cephe boyası"), 12, turkish ? "kutu" : "gal", 57.49, 49.99, false),
+            (t("Sand and patch", "Lijar y resanar", "Zımpara ve alçı"), 6, turkish ? "saat" : "hr", 45, 0, true),
         ], status: .paid, created: early(7), paid: early(4))
-        document(.invoice, es ? "Mantenimiento de jardín" : "Lawn care", ana, [
-            (es ? "Cortar y orillar el pasto" : "Mow and edge", 4, "", 55, 0, true),
-            (es ? "Fertilizante" : "Fertilizer", 1, "", 28.74, 24.99, false),
+        document(.invoice, t("Lawn care", "Mantenimiento de jardín", "Bahçe bakımı"), ana, [
+            (t("Mow and edge", "Cortar y orillar el pasto", "Çim biçme ve kenar düzeltme"), 4, "", 55, 0, true),
+            (t("Fertilizer", "Fertilizante", "Gübre"), 1, "", 28.74, 24.99, false),
         ], status: .paid, created: early(5), paid: early(3), repeats: .monthly)
-        document(.invoice, es ? "Cambio de llave de cocina" : "Kitchen faucet replacement", john, [
-            (es ? "Instalar llave nueva" : "Install new faucet", 1, "", 145, 0, true),
-            (es ? "Llave de cocina" : "Kitchen faucet", 1, "", 189.99, 164.99, false),
+        document(.invoice, t("Kitchen faucet replacement", "Cambio de llave de cocina", "Mutfak bataryası değişimi"), john, [
+            (t("Install new faucet", "Instalar llave nueva", "Yeni batarya montajı"), 1, "", 145, 0, true),
+            (t("Kitchen faucet", "Llave de cocina", "Mutfak bataryası"), 1, "", 189.99, 164.99, false),
         ], status: .sent, created: -4, due: -1)
-        document(.estimate, es ? "Reparación de techo" : "Roof repair", robert, [
-            (es ? "Cambiar tejas dañadas" : "Replace damaged shingles", 120, "sq ft", 6.5, 0, true),
-            (es ? "Sellar chimenea" : "Seal chimney flashing", 1, "", 275, 0, true),
+        document(.estimate, t("Roof repair", "Reparación de techo", "Çatı tamiri"), robert, [
+            (t("Replace damaged shingles", "Cambiar tejas dañadas", "Hasarlı kiremit değişimi"), turkish ? 11 : 120, turkish ? "m²" : "sq ft", turkish ? 70 : 6.5, 0, true),
+            (t("Seal chimney flashing", "Sellar chimenea", "Baca izolasyonu"), 1, "", 275, 0, true),
         ], status: .approved, created: -3)
-        document(.estimate, es ? "Barnizar la cerca" : "Fence staining", linda, [
-            (es ? "Barnizar cerca de madera" : "Stain wood fence", 160, "lin ft", 4.25, 0, true),
+        document(.estimate, t("Fence staining", "Barnizar la cerca", "Bahçe çiti verniği"), linda, [
+            (t("Stain wood fence", "Barnizar cerca de madera", "Ahşap çit vernikleme"), turkish ? 50 : 160, turkish ? "m" : "lin ft", turkish ? 13.5 : 4.25, 0, true),
         ], status: .sent, created: -2)
 
         // The hero estimate: what the editor, PDF and signature scenes show.
-        document(.estimate, es ? "Pintura interior, 3 recámaras" : "Interior painting, 3 bedrooms", maria, [
-            (es ? "Pintar recámaras (paredes y techo)" : "Paint bedrooms (walls and ceiling)", 3, "", 450, 0, true),
-            (es ? "Resanar y lijar paredes" : "Patch and sand walls", 4, "hr", 45, 0, true),
-            (es ? "Pintura interior premium" : "Premium interior paint", 6, "gal", 52.89, 45.99, false),
-            (es ? "Cinta, plástico y rodillos" : "Tape, plastic and rollers", 1, "", 38.50, 33.48, false),
+        document(.estimate, t("Interior painting, 3 bedrooms", "Pintura interior, 3 recámaras", "İç boya, 3 oda"), maria, [
+            (t("Paint bedrooms (walls and ceiling)", "Pintar recámaras (paredes y techo)", "Oda boyama (duvar ve tavan)"), 3, "", 450, 0, true),
+            (t("Patch and sand walls", "Resanar y lijar paredes", "Duvar alçı ve zımpara"), 4, turkish ? "saat" : "hr", 45, 0, true),
+            (t("Premium interior paint", "Pintura interior premium", "Premium iç cephe boyası"), 6, turkish ? "kutu" : "gal", 52.89, 45.99, false),
+            (t("Tape, plastic and rollers", "Cinta, plástico y rodillos", "Bant, naylon ve rulo"), 1, "", 38.50, 33.48, false),
         ], status: .sent, created: 0, id: heroID)
         try? context.save()
     }

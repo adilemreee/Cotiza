@@ -462,7 +462,7 @@ SDK'sı yok; eklersen bu cevabı güncelle.
 ## 8. Ekran görüntüleri
 
 Hazır dosyalar `AppStore/screenshot-kit/out/<dil>/<cihaz>/` içinde, App Store Connect'in kabul ettiği
-boyutlarda. Sıra dosya adındaki numaradır (01–06). `en` → English (U.S.), `es` → Spanish (Mexico).
+boyutlarda. Sıra dosya adındaki numaradır (01–06). `en` → English (U.S.), `es` → Spanish (Mexico), `tr` → Turkish.
 Tasarım: sade turuncu zemin, yalnız büyük başlık (vurgu kelimeler koyu kahve), çerçeveli cihaz.
 iPhone Duo yalnızca katlı haliyle (dış ekran) gösterilir; açık hali için slayt yok.
 
@@ -473,14 +473,16 @@ iPhone Duo yalnızca katlı haliyle (dış ekran) gösterilir; açık hali için
 | `ipad13` | iPad 13" Display | 2064 × 2752 |
 | `duo-outer` | iPhone Duo, katlı (dış ekran) | 1398 × 2034 |
 
-| # | Ekran | EN başlık | ES başlık |
-| --- | --- | --- | --- |
-| 01 | Sesle iş tarifi | Say the job. Get the estimate. | Di el trabajo. Recibe la cotización. |
-| 02 | Editör, kalemler dolu | Prices and quantities, filled in for you | Precios y cantidades, listos para ti |
-| 03 | PDF önizleme | A professional estimate in one tap | Un PDF profesional con un toque |
-| 04 | Müşteri imzası | Your client signs on your phone | Tu cliente firma en tu teléfono |
-| 05 | Ana ekran | Know who owes you | Sabes quién te debe |
-| 06 | Kâr raporu | See what you really made | Mira cuánto ganaste de verdad |
+| # | Ekran | EN başlık | ES başlık | TR başlık |
+| --- | --- | --- | --- | --- |
+| 01 | Sesle iş tarifi | Say the job. Get the estimate. | Di el trabajo. Recibe la cotización. | İşi anlat. Teklif hazır. |
+| 02 | Editör, kalemler dolu | Prices and quantities, filled in for you | Precios y cantidades, listos para ti | Fiyatlar ve miktarlar kendiliğinden dolar |
+| 03 | PDF önizleme | A professional estimate in one tap | Un PDF profesional con un toque | Profesyonel teklif tek dokunuşla |
+| 04 | Müşteri imzası | Your client signs on your phone | Tu cliente firma en tu teléfono | Müşterin imzası hemen telefonunda |
+| 05 | Ana ekran | Know who owes you | Sabes quién te debe | Alacaklarını tek bakışta gör |
+| 06 | Kâr raporu | See what you really made | Mira cuánto ganaste de verdad | Gerçekte ne kazandığını gör |
+
+Türkçe ekranlarda örnek veri İstanbul'da bir boya ustası (Yılmaz Boya Dekorasyon), vergi %20; tutarlar uygulamadaki gibi dolar.
 
 Abonelik ürünlerinin "Review screenshot" alanı için Pro ekranının çerçevesiz hali:
 `AppStore/screenshots/raw/iPhone-18-Pro/en/7-paywall.png`.
