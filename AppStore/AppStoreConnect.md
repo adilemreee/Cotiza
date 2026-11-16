@@ -464,6 +464,7 @@ SDK'sı yok; eklersen bu cevabı güncelle.
 Hazır dosyalar `AppStore/screenshot-kit/out/<dil>/<cihaz>/` içinde, App Store Connect'in kabul ettiği
 boyutlarda. Sıra dosya adındaki numaradır (01–06). `en` → English (U.S.), `es` → Spanish (Mexico).
 Tasarım: sade turuncu zemin, yalnız büyük başlık (vurgu kelimeler koyu kahve), çerçeveli cihaz.
+iPhone Duo yalnızca katlı haliyle (dış ekran) gösterilir; açık hali için slayt yok.
 
 | Klasör | App Store Connect'teki alan | Boyut |
 | --- | --- | --- |
@@ -471,7 +472,6 @@ Tasarım: sade turuncu zemin, yalnız büyük başlık (vurgu kelimeler koyu kah
 | `iphone63` | iPhone 6.3" Display | 1206 × 2622 |
 | `ipad13` | iPad 13" Display | 2064 × 2752 |
 | `duo-outer` | iPhone Duo, katlı (dış ekran) | 1398 × 2034 |
-| `duo-inner-land` | iPhone Duo, açık (iç ekran, yatay) | 2853 × 2007 |
 
 | # | Ekran | EN başlık | ES başlık |
 | --- | --- | --- | --- |
