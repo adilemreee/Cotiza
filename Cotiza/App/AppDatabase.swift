@@ -88,6 +88,15 @@ enum AppDatabase {
     private static func prepared(_ container: ModelContainer) -> ModelContainer {
         repairDocumentIDs(in: container.mainContext)
         mergeDuplicateProfiles(in: container.mainContext)
+        // Reminders, Siri and background checks can run before any screen sets the currency.
+        if let profile = try? container.mainContext.fetch(FetchDescriptor<BusinessProfile>()).first {
+            // A business from before currencies existed gets its region's currency, once.
+            if profile.currencyCode.isEmpty {
+                profile.currencyCode = Money.regionCurrency
+                try? container.mainContext.save()
+            }
+            Money.currencyCode = profile.currency
+        }
         return container
     }
 

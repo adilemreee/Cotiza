@@ -31,7 +31,7 @@ nonisolated enum ReceiptParser {
         "para ustu", "para üstü", "indirim", "iskonto", "odenen", "ödenen", "bakiye", "fis no", "fiş no", "z no",
     ]
 
-    private static let price = #"(-)?\$?\s?(\d{1,3}(?:[,\s]\d{3})*[.,]\d{2}|\d{1,6}[.,]\d{2})(?:\s*-)?(?:\s+[A-Z]{1,2})?\s*$"#
+    private static let price = #"(-)?[\$€₺]?\s?(\d{1,3}(?:[.,\s]\d{3})*[.,]\d{2}|\d{1,6}[.,]\d{2})(?:\s*-)?(?:\s+[A-Z]{1,2})?\s*$"#
     private static let multiple = #"^(\d+(?:[.,]\d+)?)\s*(?:@|x|X|×)\s*\$?(\d+[.,]\d{2})"#
 
     static func parse(_ lines: [String]) -> [ReceiptLine] {
@@ -78,7 +78,7 @@ nonisolated enum ReceiptParser {
     private static func clean(_ raw: String) -> String {
         var s = raw.replacing(rx(#"\b\d{5,}\b"#), with: " ")
         s = s.replacing(rx(#"[<>*#|_=]+"#), with: " ")
-        s = s.replacing(rx(#"\s+"#), with: " ").trimmingCharacters(in: CharacterSet(charactersIn: " .,-:$"))
+        s = s.replacing(rx(#"\s+"#), with: " ").trimmingCharacters(in: CharacterSet(charactersIn: " .,-:$€₺"))
         // Receipts shout; the client's PDF shouldn't.
         if s == s.uppercased() {
             s = s.lowercased().split(separator: " ").map { word in
@@ -92,7 +92,10 @@ nonisolated enum ReceiptParser {
         guard var s = raw.map(String.init) else { return nil }
         s = s.replacingOccurrences(of: " ", with: "")
         if s.contains("."), s.contains(",") {
-            s = s.replacingOccurrences(of: ",", with: "")
+            // "1,250.00" or "1.250,00": the last separator is the decimal one.
+            let decimal: Character = s.lastIndex(of: ",")! > s.lastIndex(of: ".")! ? "," : "."
+            s = s.replacingOccurrences(of: decimal == "," ? "." : ",", with: "")
+            s = s.replacingOccurrences(of: ",", with: ".")
         } else if let comma = s.lastIndex(of: ","), s.distance(from: comma, to: s.endIndex) == 3 {
             s.replaceSubrange(comma...comma, with: ".")
         } else {

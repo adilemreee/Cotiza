@@ -38,6 +38,7 @@
 		720E9B8453DFFFE446D8ABEB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895900AA689A5869DA771403 /* Theme.swift */; };
 		7627BA4FCD83FF0D0ECCC4E0 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA7ABF0D826685E86B9418 /* ReviewPrompt.swift */; };
 		7AB465804B012AE6C53AB8F5 /* ProfitReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70318AA0E17D7E28BEE1D552 /* ProfitReport.swift */; };
+		817BEA6ABFB30A5229EAF5E6 /* SpokenPhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D2B0631299A27E545395E2 /* SpokenPhraseTests.swift */; };
 		8A7CDF32AA5A890B9DB4031F /* IntentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE1C56EE0FD681589E99B51 /* IntentsTests.swift */; };
 		8E9C2676B6D9E6FEFCA94E23 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A20DA9E55643A74C5CBC7D5 /* OnboardingView.swift */; };
 		8F5961762B3E26C39F3240C4 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9441818E1257B6F619811F2 /* PaywallView.swift */; };
@@ -135,6 +136,7 @@
 		895900AA689A5869DA771403 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		9564AAA00BCBF0103ECA030D /* DocumentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentFactory.swift; sourceTree = "<group>"; };
 		97748F449E02E025543C2DBF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		98D2B0631299A27E545395E2 /* SpokenPhraseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpokenPhraseTests.swift; sourceTree = "<group>"; };
 		9F458BABA3B80701C0CDCDE5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		A0401740DA354A424055B4B6 /* WidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetData.swift; sourceTree = "<group>"; };
 		A7F0AC3A5B78A9AFBAE7AF08 /* CotizaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotizaWidget.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				13FF462B9D5F4C2500C32E2F /* PDFAndStoreTests.swift */,
 				F1A0939BDF3859C08D35D6AF /* ReviewPromptTests.swift */,
 				DE50F8E75420374B2351085A /* SignLinkTests.swift */,
+				98D2B0631299A27E545395E2 /* SpokenPhraseTests.swift */,
 				F5B6FE32F6423C7C90ED6771 /* TurkishTests.swift */,
 			);
 			path = CotizaTests;
@@ -509,6 +512,7 @@
 				3C22B136A38DE9D4A0A50C68 /* PaymentTests.swift in Sources */,
 				28884CF4F87AD1960C4B4395 /* ReviewPromptTests.swift in Sources */,
 				A92676EA46DC264C2BB1F838 /* SignLinkTests.swift in Sources */,
+				817BEA6ABFB30A5229EAF5E6 /* SpokenPhraseTests.swift in Sources */,
 				6E2B022672E64630649BD23B /* TurkishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,7 +666,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -796,7 +800,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

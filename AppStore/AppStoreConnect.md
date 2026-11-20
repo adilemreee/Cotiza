@@ -8,8 +8,7 @@ yayınlanır. Paket kimliği (`com.cotiza.app`), abonelik ürün kimlikleri ve i
 kullanıcı bunları görmez. Site ve imza linkleri `precia.adilemree.xyz`; eski `cotiza.adilemree.xyz` adresinde
 imza linkleri ve uygulama API'si çalışmaya devam eder, sayfalar yeni adrese yönlenir.
 
-İlk yayında App Store Connect "What's New" alanını istemez; aşağıdaki What's New metinleri ilk güncellemede
-kullanılır. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
+İlk yayın 1.1.1 (What's New alanı yok). Aşağıdaki What's New metinleri 1.2.0 içindir. Karakter sınırları `python3 AppStore/check_lengths.py` ile kontrol edildi.
 
 Dil sırası: **English (U.S.)** ana dil, **Spanish (Mexico)** ek dil. ABD App Store'u İspanyolca cihaz
 kullanan kişilere Spanish (Mexico) metinlerini gösterir; hedef kitle bu. **Turkish** isteğe bağlı üçüncü dil: Türkiye
@@ -139,20 +138,20 @@ Subscription terms: https://precia.adilemree.xyz/terms
 Privacy Policy: https://precia.adilemree.xyz/privacy
 ```
 
-**What's New** (4000) — 1.1.1 (1.1.0 ayrıca yayınlanmadığı için onun notlarını da içerir)
+**What's New** (4000) — 1.2.0
 ```
-Deposits and partial payments
+Your currency
+• Pick the currency for your estimates and invoices in Settings: US dollars, Turkish lira, euros, Mexican pesos, British pounds or Canadian dollars. Precia starts with your phone's.
+• The PDF, the signing page, the message to your client, reports and the widget all use it.
 
-• Ask for a deposit on your estimates. Set your usual percentage once in Settings. The deposit is printed on the PDF, on the signing page and in the message to your client.
-• Record each payment: the amount, the date and how your client paid (cash, check, Zelle, Cash App, Venmo or card).
-• Invoices list what was paid and show the balance due. A deposit paid on the estimate carries over to the invoice.
-• When everything is paid, the job is marked paid by itself.
-• The home screen shows what each client still owes, and overdue reminders mention the balance, not the full total.
-• Reports count every payment on the day you got it, deposits included.
-• A cleaner estimate and invoice screen: dates, repeat, deposit percentage, language and status are now tucked under More options.
-• Precia now speaks Turkish: the app, voice input and documents.
+Understands more of what you say
+• Amounts said in words: "twelve hundred", "two thousand five hundred", "mil doscientos", "dos mil quinientos".
+• "Half an hour", "an hour and a half", "media hora".
+• "$300 total for 3 loads" becomes 3 at $100 each.
+• "50% deposit to start" goes into the notes for your client instead of becoming a line.
+• In Turkish: lira written as ₺ or TL, "bin", "metre kare", kuruş, and a price said for all of them.
 
-Recording payments is part of Precia Pro.
+Receipts that print amounts as 1.250,00 are read correctly.
 ```
 
 ---
@@ -238,20 +237,19 @@ Términos de suscripción: https://precia.adilemree.xyz/es/terms
 Política de privacidad: https://precia.adilemree.xyz/es/privacy
 ```
 
-**What's New** (4000) — 1.1.1
+**What's New** (4000) — 1.2.0
 ```
-Anticipos y pagos parciales
+Tu moneda
+• Elige la moneda de tus cotizaciones y facturas en Configuración: dólares, liras turcas, euros, pesos mexicanos, libras o dólares canadienses. Precia empieza con la de tu teléfono.
+• El PDF, la página para firmar, el mensaje a tu cliente, los reportes y el widget la usan.
 
-• Pide un anticipo en tus cotizaciones. Pon tu porcentaje de siempre una vez en Configuración. El anticipo sale en el PDF, en la página para firmar y en el mensaje a tu cliente.
-• Registra cada pago: el monto, la fecha y cómo te pagó tu cliente (efectivo, cheque, Zelle, Cash App, Venmo o tarjeta).
-• Las facturas muestran lo que ya te pagaron y el saldo pendiente. Un anticipo pagado en la cotización pasa a la factura.
-• Cuando te pagan todo, el trabajo queda como pagado solo.
-• La pantalla de inicio muestra cuánto te debe cada cliente, y los recordatorios de pago vencido dicen el saldo, no el total.
-• Los reportes cuentan cada pago el día en que lo recibiste, anticipos incluidos.
-• Pantalla de cotización y factura más limpia: fechas, repetición, porcentaje de anticipo, idioma y estado ahora están en Más opciones.
-• Precia ahora también está en turco: la app, la voz y los documentos.
+Entiende más de lo que dices
+• Cantidades dichas en palabras: "mil doscientos", "dos mil quinientos", "quinientos", "twelve hundred".
+• "Media hora", "una hora y media", "half an hour".
+• "300 en total por 3 viajes" queda en 3 a 100 cada uno.
+• "50% de anticipo para empezar" pasa a las notas para tu cliente en vez de volverse un concepto.
 
-Registrar pagos es parte de Precia Pro.
+Los recibos que imprimen montos como 1.250,00 se leen bien.
 ```
 
 ---
@@ -342,25 +340,20 @@ Abonelik koşulları: https://precia.adilemree.xyz/tr/terms
 Gizlilik Politikası: https://precia.adilemree.xyz/tr/privacy
 ```
 
-**What's New** (4000) — 1.1.1
+**What's New** (4000) — 1.2.0
 ```
-Precia artık Türkçe
+Para birimin
+• Teklif ve faturalarının para birimini Ayarlar'dan seç: Türk lirası, ABD doları, euro, Meksika pesosu, İngiliz sterlini ya da Kanada doları. Precia telefonunun para birimiyle başlar.
+• PDF, imza sayfası, müşteriye giden mesaj, raporlar ve widget hepsi bunu kullanır.
 
-• Uygulamanın tamamı Türkçe: ekranlar, widget'lar ve Siri.
-• İşi Türkçe sesli anlat: "tanesi 120", "metrekaresi 25", "toplam 600", "iki buçuk saat" gibi söyleyişleri anlar.
-• Belge dili olarak Türkçe: PDF, müşteriye giden mesaj, imza sayfası ve kâr raporu.
+Söylediklerini daha iyi anlar
+• ₺ ya da TL diye yazılan lira, "iki bin beş yüz", "bin iki yüz", "metre kare", kuruş ve "52,50" gibi küsuratlar.
+• "Yarım gün", "yarım saat".
+• "Tanesi" demeden söylenen fiyat hepsinin fiyatı sayılır: "3 oda 4.500 lira" odası 1.500 olur.
+• "Liradan", "liralık", "TL'den", "rulosu", "metrekare başına" gibi söyleyişler.
+• "Yüzde 50 kapora" gibi kapora sözleri kalem olmaz, müşteriye not olarak eklenir.
 
-Kapora ve kısmi ödemeler
-
-• Tekliflerinde kapora iste. Her zamanki yüzdeni bir kez Ayarlar'da gir. Kapora PDF'te, imza sayfasında ve müşteriye giden mesajda görünür.
-• Her ödemeyi kaydet: tutarı, tarihi ve müşterinin nasıl ödediğini (nakit, çek, kart ya da diğer).
-• Faturalar ödenenleri ve kalan tutarı gösterir. Teklifte alınan kapora faturaya geçer.
-• Her şey ödendiğinde iş kendiliğinden ödendi olarak işaretlenir.
-• Ana ekran her müşterinin kalan borcunu gösterir; vadesi geçen hatırlatmaları toplamı değil kalan tutarı söyler.
-• Raporlar, kaporalar dahil her ödemeyi alındığı gün sayar.
-• Daha sade teklif ve fatura ekranı: tarihler, tekrar, kapora yüzdesi, dil ve durum artık Diğer ayarlar altında.
-
-Ödeme kaydetmek Precia Pro'ya dahildir.
+1.250,00 gibi yazılan fiş tutarları doğru okunur.
 ```
 
 ---

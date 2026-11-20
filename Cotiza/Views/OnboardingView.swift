@@ -163,6 +163,8 @@ struct OnboardingView: View {
             let created = BusinessProfile()
             // Documents start in the phone's language; Settings changes it.
             created.documentLanguage = .device
+            // Amounts start in the phone region's currency, and stay in it if the region changes later.
+            created.currency = Money.regionCurrency
             context.insert(created)
             return created
         }()
