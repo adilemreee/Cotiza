@@ -11,6 +11,8 @@ nonisolated struct WidgetSnapshot: Codable, Equatable, Sendable {
     var awaitingCount: Int
     var overdueCount: Int
     var updatedAt: Date
+    /// The business's currency; snapshots saved before it existed decode as dollars.
+    var currencyCode: String? = nil
 
     static let empty = WidgetSnapshot(pending: 0, paidThisMonth: 0, awaitingCount: 0, overdueCount: 0, updatedAt: .distantPast)
 
@@ -30,8 +32,8 @@ nonisolated struct WidgetSnapshot: Codable, Equatable, Sendable {
     }
 
     /// "$1,250" — cents only when there are any, so the number fits a small widget.
-    static func money(_ value: Double, locale: Locale = .current) -> String {
+    static func money(_ value: Double, currency: String? = nil, locale: Locale = .current) -> String {
         let hasCents = (value * 100).rounded().truncatingRemainder(dividingBy: 100) != 0
-        return value.formatted(.currency(code: "USD").precision(.fractionLength(hasCents ? 2 : 0)).locale(locale))
+        return value.formatted(.currency(code: currency ?? "USD").precision(.fractionLength(hasCents ? 2 : 0)).locale(locale))
     }
 }

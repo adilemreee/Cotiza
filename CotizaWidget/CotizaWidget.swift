@@ -36,8 +36,8 @@ struct SummaryWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: SummaryEntry
 
-    private var pending: String { WidgetSnapshot.money(entry.snapshot.pending) }
-    private var paid: String { WidgetSnapshot.money(entry.snapshot.paid(asOf: entry.date)) }
+    private var pending: String { WidgetSnapshot.money(entry.snapshot.pending, currency: entry.snapshot.currencyCode) }
+    private var paid: String { WidgetSnapshot.money(entry.snapshot.paid(asOf: entry.date), currency: entry.snapshot.currencyCode) }
 
     var body: some View {
         switch family {

@@ -20,7 +20,7 @@ nonisolated enum ClientMessage {
                 : language.text("Hi \(firstName),", "Hola \(firstName),", "Merhaba \(firstName),")
             let business = s.businessName.isEmpty ? s.ownerName : s.businessName
             from = business.isEmpty ? "" : language.text(" from \(business)", " de \(business)", " (\(business))")
-            total = Money.string(s.totals.total, locale: language.locale)
+            total = Money.string(s.totals.total, locale: language.locale, currency: s.currency)
         }
     }
 
@@ -42,10 +42,10 @@ nonisolated enum ClientMessage {
         let t = p.t
         let (greeting, from, total, number) = (p.greeting, p.from, p.total, s.displayNumber)
         let locale = s.language.locale
-        let deposit = Money.string(s.depositAmount, locale: locale)
+        let deposit = Money.string(s.depositAmount, locale: locale, currency: s.currency)
         let percent = Money.quantity(s.depositPercent, locale: locale)
-        let paidSoFar = Money.string(s.amountPaid, locale: locale)
-        let balance = Money.string(s.balanceDue, locale: locale)
+        let paidSoFar = Money.string(s.amountPaid, locale: locale, currency: s.currency)
+        let balance = Money.string(s.balanceDue, locale: locale, currency: s.currency)
         let payment = s.paymentInstructions.trimmingCharacters(in: .whitespacesAndNewlines)
         var lines: [String] = []
         func paymentLine() {

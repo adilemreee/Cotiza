@@ -183,6 +183,7 @@ ES = {
     "Precia remembers your prices each time you send an estimate.": "Precia recuerda tus precios cada vez que envías una cotización.",
     "Couldn't create the PDF": "No se pudo crear el PDF",
     "Create estimate": "Crear cotización",
+    "Currency": "Moneda",
     "Defaults for new estimates": "Valores para cotizaciones nuevas",
     "Delete": "Eliminar",
     "Delete item": "Eliminar concepto",

@@ -72,6 +72,69 @@ struct TurkishTests {
         #expect(lines.first?.unitPrice == 89.9)
     }
 
+    @Test func `lira written every way`() throws {
+        let cases: [(String, Double, Double)] = [
+            ("Kombi bakımı 1.800 ₺", 1, 1800),
+            ("₺950 lavabo değişimi", 1, 950),
+            ("Batarya değişimi 750 TL'den", 1, 750),
+            ("Kapı kolu değişimi 52,50 TL", 1, 52.5),
+            ("Silikon 52 lira 5 kuruş", 1, 52.05),
+            ("Mutfak tadilatı on bin liralık", 1, 10000),
+            ("Elektrik tesisatı iki bin beş yüz lira", 1, 2500),
+            ("Çatı tamiri bin iki yüz lira", 1, 1200),
+        ]
+        for (text, quantity, price) in cases {
+            let draft = RuleBasedParser.parse(text)
+            try #require(draft.items.count == 1, "\(text)")
+            #expect(draft.items[0].quantity == quantity, "\(text)")
+            #expect(draft.items[0].unitPrice == price, "\(text)")
+            #expect(!draft.items[0].text.contains("₺") && !draft.items[0].text.lowercased().contains("bin"), "\(text)")
+        }
+    }
+
+    @Test func `turkish units, per-unit words and totals`() throws {
+        let squareMeters = RuleBasedParser.parse("40 metre kare parke döşeme metrekare başına 300 TL")
+        try #require(squareMeters.items.count == 1)
+        #expect(squareMeters.items[0].text == "Parke döşeme")
+        #expect(squareMeters.items[0].quantity == 40)
+        #expect(squareMeters.items[0].unit == "m²")
+        #expect(squareMeters.items[0].unitPrice == 300)
+
+        let rolls = RuleBasedParser.parse("Duvar kağıdı 3 rulo rulosu 400 lira")
+        #expect(rolls.items.first?.text == "Duvar kağıdı")
+        #expect(rolls.items.first?.unit == "rulo")
+        #expect(rolls.items.first?.unitPrice == 400)
+
+        // Without "tanesi", the amount is for all of them.
+        let rooms = RuleBasedParser.parse("Boya badana 3 oda 4.500 lira")
+        #expect(rooms.items.first?.quantity == 3)
+        #expect(rooms.items.first?.unitPrice == 1500)
+    }
+
+    @Test func `the spoken language settles short phrases`() {
+        let draft = RuleBasedParser.parse("kapi 120 lira", spoken: .turkish)
+        #expect(draft.textLanguage == .turkish)
+        #expect(draft.items.first?.unitPrice == 120)
+        #expect(RuleBasedParser.numbers(in: "2.500 ve 52,50", spoken: .turkish).contains(2500))
+        #expect(RuleBasedParser.numbers(in: "2.500 ve 52,50", spoken: .turkish).contains(52.5))
+    }
+
+    @Test func `amounts in lira`() {
+        #expect(Money.string(2500, locale: Locale(identifier: "tr_TR"), currency: "TRY") == "₺2.500,00")
+        #expect(Money.symbol("TRY", locale: Locale(identifier: "tr_TR")) == "₺")
+        #expect(WidgetSnapshot.money(1250, currency: "TRY", locale: Locale(identifier: "tr_TR")) == "₺1.250")
+    }
+
+    @Test func `model units are written in turkish`() {
+        let generated = GeneratedEstimate(title: "İşçilik", clientName: "", items: [
+            GeneratedItem(description: "İşçilik", quantity: 8, unit: "hr", unitPrice: 450, isLabor: true),
+        ], notes: "")
+        let draft = EstimateEngine.validated(generated, transcript: "8 saat işçilik saati 450", spoken: .turkish, priceBook: [],
+                                             language: .turkish, fallback: RuleBasedParser.parse(""))
+        #expect(draft.items.first?.unit == "saat")
+        #expect(draft.items.first?.unitPrice == 450)
+    }
+
     // MARK: What the client sees
 
     private func snapshot(kind: DocumentKind) -> DocumentSnapshot {

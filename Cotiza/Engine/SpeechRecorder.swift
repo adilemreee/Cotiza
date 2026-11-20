@@ -33,6 +33,22 @@ final class SpeechRecorder {
 
     var isRecording: Bool { state == .recording }
 
+    /// Trade words the recognizer would otherwise mishear ("metrekare", "alçıpan", "tablaroca").
+    static func vocabulary(for locale: Locale) -> [String] {
+        switch locale.language.languageCode {
+        case .turkish:
+            ["metrekare", "metrekaresi", "tanesi", "adedi", "saati", "işçilik", "lira", "TL", "kapora", "alçıpan",
+             "boya", "badana", "fayans", "seramik", "parke", "laminat", "sıva", "kombi", "batarya", "lavabo",
+             "klozet", "priz", "izolasyon", "su yalıtımı", "çatı", "oluk", "kiremit", "tesisat", "müşteri", "tadilat"]
+        case .spanish:
+            ["recámara", "tablaroca", "pies cuadrados", "pies lineales", "mano de obra", "anticipo", "cotización",
+             "impermeabilizar", "resanar", "galones", "zoclo", "azulejo", "cliente"]
+        default:
+            ["drywall", "square feet", "linear feet", "labor", "deposit", "trim", "caulk", "vanity", "grout",
+             "baseboard", "gallons", "client"]
+        }
+    }
+
     func start(locale: Locale) async {
         guard state != .recording else { return }
         transcript = ""
@@ -59,6 +75,7 @@ final class SpeechRecorder {
             request.shouldReportPartialResults = true
             request.addsPunctuation = true
             request.requiresOnDeviceRecognition = recognizer.supportsOnDeviceRecognition
+            request.contextualStrings = Self.vocabulary(for: locale)
 
             let engine = AVAudioEngine()
             try Self.installTap(on: engine, feeding: request) { [weak self] level in

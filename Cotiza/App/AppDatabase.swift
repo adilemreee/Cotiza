@@ -125,6 +125,7 @@ enum AppDatabase {
             if keep.terms.isEmpty { keep.terms = extra.terms }
             if keep.paymentInstructions.isEmpty { keep.paymentInstructions = extra.paymentInstructions }
             if keep.defaultDepositPercent == 0 { keep.defaultDepositPercent = extra.defaultDepositPercent }
+            if keep.currencyCode.isEmpty { keep.currencyCode = extra.currencyCode }
             context.delete(extra)
         }
         try? context.save()

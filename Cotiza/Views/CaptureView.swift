@@ -109,7 +109,9 @@ struct CaptureView: View {
                     Text(speechLanguage.text(
                         "“Paint two bedrooms at 350 each, install 3 doors at 120 dollars each and 8 hours of labor at 45 an hour. Client Maria Lopez.”",
                         "“Pintar dos recámaras a 350 cada una, instalar 3 puertas a 120 dólares cada una y 8 horas de mano de obra a 45 la hora. Cliente María López.”",
-                        "“2 yatak odası boyama tanesi 350, 3 kapı takma tanesi 120 dolar ve 8 saat işçilik saati 45. Müşteri Ayşe Yılmaz.”"))
+                        Money.currencyCode == "TRY"
+                            ? "“2 yatak odası boyama tanesi 3.500 lira, 3 kapı takma tanesi 1.200 lira ve 8 saat işçilik saati 450. Müşteri Ayşe Yılmaz.”"
+                            : "“2 yatak odası boyama tanesi 350, 3 kapı takma tanesi 120 dolar ve 8 saat işçilik saati 45. Müşteri Ayşe Yılmaz.”"))
                         .font(.body)
                         .foregroundStyle(Color.secondary)
                 }
@@ -223,9 +225,12 @@ struct CaptureView: View {
         let hints = DocumentFactory(context: context).priceHints()
         let trade = profile.tradeDescription
         let target = profile.documentLanguage
+        let spoken = speechLanguage
+        let currency = profile.currency
 
         Task {
-            let draft = await EstimateEngine().makeDraft(transcript: transcript, trade: trade, language: target, priceBook: hints)
+            let draft = await EstimateEngine().makeDraft(transcript: transcript, trade: trade, language: target, spoken: spoken,
+                                                          currency: currency, priceBook: hints)
             guard draft.textLanguage != target, !draft.items.isEmpty else {
                 finish(with: draft, transcript: transcript)
                 return

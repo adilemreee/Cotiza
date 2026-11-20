@@ -39,14 +39,16 @@ nonisolated struct EstimateDraft: Equatable, Sendable {
 /// price in the result is literally present in the input.
 nonisolated enum RuleBasedParser {
 
-    static func parse(_ transcript: String) -> EstimateDraft {
+    /// `spoken` is the language the contractor said they speak ("I speak" on the capture screen).
+    /// Turkish there is trusted outright; otherwise the text decides between Spanish and English.
+    static func parse(_ transcript: String, spoken: DocumentLanguage? = nil) -> EstimateDraft {
         var text = transcript
             .replacingOccurrences(of: "\n", with: ". ")
             .replacingOccurrences(of: "\u{00A0}", with: " ")
-        let language = detectLanguage(of: transcript)
+        let language = detectLanguage(of: transcript, spoken: spoken)
 
         let clientName = language == .turkish ? turkishClient(from: &text) : extractClient(from: &text)
-        text = replaceNumberWords(in: text)
+        text = replaceNumberWords(in: text, language: language)
 
         var items: [DraftItem] = []
         var notes: [String] = []
@@ -75,7 +77,9 @@ nonisolated enum RuleBasedParser {
         return EstimateDraft(title: title, clientName: clientName, items: items, notes: noteText, source: .basic, textLanguage: language)
     }
 
-    static func detectLanguage(of text: String) -> DocumentLanguage {
+    static func detectLanguage(of text: String, spoken: DocumentLanguage? = nil) -> DocumentLanguage {
+        // Short phrases ("kapı 120 lira") don't carry enough to guess from.
+        if spoken == .turkish { return .turkish }
         let recognizer = NLLanguageRecognizer()
         recognizer.languageConstraints = [.spanish, .english, .turkish]
         recognizer.processString(text)
@@ -89,8 +93,8 @@ nonisolated enum RuleBasedParser {
     }
 
     /// Every number that literally appears in the text (after number words are converted).
-    static func numbers(in transcript: String) -> [Double] {
-        let text = replaceNumberWords(in: transcript)
+    static func numbers(in transcript: String, spoken: DocumentLanguage? = nil) -> [Double] {
+        let text = replaceNumberWords(in: transcript, language: detectLanguage(of: transcript, spoken: spoken))
         return text.matches(of: rx(#"\d[\d,]*(?:\.\d+)?"#)).compactMap { number(String($0.0)) }
     }
 
@@ -196,8 +200,8 @@ nonisolated enum RuleBasedParser {
         ("yetmiş", 70), ("seksen", 80), ("doksan", 90),
     ]
 
-    static func replaceNumberWords(in text: String) -> String {
-        if detectLanguage(of: text) == .turkish { return turkishNumbers(in: text) }
+    static func replaceNumberWords(in text: String, language: DocumentLanguage? = nil) -> String {
+        if (language ?? detectLanguage(of: text)) == .turkish { return turkishNumbers(in: text) }
         var result = text
         for (word, digits) in numberWords {
             result = result.replacing(rx("(?i)\\b\(word)\\b"), with: digits)
@@ -213,6 +217,12 @@ nonisolated enum RuleBasedParser {
         while let match = s.firstMatch(of: rx(#"(\d)\.(\d{3})(?!\d)"#)) {
             s.replaceSubrange(match.range, with: "\(match.output[1].substring!)\(match.output[2].substring!)")
         }
+        // "₺950", "1.800 ₺", "750 TL'den": the lira written as a sign or with a case ending becomes "lira".
+        s = s.replacing(rx(#"₺\s?(\d[\d,]*(?:\.\d+)?)"#)) { "\($0.output[1].substring!) lira" }
+        s = s.replacing(rx(#"(\d)\s?₺"#)) { "\($0.output[1].substring!) lira" }
+        s = s.replacing(rx(#"(?i)\b(?:tl|ytl)['’]?\p{L}*(?!\p{L})"#), with: "lira")
+        // "metre kare", said as two words.
+        s = s.replacing(rx(#"(?i)\bmetre\s+kare(\p{L}*)"#)) { "metrekare\($0.output[1].substring!)" }
         // "350'şer", "120'şer": so much each.
         s = s.replacing(rx(#"(\d[\d,]*(?:\.\d+)?)['’](?:şer|şar|ser|sar|er|ar)(?!\p{L})"#)) { "tanesi \($0.output[1].substring!)" }
         // Case endings: "120'den", "45'ten", "600'e".
@@ -242,8 +252,24 @@ nonisolated enum RuleBasedParser {
         }
         // "altı" is six, but also "under" ("lavabo altı"): only when it opens a phrase.
         s = s.replacing(rx(#"(?i)(^|[,.;]\s*|\bve\s+)altı\b"#)) { "\($0.output[1].substring ?? "")6" }
-        // "2 buçuk saat": and a half.
+        // "iki bin beş yüz" (by now "2 bin 500") is 2500; "bin iki yüz" is 1200; "on bin" is 10000.
+        for (word, size) in [("milyon", 1_000_000), ("bin", 1000)] {
+            s = s.replacing(rx("(?i)(?:\\b(\\d+)\\s+)?\\b\(word)\\b(?:\\s+(\\d+)(?![\\d.,]))?")) { m in
+                let times = m.output[1].substring.flatMap { Int($0) } ?? 1
+                let rest = m.output[2].substring.flatMap { Int($0) } ?? 0
+                return String(times * size + (rest < size ? rest : 0)) + (rest >= size ? " \(rest)" : "")
+            }
+        }
+        // "2 buçuk saat": and a half. "yarım saat": half.
         s = s.replacing(rx(#"(?i)(\d+)\s+buçuk\b"#)) { "\($0.output[1].substring!).5" }
+        s = s.replacing(rx(#"(?i)\byarım\b"#), with: "0.5")
+        // "52 lira 50 kuruş" is 52.50.
+        s = s.replacing(rx(#"(?i)(\d+)\s*(?:lira|dolar)\s+(\d{1,2})\s*kuruş\b"#)) { m in
+            let cents = String(m.output[2].substring!)
+            return "\(m.output[1].substring!).\(cents.count == 1 ? "0" + cents : cents) lira"
+        }
+        // "52,50": a decimal comma.
+        s = s.replacing(rx(#"(\d),(\d{1,2})(?![\d])"#)) { "\($0.output[1].substring!).\($0.output[2].substring!)" }
         return s
     }
 
@@ -292,6 +318,12 @@ nonisolated enum RuleBasedParser {
         (#"metros|metro|meters|meter|metre"#, "m"),
         (#"libras|libra|pounds|pound|lbs|lb"#, "lb"),
         (#"kilo|kg"#, "kg"),
+        (#"litre|lt"#, "L"),
+        (#"ton"#, "ton"),
+        (#"rulo"#, "rulo"),
+        (#"paket"#, "paket"),
+        (#"kova"#, "kova"),
+        (#"oda"#, "oda"),
         (#"adet|tane"#, ""),
     ]
 
@@ -309,15 +341,18 @@ nonisolated enum RuleBasedParser {
 
     private static func findPrice(in s: String) -> PriceMatch? {
         let totalPrefixes: Set<String> = ["por", "for", "en", "de", "son", "toplam", "toplamda", "hepsi"]
-        let eachPrefixes: Set<String> = ["tanesi", "adedi", "saati", "saatliği", "saatligi", "metrekaresi", "metresi",
-                                         "günlüğü", "gunlugu", "günü", "galonu", "başına", "basina", "her biri"]
-        let turkishPrefixes = "tanesi|adedi|saati|saatliği|saatligi|metrekaresi|metresi|günlüğü|gunlugu|günü|galonu|başına|basina|her biri|fiyatı|fiyati|ücreti|ucreti|tutarı|tutari|toplam|toplamda|hepsi"
+        let eachPrefixes: Set<String> = ["tanesi", "adedi", "saati", "saatliği", "saatligi", "saatlik", "metrekaresi", "metresi",
+                                         "günlüğü", "gunlugu", "günü", "günlük", "galonu", "rulosu", "paketi", "kovası", "kutusu",
+                                         "torbası", "litresi", "tonu", "başına", "basina", "başı", "basi", "her biri", "beheri"]
+        let turkishPrefixes = "(?:(?:metrekare|metre|saat|gün|adet|tane|kişi|oda)\\s+)?(?:başına|basina|başı|basi)|tanesi|adedi|saati|saatliği|saatligi|saatlik|metrekaresi|metresi|günlüğü|gunlugu|günü|günlük|galonu|rulosu|paketi|kovası|kutusu|torbası|litresi|tonu|her biri|beheri|fiyatı|fiyati|ücreti|ucreti|tutarı|tutari|toplam|toplamda|hepsi"
         let prefix = "(\\b(?:a|at|por|for|en|de|cuestan|cuesta|cobro|son|valen|vale|\(turkishPrefixes))\\s+)?"
         let amount = #"(\d[\d,]*(?:\.\d+)?)"#
         let notAUnit = "(?!\\s*(?:\(unitAlternation)|manos|capas|coats|kat|%|por ciento|percent)\\b)"
         let patterns = [
-            "(?i)\(prefix)\\$\\s?\(amount)",
-            "(?i)\(prefix)\(amount)\\s*(?:dólares|dolares|dollars|dollar|bucks|usd|pesos|dolar|dolardan|dolara|lira|liradan|tl)\\b",
+            "(?i)\(prefix)[\\$€₺]\\s?\(amount)",
+            "(?i)\(prefix)\(amount)\\s*(?:€|₺)",
+            // Turkish adds case endings to the currency: "liradan", "liraya", "liralık", "dolarlık".
+            "(?i)\(prefix)\(amount)\\s*(?:dólares|dolares|dollars|dollar|bucks|usd|pesos|euros|euro|eur|avro|dolar\\p{L}*|lira\\p{L}*|tl)(?!\\p{L})",
             "(?i)(\\b(?:a|at|por|for|cuestan|cuesta|cobro|son|\(turkishPrefixes))\\s+)\(amount)(?![\\d.,]*\\d)\(notAUnit)",
         ]
         for pattern in patterns {
@@ -325,8 +360,10 @@ nonisolated enum RuleBasedParser {
                   let digits = match.output[2].substring,
                   let value = number(String(digits)) else { continue }
             let prefixWord = match.output[1].substring.map { $0.trimmingCharacters(in: .whitespaces).lowercased() } ?? ""
+            // "metrekare başına": the last word says it.
+            let lastWord = prefixWord.split(separator: " ").last.map(String.init) ?? prefixWord
             return PriceMatch(value: value, range: match.range, isTotalPrefix: totalPrefixes.contains(prefixWord),
-                              isEach: eachPrefixes.contains(prefixWord))
+                              isEach: eachPrefixes.contains(prefixWord) || eachPrefixes.contains(lastWord))
         }
         // "New vanity 600": a bare number that ends the phrase is the price for the whole line.
         // (Swift Regex has no lookbehind, so the preceding letter is matched and then excluded from the range.)
@@ -360,7 +397,7 @@ nonisolated enum RuleBasedParser {
         if let price { s.replaceSubrange(price.range, with: " ") }
 
         // 2. "each" / "total" markers
-        let eachPattern = #"(?i)\b(?:c/u|cada(?:\s+un[oa]?)?|each|apiece|tanesi|adedi|her biri|her birine|birim fiyatı|saati|saatliği|saatlik|metrekaresi|metresi|günlüğü|günü|galonu|başına|basina|por\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:la|el)\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:an?|per)\s+(?:hour|foot|square foot|sq ft|piece|unit|gallon|yard|day))(?![\p{L}])"#
+        let eachPattern = #"(?i)\b(?:c/u|cada(?:\s+un[oa]?)?|each|apiece|tanesi|adedi|her biri|her birine|birim fiyatı|beheri|saati|saatliği|saatlik|metrekaresi|metresi|günlüğü|günü|günlük|galonu|rulosu|paketi|kovası|kutusu|torbası|litresi|başına|basina|başı|por\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:la|el)\s+(?:hora|pie|pieza|unidad|galón|galon|yarda|metro|día|dia)(?:\s+cuadrad[oa])?|(?:an?|per)\s+(?:hour|foot|square foot|sq ft|piece|unit|gallon|yard|day))(?![\p{L}])"#
         var isEach = price?.isEach ?? false
         if price != nil, !isEach, let match = s.firstMatch(of: rx(eachPattern)) {
             isEach = true
@@ -409,7 +446,10 @@ nonisolated enum RuleBasedParser {
 
         // 5. Unit price
         var unitPrice = price?.value ?? 0
-        if let price, !isEach, price.isTotalPrefix || saysTotal, quantity > 1 {
+        // Turkish says "each" out loud ("tanesi 350"); "3 oda 4.500 lira" is the price for all three.
+        let isTotal = price.map { $0.isTotalPrefix || saysTotal || language == .turkish } ?? false
+        // Turkish "yarım gün … 1.500 lira": half a day for 1,500.
+        if let price, !isEach, isTotal, quantity > 1 || (language == .turkish && quantity < 1) {
             let each = price.value / quantity
             if abs(Money.round(each) * quantity - price.value) < 0.005 {
                 unitPrice = Money.round(each)
@@ -428,10 +468,10 @@ nonisolated enum RuleBasedParser {
     }
 
     /// Units are matched in one short form ("hr"); a Turkish document prints them in Turkish.
-    private static func written(_ unit: String, in language: DocumentLanguage) -> String {
+    static func written(_ unit: String, in language: DocumentLanguage) -> String {
         guard language == .turkish else { return unit }
         let turkish = ["hr": "saat", "day": "gün", "box": "kutu", "bag": "torba", "gal": "galon",
-                       "sq ft": "ft²", "lin ft": "ft", "sq yd": "yd²"]
+                       "sq ft": "ft²", "lin ft": "ft", "sq yd": "yd²", "lb": "libre"]
         return turkish[unit] ?? unit
     }
 

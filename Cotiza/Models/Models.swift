@@ -151,6 +151,8 @@ final class BusinessProfile {
     var materialMarkupPercent: Double = 15
     /// Asked for on new estimates, as a share of the total. 0 means no deposit.
     var defaultDepositPercent: Double = 0
+    /// ISO 4217 code for every amount ("USD", "TRY"). Empty means the phone's region decides.
+    var currencyCode: String = ""
     var createdAt: Date = Date.now
 
     init() {}
@@ -169,6 +171,12 @@ final class BusinessProfile {
     var documentLanguage: DocumentLanguage {
         get { DocumentLanguage(rawValue: documentLanguageRaw) ?? .english }
         set { documentLanguageRaw = newValue.rawValue }
+    }
+
+    /// The currency amounts are written in: the one chosen in Settings, else the phone's.
+    var currency: String {
+        get { currencyCode.isEmpty ? Money.regionCurrency : currencyCode }
+        set { currencyCode = newValue }
     }
 }
 
@@ -462,8 +470,26 @@ nonisolated enum Money {
         round(cost * (1 + max(percent, 0) / 100))
     }
 
-    static func string(_ value: Double, locale: Locale = Locale(identifier: "en_US")) -> String {
-        value.formatted(.currency(code: "USD").locale(locale))
+    /// The business's currency. Set from the profile when the app starts and whenever it changes
+    /// (`RootView`); every amount in the app, the PDF and the messages is written in it.
+    nonisolated(unsafe) static var currencyCode = "USD"
+
+    /// Currencies offered in Settings, most likely first. The phone's own is added when it's missing.
+    static let commonCurrencies = ["USD", "TRY", "EUR", "MXN", "GBP", "CAD"]
+
+    /// The phone region's currency: TRY in Türkiye, USD in the United States.
+    static var regionCurrency: String {
+        Locale.current.currency?.identifier ?? "USD"
+    }
+
+    static func string(_ value: Double, locale: Locale = Locale(identifier: "en_US"), currency: String? = nil) -> String {
+        value.formatted(.currency(code: currency ?? currencyCode).locale(locale))
+    }
+
+    /// "₺", "$", "€": the symbol a document in `locale` uses for `currency`.
+    static func symbol(_ currency: String? = nil, locale: Locale = .current) -> String {
+        let format = FloatingPointFormatStyle<Double>.Currency(code: currency ?? currencyCode).locale(locale)
+        return 0.0.formatted(format).filter { !$0.isNumber && !",. \u{00A0}\u{202F}".contains($0) }
     }
 
     /// Quantity without trailing zeros: 3, 2.5, 120.

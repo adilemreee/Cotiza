@@ -44,19 +44,19 @@ nonisolated struct SignLinkDocument: Codable, Equatable, Sendable {
         validUntilText = s.validUntil.map(s.formatted) ?? ""
         items = s.items.map { item in
             let quantity = Money.quantity(item.quantity, locale: locale) + (item.unit.isEmpty ? "" : " \(item.unit)")
-            return Line(text: item.text, detail: "\(quantity) × \(Money.string(item.unitPrice, locale: locale))",
-                        amount: Money.string(item.amount, locale: locale))
+            return Line(text: item.text, detail: "\(quantity) × \(Money.string(item.unitPrice, locale: locale, currency: s.currency))",
+                        amount: Money.string(item.amount, locale: locale, currency: s.currency))
         }
         totals = s.totals.tax > 0
-            ? [Total(label: strings.subtotal, value: Money.string(s.totals.subtotal, locale: locale)),
-               Total(label: strings.tax(rate: Money.quantity(s.taxRate, locale: locale)), value: Money.string(s.totals.tax, locale: locale))]
+            ? [Total(label: strings.subtotal, value: Money.string(s.totals.subtotal, locale: locale, currency: s.currency)),
+               Total(label: strings.tax(rate: Money.quantity(s.taxRate, locale: locale)), value: Money.string(s.totals.tax, locale: locale, currency: s.currency))]
             : []
-        total = Money.string(s.totals.total, locale: locale)
+        total = Money.string(s.totals.total, locale: locale, currency: s.currency)
         notes = s.notes
         let validity = s.validUntil.map { strings.validity(until: s.formatted($0)) } ?? ""
         // The page shows totals before the grand total, so the deposit goes with the terms instead.
         let deposit = s.depositIsDue
-            ? "\(strings.depositToStart(percent: Money.quantity(s.depositPercent, locale: locale))): \(Money.string(s.depositAmount, locale: locale))"
+            ? "\(strings.depositToStart(percent: Money.quantity(s.depositPercent, locale: locale))): \(Money.string(s.depositAmount, locale: locale, currency: s.currency))"
             : ""
         terms = [deposit, s.terms, validity].filter { !$0.isEmpty }.joined(separator: "\n")
     }

@@ -51,6 +51,8 @@ nonisolated struct DocumentSnapshot: Sendable, Equatable {
     var depositPercent: Double = 0
     var depositAmount: Double = 0
     var payments: [Payment] = []
+    /// ISO 4217 code every amount is written in.
+    var currency: String = "USD"
 
     var amountPaid: Double { Money.round(payments.reduce(0) { $0 + $1.amount }) }
     var balanceDue: Double { isPaid ? 0 : max(Money.round(totals.total - amountPaid), 0) }
@@ -104,7 +106,8 @@ extension DocumentSnapshot {
             signedAt: document.signedAt,
             depositPercent: document.depositPercent,
             depositAmount: document.depositAmount,
-            payments: document.sortedPayments.map { Payment(date: $0.date, amount: $0.amount, method: $0.method) }
+            payments: document.sortedPayments.map { Payment(date: $0.date, amount: $0.amount, method: $0.method) },
+            currency: profile?.currency ?? Money.currencyCode
         )
     }
 }
@@ -410,8 +413,8 @@ struct PDFRenderer {
             draw(item.text, font: textFont, color: ink, in: columns.description.at(y: textY, height: textHeight + 2), lineSpacing: 2)
             let quantity = Money.quantity(item.quantity, locale: locale) + (item.unit.isEmpty ? "" : " \(item.unit)")
             draw(quantity, font: numberFont, color: ink, in: columns.quantity.at(y: textY, height: 14), alignment: .right)
-            draw(Money.string(item.unitPrice, locale: locale), font: numberFont, color: ink, in: columns.rate.at(y: textY, height: 14), alignment: .right)
-            draw(Money.string(item.amount, locale: locale), font: numberFont, color: ink, in: columns.amount.at(y: textY, height: 14), alignment: .right)
+            draw(Money.string(item.unitPrice, locale: locale, currency: s.currency), font: numberFont, color: ink, in: columns.rate.at(y: textY, height: 14), alignment: .right)
+            draw(Money.string(item.amount, locale: locale, currency: s.currency), font: numberFont, color: ink, in: columns.amount.at(y: textY, height: 14), alignment: .right)
             layout.y += rowHeight
             rule(at: layout.y, layout: layout, color: hairline, width: 0.5)
         }
@@ -440,7 +443,7 @@ struct PDFRenderer {
                  in: CGRect(x: x + boxWidth - 10 - valueWidth, y: layout.y, width: valueWidth, height: 14), alignment: .right)
             layout.y += 20
         }
-        func money(_ value: Double) -> String { Money.string(value, locale: locale) }
+        func money(_ value: Double) -> String { Money.string(value, locale: locale, currency: s.currency) }
 
         if showsTax {
             row(strings.subtotal, money(s.totals.subtotal))

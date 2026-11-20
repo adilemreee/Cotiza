@@ -10,7 +10,8 @@ enum WidgetData {
             paidThisMonth: summary.paidThisMonth,
             awaitingCount: documents.count(where: \.isAwaitingPayment),
             overdueCount: documents.count { $0.isOverdue(now: now) },
-            updatedAt: now
+            updatedAt: now,
+            currencyCode: Money.currencyCode
         )
     }
 

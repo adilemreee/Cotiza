@@ -133,6 +133,12 @@ struct RootView: View {
             // A profile that arrived from iCloud counts as set up, so a new iPhone skips onboarding.
             if let profile = profiles.first {
                 HomeView(profile: profile)
+                    // Every amount is written in the business's currency.
+                    .onChange(of: profile.currency, initial: true) { _, code in
+                        guard Money.currencyCode != code else { return }
+                        Money.currencyCode = code
+                        Task { await Self.refreshSystemViews() }
+                    }
             } else {
                 OnboardingView { hasOnboarded = true }
             }

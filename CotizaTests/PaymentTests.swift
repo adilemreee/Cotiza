@@ -26,6 +26,8 @@ struct PaymentTests {
         let profile = BusinessProfile()
         profile.defaultTaxRate = 10
         profile.defaultDepositPercent = deposit
+        // Amounts in dollars whatever region the simulator is set to.
+        profile.currency = "USD"
         context.insert(profile)
         let draft = EstimateDraft(title: "Paint the house", clientName: "Maria Lopez", items: [
             DraftItem(text: "Labor", quantity: 1, unitPrice: 1000, isLabor: true),

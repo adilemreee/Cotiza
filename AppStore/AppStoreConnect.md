@@ -258,9 +258,9 @@ Registrar pagos es parte de Precia Pro.
 
 ## 4. Turkish
 
-Türkiye mağazası için (App Store Connect'te dil ekle → **Turkish**). Uygulamada para birimi hâlâ dolar ($) ve
-vergi ABD tarzı tek oran; metinler bu yüzden para birimi, KDV ya da e-fatura vaat etmiyor. Ödeme yöntemlerinde de
-Zelle/Venmo gibi ABD'ye özgü adlar geçmiyor.
+Türkiye mağazası için (App Store Connect'te dil ekle → **Turkish**). Para birimi Ayarlar'dan seçilir; Türkiye
+bölgesindeki telefonda varsayılan Türk lirası (₺). Vergi tek oran (KDV oranı elle girilir); metinler e-fatura vaat
+etmiyor. Ödeme yöntemlerinde Zelle/Venmo gibi ABD'ye özgü adlar geçmiyor.
 
 **Name** (30)
 ```

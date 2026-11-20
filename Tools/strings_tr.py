@@ -66,6 +66,7 @@ TR = {
     "Create estimate": "Teklif oluştur",
     "Date": "Tarih",
     "Dates and reminders": "Tarihler ve hatırlatmalar",
+    "Currency": "Para birimi",
     "Defaults for new estimates": "Yeni teklifler için varsayılanlar",
     "Delete": "Sil",
     "Delete item": "Kalemi sil",

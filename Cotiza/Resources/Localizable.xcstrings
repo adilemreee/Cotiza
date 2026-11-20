@@ -899,6 +899,22 @@
         }
       }
     },
+    "Currency": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moneda"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para birimi"
+          }
+        }
+      }
+    },
     "Date": {
       "localizations": {
         "es": {

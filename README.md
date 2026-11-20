@@ -50,6 +50,7 @@ xcodebuild -project Cotiza.xcodeproj -scheme Cotiza -destination 'platform=iOS S
 | Ana ekran / kilit ekranı widget'ı (App Group üzerinden özet) | `CotizaWidget/`, `Cotiza/Shared/WidgetSnapshot.swift`, `Cotiza/App/WidgetData.swift` |
 | Malzemeye kâr payı (fişten gelen maliyet saklanır, müşteriye kârlı fiyat gider) | `Money.withMarkup`, `LineItem.unitCost`, `Cotiza/Views/ReceiptScanView.swift` |
 | Tekrarlayan faturalar (haftalık / 2 haftalık / aylık) + hatırlatma | `DocumentFactory.makeDueRepeats`, `RecurringInvoices`, `ReminderScheduler` |
+| Para birimi: Ayarlar'da seçilir (USD, TRY, EUR, MXN, GBP, CAD ve telefonun kendi para birimi); boşsa telefonun bölgesi. PDF, mesaj, imza sayfası, widget ve yapay zekâ bu para birimini kullanır | `BusinessProfile.currency`, `Money.currencyCode`, `DocumentSnapshot.currency` |
 | Kapora ve kısmi ödemeler (Pro): teklifte kapora yüzdesi, ödeme kaydı, PDF'te ödenenler + kalan bakiye, faturaya çevirince kapora faturaya taşınır, tamamı ödenince "ödendi" | `Payment` modeli, `DocumentFactory.record(payment:)`, `PaymentSheet` (`DocumentEditorView.swift`) |
 | Kazanç / gider raporu, CSV + PDF dışa aktarma (Pro) | `Cotiza/Engine/ProfitReport.swift`, `Cotiza/Views/ReportView.swift` |
 | iCloud senkronu (CloudKit özel veritabanı, olmazsa yerel) | `Cotiza/App/AppDatabase.swift` |

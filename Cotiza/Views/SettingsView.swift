@@ -53,6 +53,11 @@ struct SettingsView: View {
                             Text(language.label).tag(language.rawValue)
                         }
                     }
+                    Picker("Currency", selection: $profile.currency) {
+                        ForEach(currencyChoices, id: \.self) { code in
+                            Text(Self.currencyName(code)).tag(code)
+                        }
+                    }
                     LabeledContent("Sales tax (%)") {
                         TextField("0", value: $profile.defaultTaxRate, format: .number.precision(.fractionLength(0...3)))
                             .keyboardType(.decimalPad)
@@ -176,6 +181,22 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+
+    // MARK: Currency
+
+    /// The common currencies, plus the phone's own and the one already chosen.
+    private var currencyChoices: [String] {
+        var codes = Money.commonCurrencies
+        for code in [Money.regionCurrency, profile.currency] where !codes.contains(code) { codes.append(code) }
+        return codes
+    }
+
+    /// "Turkish Lira (₺)" in the phone's language.
+    static func currencyName(_ code: String) -> String {
+        let name = Locale.current.localizedString(forCurrencyCode: code) ?? code
+        let symbol = Money.symbol(code)
+        return symbol.isEmpty || symbol == code ? name : "\(name) (\(symbol))"
     }
 
     // MARK: Sections
