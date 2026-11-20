@@ -92,7 +92,7 @@ final class CotizaUITests: XCTestCase {
         app.buttons["New estimate"].tap()
         waitFor(app.buttons["Create estimate"])
         app.buttons["Create estimate"].tap()
-        waitFor(app.staticTexts["Paint bedrooms"], timeout: 15)
+        waitFor(app.staticTexts["Paint bedrooms"], timeout: 40) // the on-device model loads slowly the first time
         XCTAssertTrue(app.staticTexts["Install doors"].exists)
         XCTAssertTrue(app.staticTexts["Labor"].exists)
         XCTAssertTrue(app.staticTexts["Maria Lopez"].exists)
@@ -181,7 +181,7 @@ final class CotizaUITests: XCTestCase {
 
         app.buttons["New estimate"].tap()
         app.buttons["Create estimate"].tap()
-        waitFor(app.staticTexts["Paint bedrooms"], timeout: 15)
+        waitFor(app.staticTexts["Paint bedrooms"], timeout: 40) // the on-device model loads slowly the first time
 
         tapMenuItem(app, "Convert to invoice")
         waitFor(app.staticTexts["INV-1001"])

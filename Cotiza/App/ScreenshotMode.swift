@@ -51,6 +51,8 @@ enum ScreenshotScene: String {
             return client
         }
         typealias Line = (text: String, quantity: Double, unit: String, price: Double, cost: Double, labor: Bool)
+        /// Dollar prices, or lira prices a Turkish client would expect.
+        func price(_ dollars: Double, _ lira: Double) -> Double { turkish ? lira : dollars }
         @discardableResult
         func document(_ kind: DocumentKind, _ title: String, _ who: Client, _ lines: [Line], status: DocumentStatus,
                       created: Int, paid: Int? = nil, due: Int? = nil, repeats: RepeatInterval = .never, id: UUID? = nil) -> JobDocument {
@@ -95,36 +97,36 @@ enum ScreenshotScene: String {
             : client("Linda García", "(713) 555-0161", "905 Elm St, Bellaire, TX")
 
         document(.invoice, t("Deep house cleaning", "Limpieza profunda de casa", "Detaylı ev temizliği"), linda, [
-            (t("Deep cleaning, 3 bedrooms", "Limpieza profunda, 3 recámaras", "Detaylı temizlik, 3 oda"), 1, "", 320, 0, true),
-            (t("Cleaning supplies", "Productos de limpieza", "Temizlik malzemeleri"), 1, "", 45.98, 39.98, false),
+            (t("Deep cleaning, 3 bedrooms", "Limpieza profunda, 3 recámaras", "Detaylı temizlik, 3 oda"), 1, "", price(320, 4500), 0, true),
+            (t("Cleaning supplies", "Productos de limpieza", "Temizlik malzemeleri"), 1, "", price(45.98, 850), price(39.98, 700), false),
         ], status: .paid, created: early(9), paid: early(8))
         document(.invoice, t("Exterior house painting", "Pintura exterior de la casa", "Dış cephe boyama"), robert, [
-            (t("Paint house exterior", "Pintar exterior de la casa", "Dış cephe boyama"), turkish ? 170 : 1800, turkish ? "m²" : "sq ft", turkish ? 18.5 : 1.75, 0, true),
-            (t("Premium exterior paint", "Pintura exterior premium", "Premium dış cephe boyası"), 12, turkish ? "kutu" : "gal", 57.49, 49.99, false),
-            (t("Sand and patch", "Lijar y resanar", "Zımpara ve alçı"), 6, turkish ? "saat" : "hr", 45, 0, true),
+            (t("Paint house exterior", "Pintar exterior de la casa", "Dış cephe boyama"), turkish ? 170 : 1800, turkish ? "m²" : "sq ft", price(1.75, 280), 0, true),
+            (t("Premium exterior paint", "Pintura exterior premium", "Premium dış cephe boyası"), 12, turkish ? "kutu" : "gal", price(57.49, 1450), price(49.99, 1250), false),
+            (t("Sand and patch", "Lijar y resanar", "Zımpara ve alçı"), 6, turkish ? "saat" : "hr", price(45, 450), 0, true),
         ], status: .paid, created: early(7), paid: early(4))
         document(.invoice, t("Lawn care", "Mantenimiento de jardín", "Bahçe bakımı"), ana, [
-            (t("Mow and edge", "Cortar y orillar el pasto", "Çim biçme ve kenar düzeltme"), 4, "", 55, 0, true),
-            (t("Fertilizer", "Fertilizante", "Gübre"), 1, "", 28.74, 24.99, false),
+            (t("Mow and edge", "Cortar y orillar el pasto", "Çim biçme ve kenar düzeltme"), 4, "", price(55, 600), 0, true),
+            (t("Fertilizer", "Fertilizante", "Gübre"), 1, "", price(28.74, 380), price(24.99, 320), false),
         ], status: .paid, created: early(5), paid: early(3), repeats: .monthly)
         document(.invoice, t("Kitchen faucet replacement", "Cambio de llave de cocina", "Mutfak bataryası değişimi"), john, [
-            (t("Install new faucet", "Instalar llave nueva", "Yeni batarya montajı"), 1, "", 145, 0, true),
-            (t("Kitchen faucet", "Llave de cocina", "Mutfak bataryası"), 1, "", 189.99, 164.99, false),
+            (t("Install new faucet", "Instalar llave nueva", "Yeni batarya montajı"), 1, "", price(145, 900), 0, true),
+            (t("Kitchen faucet", "Llave de cocina", "Mutfak bataryası"), 1, "", price(189.99, 2450), price(164.99, 2100), false),
         ], status: .sent, created: -4, due: -1)
         document(.estimate, t("Roof repair", "Reparación de techo", "Çatı tamiri"), robert, [
-            (t("Replace damaged shingles", "Cambiar tejas dañadas", "Hasarlı kiremit değişimi"), turkish ? 11 : 120, turkish ? "m²" : "sq ft", turkish ? 70 : 6.5, 0, true),
-            (t("Seal chimney flashing", "Sellar chimenea", "Baca izolasyonu"), 1, "", 275, 0, true),
+            (t("Replace damaged shingles", "Cambiar tejas dañadas", "Hasarlı kiremit değişimi"), turkish ? 11 : 120, turkish ? "m²" : "sq ft", price(6.5, 950), 0, true),
+            (t("Seal chimney flashing", "Sellar chimenea", "Baca izolasyonu"), 1, "", price(275, 3500), 0, true),
         ], status: .approved, created: -3)
         document(.estimate, t("Fence staining", "Barnizar la cerca", "Bahçe çiti verniği"), linda, [
-            (t("Stain wood fence", "Barnizar cerca de madera", "Ahşap çit vernikleme"), turkish ? 50 : 160, turkish ? "m" : "lin ft", turkish ? 13.5 : 4.25, 0, true),
+            (t("Stain wood fence", "Barnizar cerca de madera", "Ahşap çit vernikleme"), turkish ? 50 : 160, turkish ? "m" : "lin ft", price(4.25, 180), 0, true),
         ], status: .sent, created: -2)
 
         // The hero estimate: what the editor, PDF and signature scenes show.
         document(.estimate, t("Interior painting, 3 bedrooms", "Pintura interior, 3 recámaras", "İç boya, 3 oda"), maria, [
-            (t("Paint bedrooms (walls and ceiling)", "Pintar recámaras (paredes y techo)", "Oda boyama (duvar ve tavan)"), 3, "", 450, 0, true),
-            (t("Patch and sand walls", "Resanar y lijar paredes", "Duvar alçı ve zımpara"), 4, turkish ? "saat" : "hr", 45, 0, true),
-            (t("Premium interior paint", "Pintura interior premium", "Premium iç cephe boyası"), 6, turkish ? "kutu" : "gal", 52.89, 45.99, false),
-            (t("Tape, plastic and rollers", "Cinta, plástico y rodillos", "Bant, naylon ve rulo"), 1, "", 38.50, 33.48, false),
+            (t("Paint bedrooms (walls and ceiling)", "Pintar recámaras (paredes y techo)", "Oda boyama (duvar ve tavan)"), 3, "", price(450, 4500), 0, true),
+            (t("Patch and sand walls", "Resanar y lijar paredes", "Duvar alçı ve zımpara"), 4, turkish ? "saat" : "hr", price(45, 450), 0, true),
+            (t("Premium interior paint", "Pintura interior premium", "Premium iç cephe boyası"), 6, turkish ? "kutu" : "gal", price(52.89, 1450), price(45.99, 1250), false),
+            (t("Tape, plastic and rollers", "Cinta, plástico y rodillos", "Bant, naylon ve rulo"), 1, "", price(38.50, 650), price(33.48, 520), false),
         ], status: .sent, created: 0, id: heroID)
         try? context.save()
     }

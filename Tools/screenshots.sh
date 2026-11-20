@@ -24,7 +24,7 @@ locale_of() { case "$1" in tr) echo tr_TR ;; *) echo "${1}_US" ;; esac; }
 
 transcript() {
   if [ "$1" = tr ]; then
-    echo "Üç yatak odası boyama tanesi 450, duvar ve tavan. Alçı ve zımpara 4 saat, saati 45. 6 kutu premium boya tanesi 52,89, bant, naylon ve rulo toplam 38,50. Müşteri Ayşe Demir."
+    echo "Üç yatak odası boyama tanesi 4.500 lira, duvar ve tavan. Alçı ve zımpara 4 saat, saati 450. 6 kutu premium boya tanesi 1.450, bant, naylon ve rulo toplam 650. Müşteri Ayşe Demir."
   elif [ "$1" = es ]; then
     echo "Pintar tres recámaras a 450 cada una, paredes y techo. Resanar y lijar 4 horas a 45 la hora. 6 galones de pintura premium a 52.89 y cinta, plástico y rodillos por 38.50. Cliente María López."
   else
