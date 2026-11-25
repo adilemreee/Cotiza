@@ -18,7 +18,10 @@ enum AppDatabase {
     private static let setup: (container: ModelContainer, syncsWithICloud: Bool) = {
         var inMemory = false
         #if DEBUG
-        if UserDefaults.standard.bool(forKey: "CotizaInitCloudKitSchema") { initializeCloudKitSchema() }
+        // Also `CotizaInitCloudKitSchema=1` in the environment, for `devicectl … --environment-variables`,
+        // which reads a "-Cotiza…" launch argument as one of its own options.
+        if UserDefaults.standard.bool(forKey: "CotizaInitCloudKitSchema")
+            || ProcessInfo.processInfo.environment["CotizaInitCloudKitSchema"] != nil { initializeCloudKitSchema() }
         // `-CotizaResetState YES` (UI tests) starts like a fresh install, with nothing saved to disk.
         inMemory = UserDefaults.standard.bool(forKey: "CotizaResetState")
         #endif
