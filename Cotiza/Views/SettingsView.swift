@@ -43,6 +43,12 @@ struct SettingsView: View {
                         TextField("What do you do? For example: pool cleaning", text: $profile.customTrade)
                             .textInputAutocapitalization(.sentences)
                     }
+                    // Every amount, on old documents too: it belongs to the business, not to new estimates.
+                    Picker("Currency", selection: $profile.currency) {
+                        ForEach(currencyChoices, id: \.self) { code in
+                            Text(Self.currencyName(code)).tag(code)
+                        }
+                    }
                 }
 
                 logoSection
@@ -51,11 +57,6 @@ struct SettingsView: View {
                     Picker("Document language", selection: $profile.documentLanguageRaw) {
                         ForEach(DocumentLanguage.allCases) { language in
                             Text(language.label).tag(language.rawValue)
-                        }
-                    }
-                    Picker("Currency", selection: $profile.currency) {
-                        ForEach(currencyChoices, id: \.self) { code in
-                            Text(Self.currencyName(code)).tag(code)
                         }
                     }
                     LabeledContent("Sales tax (%)") {
